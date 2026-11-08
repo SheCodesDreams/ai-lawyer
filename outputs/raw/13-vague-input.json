@@ -1,0 +1,68 @@
+{
+  "case": {
+    "id": "13-vague-input",
+    "note": "Too little information: should ask questions, not give a plan.",
+    "story": "my money is stuck, please help",
+    "expect": {
+      "stay_in_intake": true
+    }
+  },
+  "seconds": 6,
+  "checks": [
+    {
+      "name": "still asking questions (no plan)",
+      "ok": true,
+      "detail": "intake"
+    }
+  ],
+  "row": {
+    "id": "13-vague-input",
+    "pass": true,
+    "seconds": 6,
+    "warnings": 0,
+    "failed": []
+  },
+  "turns": [
+    {
+      "label": "story",
+      "user": "my money is stuck, please help",
+      "result": {
+        "state": {
+          "stage": "intake",
+          "story": {
+            "summary": "User's money is stuck.",
+            "timeline": [],
+            "opposite_party": null,
+            "platform": null,
+            "amount_inr": null,
+            "payment_method": null,
+            "proof_mentioned": [],
+            "user_goal": "Get stuck money back",
+            "months_since_event": null,
+            "event_date": null,
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": null,
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "my money is stuck, please help"
+            },
+            {
+              "role": "assistant",
+              "text": "I can help you with that. Could you please tell me how much money is stuck and which platform or company this is related to?"
+            }
+          ]
+        },
+        "reply": "I can help you with that. Could you please tell me how much money is stuck and which platform or company this is related to?",
+        "warnings": []
+      }
+    }
+  ]
+}

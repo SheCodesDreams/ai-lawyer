@@ -1,0 +1,636 @@
+{
+  "case": {
+    "id": "08-time-barred",
+    "note": "Problem is 30 months old -> limitation risk -> lawyer.",
+    "story": "I bought a washing machine for Rs 25000 from an online store in May 2024. It stopped working after a week and the seller never refunded me. I only now want to do something.",
+    "extra": "Yes it was about 2.5 years ago. I have the invoice and old emails.",
+    "proofs": "I have the invoice and emails.",
+    "expect": {
+      "verdict": "needs_lawyer"
+    }
+  },
+  "seconds": 27,
+  "checks": [
+    {
+      "name": "verdict = needs_lawyer",
+      "ok": true,
+      "detail": "needs_lawyer"
+    }
+  ],
+  "row": {
+    "id": "08-time-barred",
+    "pass": true,
+    "verdict": "needs_lawyer",
+    "issue": "refund_or_nondelivery",
+    "seconds": 27,
+    "warnings": 0,
+    "failed": []
+  },
+  "turns": [
+    {
+      "label": "story",
+      "user": "I bought a washing machine for Rs 25000 from an online store in May 2024. It stopped working after a week and the seller never refunded me. I only now want to do something.",
+      "result": {
+        "state": {
+          "stage": "intake",
+          "story": {
+            "summary": "User bought a washing machine for Rs 25000 from an online store in May 2024. It broke down after a week and the seller did not refund the money.",
+            "timeline": [
+              {
+                "when": "2024-05",
+                "what": "Purchased washing machine online for Rs 25000, broke down after a week, seller refused refund."
+              }
+            ],
+            "opposite_party": "Online store",
+            "platform": "Online store",
+            "amount_inr": 25000,
+            "payment_method": null,
+            "proof_mentioned": [],
+            "user_goal": "Get a refund",
+            "months_since_event": 30,
+            "event_date": "2024-05-15",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": null,
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I bought a washing machine for Rs 25000 from an online store in May 2024. It stopped working after a week and the seller never refunded me. I only now want to do something."
+            },
+            {
+              "role": "assistant",
+              "text": "I am not a lawyer, but I can help you organize your consumer dispute. You bought a washing machine for Rs 25000 online in May 2024, it stopped working after a week, and the seller refused a refund. \n\nDid you receive any written refusal or response from the seller when you asked for the refund, and what is the name of the online store?"
+            }
+          ]
+        },
+        "reply": "I am not a lawyer, but I can help you organize your consumer dispute. You bought a washing machine for Rs 25000 online in May 2024, it stopped working after a week, and the seller refused a refund. \n\nDid you receive any written refusal or response from the seller when you asked for the refund, and what is the name of the online store?",
+        "warnings": []
+      }
+    },
+    {
+      "label": "extra details",
+      "user": "Yes it was about 2.5 years ago. I have the invoice and old emails.",
+      "result": {
+        "state": {
+          "stage": "confirm",
+          "story": {
+            "summary": "User bought a washing machine for Rs 25000 from an online store in May 2024. It broke down after a week, the seller refused a refund, and the user has the invoice and email proofs.",
+            "timeline": [
+              {
+                "when": "2024-05",
+                "what": "Purchased washing machine online for Rs 25000, broke down after a week, seller refused refund."
+              },
+              {
+                "when": "2024-05",
+                "what": "Asked seller for refund and received written refusal via email."
+              }
+            ],
+            "opposite_party": "Online store",
+            "platform": "Online store",
+            "amount_inr": 25000,
+            "payment_method": null,
+            "proof_mentioned": [
+              "invoice",
+              "emails"
+            ],
+            "user_goal": "Get a refund",
+            "months_since_event": 30,
+            "event_date": "2024-05-15",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": null,
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I bought a washing machine for Rs 25000 from an online store in May 2024. It stopped working after a week and the seller never refunded me. I only now want to do something."
+            },
+            {
+              "role": "assistant",
+              "text": "I am not a lawyer, but I can help you organize your consumer dispute. You bought a washing machine for Rs 25000 online in May 2024, it stopped working after a week, and the seller refused a refund. \n\nDid you receive any written refusal or response from the seller when you asked for the refund, and what is the name of the online store?"
+            },
+            {
+              "role": "user",
+              "text": "Yes it was about 2.5 years ago. I have the invoice and old emails."
+            },
+            {
+              "role": "assistant",
+              "text": "You bought a washing machine for Rs 25000 from an online store around May 2024, it broke down after a week, and the seller refused a refund. You have the invoice and old email proofs. Is this correct? Say yes, or tell me what to change."
+            }
+          ]
+        },
+        "reply": "You bought a washing machine for Rs 25000 from an online store around May 2024, it broke down after a week, and the seller refused a refund. You have the invoice and old email proofs. Is this correct? Say yes, or tell me what to change.",
+        "warnings": []
+      }
+    },
+    {
+      "label": "confirm",
+      "user": "Yes, that is correct.",
+      "result": {
+        "state": {
+          "stage": "evidence",
+          "story": {
+            "summary": "User bought a washing machine for Rs 25000 from an online store in May 2024. It broke down after a week, the seller refused a refund, and the user has the invoice and email proofs.",
+            "timeline": [
+              {
+                "when": "2024-05",
+                "what": "Purchased washing machine online for Rs 25000, broke down after a week, seller refused refund."
+              },
+              {
+                "when": "2024-05",
+                "what": "Asked seller for refund and received written refusal via email."
+              }
+            ],
+            "opposite_party": "Online store",
+            "platform": "Online store",
+            "amount_inr": 25000,
+            "payment_method": null,
+            "proof_mentioned": [
+              "invoice",
+              "emails"
+            ],
+            "user_goal": "Get a refund",
+            "months_since_event": 30,
+            "event_date": "2024-05-15",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "refund_or_nondelivery",
+            "plain_explanation": "Since you bought the washing machine online for Rs 25,000 and it broke down within a week with a refusal to refund, you have consumer rights under the law. However, more than two years have passed since the problem started, which means a consumer complaint normally has a strict time limit. A consumer commission can sometimes allow a delay if valid reasons are recorded, but because the time limit has passed, there is uncertainty about whether your case will be accepted now. You should check if you have all your documents ready and speak to a lawyer or legal aid clinic to see if the delay can be condoned.",
+            "provisions": [
+              {
+                "id": "CPA-2.7",
+                "why": "It defines you as a consumer because you bought goods for a price that was paid.",
+                "reference": "Section 2(7)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of consumer",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "CPA-2.47",
+                "why": "It covers unfair trade practices, such as refusing to refund money for defective goods within a stipulated period.",
+                "reference": "Section 2(47)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of unfair trade practice",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "CPA-69",
+                "why": "It sets a two-year time limit from the date of the problem to file a consumer complaint, though a commission may sometimes allow a delay with recorded reasons.",
+                "reference": "Section 69",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Time limit for a consumer complaint",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/69.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "SOGA-16",
+                "why": "It protects buyers when goods bought by description or from a dealer turn out to be defective or unfit for use.",
+                "reference": "Section 16",
+                "instrument": "Sale of Goods Act, 1930",
+                "title": "Quality and fitness of goods",
+                "source_url": "https://www.legalauthority.in/bare-act/sale-of-goods-act-1930",
+                "source_type": "secondary"
+              },
+              {
+                "id": "PROC-NCH",
+                "why": "It allows you to use the National Consumer Helpline as a pre-litigation step to register your grievance against the company.",
+                "reference": "1915 / 1800-11-4000 / INGRAM portal",
+                "instrument": "National Consumer Helpline (Department of Consumer Affairs)",
+                "title": "Pre-litigation step: National Consumer Helpline",
+                "source_url": "https://consumerhelpline.gov.in/public/about",
+                "source_type": "official"
+              },
+              {
+                "id": "PROC-EJAGRITI",
+                "why": "It points to the e-Jagriti portal where you can file a consumer complaint online if you choose to proceed.",
+                "reference": "e-jagriti.gov.in",
+                "instrument": "e-Jagriti portal (Department of Consumer Affairs)",
+                "title": "Filing a consumer complaint online",
+                "source_url": "https://www.impriindia.com/insights/policy-update/e-jagriti-the-digital-transformation-of-consumer-dispute-resolution-in-india/",
+                "source_type": "secondary"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "Purchase invoice",
+                "why": "Shows proof of purchase, date, and amount paid for the washing machine.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Email communication with the seller",
+                "why": "Proves that you contacted the seller and they refused your refund in writing.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Payment receipt or bank statement",
+                "why": "Confirms the exact amount of Rs 25,000 paid to the online store.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Photographs or videos of the defective machine",
+                "why": "Shows the physical condition of the washing machine after it broke down.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Service requests or repair job sheets",
+                "why": "Documents any attempts to get the machine fixed or diagnosed after it stopped working.",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "Do you have the payment receipt or bank statement along with your invoice and emails, and have you already tried contacting the National Consumer Helpline or any other platform about this issue?"
+          },
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I bought a washing machine for Rs 25000 from an online store in May 2024. It stopped working after a week and the seller never refunded me. I only now want to do something."
+            },
+            {
+              "role": "assistant",
+              "text": "I am not a lawyer, but I can help you organize your consumer dispute. You bought a washing machine for Rs 25000 online in May 2024, it stopped working after a week, and the seller refused a refund. \n\nDid you receive any written refusal or response from the seller when you asked for the refund, and what is the name of the online store?"
+            },
+            {
+              "role": "user",
+              "text": "Yes it was about 2.5 years ago. I have the invoice and old emails."
+            },
+            {
+              "role": "assistant",
+              "text": "You bought a washing machine for Rs 25000 from an online store around May 2024, it broke down after a week, and the seller refused a refund. You have the invoice and old email proofs. Is this correct? Say yes, or tell me what to change."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "Since you bought the washing machine online for Rs 25,000 and it broke down within a week with a refusal to refund, you have consumer rights under the law. However, more than two years have passed since the problem started, which means a consumer complaint normally has a strict time limit. A consumer commission can sometimes allow a delay if valid reasons are recorded, but because the time limit has passed, there is uncertainty about whether your case will be accepted now. You should check if you have all your documents ready and speak to a lawyer or legal aid clinic to see if the delay can be condoned.\n\nDo you have the payment receipt or bank statement along with your invoice and emails, and have you already tried contacting the National Consumer Helpline or any other platform about this issue?"
+            }
+          ]
+        },
+        "reply": "Since you bought the washing machine online for Rs 25,000 and it broke down within a week with a refusal to refund, you have consumer rights under the law. However, more than two years have passed since the problem started, which means a consumer complaint normally has a strict time limit. A consumer commission can sometimes allow a delay if valid reasons are recorded, but because the time limit has passed, there is uncertainty about whether your case will be accepted now. You should check if you have all your documents ready and speak to a lawyer or legal aid clinic to see if the delay can be condoned.\n\nDo you have the payment receipt or bank statement along with your invoice and emails, and have you already tried contacting the National Consumer Helpline or any other platform about this issue?",
+        "analysis": {
+          "issue_type": "refund_or_nondelivery",
+          "plain_explanation": "Since you bought the washing machine online for Rs 25,000 and it broke down within a week with a refusal to refund, you have consumer rights under the law. However, more than two years have passed since the problem started, which means a consumer complaint normally has a strict time limit. A consumer commission can sometimes allow a delay if valid reasons are recorded, but because the time limit has passed, there is uncertainty about whether your case will be accepted now. You should check if you have all your documents ready and speak to a lawyer or legal aid clinic to see if the delay can be condoned.",
+          "provisions": [
+            {
+              "id": "CPA-2.7",
+              "why": "It defines you as a consumer because you bought goods for a price that was paid.",
+              "reference": "Section 2(7)",
+              "instrument": "Consumer Protection Act, 2019",
+              "title": "Definition of consumer",
+              "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+              "source_type": "secondary"
+            },
+            {
+              "id": "CPA-2.47",
+              "why": "It covers unfair trade practices, such as refusing to refund money for defective goods within a stipulated period.",
+              "reference": "Section 2(47)",
+              "instrument": "Consumer Protection Act, 2019",
+              "title": "Definition of unfair trade practice",
+              "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+              "source_type": "secondary"
+            },
+            {
+              "id": "CPA-69",
+              "why": "It sets a two-year time limit from the date of the problem to file a consumer complaint, though a commission may sometimes allow a delay with recorded reasons.",
+              "reference": "Section 69",
+              "instrument": "Consumer Protection Act, 2019",
+              "title": "Time limit for a consumer complaint",
+              "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/69.php",
+              "source_type": "secondary"
+            },
+            {
+              "id": "SOGA-16",
+              "why": "It protects buyers when goods bought by description or from a dealer turn out to be defective or unfit for use.",
+              "reference": "Section 16",
+              "instrument": "Sale of Goods Act, 1930",
+              "title": "Quality and fitness of goods",
+              "source_url": "https://www.legalauthority.in/bare-act/sale-of-goods-act-1930",
+              "source_type": "secondary"
+            },
+            {
+              "id": "PROC-NCH",
+              "why": "It allows you to use the National Consumer Helpline as a pre-litigation step to register your grievance against the company.",
+              "reference": "1915 / 1800-11-4000 / INGRAM portal",
+              "instrument": "National Consumer Helpline (Department of Consumer Affairs)",
+              "title": "Pre-litigation step: National Consumer Helpline",
+              "source_url": "https://consumerhelpline.gov.in/public/about",
+              "source_type": "official"
+            },
+            {
+              "id": "PROC-EJAGRITI",
+              "why": "It points to the e-Jagriti portal where you can file a consumer complaint online if you choose to proceed.",
+              "reference": "e-jagriti.gov.in",
+              "instrument": "e-Jagriti portal (Department of Consumer Affairs)",
+              "title": "Filing a consumer complaint online",
+              "source_url": "https://www.impriindia.com/insights/policy-update/e-jagriti-the-digital-transformation-of-consumer-dispute-resolution-in-india/",
+              "source_type": "secondary"
+            }
+          ],
+          "evidence_checklist": [
+            {
+              "item": "Purchase invoice",
+              "why": "Shows proof of purchase, date, and amount paid for the washing machine.",
+              "mentioned_by_user": true
+            },
+            {
+              "item": "Email communication with the seller",
+              "why": "Proves that you contacted the seller and they refused your refund in writing.",
+              "mentioned_by_user": true
+            },
+            {
+              "item": "Payment receipt or bank statement",
+              "why": "Confirms the exact amount of Rs 25,000 paid to the online store.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Photographs or videos of the defective machine",
+              "why": "Shows the physical condition of the washing machine after it broke down.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Service requests or repair job sheets",
+              "why": "Documents any attempts to get the machine fixed or diagnosed after it stopped working.",
+              "mentioned_by_user": false
+            }
+          ],
+          "ask": "Do you have the payment receipt or bank statement along with your invoice and emails, and have you already tried contacting the National Consumer Helpline or any other platform about this issue?"
+        },
+        "warnings": []
+      }
+    },
+    {
+      "label": "proofs",
+      "user": "I have the invoice and emails.",
+      "result": {
+        "state": {
+          "stage": "done",
+          "story": {
+            "summary": "User bought a washing machine for Rs 25000 from an online store in May 2024. It broke down after a week, the seller refused a refund, and the user has the invoice and email proofs.",
+            "timeline": [
+              {
+                "when": "2024-05",
+                "what": "Purchased washing machine online for Rs 25000, broke down after a week, seller refused refund."
+              },
+              {
+                "when": "2024-05",
+                "what": "Asked seller for refund and received written refusal via email."
+              }
+            ],
+            "opposite_party": "Online store",
+            "platform": "Online store",
+            "amount_inr": 25000,
+            "payment_method": null,
+            "proof_mentioned": [
+              "invoice",
+              "emails"
+            ],
+            "user_goal": "Get a refund",
+            "months_since_event": 30,
+            "event_date": "2024-05-15",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "refund_or_nondelivery",
+            "plain_explanation": "Since you bought the washing machine online for Rs 25,000 and it broke down within a week with a refusal to refund, you have consumer rights under the law. However, more than two years have passed since the problem started, which means a consumer complaint normally has a strict time limit. A consumer commission can sometimes allow a delay if valid reasons are recorded, but because the time limit has passed, there is uncertainty about whether your case will be accepted now. You should check if you have all your documents ready and speak to a lawyer or legal aid clinic to see if the delay can be condoned.",
+            "provisions": [
+              {
+                "id": "CPA-2.7",
+                "why": "It defines you as a consumer because you bought goods for a price that was paid.",
+                "reference": "Section 2(7)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of consumer",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "CPA-2.47",
+                "why": "It covers unfair trade practices, such as refusing to refund money for defective goods within a stipulated period.",
+                "reference": "Section 2(47)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of unfair trade practice",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "CPA-69",
+                "why": "It sets a two-year time limit from the date of the problem to file a consumer complaint, though a commission may sometimes allow a delay with recorded reasons.",
+                "reference": "Section 69",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Time limit for a consumer complaint",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/69.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "SOGA-16",
+                "why": "It protects buyers when goods bought by description or from a dealer turn out to be defective or unfit for use.",
+                "reference": "Section 16",
+                "instrument": "Sale of Goods Act, 1930",
+                "title": "Quality and fitness of goods",
+                "source_url": "https://www.legalauthority.in/bare-act/sale-of-goods-act-1930",
+                "source_type": "secondary"
+              },
+              {
+                "id": "PROC-NCH",
+                "why": "It allows you to use the National Consumer Helpline as a pre-litigation step to register your grievance against the company.",
+                "reference": "1915 / 1800-11-4000 / INGRAM portal",
+                "instrument": "National Consumer Helpline (Department of Consumer Affairs)",
+                "title": "Pre-litigation step: National Consumer Helpline",
+                "source_url": "https://consumerhelpline.gov.in/public/about",
+                "source_type": "official"
+              },
+              {
+                "id": "PROC-EJAGRITI",
+                "why": "It points to the e-Jagriti portal where you can file a consumer complaint online if you choose to proceed.",
+                "reference": "e-jagriti.gov.in",
+                "instrument": "e-Jagriti portal (Department of Consumer Affairs)",
+                "title": "Filing a consumer complaint online",
+                "source_url": "https://www.impriindia.com/insights/policy-update/e-jagriti-the-digital-transformation-of-consumer-dispute-resolution-in-india/",
+                "source_type": "secondary"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "Purchase invoice",
+                "why": "Shows proof of purchase, date, and amount paid for the washing machine.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Email communication with the seller",
+                "why": "Proves that you contacted the seller and they refused your refund in writing.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Payment receipt or bank statement",
+                "why": "Confirms the exact amount of Rs 25,000 paid to the online store.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Photographs or videos of the defective machine",
+                "why": "Shows the physical condition of the washing machine after it broke down.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Service requests or repair job sheets",
+                "why": "Documents any attempts to get the machine fixed or diagnosed after it stopped working.",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "Do you have the payment receipt or bank statement along with your invoice and emails, and have you already tried contacting the National Consumer Helpline or any other platform about this issue?"
+          },
+          "plan": {
+            "evidence_have": [
+              "Purchase invoice",
+              "Email communication with the seller showing refusal"
+            ],
+            "evidence_missing": [
+              "Payment receipt or bank statement",
+              "Photographs or videos of the defective machine",
+              "Service requests or repair job sheets"
+            ],
+            "steps": [
+              {
+                "title": "(General) Gather and organize all records",
+                "detail": "Collect your purchase invoice, emails with the seller, and any payment receipts or bank statements showing the Rs 25,000 payment.",
+                "where": "At home or your digital files"
+              },
+              {
+                "title": "Register a grievance on the National Consumer Helpline",
+                "detail": "Log your complaint online or call to register your issue as a pre-litigation step against the online store.",
+                "where": "National Consumer Helpline (INGRAM portal or 1915)"
+              },
+              {
+                "title": "Contact the District Legal Services Authority",
+                "detail": "Consult legal aid to understand your options, given that more than two years have passed since the cause of action arose.",
+                "where": "District Legal Services Authority or NALSA helpline 15100"
+              },
+              {
+                "title": "File a consumer complaint online",
+                "detail": "If you decide to proceed with a formal consumer complaint, submit your case online through the designated digital portal.",
+                "where": "e-Jagriti portal (e-jagriti.gov.in)"
+              }
+            ],
+            "forum": "District Consumer Commission, because the value paid for the goods is up to Rs 50 lakh.",
+            "confidence": "medium",
+            "summary": "You have your purchase invoice and emails proving the defect and refusal to refund from May 2024. Because more than two years have passed, consumer complaints face strict time limits, though a commission may consider a delay with valid reasons. You should organize your documents, consider using the National Consumer Helpline or e-Jagriti portal, and consult legal aid for assistance regarding the time limit.",
+            "draft_document": {
+              "type": "legal_notice",
+              "text": "To,\n[ONLINE STORE NAME / SELLER]\n[SELLER ADDRESS]\n\nSUBJECT: LEGAL NOTICE FOR REFUND OF RS 25,000 FOR DEFECTIVE WASHING MACHINE\n\nDear Sir/Madam,\n\nI, [YOUR NAME], resident of [YOUR ADDRESS], purchased a washing machine for Rs 25,000 from your online store in May 2024, vide invoice number [INVOICE NUMBER] dated [DATE]. \n\nWithin a week of delivery, the washing machine broke down and stopped working entirely, rendering it completely unfit for use. I immediately informed you of this defect and requested a refund. However, you refused to refund my money and sent an email refusal dated [DATE OF EMAIL].\n\nUnder Section 2(47) and Section 16 of the relevant laws, supplying defective goods and refusing a refund constitutes an unfair trade practice. \n\nTherefore, I call upon you to refund the full amount of Rs 25,000 within [NUMBER, e.g., 15] days of receiving this notice. If you fail to comply, I shall be constrained to initiate legal proceedings against you before the appropriate consumer forum.\n\nSincerely,\n[YOUR NAME]\n[YOUR CONTACT INFORMATION]\n[DATE]"
+            }
+          },
+          "verdict": {
+            "level": "needs_lawyer",
+            "reasons": [
+              "The problem is close to or past the 2-year consumer complaint time limit. A lawyer should check whether you can still file."
+            ]
+          },
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I bought a washing machine for Rs 25000 from an online store in May 2024. It stopped working after a week and the seller never refunded me. I only now want to do something."
+            },
+            {
+              "role": "assistant",
+              "text": "I am not a lawyer, but I can help you organize your consumer dispute. You bought a washing machine for Rs 25000 online in May 2024, it stopped working after a week, and the seller refused a refund. \n\nDid you receive any written refusal or response from the seller when you asked for the refund, and what is the name of the online store?"
+            },
+            {
+              "role": "user",
+              "text": "Yes it was about 2.5 years ago. I have the invoice and old emails."
+            },
+            {
+              "role": "assistant",
+              "text": "You bought a washing machine for Rs 25000 from an online store around May 2024, it broke down after a week, and the seller refused a refund. You have the invoice and old email proofs. Is this correct? Say yes, or tell me what to change."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "Since you bought the washing machine online for Rs 25,000 and it broke down within a week with a refusal to refund, you have consumer rights under the law. However, more than two years have passed since the problem started, which means a consumer complaint normally has a strict time limit. A consumer commission can sometimes allow a delay if valid reasons are recorded, but because the time limit has passed, there is uncertainty about whether your case will be accepted now. You should check if you have all your documents ready and speak to a lawyer or legal aid clinic to see if the delay can be condoned.\n\nDo you have the payment receipt or bank statement along with your invoice and emails, and have you already tried contacting the National Consumer Helpline or any other platform about this issue?"
+            },
+            {
+              "role": "user",
+              "text": "I have the invoice and emails."
+            },
+            {
+              "role": "assistant",
+              "text": "You have your purchase invoice and emails proving the defect and refusal to refund from May 2024. Because more than two years have passed, consumer complaints face strict time limits, though a commission may consider a delay with valid reasons. You should organize your documents, consider using the National Consumer Helpline or e-Jagriti portal, and consult legal aid for assistance regarding the time limit."
+            }
+          ]
+        },
+        "reply": "You have your purchase invoice and emails proving the defect and refusal to refund from May 2024. Because more than two years have passed, consumer complaints face strict time limits, though a commission may consider a delay with valid reasons. You should organize your documents, consider using the National Consumer Helpline or e-Jagriti portal, and consult legal aid for assistance regarding the time limit.",
+        "plan": {
+          "evidence_have": [
+            "Purchase invoice",
+            "Email communication with the seller showing refusal"
+          ],
+          "evidence_missing": [
+            "Payment receipt or bank statement",
+            "Photographs or videos of the defective machine",
+            "Service requests or repair job sheets"
+          ],
+          "steps": [
+            {
+              "title": "(General) Gather and organize all records",
+              "detail": "Collect your purchase invoice, emails with the seller, and any payment receipts or bank statements showing the Rs 25,000 payment.",
+              "where": "At home or your digital files"
+            },
+            {
+              "title": "Register a grievance on the National Consumer Helpline",
+              "detail": "Log your complaint online or call to register your issue as a pre-litigation step against the online store.",
+              "where": "National Consumer Helpline (INGRAM portal or 1915)"
+            },
+            {
+              "title": "Contact the District Legal Services Authority",
+              "detail": "Consult legal aid to understand your options, given that more than two years have passed since the cause of action arose.",
+              "where": "District Legal Services Authority or NALSA helpline 15100"
+            },
+            {
+              "title": "File a consumer complaint online",
+              "detail": "If you decide to proceed with a formal consumer complaint, submit your case online through the designated digital portal.",
+              "where": "e-Jagriti portal (e-jagriti.gov.in)"
+            }
+          ],
+          "forum": "District Consumer Commission, because the value paid for the goods is up to Rs 50 lakh.",
+          "confidence": "medium",
+          "summary": "You have your purchase invoice and emails proving the defect and refusal to refund from May 2024. Because more than two years have passed, consumer complaints face strict time limits, though a commission may consider a delay with valid reasons. You should organize your documents, consider using the National Consumer Helpline or e-Jagriti portal, and consult legal aid for assistance regarding the time limit.",
+          "draft_document": {
+            "type": "legal_notice",
+            "text": "To,\n[ONLINE STORE NAME / SELLER]\n[SELLER ADDRESS]\n\nSUBJECT: LEGAL NOTICE FOR REFUND OF RS 25,000 FOR DEFECTIVE WASHING MACHINE\n\nDear Sir/Madam,\n\nI, [YOUR NAME], resident of [YOUR ADDRESS], purchased a washing machine for Rs 25,000 from your online store in May 2024, vide invoice number [INVOICE NUMBER] dated [DATE]. \n\nWithin a week of delivery, the washing machine broke down and stopped working entirely, rendering it completely unfit for use. I immediately informed you of this defect and requested a refund. However, you refused to refund my money and sent an email refusal dated [DATE OF EMAIL].\n\nUnder Section 2(47) and Section 16 of the relevant laws, supplying defective goods and refusing a refund constitutes an unfair trade practice. \n\nTherefore, I call upon you to refund the full amount of Rs 25,000 within [NUMBER, e.g., 15] days of receiving this notice. If you fail to comply, I shall be constrained to initiate legal proceedings against you before the appropriate consumer forum.\n\nSincerely,\n[YOUR NAME]\n[YOUR CONTACT INFORMATION]\n[DATE]"
+          }
+        },
+        "verdict": {
+          "level": "needs_lawyer",
+          "reasons": [
+            "The problem is close to or past the 2-year consumer complaint time limit. A lawyer should check whether you can still file."
+          ]
+        },
+        "warnings": []
+      }
+    }
+  ]
+}

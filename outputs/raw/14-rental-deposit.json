@@ -1,0 +1,463 @@
+{
+  "case": {
+    "id": "14-rental-deposit",
+    "note": "Landlord not returning deposit (PS example).",
+    "story": "I rented a flat in Hyderabad and paid a security deposit of Rs 60000. I vacated on 30 September 2026 and handed over the keys. The landlord keeps saying he will return it next week but has not paid for 5 weeks and now stopped picking my calls.",
+    "extra": "The rent agreement is registered, rent was Rs 20000 per month, all rent was paid. He has not deducted anything or given reasons.",
+    "proofs": "I have the signed rent agreement, bank transfer receipt of the deposit, and WhatsApp chats where he promised to return it.",
+    "expect": {
+      "verdict_in": [
+        "partly",
+        "can_help"
+      ],
+      "issue_type": "rental_deposit",
+      "must_cite_any": [
+        "MTA-11",
+        "RENT-DEPOSIT-ROUTE"
+      ],
+      "draft_type_in": [
+        "legal_notice"
+      ]
+    }
+  },
+  "seconds": 21,
+  "checks": [
+    {
+      "name": "verdict in partly/can_help",
+      "ok": true,
+      "detail": "partly"
+    },
+    {
+      "name": "issue_type = rental_deposit",
+      "ok": true,
+      "detail": "rental_deposit"
+    },
+    {
+      "name": "cites one of MTA-11/RENT-DEPOSIT-ROUTE",
+      "ok": true,
+      "detail": "MTA-11,RENT-DEPOSIT-ROUTE"
+    },
+    {
+      "name": "draft type in legal_notice",
+      "ok": true,
+      "detail": "legal_notice"
+    }
+  ],
+  "row": {
+    "id": "14-rental-deposit",
+    "pass": true,
+    "verdict": "partly",
+    "issue": "rental_deposit",
+    "seconds": 21,
+    "warnings": 0,
+    "failed": []
+  },
+  "turns": [
+    {
+      "label": "story",
+      "user": "I rented a flat in Hyderabad and paid a security deposit of Rs 60000. I vacated on 30 September 2026 and handed over the keys. The landlord keeps saying he will return it next week but has not paid for 5 weeks and now stopped picking my calls.",
+      "result": {
+        "state": {
+          "stage": "confirm",
+          "story": {
+            "summary": "User paid a security deposit of Rs 60000 for a flat in Hyderabad, vacated on 30 September 2026, but the landlord has not refunded the amount and is now ignoring calls.",
+            "timeline": [
+              {
+                "when": "2026-09-30",
+                "what": "User vacated the flat and handed over the keys."
+              }
+            ],
+            "opposite_party": "Landlord",
+            "platform": null,
+            "amount_inr": 60000,
+            "payment_method": null,
+            "proof_mentioned": [],
+            "user_goal": "Get back the security deposit of Rs 60000",
+            "months_since_event": 2,
+            "event_date": "2026-09-30",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": null,
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I rented a flat in Hyderabad and paid a security deposit of Rs 60000. I vacated on 30 September 2026 and handed over the keys. The landlord keeps saying he will return it next week but has not paid for 5 weeks and now stopped picking my calls."
+            },
+            {
+              "role": "assistant",
+              "text": "You paid a security deposit of Rs 60000 for a flat in Hyderabad, vacated on 30 September 2026, and the landlord has not returned the money and stopped answering calls. Is this correct? Say yes, or tell me what to change."
+            }
+          ]
+        },
+        "reply": "You paid a security deposit of Rs 60000 for a flat in Hyderabad, vacated on 30 September 2026, and the landlord has not returned the money and stopped answering calls. Is this correct? Say yes, or tell me what to change.",
+        "warnings": []
+      }
+    },
+    {
+      "label": "confirm",
+      "user": "Yes, that is correct.",
+      "result": {
+        "state": {
+          "stage": "evidence",
+          "story": {
+            "summary": "User paid a security deposit of Rs 60000 for a flat in Hyderabad, vacated on 30 September 2026, but the landlord has not refunded the amount and is now ignoring calls.",
+            "timeline": [
+              {
+                "when": "2026-09-30",
+                "what": "User vacated the flat and handed over the keys."
+              }
+            ],
+            "opposite_party": "Landlord",
+            "platform": null,
+            "amount_inr": 60000,
+            "payment_method": null,
+            "proof_mentioned": [],
+            "user_goal": "Get back the security deposit of Rs 60000",
+            "months_since_event": 2,
+            "event_date": "2026-09-30",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "rental_deposit",
+            "plain_explanation": "Since you have already vacated the flat and handed over the keys, your landlord is expected to return your security deposit after deducting any legitimate dues. Because the landlord is currently ignoring your calls, your best next steps are to send a formal written reminder or legal notice demanding the refund, and if that fails, you can pursue legal options. A consumer forum usually does not handle disputes with private landlords unless they are professional service providers, so civil recovery or state rent authority routes are typically used. Please note that this explanation combines verified legal principles with general practical guidance, and outcomes are never guaranteed.",
+            "provisions": [
+              {
+                "id": "MTA-11",
+                "why": "This model provision explains that security deposits should be refunded when the landlord takes back vacant possession, though it is a model law that depends on your state adopting it.",
+                "reference": "Section 11",
+                "instrument": "Model Tenancy Act, 2021",
+                "title": "Security deposit limit and refund",
+                "source_url": "https://livelaw.in/pdf_upload/model-tenancy-act-394449.pdf",
+                "source_type": "official"
+              },
+              {
+                "id": "RENT-DEPOSIT-ROUTE",
+                "why": "This practical guidance outlines the usual steps to recover a deposit, starting with written messages and moving to a formal notice or civil recovery.",
+                "reference": "Recovering a rental deposit",
+                "instrument": "Practice",
+                "title": "Practical route to recover a deposit",
+                "source_url": "https://sudhirrao.com/insights/recover-security-deposit-landlord-legal-remedies-india",
+                "source_type": "secondary"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "Written rental agreement",
+                "why": "Proves the terms of your tenancy and the security deposit amount agreed upon.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Payment receipt or bank statement showing deposit payment",
+                "why": "Confirms you actually paid the Rs 60000 security deposit to the landlord.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Handover acknowledgment or messages regarding key return",
+                "why": "Proves you vacated the flat on 30 September 2026.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Chat messages, emails, or call logs with the landlord",
+                "why": "Shows your attempts to contact the landlord and their delays or ignored calls.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Copy of any legal notice sent",
+                "why": "Serves as formal proof that you gave the landlord a final chance to pay.",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "Which of these proofs do you currently have, and have you already sent a formal written notice or message demanding the refund?"
+          },
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I rented a flat in Hyderabad and paid a security deposit of Rs 60000. I vacated on 30 September 2026 and handed over the keys. The landlord keeps saying he will return it next week but has not paid for 5 weeks and now stopped picking my calls."
+            },
+            {
+              "role": "assistant",
+              "text": "You paid a security deposit of Rs 60000 for a flat in Hyderabad, vacated on 30 September 2026, and the landlord has not returned the money and stopped answering calls. Is this correct? Say yes, or tell me what to change."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "Since you have already vacated the flat and handed over the keys, your landlord is expected to return your security deposit after deducting any legitimate dues. Because the landlord is currently ignoring your calls, your best next steps are to send a formal written reminder or legal notice demanding the refund, and if that fails, you can pursue legal options. A consumer forum usually does not handle disputes with private landlords unless they are professional service providers, so civil recovery or state rent authority routes are typically used. Please note that this explanation combines verified legal principles with general practical guidance, and outcomes are never guaranteed.\n\nWhich of these proofs do you currently have, and have you already sent a formal written notice or message demanding the refund?"
+            }
+          ]
+        },
+        "reply": "Since you have already vacated the flat and handed over the keys, your landlord is expected to return your security deposit after deducting any legitimate dues. Because the landlord is currently ignoring your calls, your best next steps are to send a formal written reminder or legal notice demanding the refund, and if that fails, you can pursue legal options. A consumer forum usually does not handle disputes with private landlords unless they are professional service providers, so civil recovery or state rent authority routes are typically used. Please note that this explanation combines verified legal principles with general practical guidance, and outcomes are never guaranteed.\n\nWhich of these proofs do you currently have, and have you already sent a formal written notice or message demanding the refund?",
+        "analysis": {
+          "issue_type": "rental_deposit",
+          "plain_explanation": "Since you have already vacated the flat and handed over the keys, your landlord is expected to return your security deposit after deducting any legitimate dues. Because the landlord is currently ignoring your calls, your best next steps are to send a formal written reminder or legal notice demanding the refund, and if that fails, you can pursue legal options. A consumer forum usually does not handle disputes with private landlords unless they are professional service providers, so civil recovery or state rent authority routes are typically used. Please note that this explanation combines verified legal principles with general practical guidance, and outcomes are never guaranteed.",
+          "provisions": [
+            {
+              "id": "MTA-11",
+              "why": "This model provision explains that security deposits should be refunded when the landlord takes back vacant possession, though it is a model law that depends on your state adopting it.",
+              "reference": "Section 11",
+              "instrument": "Model Tenancy Act, 2021",
+              "title": "Security deposit limit and refund",
+              "source_url": "https://livelaw.in/pdf_upload/model-tenancy-act-394449.pdf",
+              "source_type": "official"
+            },
+            {
+              "id": "RENT-DEPOSIT-ROUTE",
+              "why": "This practical guidance outlines the usual steps to recover a deposit, starting with written messages and moving to a formal notice or civil recovery.",
+              "reference": "Recovering a rental deposit",
+              "instrument": "Practice",
+              "title": "Practical route to recover a deposit",
+              "source_url": "https://sudhirrao.com/insights/recover-security-deposit-landlord-legal-remedies-india",
+              "source_type": "secondary"
+            }
+          ],
+          "evidence_checklist": [
+            {
+              "item": "Written rental agreement",
+              "why": "Proves the terms of your tenancy and the security deposit amount agreed upon.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Payment receipt or bank statement showing deposit payment",
+              "why": "Confirms you actually paid the Rs 60000 security deposit to the landlord.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Handover acknowledgment or messages regarding key return",
+              "why": "Proves you vacated the flat on 30 September 2026.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Chat messages, emails, or call logs with the landlord",
+              "why": "Shows your attempts to contact the landlord and their delays or ignored calls.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Copy of any legal notice sent",
+              "why": "Serves as formal proof that you gave the landlord a final chance to pay.",
+              "mentioned_by_user": false
+            }
+          ],
+          "ask": "Which of these proofs do you currently have, and have you already sent a formal written notice or message demanding the refund?"
+        },
+        "warnings": []
+      }
+    },
+    {
+      "label": "proofs",
+      "user": "I have the signed rent agreement, bank transfer receipt of the deposit, and WhatsApp chats where he promised to return it.",
+      "result": {
+        "state": {
+          "stage": "done",
+          "story": {
+            "summary": "User paid a security deposit of Rs 60000 for a flat in Hyderabad, vacated on 30 September 2026, but the landlord has not refunded the amount and is now ignoring calls.",
+            "timeline": [
+              {
+                "when": "2026-09-30",
+                "what": "User vacated the flat and handed over the keys."
+              }
+            ],
+            "opposite_party": "Landlord",
+            "platform": null,
+            "amount_inr": 60000,
+            "payment_method": null,
+            "proof_mentioned": [],
+            "user_goal": "Get back the security deposit of Rs 60000",
+            "months_since_event": 2,
+            "event_date": "2026-09-30",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "rental_deposit",
+            "plain_explanation": "Since you have already vacated the flat and handed over the keys, your landlord is expected to return your security deposit after deducting any legitimate dues. Because the landlord is currently ignoring your calls, your best next steps are to send a formal written reminder or legal notice demanding the refund, and if that fails, you can pursue legal options. A consumer forum usually does not handle disputes with private landlords unless they are professional service providers, so civil recovery or state rent authority routes are typically used. Please note that this explanation combines verified legal principles with general practical guidance, and outcomes are never guaranteed.",
+            "provisions": [
+              {
+                "id": "MTA-11",
+                "why": "This model provision explains that security deposits should be refunded when the landlord takes back vacant possession, though it is a model law that depends on your state adopting it.",
+                "reference": "Section 11",
+                "instrument": "Model Tenancy Act, 2021",
+                "title": "Security deposit limit and refund",
+                "source_url": "https://livelaw.in/pdf_upload/model-tenancy-act-394449.pdf",
+                "source_type": "official"
+              },
+              {
+                "id": "RENT-DEPOSIT-ROUTE",
+                "why": "This practical guidance outlines the usual steps to recover a deposit, starting with written messages and moving to a formal notice or civil recovery.",
+                "reference": "Recovering a rental deposit",
+                "instrument": "Practice",
+                "title": "Practical route to recover a deposit",
+                "source_url": "https://sudhirrao.com/insights/recover-security-deposit-landlord-legal-remedies-india",
+                "source_type": "secondary"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "Written rental agreement",
+                "why": "Proves the terms of your tenancy and the security deposit amount agreed upon.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Payment receipt or bank statement showing deposit payment",
+                "why": "Confirms you actually paid the Rs 60000 security deposit to the landlord.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Handover acknowledgment or messages regarding key return",
+                "why": "Proves you vacated the flat on 30 September 2026.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Chat messages, emails, or call logs with the landlord",
+                "why": "Shows your attempts to contact the landlord and their delays or ignored calls.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Copy of any legal notice sent",
+                "why": "Serves as formal proof that you gave the landlord a final chance to pay.",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "Which of these proofs do you currently have, and have you already sent a formal written notice or message demanding the refund?"
+          },
+          "plan": {
+            "evidence_have": [
+              "Signed rent agreement",
+              "Bank transfer receipt of the deposit",
+              "WhatsApp chats where he promised to return it"
+            ],
+            "evidence_missing": [
+              "Handover acknowledgment or written proof of key return on 30 September 2026",
+              "Copy of any formal legal notice sent"
+            ],
+            "steps": [
+              {
+                "title": "(General) Send a formal written demand",
+                "detail": "Send a formal written notice or message clearly demanding your security deposit refund of Rs 60000 within a strict deadline, referencing your vacation date and agreement.",
+                "where": "Via WhatsApp, email, and registered post to the landlord"
+              },
+              {
+                "title": "(General) Seek free legal advice or aid",
+                "detail": "Contact the District Legal Services Authority or call the legal aid helpline to understand your local options for recovering the rental deposit.",
+                "where": "District Legal Services Authority or NALSA Helpline 15100"
+              },
+              {
+                "title": "(General) Explore Lok Adalat for a settlement",
+                "detail": "Approach the pre-litigation Lok Adalat to attempt a quick and mutually agreed settlement with the landlord without going through a long court battle.",
+                "where": "District Legal Services Authority / Lok Adalat"
+              },
+              {
+                "title": "(General) File a civil money recovery suit",
+                "detail": "If the landlord continues to ignore the demand, file a civil money recovery suit in the appropriate civil court within the limitation period.",
+                "where": "Civil Court having jurisdiction in Hyderabad"
+              }
+            ],
+            "forum": "Civil Court or State Rent Authority, because consumer forums generally do not handle disputes with private residential landlords.",
+            "confidence": "medium",
+            "summary": "You have your rent agreement, bank transfer receipt, and chat history confirming the deposit and promises of repayment. Since the landlord is ignoring your calls, your next best move is to send a formal legal notice or written demand, and if needed, pursue a civil recovery or approach legal aid authorities.",
+            "draft_document": {
+              "type": "legal_notice",
+              "text": "LEGAL NOTICE\n\nTo,\n[LANDLORD'S NAME]\n[LANDLORD'S ADDRESS]\n\nDate: [DATE]\n\nSUBJECT: DEMAND FOR REFUND OF SECURITY DEPOSIT OF RS 60,000\n\nDear Sir/Madam,\n\n1. That you are the owner/landlord of the residential flat located at [FLAT ADDRESS, HYDERABAD], which the undersigned ([YOUR NAME]) occupied as a tenant pursuant to a signed rent agreement dated [DATE OF RENT AGREEMENT].\n\n2. That at the commencement of the tenancy, the undersigned paid an amount of Rs 60,000 (Rupees Sixty Thousand Only) as a security deposit via bank transfer, receipt of which is duly documented.\n\n3. That the undersigned vacated the said flat and handed over the possession and keys to you on 30 September 2026.\n\n4. That despite vacating the premises cleanly and without any pending utility or rent dues, and despite several reminders and your subsequent WhatsApp messages promising to return the amount, you have failed to refund the security deposit of Rs 60,000 and are currently avoiding communication.\n\n5. You are hereby called upon to refund the full security deposit amount of Rs 60,000 within 15 days of receiving this notice, failing which the undersigned will be forced to initiate appropriate legal proceedings, including filing a civil suit for recovery along with interest and costs, at your sole risk and expense.\n\nSincerely,\n\n[YOUR NAME]\n[YOUR CONTACT NUMBER]\n[YOUR ADDRESS]"
+            }
+          },
+          "verdict": {
+            "level": "partly",
+            "reasons": [
+              "Some parts of your case are not clearly covered by the verified laws here."
+            ]
+          },
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I rented a flat in Hyderabad and paid a security deposit of Rs 60000. I vacated on 30 September 2026 and handed over the keys. The landlord keeps saying he will return it next week but has not paid for 5 weeks and now stopped picking my calls."
+            },
+            {
+              "role": "assistant",
+              "text": "You paid a security deposit of Rs 60000 for a flat in Hyderabad, vacated on 30 September 2026, and the landlord has not returned the money and stopped answering calls. Is this correct? Say yes, or tell me what to change."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "Since you have already vacated the flat and handed over the keys, your landlord is expected to return your security deposit after deducting any legitimate dues. Because the landlord is currently ignoring your calls, your best next steps are to send a formal written reminder or legal notice demanding the refund, and if that fails, you can pursue legal options. A consumer forum usually does not handle disputes with private landlords unless they are professional service providers, so civil recovery or state rent authority routes are typically used. Please note that this explanation combines verified legal principles with general practical guidance, and outcomes are never guaranteed.\n\nWhich of these proofs do you currently have, and have you already sent a formal written notice or message demanding the refund?"
+            },
+            {
+              "role": "user",
+              "text": "I have the signed rent agreement, bank transfer receipt of the deposit, and WhatsApp chats where he promised to return it."
+            },
+            {
+              "role": "assistant",
+              "text": "You have your rent agreement, bank transfer receipt, and chat history confirming the deposit and promises of repayment. Since the landlord is ignoring your calls, your next best move is to send a formal legal notice or written demand, and if needed, pursue a civil recovery or approach legal aid authorities."
+            }
+          ]
+        },
+        "reply": "You have your rent agreement, bank transfer receipt, and chat history confirming the deposit and promises of repayment. Since the landlord is ignoring your calls, your next best move is to send a formal legal notice or written demand, and if needed, pursue a civil recovery or approach legal aid authorities.",
+        "plan": {
+          "evidence_have": [
+            "Signed rent agreement",
+            "Bank transfer receipt of the deposit",
+            "WhatsApp chats where he promised to return it"
+          ],
+          "evidence_missing": [
+            "Handover acknowledgment or written proof of key return on 30 September 2026",
+            "Copy of any formal legal notice sent"
+          ],
+          "steps": [
+            {
+              "title": "(General) Send a formal written demand",
+              "detail": "Send a formal written notice or message clearly demanding your security deposit refund of Rs 60000 within a strict deadline, referencing your vacation date and agreement.",
+              "where": "Via WhatsApp, email, and registered post to the landlord"
+            },
+            {
+              "title": "(General) Seek free legal advice or aid",
+              "detail": "Contact the District Legal Services Authority or call the legal aid helpline to understand your local options for recovering the rental deposit.",
+              "where": "District Legal Services Authority or NALSA Helpline 15100"
+            },
+            {
+              "title": "(General) Explore Lok Adalat for a settlement",
+              "detail": "Approach the pre-litigation Lok Adalat to attempt a quick and mutually agreed settlement with the landlord without going through a long court battle.",
+              "where": "District Legal Services Authority / Lok Adalat"
+            },
+            {
+              "title": "(General) File a civil money recovery suit",
+              "detail": "If the landlord continues to ignore the demand, file a civil money recovery suit in the appropriate civil court within the limitation period.",
+              "where": "Civil Court having jurisdiction in Hyderabad"
+            }
+          ],
+          "forum": "Civil Court or State Rent Authority, because consumer forums generally do not handle disputes with private residential landlords.",
+          "confidence": "medium",
+          "summary": "You have your rent agreement, bank transfer receipt, and chat history confirming the deposit and promises of repayment. Since the landlord is ignoring your calls, your next best move is to send a formal legal notice or written demand, and if needed, pursue a civil recovery or approach legal aid authorities.",
+          "draft_document": {
+            "type": "legal_notice",
+            "text": "LEGAL NOTICE\n\nTo,\n[LANDLORD'S NAME]\n[LANDLORD'S ADDRESS]\n\nDate: [DATE]\n\nSUBJECT: DEMAND FOR REFUND OF SECURITY DEPOSIT OF RS 60,000\n\nDear Sir/Madam,\n\n1. That you are the owner/landlord of the residential flat located at [FLAT ADDRESS, HYDERABAD], which the undersigned ([YOUR NAME]) occupied as a tenant pursuant to a signed rent agreement dated [DATE OF RENT AGREEMENT].\n\n2. That at the commencement of the tenancy, the undersigned paid an amount of Rs 60,000 (Rupees Sixty Thousand Only) as a security deposit via bank transfer, receipt of which is duly documented.\n\n3. That the undersigned vacated the said flat and handed over the possession and keys to you on 30 September 2026.\n\n4. That despite vacating the premises cleanly and without any pending utility or rent dues, and despite several reminders and your subsequent WhatsApp messages promising to return the amount, you have failed to refund the security deposit of Rs 60,000 and are currently avoiding communication.\n\n5. You are hereby called upon to refund the full security deposit amount of Rs 60,000 within 15 days of receiving this notice, failing which the undersigned will be forced to initiate appropriate legal proceedings, including filing a civil suit for recovery along with interest and costs, at your sole risk and expense.\n\nSincerely,\n\n[YOUR NAME]\n[YOUR CONTACT NUMBER]\n[YOUR ADDRESS]"
+          }
+        },
+        "verdict": {
+          "level": "partly",
+          "reasons": [
+            "Some parts of your case are not clearly covered by the verified laws here."
+          ]
+        },
+        "warnings": []
+      }
+    }
+  ]
+}

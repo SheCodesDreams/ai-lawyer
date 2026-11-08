@@ -1,0 +1,597 @@
+{
+  "case": {
+    "id": "05-fake-investment-scam",
+    "note": "Fake investment app, Rs 2.5 lakh lost over weeks.",
+    "story": "A WhatsApp group promised me 30 percent monthly returns on a trading app. Over 3 weeks I transferred Rs 250000 in total. Now the app says I must pay more tax to withdraw. I think it is fake.",
+    "extra": "I paid through bank transfer to different accounts. The last payment was 4 days ago.",
+    "proofs": "I have the bank statements, app screenshots, and the WhatsApp chat.",
+    "expect": {
+      "verdict_in": [
+        "partly",
+        "needs_lawyer"
+      ],
+      "issue_type_in": [
+        "cheating_scam",
+        "payment_fraud"
+      ]
+    }
+  },
+  "seconds": 27,
+  "checks": [
+    {
+      "name": "verdict in partly/needs_lawyer",
+      "ok": true,
+      "detail": "partly"
+    },
+    {
+      "name": "issue_type in cheating_scam/payment_fraud",
+      "ok": true,
+      "detail": "cheating_scam"
+    }
+  ],
+  "row": {
+    "id": "05-fake-investment-scam",
+    "pass": true,
+    "verdict": "partly",
+    "issue": "cheating_scam",
+    "seconds": 27,
+    "warnings": 0,
+    "failed": []
+  },
+  "turns": [
+    {
+      "label": "story",
+      "user": "A WhatsApp group promised me 30 percent monthly returns on a trading app. Over 3 weeks I transferred Rs 250000 in total. Now the app says I must pay more tax to withdraw. I think it is fake.",
+      "result": {
+        "state": {
+          "stage": "intake",
+          "story": {
+            "summary": "User joined a WhatsApp group promising high returns on a trading app, transferred Rs 250000 over 3 weeks, and now the app demands tax payment for withdrawals.",
+            "timeline": [
+              {
+                "when": "Over the last 3 weeks",
+                "what": "Transferred Rs 250000 in total to a trading app recommended via a WhatsApp group"
+              }
+            ],
+            "opposite_party": "WhatsApp group trading app operators",
+            "platform": "WhatsApp / Trading App",
+            "amount_inr": 250000,
+            "payment_method": "Online transfer",
+            "proof_mentioned": [
+              "WhatsApp group chats",
+              "transaction receipts"
+            ],
+            "user_goal": "Recover the invested money and withdraw funds",
+            "months_since_event": 0,
+            "event_date": null,
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": null,
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "A WhatsApp group promised me 30 percent monthly returns on a trading app. Over 3 weeks I transferred Rs 250000 in total. Now the app says I must pay more tax to withdraw. I think it is fake."
+            },
+            {
+              "role": "assistant",
+              "text": "I understand you invested Rs 250,000 through a WhatsApp group in a trading app over 3 weeks, and now they are asking for more tax before letting you withdraw. What is the name of the trading app, and when did they last refuse your withdrawal?"
+            }
+          ]
+        },
+        "reply": "I understand you invested Rs 250,000 through a WhatsApp group in a trading app over 3 weeks, and now they are asking for more tax before letting you withdraw. What is the name of the trading app, and when did they last refuse your withdrawal?",
+        "warnings": []
+      }
+    },
+    {
+      "label": "extra details",
+      "user": "I paid through bank transfer to different accounts. The last payment was 4 days ago.",
+      "result": {
+        "state": {
+          "stage": "confirm",
+          "story": {
+            "summary": "User joined a WhatsApp group promising high returns on a trading app, transferred Rs 250,000 via bank transfer over 3 weeks, and now the app demands tax payment for withdrawals.",
+            "timeline": [
+              {
+                "when": "Over the last 3 weeks",
+                "what": "Transferred Rs 250000 in total to a trading app recommended via a WhatsApp group"
+              },
+              {
+                "when": "2026-11-04",
+                "what": "Made the last bank transfer payment"
+              }
+            ],
+            "opposite_party": "WhatsApp group trading app operators",
+            "platform": "WhatsApp / Trading App",
+            "amount_inr": 250000,
+            "payment_method": "Bank transfer",
+            "proof_mentioned": [
+              "WhatsApp group chats",
+              "transaction receipts"
+            ],
+            "user_goal": "Recover the invested money and withdraw funds",
+            "months_since_event": 0,
+            "event_date": "2026-11-04",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": null,
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "A WhatsApp group promised me 30 percent monthly returns on a trading app. Over 3 weeks I transferred Rs 250000 in total. Now the app says I must pay more tax to withdraw. I think it is fake."
+            },
+            {
+              "role": "assistant",
+              "text": "I understand you invested Rs 250,000 through a WhatsApp group in a trading app over 3 weeks, and now they are asking for more tax before letting you withdraw. What is the name of the trading app, and when did they last refuse your withdrawal?"
+            },
+            {
+              "role": "user",
+              "text": "I paid through bank transfer to different accounts. The last payment was 4 days ago."
+            },
+            {
+              "role": "assistant",
+              "text": "You transferred a total of Rs 250,000 to a trading app over three weeks, with the last payment 4 days ago on November 4, 2026. Now the app is demanding extra tax before letting you withdraw your funds. Your goal is to recover your money. Is this correct? Say yes, or tell me what to change."
+            }
+          ]
+        },
+        "reply": "You transferred a total of Rs 250,000 to a trading app over three weeks, with the last payment 4 days ago on November 4, 2026. Now the app is demanding extra tax before letting you withdraw your funds. Your goal is to recover your money. Is this correct? Say yes, or tell me what to change.",
+        "warnings": []
+      }
+    },
+    {
+      "label": "confirm",
+      "user": "Yes, that is correct.",
+      "result": {
+        "state": {
+          "stage": "evidence",
+          "story": {
+            "summary": "User joined a WhatsApp group promising high returns on a trading app, transferred Rs 250,000 via bank transfer over 3 weeks, and now the app demands tax payment for withdrawals.",
+            "timeline": [
+              {
+                "when": "Over the last 3 weeks",
+                "what": "Transferred Rs 250000 in total to a trading app recommended via a WhatsApp group"
+              },
+              {
+                "when": "2026-11-04",
+                "what": "Made the last bank transfer payment"
+              }
+            ],
+            "opposite_party": "WhatsApp group trading app operators",
+            "platform": "WhatsApp / Trading App",
+            "amount_inr": 250000,
+            "payment_method": "Bank transfer",
+            "proof_mentioned": [
+              "WhatsApp group chats",
+              "transaction receipts"
+            ],
+            "user_goal": "Recover the invested money and withdraw funds",
+            "months_since_event": 0,
+            "event_date": "2026-11-04",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "cheating_scam",
+            "plain_explanation": "You have been targeted by an online investment scam where fraudsters promise high returns through a fake trading app and then demand extra money under the guise of taxes when you try to withdraw your funds. This is a common form of financial fraud and online cheating. You can report this immediately to the national cyber crime reporting helpline and your bank to block further transfers and try to freeze the stolen funds. Recovering lost money from unauthorized scams is very difficult, and there is no guarantee of getting a refund. Be cautious of anyone claiming they can recover your money for a fee, as these are often secondary scams.",
+            "provisions": [
+              {
+                "id": "PROC-CYBER",
+                "why": "It is the primary reporting channel for online financial fraud to help freeze fraudulent transactions quickly.",
+                "reference": "cybercrime.gov.in, 1930",
+                "instrument": "National Cyber Crime Reporting Portal / helpline 1930",
+                "title": "Report online financial fraud immediately",
+                "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2085609&reg=3&lang=2",
+                "source_type": "official"
+              },
+              {
+                "id": "BNS-318",
+                "why": "It defines the criminal offence of cheating and dishonestly inducing the delivery of property, which applies to fake online trading scams.",
+                "reference": "Section 318",
+                "instrument": "Bharatiya Nyaya Sanhita, 2023",
+                "title": "Cheating",
+                "source_url": "https://egazette.gov.in/WriteReadData/2023/250883.pdf",
+                "source_type": "official"
+              },
+              {
+                "id": "ITA-66",
+                "why": "It deals with computer-related fraud and cheating by personation using digital devices or fake apps.",
+                "reference": "Sections 66, 66C, 66D (and 43)",
+                "instrument": "Information Technology Act, 2000",
+                "title": "Computer-related fraud, identity theft, cheating by personation online",
+                "source_url": "https://www.indiacode.nic.in/bitstream/123456789/13116/1/it_act_2000_updated.pdf",
+                "source_type": "official"
+              },
+              {
+                "id": "RBI-2017-LIAB",
+                "why": "It guides how to report unauthorized or fraudulent electronic transfers to your bank, though recovery depends on how quickly you report.",
+                "reference": "Paras 6, 7, 9, 12",
+                "instrument": "RBI circular DBR.No.Leg.BC.78/09.07.005/2017-18 (6 July 2017)",
+                "title": "Customer liability for unauthorised electronic banking transactions (2017 rules)",
+                "source_url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11040",
+                "source_type": "official"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "WhatsApp group chat history and messages",
+                "why": "Shows how you were contacted, the promises made, and instructions given by the scammers.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Bank transaction receipts and statements",
+                "why": "Proves the dates and amounts of the Rs 250,000 transferred to the fraudsters.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Screenshots of the trading app and withdrawal demands",
+                "why": "Demonstrates the fake balances and the demand for extra tax payments to withdraw funds.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Details of the bank accounts or UPI IDs received",
+                "why": "Helps law enforcement and your bank track where the stolen money went.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Phone numbers or profile details of the WhatsApp group admins",
+                "why": "Useful for cyber cell investigators to identify the operators.",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "Do you have all your bank transaction receipts and screenshots of the WhatsApp chats and the trading app demands, and have you already reported this to the cyber helpline (1930) or your bank?"
+          },
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "A WhatsApp group promised me 30 percent monthly returns on a trading app. Over 3 weeks I transferred Rs 250000 in total. Now the app says I must pay more tax to withdraw. I think it is fake."
+            },
+            {
+              "role": "assistant",
+              "text": "I understand you invested Rs 250,000 through a WhatsApp group in a trading app over 3 weeks, and now they are asking for more tax before letting you withdraw. What is the name of the trading app, and when did they last refuse your withdrawal?"
+            },
+            {
+              "role": "user",
+              "text": "I paid through bank transfer to different accounts. The last payment was 4 days ago."
+            },
+            {
+              "role": "assistant",
+              "text": "You transferred a total of Rs 250,000 to a trading app over three weeks, with the last payment 4 days ago on November 4, 2026. Now the app is demanding extra tax before letting you withdraw your funds. Your goal is to recover your money. Is this correct? Say yes, or tell me what to change."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "You have been targeted by an online investment scam where fraudsters promise high returns through a fake trading app and then demand extra money under the guise of taxes when you try to withdraw your funds. This is a common form of financial fraud and online cheating. You can report this immediately to the national cyber crime reporting helpline and your bank to block further transfers and try to freeze the stolen funds. Recovering lost money from unauthorized scams is very difficult, and there is no guarantee of getting a refund. Be cautious of anyone claiming they can recover your money for a fee, as these are often secondary scams.\n\nDo you have all your bank transaction receipts and screenshots of the WhatsApp chats and the trading app demands, and have you already reported this to the cyber helpline (1930) or your bank?"
+            }
+          ]
+        },
+        "reply": "You have been targeted by an online investment scam where fraudsters promise high returns through a fake trading app and then demand extra money under the guise of taxes when you try to withdraw your funds. This is a common form of financial fraud and online cheating. You can report this immediately to the national cyber crime reporting helpline and your bank to block further transfers and try to freeze the stolen funds. Recovering lost money from unauthorized scams is very difficult, and there is no guarantee of getting a refund. Be cautious of anyone claiming they can recover your money for a fee, as these are often secondary scams.\n\nDo you have all your bank transaction receipts and screenshots of the WhatsApp chats and the trading app demands, and have you already reported this to the cyber helpline (1930) or your bank?",
+        "analysis": {
+          "issue_type": "cheating_scam",
+          "plain_explanation": "You have been targeted by an online investment scam where fraudsters promise high returns through a fake trading app and then demand extra money under the guise of taxes when you try to withdraw your funds. This is a common form of financial fraud and online cheating. You can report this immediately to the national cyber crime reporting helpline and your bank to block further transfers and try to freeze the stolen funds. Recovering lost money from unauthorized scams is very difficult, and there is no guarantee of getting a refund. Be cautious of anyone claiming they can recover your money for a fee, as these are often secondary scams.",
+          "provisions": [
+            {
+              "id": "PROC-CYBER",
+              "why": "It is the primary reporting channel for online financial fraud to help freeze fraudulent transactions quickly.",
+              "reference": "cybercrime.gov.in, 1930",
+              "instrument": "National Cyber Crime Reporting Portal / helpline 1930",
+              "title": "Report online financial fraud immediately",
+              "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2085609&reg=3&lang=2",
+              "source_type": "official"
+            },
+            {
+              "id": "BNS-318",
+              "why": "It defines the criminal offence of cheating and dishonestly inducing the delivery of property, which applies to fake online trading scams.",
+              "reference": "Section 318",
+              "instrument": "Bharatiya Nyaya Sanhita, 2023",
+              "title": "Cheating",
+              "source_url": "https://egazette.gov.in/WriteReadData/2023/250883.pdf",
+              "source_type": "official"
+            },
+            {
+              "id": "ITA-66",
+              "why": "It deals with computer-related fraud and cheating by personation using digital devices or fake apps.",
+              "reference": "Sections 66, 66C, 66D (and 43)",
+              "instrument": "Information Technology Act, 2000",
+              "title": "Computer-related fraud, identity theft, cheating by personation online",
+              "source_url": "https://www.indiacode.nic.in/bitstream/123456789/13116/1/it_act_2000_updated.pdf",
+              "source_type": "official"
+            },
+            {
+              "id": "RBI-2017-LIAB",
+              "why": "It guides how to report unauthorized or fraudulent electronic transfers to your bank, though recovery depends on how quickly you report.",
+              "reference": "Paras 6, 7, 9, 12",
+              "instrument": "RBI circular DBR.No.Leg.BC.78/09.07.005/2017-18 (6 July 2017)",
+              "title": "Customer liability for unauthorised electronic banking transactions (2017 rules)",
+              "source_url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11040",
+              "source_type": "official"
+            }
+          ],
+          "evidence_checklist": [
+            {
+              "item": "WhatsApp group chat history and messages",
+              "why": "Shows how you were contacted, the promises made, and instructions given by the scammers.",
+              "mentioned_by_user": true
+            },
+            {
+              "item": "Bank transaction receipts and statements",
+              "why": "Proves the dates and amounts of the Rs 250,000 transferred to the fraudsters.",
+              "mentioned_by_user": true
+            },
+            {
+              "item": "Screenshots of the trading app and withdrawal demands",
+              "why": "Demonstrates the fake balances and the demand for extra tax payments to withdraw funds.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Details of the bank accounts or UPI IDs received",
+              "why": "Helps law enforcement and your bank track where the stolen money went.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Phone numbers or profile details of the WhatsApp group admins",
+              "why": "Useful for cyber cell investigators to identify the operators.",
+              "mentioned_by_user": false
+            }
+          ],
+          "ask": "Do you have all your bank transaction receipts and screenshots of the WhatsApp chats and the trading app demands, and have you already reported this to the cyber helpline (1930) or your bank?"
+        },
+        "warnings": []
+      }
+    },
+    {
+      "label": "proofs",
+      "user": "I have the bank statements, app screenshots, and the WhatsApp chat.",
+      "result": {
+        "state": {
+          "stage": "done",
+          "story": {
+            "summary": "User joined a WhatsApp group promising high returns on a trading app, transferred Rs 250,000 via bank transfer over 3 weeks, and now the app demands tax payment for withdrawals.",
+            "timeline": [
+              {
+                "when": "Over the last 3 weeks",
+                "what": "Transferred Rs 250000 in total to a trading app recommended via a WhatsApp group"
+              },
+              {
+                "when": "2026-11-04",
+                "what": "Made the last bank transfer payment"
+              }
+            ],
+            "opposite_party": "WhatsApp group trading app operators",
+            "platform": "WhatsApp / Trading App",
+            "amount_inr": 250000,
+            "payment_method": "Bank transfer",
+            "proof_mentioned": [
+              "WhatsApp group chats",
+              "transaction receipts"
+            ],
+            "user_goal": "Recover the invested money and withdraw funds",
+            "months_since_event": 0,
+            "event_date": "2026-11-04",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "cheating_scam",
+            "plain_explanation": "You have been targeted by an online investment scam where fraudsters promise high returns through a fake trading app and then demand extra money under the guise of taxes when you try to withdraw your funds. This is a common form of financial fraud and online cheating. You can report this immediately to the national cyber crime reporting helpline and your bank to block further transfers and try to freeze the stolen funds. Recovering lost money from unauthorized scams is very difficult, and there is no guarantee of getting a refund. Be cautious of anyone claiming they can recover your money for a fee, as these are often secondary scams.",
+            "provisions": [
+              {
+                "id": "PROC-CYBER",
+                "why": "It is the primary reporting channel for online financial fraud to help freeze fraudulent transactions quickly.",
+                "reference": "cybercrime.gov.in, 1930",
+                "instrument": "National Cyber Crime Reporting Portal / helpline 1930",
+                "title": "Report online financial fraud immediately",
+                "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2085609&reg=3&lang=2",
+                "source_type": "official"
+              },
+              {
+                "id": "BNS-318",
+                "why": "It defines the criminal offence of cheating and dishonestly inducing the delivery of property, which applies to fake online trading scams.",
+                "reference": "Section 318",
+                "instrument": "Bharatiya Nyaya Sanhita, 2023",
+                "title": "Cheating",
+                "source_url": "https://egazette.gov.in/WriteReadData/2023/250883.pdf",
+                "source_type": "official"
+              },
+              {
+                "id": "ITA-66",
+                "why": "It deals with computer-related fraud and cheating by personation using digital devices or fake apps.",
+                "reference": "Sections 66, 66C, 66D (and 43)",
+                "instrument": "Information Technology Act, 2000",
+                "title": "Computer-related fraud, identity theft, cheating by personation online",
+                "source_url": "https://www.indiacode.nic.in/bitstream/123456789/13116/1/it_act_2000_updated.pdf",
+                "source_type": "official"
+              },
+              {
+                "id": "RBI-2017-LIAB",
+                "why": "It guides how to report unauthorized or fraudulent electronic transfers to your bank, though recovery depends on how quickly you report.",
+                "reference": "Paras 6, 7, 9, 12",
+                "instrument": "RBI circular DBR.No.Leg.BC.78/09.07.005/2017-18 (6 July 2017)",
+                "title": "Customer liability for unauthorised electronic banking transactions (2017 rules)",
+                "source_url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11040",
+                "source_type": "official"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "WhatsApp group chat history and messages",
+                "why": "Shows how you were contacted, the promises made, and instructions given by the scammers.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Bank transaction receipts and statements",
+                "why": "Proves the dates and amounts of the Rs 250,000 transferred to the fraudsters.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Screenshots of the trading app and withdrawal demands",
+                "why": "Demonstrates the fake balances and the demand for extra tax payments to withdraw funds.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Details of the bank accounts or UPI IDs received",
+                "why": "Helps law enforcement and your bank track where the stolen money went.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Phone numbers or profile details of the WhatsApp group admins",
+                "why": "Useful for cyber cell investigators to identify the operators.",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "Do you have all your bank transaction receipts and screenshots of the WhatsApp chats and the trading app demands, and have you already reported this to the cyber helpline (1930) or your bank?"
+          },
+          "plan": {
+            "evidence_have": [
+              "WhatsApp group chat history and messages",
+              "Bank transaction receipts and statements",
+              "Screenshots of the trading app and withdrawal demands"
+            ],
+            "evidence_missing": [
+              "Details of the bank accounts or UPI IDs received",
+              "Phone numbers or profile details of the WhatsApp group admins"
+            ],
+            "steps": [
+              {
+                "title": "Report financial fraud on the Cyber Crime Portal and helpline",
+                "detail": "Immediately report the scam on the cybercrime.gov.in portal or call the 24x7 toll-free helpline 1930. Provide all transaction details, bank account numbers where you transferred the money, and app screenshots to help authorities freeze the funds.",
+                "where": "National Cyber Crime Reporting Portal (cybercrime.gov.in) or call 1930"
+              },
+              {
+                "title": "Inform your bank immediately",
+                "detail": "Contact your bank's fraud helpline or branch at once to report the fraudulent transactions, give them the transaction references, and request them to flag or freeze the beneficiary accounts if possible.",
+                "where": "Your bank's official customer care or local branch"
+              },
+              {
+                "title": "(General) File a police complaint for online cheating",
+                "detail": "Submit a formal written complaint with your evidence package including bank statements, chat transcripts, and app screenshots to your local police station or cyber cell for investigation under Section 318 of the Bharatiya Nyaya Sanhita, 2023.",
+                "where": "Local police station or Cyber Crime Cell"
+              },
+              {
+                "title": "(General) Seek free legal aid or guidance",
+                "detail": "If you need professional assistance on what steps to follow next without high costs, contact the national legal aid helpline or your District Legal Services Authority.",
+                "where": "NALSA helpline 15100 or local District Legal Services Authority (DLSA)"
+              }
+            ],
+            "forum": "Cyber Crime Cell and Law Enforcement Agencies, as online investment scams involve criminal cheating and require immediate freezing of funds through cyber portals and banks.",
+            "confidence": "high",
+            "summary": "You have experienced an online investment scam involving a fake trading app and false tax demands after transferring Rs 250,000. Since this is financial fraud, your immediate priority is to report it to the National Cyber Crime Portal (1930) and your bank to try and block the transactions, followed by filing a police complaint.",
+            "draft_document": {
+              "type": "none",
+              "text": ""
+            }
+          },
+          "verdict": {
+            "level": "partly",
+            "reasons": [
+              "Scam and fraud cases need police and bank action that this tool can only guide you to. Get a lawyer if the police or bank refuse to act."
+            ]
+          },
+          "transcript": [
+            {
+              "role": "user",
+              "text": "A WhatsApp group promised me 30 percent monthly returns on a trading app. Over 3 weeks I transferred Rs 250000 in total. Now the app says I must pay more tax to withdraw. I think it is fake."
+            },
+            {
+              "role": "assistant",
+              "text": "I understand you invested Rs 250,000 through a WhatsApp group in a trading app over 3 weeks, and now they are asking for more tax before letting you withdraw. What is the name of the trading app, and when did they last refuse your withdrawal?"
+            },
+            {
+              "role": "user",
+              "text": "I paid through bank transfer to different accounts. The last payment was 4 days ago."
+            },
+            {
+              "role": "assistant",
+              "text": "You transferred a total of Rs 250,000 to a trading app over three weeks, with the last payment 4 days ago on November 4, 2026. Now the app is demanding extra tax before letting you withdraw your funds. Your goal is to recover your money. Is this correct? Say yes, or tell me what to change."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "You have been targeted by an online investment scam where fraudsters promise high returns through a fake trading app and then demand extra money under the guise of taxes when you try to withdraw your funds. This is a common form of financial fraud and online cheating. You can report this immediately to the national cyber crime reporting helpline and your bank to block further transfers and try to freeze the stolen funds. Recovering lost money from unauthorized scams is very difficult, and there is no guarantee of getting a refund. Be cautious of anyone claiming they can recover your money for a fee, as these are often secondary scams.\n\nDo you have all your bank transaction receipts and screenshots of the WhatsApp chats and the trading app demands, and have you already reported this to the cyber helpline (1930) or your bank?"
+            },
+            {
+              "role": "user",
+              "text": "I have the bank statements, app screenshots, and the WhatsApp chat."
+            },
+            {
+              "role": "assistant",
+              "text": "You have experienced an online investment scam involving a fake trading app and false tax demands after transferring Rs 250,000. Since this is financial fraud, your immediate priority is to report it to the National Cyber Crime Portal (1930) and your bank to try and block the transactions, followed by filing a police complaint."
+            }
+          ]
+        },
+        "reply": "You have experienced an online investment scam involving a fake trading app and false tax demands after transferring Rs 250,000. Since this is financial fraud, your immediate priority is to report it to the National Cyber Crime Portal (1930) and your bank to try and block the transactions, followed by filing a police complaint.",
+        "plan": {
+          "evidence_have": [
+            "WhatsApp group chat history and messages",
+            "Bank transaction receipts and statements",
+            "Screenshots of the trading app and withdrawal demands"
+          ],
+          "evidence_missing": [
+            "Details of the bank accounts or UPI IDs received",
+            "Phone numbers or profile details of the WhatsApp group admins"
+          ],
+          "steps": [
+            {
+              "title": "Report financial fraud on the Cyber Crime Portal and helpline",
+              "detail": "Immediately report the scam on the cybercrime.gov.in portal or call the 24x7 toll-free helpline 1930. Provide all transaction details, bank account numbers where you transferred the money, and app screenshots to help authorities freeze the funds.",
+              "where": "National Cyber Crime Reporting Portal (cybercrime.gov.in) or call 1930"
+            },
+            {
+              "title": "Inform your bank immediately",
+              "detail": "Contact your bank's fraud helpline or branch at once to report the fraudulent transactions, give them the transaction references, and request them to flag or freeze the beneficiary accounts if possible.",
+              "where": "Your bank's official customer care or local branch"
+            },
+            {
+              "title": "(General) File a police complaint for online cheating",
+              "detail": "Submit a formal written complaint with your evidence package including bank statements, chat transcripts, and app screenshots to your local police station or cyber cell for investigation under Section 318 of the Bharatiya Nyaya Sanhita, 2023.",
+              "where": "Local police station or Cyber Crime Cell"
+            },
+            {
+              "title": "(General) Seek free legal aid or guidance",
+              "detail": "If you need professional assistance on what steps to follow next without high costs, contact the national legal aid helpline or your District Legal Services Authority.",
+              "where": "NALSA helpline 15100 or local District Legal Services Authority (DLSA)"
+            }
+          ],
+          "forum": "Cyber Crime Cell and Law Enforcement Agencies, as online investment scams involve criminal cheating and require immediate freezing of funds through cyber portals and banks.",
+          "confidence": "high",
+          "summary": "You have experienced an online investment scam involving a fake trading app and false tax demands after transferring Rs 250,000. Since this is financial fraud, your immediate priority is to report it to the National Cyber Crime Portal (1930) and your bank to try and block the transactions, followed by filing a police complaint.",
+          "draft_document": {
+            "type": "none",
+            "text": ""
+          }
+        },
+        "verdict": {
+          "level": "partly",
+          "reasons": [
+            "Scam and fraud cases need police and bank action that this tool can only guide you to. Get a lawyer if the police or bank refuse to act."
+          ]
+        },
+        "warnings": []
+      }
+    }
+  ]
+}

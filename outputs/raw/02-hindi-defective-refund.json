@@ -1,0 +1,514 @@
+{
+  "case": {
+    "id": "02-hindi-defective-refund",
+    "note": "Hindi input. Marketplace seller refuses refund for defective item.",
+    "story": "मैंने पिछले महीने एक ऑनलाइन मार्केटप्लेस से 3500 रुपये का मिक्सर खरीदा था। वह खराब निकला। विक्रेता रिफंड देने से मना कर रहा है। मुझे पैसे वापस चाहिए।",
+    "extra": "ऑर्डर 5 हफ्ते पहले किया था। मैंने 7 दिन में वापसी का अनुरोध किया था जिसे मना कर दिया गया।",
+    "proofs": "मेरे पास इनवॉइस, खराब मिक्सर की फोटो और वापसी अनुरोध का स्क्रीनशॉट है।",
+    "expect": {
+      "verdict": "can_help",
+      "issue_type": "refund_or_nondelivery",
+      "language_script": "devanagari"
+    }
+  },
+  "seconds": 22,
+  "checks": [
+    {
+      "name": "verdict = can_help",
+      "ok": true,
+      "detail": "can_help"
+    },
+    {
+      "name": "issue_type = refund_or_nondelivery",
+      "ok": true,
+      "detail": "refund_or_nondelivery"
+    },
+    {
+      "name": "replied in devanagari",
+      "ok": true
+    }
+  ],
+  "row": {
+    "id": "02-hindi-defective-refund",
+    "pass": true,
+    "verdict": "can_help",
+    "issue": "refund_or_nondelivery",
+    "seconds": 22,
+    "warnings": 0,
+    "failed": []
+  },
+  "turns": [
+    {
+      "label": "story",
+      "user": "मैंने पिछले महीने एक ऑनलाइन मार्केटप्लेस से 3500 रुपये का मिक्सर खरीदा था। वह खराब निकला। विक्रेता रिफंड देने से मना कर रहा है। मुझे पैसे वापस चाहिए।",
+      "result": {
+        "state": {
+          "stage": "confirm",
+          "story": {
+            "summary": "उपयोगकर्ता ने पिछले महीने एक ऑनलाइन मार्केटप्लेस से 3500 रुपये का मिक्सर खरीदा था जो खराब निकला। विक्रेता ने रिफंड देने से मना कर दिया है और उपयोगकर्ता पैसे वापस चाहता है।",
+            "timeline": [
+              {
+                "when": "2026-10",
+                "what": "ऑनलाइन मार्केटप्लेस से 3500 रुपये में मिक्सर खरीदा जो खराब निकला और विक्रेता ने रिफंड देने से मना कर दिया।"
+              }
+            ],
+            "opposite_party": "विक्रेता / ऑनलाइन मार्केटप्लेस",
+            "platform": "ऑनलाइन मार्केटप्लेस",
+            "amount_inr": 3500,
+            "payment_method": null,
+            "proof_mentioned": [],
+            "user_goal": "रिफंड (पैसे वापस पाना)",
+            "months_since_event": 1,
+            "event_date": "2026-10-15",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": null,
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "मैंने पिछले महीने एक ऑनलाइन मार्केटप्लेस से 3500 रुपये का मिक्सर खरीदा था। वह खराब निकला। विक्रेता रिफंड देने से मना कर रहा है। मुझे पैसे वापस चाहिए।"
+            },
+            {
+              "role": "assistant",
+              "text": "क्या यह सही है: आपने पिछले महीने (अक्टूबर 2026) एक ऑनलाइन मार्केटप्लेस से 3,500 रुपये का मिक्सर खरीदा था, जो खराब निकला और विक्रेता रिफंड देने से मना कर रहा है। आप अपना रिफंड (पैसे वापस) चाहते हैं? कृपया पुष्टि करें या बताएं कि क्या बदलना है।"
+            }
+          ]
+        },
+        "reply": "क्या यह सही है: आपने पिछले महीने (अक्टूबर 2026) एक ऑनलाइन मार्केटप्लेस से 3,500 रुपये का मिक्सर खरीदा था, जो खराब निकला और विक्रेता रिफंड देने से मना कर रहा है। आप अपना रिफंड (पैसे वापस) चाहते हैं? कृपया पुष्टि करें या बताएं कि क्या बदलना है।",
+        "warnings": []
+      }
+    },
+    {
+      "label": "confirm",
+      "user": "Yes, that is correct.",
+      "result": {
+        "state": {
+          "stage": "evidence",
+          "story": {
+            "summary": "उपयोगकर्ता ने पिछले महीने एक ऑनलाइन मार्केटप्लेस से 3500 रुपये का मिक्सर खरीदा था जो खराब निकला। विक्रेता ने रिफंड देने से मना कर दिया है और उपयोगकर्ता पैसे वापस चाहता है।",
+            "timeline": [
+              {
+                "when": "2026-10",
+                "what": "ऑनलाइन मार्केटप्लेस से 3500 रुपये में मिक्सर खरीदा जो खराब निकला और विक्रेता ने रिफंड देने से मना कर दिया।"
+              }
+            ],
+            "opposite_party": "विक्रेता / ऑनलाइन मार्केटप्लेस",
+            "platform": "ऑनलाइन मार्केटप्लेस",
+            "amount_inr": 3500,
+            "payment_method": null,
+            "proof_mentioned": [],
+            "user_goal": "रिफंड (पैसे वापस पाना)",
+            "months_since_event": 1,
+            "event_date": "2026-10-15",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "refund_or_nondelivery",
+            "plain_explanation": "आप उपभोक्ता संरक्षण कानून के तहत अपने अधिकारों का उपयोग कर सकते हैं। चूंकि आपने ऑनलाइन सामान खरीदा और वह खराब निकला, इसलिए विक्रेता या ई-कॉमर्स प्लेटफॉर्म को आपको रिफंड या सामान बदलकर देना चाहिए। आप चाहें तो पहले नेशनल कंज्यूमर हेल्पलाइन पर शिकायत दर्ज कर सकते हैं या ई-जाग्रति पोर्टल के माध्यम से उपभोक्ता आयोग में जा सकते हैं। इस मामले में अभी यह देखना बाकी है कि आपके पास खरीद और भुगतान के क्या सबूत हैं। यह जानकारी केवल सामान्य मार्गदर्शन के लिए है और सत्यापित कानूनी प्रावधानों पर आधारित है।",
+            "provisions": [
+              {
+                "id": "CPA-2.7",
+                "why": "यह परिभाषित करता है कि आप एक उपभोक्ता हैं क्योंकि आपने ऑनलाइन माध्यम से पैसे देकर सामान खरीदा है।",
+                "reference": "Section 2(7)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of consumer",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "CPA-2.47",
+                "why": "यह बताता है कि खराब सामान वापस लेने या नियत समय में रिफंड देने से मना करना एक अनुचित व्यापार प्रथा है।",
+                "reference": "Section 2(47)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of unfair trade practice",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "ECOM-6",
+                "why": "यह ऑनलाइन मार्केटप्लेस के विक्रेताओं पर यह दायित्व डालता है कि वे खराब या दोषपूर्ण सामान होने पर रिफंड देने से मना न करें।",
+                "reference": "Rule 6(3), 6(4)",
+                "instrument": "Consumer Protection (E-Commerce) Rules, 2020",
+                "title": "Duties of sellers on marketplaces",
+                "source_url": "https://taxguru.in/wp-content/uploads/2020/07/Consumer-Protection-E-Commerce-Rules-2020.pdf",
+                "source_type": "official"
+              },
+              {
+                "id": "PROC-NCH",
+                "why": "यह आपको कानूनी कार्रवाई से पहले नेशनल कंज्यूमर हेल्पलाइन (1915 या INGRAM पोर्टल) पर अपनी शिकायत दर्ज करने का एक आसान व्यावहारिक रास्ता देता है।",
+                "reference": "1915 / 1800-11-4000 / INGRAM portal",
+                "instrument": "National Consumer Helpline (Department of Consumer Affairs)",
+                "title": "Pre-litigation step: National Consumer Helpline",
+                "source_url": "https://consumerhelpline.gov.in/public/about",
+                "source_type": "official"
+              },
+              {
+                "id": "PROC-EJAGRITI",
+                "why": "यह आपको ई-जाग्रति पोर्टल के माध्यम से उपभोक्ता आयोग में ऑनलाइन शिकायत दर्ज करने की सुविधा देता है।",
+                "reference": "e-jagriti.gov.in",
+                "instrument": "e-Jagriti portal (Department of Consumer Affairs)",
+                "title": "Filing a consumer complaint online",
+                "source_url": "https://www.impriindia.com/insights/policy-update/e-jagriti-the-digital-transformation-of-consumer-dispute-resolution-in-india/",
+                "source_type": "secondary"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "खरीद की रसीद या इनवॉइस",
+                "why": "यह साबित करने के लिए कि आपने उसी विक्रेता से सामान खरीदा था।",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "भुगतान का प्रमाण (बैंक स्टेटमेंट, UPI स्क्रीनशॉट या रसीद)",
+                "why": "यह दिखाने के लिए कि आपने 3500 रुपये का भुगतान किया था।",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "खराब मिक्सर का फोटो या वीडियो",
+                "why": "यह साबित करने के लिए कि सामान में खराबी थी।",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "विक्रेता या प्लेटफॉर्म के साथ हुई बातचीत का रिकॉर्ड (चैट, ईमेल या मैसेज)",
+                "why": "यह दिखाने के लिए कि विक्रेता ने रिफंड देने से मना कर दिया है।",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "कृपया बताएं कि क्या आपके पास इनमें से कोई प्रमाण (जैसे इनवॉइस, पेमेंट का सबूत, या विक्रेता से बातचीत का रिकॉर्ड) मौजूद है, और क्या आपने इस मामले में अब तक विक्रेता, प्लेटफॉर्म या किसी अन्य हेल्पलाइन से संपर्क किया है?"
+          },
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "मैंने पिछले महीने एक ऑनलाइन मार्केटप्लेस से 3500 रुपये का मिक्सर खरीदा था। वह खराब निकला। विक्रेता रिफंड देने से मना कर रहा है। मुझे पैसे वापस चाहिए।"
+            },
+            {
+              "role": "assistant",
+              "text": "क्या यह सही है: आपने पिछले महीने (अक्टूबर 2026) एक ऑनलाइन मार्केटप्लेस से 3,500 रुपये का मिक्सर खरीदा था, जो खराब निकला और विक्रेता रिफंड देने से मना कर रहा है। आप अपना रिफंड (पैसे वापस) चाहते हैं? कृपया पुष्टि करें या बताएं कि क्या बदलना है।"
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "आप उपभोक्ता संरक्षण कानून के तहत अपने अधिकारों का उपयोग कर सकते हैं। चूंकि आपने ऑनलाइन सामान खरीदा और वह खराब निकला, इसलिए विक्रेता या ई-कॉमर्स प्लेटफॉर्म को आपको रिफंड या सामान बदलकर देना चाहिए। आप चाहें तो पहले नेशनल कंज्यूमर हेल्पलाइन पर शिकायत दर्ज कर सकते हैं या ई-जाग्रति पोर्टल के माध्यम से उपभोक्ता आयोग में जा सकते हैं। इस मामले में अभी यह देखना बाकी है कि आपके पास खरीद और भुगतान के क्या सबूत हैं। यह जानकारी केवल सामान्य मार्गदर्शन के लिए है और सत्यापित कानूनी प्रावधानों पर आधारित है।\n\nकृपया बताएं कि क्या आपके पास इनमें से कोई प्रमाण (जैसे इनवॉइस, पेमेंट का सबूत, या विक्रेता से बातचीत का रिकॉर्ड) मौजूद है, और क्या आपने इस मामले में अब तक विक्रेता, प्लेटफॉर्म या किसी अन्य हेल्पलाइन से संपर्क किया है?"
+            }
+          ]
+        },
+        "reply": "आप उपभोक्ता संरक्षण कानून के तहत अपने अधिकारों का उपयोग कर सकते हैं। चूंकि आपने ऑनलाइन सामान खरीदा और वह खराब निकला, इसलिए विक्रेता या ई-कॉमर्स प्लेटफॉर्म को आपको रिफंड या सामान बदलकर देना चाहिए। आप चाहें तो पहले नेशनल कंज्यूमर हेल्पलाइन पर शिकायत दर्ज कर सकते हैं या ई-जाग्रति पोर्टल के माध्यम से उपभोक्ता आयोग में जा सकते हैं। इस मामले में अभी यह देखना बाकी है कि आपके पास खरीद और भुगतान के क्या सबूत हैं। यह जानकारी केवल सामान्य मार्गदर्शन के लिए है और सत्यापित कानूनी प्रावधानों पर आधारित है।\n\nकृपया बताएं कि क्या आपके पास इनमें से कोई प्रमाण (जैसे इनवॉइस, पेमेंट का सबूत, या विक्रेता से बातचीत का रिकॉर्ड) मौजूद है, और क्या आपने इस मामले में अब तक विक्रेता, प्लेटफॉर्म या किसी अन्य हेल्पलाइन से संपर्क किया है?",
+        "analysis": {
+          "issue_type": "refund_or_nondelivery",
+          "plain_explanation": "आप उपभोक्ता संरक्षण कानून के तहत अपने अधिकारों का उपयोग कर सकते हैं। चूंकि आपने ऑनलाइन सामान खरीदा और वह खराब निकला, इसलिए विक्रेता या ई-कॉमर्स प्लेटफॉर्म को आपको रिफंड या सामान बदलकर देना चाहिए। आप चाहें तो पहले नेशनल कंज्यूमर हेल्पलाइन पर शिकायत दर्ज कर सकते हैं या ई-जाग्रति पोर्टल के माध्यम से उपभोक्ता आयोग में जा सकते हैं। इस मामले में अभी यह देखना बाकी है कि आपके पास खरीद और भुगतान के क्या सबूत हैं। यह जानकारी केवल सामान्य मार्गदर्शन के लिए है और सत्यापित कानूनी प्रावधानों पर आधारित है।",
+          "provisions": [
+            {
+              "id": "CPA-2.7",
+              "why": "यह परिभाषित करता है कि आप एक उपभोक्ता हैं क्योंकि आपने ऑनलाइन माध्यम से पैसे देकर सामान खरीदा है।",
+              "reference": "Section 2(7)",
+              "instrument": "Consumer Protection Act, 2019",
+              "title": "Definition of consumer",
+              "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+              "source_type": "secondary"
+            },
+            {
+              "id": "CPA-2.47",
+              "why": "यह बताता है कि खराब सामान वापस लेने या नियत समय में रिफंड देने से मना करना एक अनुचित व्यापार प्रथा है।",
+              "reference": "Section 2(47)",
+              "instrument": "Consumer Protection Act, 2019",
+              "title": "Definition of unfair trade practice",
+              "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+              "source_type": "secondary"
+            },
+            {
+              "id": "ECOM-6",
+              "why": "यह ऑनलाइन मार्केटप्लेस के विक्रेताओं पर यह दायित्व डालता है कि वे खराब या दोषपूर्ण सामान होने पर रिफंड देने से मना न करें।",
+              "reference": "Rule 6(3), 6(4)",
+              "instrument": "Consumer Protection (E-Commerce) Rules, 2020",
+              "title": "Duties of sellers on marketplaces",
+              "source_url": "https://taxguru.in/wp-content/uploads/2020/07/Consumer-Protection-E-Commerce-Rules-2020.pdf",
+              "source_type": "official"
+            },
+            {
+              "id": "PROC-NCH",
+              "why": "यह आपको कानूनी कार्रवाई से पहले नेशनल कंज्यूमर हेल्पलाइन (1915 या INGRAM पोर्टल) पर अपनी शिकायत दर्ज करने का एक आसान व्यावहारिक रास्ता देता है।",
+              "reference": "1915 / 1800-11-4000 / INGRAM portal",
+              "instrument": "National Consumer Helpline (Department of Consumer Affairs)",
+              "title": "Pre-litigation step: National Consumer Helpline",
+              "source_url": "https://consumerhelpline.gov.in/public/about",
+              "source_type": "official"
+            },
+            {
+              "id": "PROC-EJAGRITI",
+              "why": "यह आपको ई-जाग्रति पोर्टल के माध्यम से उपभोक्ता आयोग में ऑनलाइन शिकायत दर्ज करने की सुविधा देता है।",
+              "reference": "e-jagriti.gov.in",
+              "instrument": "e-Jagriti portal (Department of Consumer Affairs)",
+              "title": "Filing a consumer complaint online",
+              "source_url": "https://www.impriindia.com/insights/policy-update/e-jagriti-the-digital-transformation-of-consumer-dispute-resolution-in-india/",
+              "source_type": "secondary"
+            }
+          ],
+          "evidence_checklist": [
+            {
+              "item": "खरीद की रसीद या इनवॉइस",
+              "why": "यह साबित करने के लिए कि आपने उसी विक्रेता से सामान खरीदा था।",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "भुगतान का प्रमाण (बैंक स्टेटमेंट, UPI स्क्रीनशॉट या रसीद)",
+              "why": "यह दिखाने के लिए कि आपने 3500 रुपये का भुगतान किया था।",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "खराब मिक्सर का फोटो या वीडियो",
+              "why": "यह साबित करने के लिए कि सामान में खराबी थी।",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "विक्रेता या प्लेटफॉर्म के साथ हुई बातचीत का रिकॉर्ड (चैट, ईमेल या मैसेज)",
+              "why": "यह दिखाने के लिए कि विक्रेता ने रिफंड देने से मना कर दिया है।",
+              "mentioned_by_user": false
+            }
+          ],
+          "ask": "कृपया बताएं कि क्या आपके पास इनमें से कोई प्रमाण (जैसे इनवॉइस, पेमेंट का सबूत, या विक्रेता से बातचीत का रिकॉर्ड) मौजूद है, और क्या आपने इस मामले में अब तक विक्रेता, प्लेटफॉर्म या किसी अन्य हेल्पलाइन से संपर्क किया है?"
+        },
+        "warnings": []
+      }
+    },
+    {
+      "label": "proofs",
+      "user": "मेरे पास इनवॉइस, खराब मिक्सर की फोटो और वापसी अनुरोध का स्क्रीनशॉट है।",
+      "result": {
+        "state": {
+          "stage": "done",
+          "story": {
+            "summary": "उपयोगकर्ता ने पिछले महीने एक ऑनलाइन मार्केटप्लेस से 3500 रुपये का मिक्सर खरीदा था जो खराब निकला। विक्रेता ने रिफंड देने से मना कर दिया है और उपयोगकर्ता पैसे वापस चाहता है।",
+            "timeline": [
+              {
+                "when": "2026-10",
+                "what": "ऑनलाइन मार्केटप्लेस से 3500 रुपये में मिक्सर खरीदा जो खराब निकला और विक्रेता ने रिफंड देने से मना कर दिया।"
+              }
+            ],
+            "opposite_party": "विक्रेता / ऑनलाइन मार्केटप्लेस",
+            "platform": "ऑनलाइन मार्केटप्लेस",
+            "amount_inr": 3500,
+            "payment_method": null,
+            "proof_mentioned": [],
+            "user_goal": "रिफंड (पैसे वापस पाना)",
+            "months_since_event": 1,
+            "event_date": "2026-10-15",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "refund_or_nondelivery",
+            "plain_explanation": "आप उपभोक्ता संरक्षण कानून के तहत अपने अधिकारों का उपयोग कर सकते हैं। चूंकि आपने ऑनलाइन सामान खरीदा और वह खराब निकला, इसलिए विक्रेता या ई-कॉमर्स प्लेटफॉर्म को आपको रिफंड या सामान बदलकर देना चाहिए। आप चाहें तो पहले नेशनल कंज्यूमर हेल्पलाइन पर शिकायत दर्ज कर सकते हैं या ई-जाग्रति पोर्टल के माध्यम से उपभोक्ता आयोग में जा सकते हैं। इस मामले में अभी यह देखना बाकी है कि आपके पास खरीद और भुगतान के क्या सबूत हैं। यह जानकारी केवल सामान्य मार्गदर्शन के लिए है और सत्यापित कानूनी प्रावधानों पर आधारित है।",
+            "provisions": [
+              {
+                "id": "CPA-2.7",
+                "why": "यह परिभाषित करता है कि आप एक उपभोक्ता हैं क्योंकि आपने ऑनलाइन माध्यम से पैसे देकर सामान खरीदा है।",
+                "reference": "Section 2(7)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of consumer",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "CPA-2.47",
+                "why": "यह बताता है कि खराब सामान वापस लेने या नियत समय में रिफंड देने से मना करना एक अनुचित व्यापार प्रथा है।",
+                "reference": "Section 2(47)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of unfair trade practice",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "ECOM-6",
+                "why": "यह ऑनलाइन मार्केटप्लेस के विक्रेताओं पर यह दायित्व डालता है कि वे खराब या दोषपूर्ण सामान होने पर रिफंड देने से मना न करें।",
+                "reference": "Rule 6(3), 6(4)",
+                "instrument": "Consumer Protection (E-Commerce) Rules, 2020",
+                "title": "Duties of sellers on marketplaces",
+                "source_url": "https://taxguru.in/wp-content/uploads/2020/07/Consumer-Protection-E-Commerce-Rules-2020.pdf",
+                "source_type": "official"
+              },
+              {
+                "id": "PROC-NCH",
+                "why": "यह आपको कानूनी कार्रवाई से पहले नेशनल कंज्यूमर हेल्पलाइन (1915 या INGRAM पोर्टल) पर अपनी शिकायत दर्ज करने का एक आसान व्यावहारिक रास्ता देता है।",
+                "reference": "1915 / 1800-11-4000 / INGRAM portal",
+                "instrument": "National Consumer Helpline (Department of Consumer Affairs)",
+                "title": "Pre-litigation step: National Consumer Helpline",
+                "source_url": "https://consumerhelpline.gov.in/public/about",
+                "source_type": "official"
+              },
+              {
+                "id": "PROC-EJAGRITI",
+                "why": "यह आपको ई-जाग्रति पोर्टल के माध्यम से उपभोक्ता आयोग में ऑनलाइन शिकायत दर्ज करने की सुविधा देता है।",
+                "reference": "e-jagriti.gov.in",
+                "instrument": "e-Jagriti portal (Department of Consumer Affairs)",
+                "title": "Filing a consumer complaint online",
+                "source_url": "https://www.impriindia.com/insights/policy-update/e-jagriti-the-digital-transformation-of-consumer-dispute-resolution-in-india/",
+                "source_type": "secondary"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "खरीद की रसीद या इनवॉइस",
+                "why": "यह साबित करने के लिए कि आपने उसी विक्रेता से सामान खरीदा था।",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "भुगतान का प्रमाण (बैंक स्टेटमेंट, UPI स्क्रीनशॉट या रसीद)",
+                "why": "यह दिखाने के लिए कि आपने 3500 रुपये का भुगतान किया था।",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "खराब मिक्सर का फोटो या वीडियो",
+                "why": "यह साबित करने के लिए कि सामान में खराबी थी।",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "विक्रेता या प्लेटफॉर्म के साथ हुई बातचीत का रिकॉर्ड (चैट, ईमेल या मैसेज)",
+                "why": "यह दिखाने के लिए कि विक्रेता ने रिफंड देने से मना कर दिया है।",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "कृपया बताएं कि क्या आपके पास इनमें से कोई प्रमाण (जैसे इनवॉइस, पेमेंट का सबूत, या विक्रेता से बातचीत का रिकॉर्ड) मौजूद है, और क्या आपने इस मामले में अब तक विक्रेता, प्लेटफॉर्म या किसी अन्य हेल्पलाइन से संपर्क किया है?"
+          },
+          "plan": {
+            "evidence_have": [
+              "इनवॉइस",
+              "खराब मिक्सर की फोटो",
+              "वापसी अनुरोध का स्क्रीनशॉट"
+            ],
+            "evidence_missing": [
+              "भुगतान का प्रमाण (बैंक स्टेटमेंट, UPI स्क्रीनशॉट या रसीद)",
+              "विक्रेता या प्लेटफॉर्म द्वारा रिफंड से मना करने का लिखित जवाब (यदि कोई हो)"
+            ],
+            "steps": [
+              {
+                "title": "(General) विक्रेता को लिखित मांग भेजें",
+                "detail": "अपने इनवॉइस, फोटो और स्क्रीनशॉट के साथ विक्रेता को एक लिखित संदेश या ईमेल भेजें जिसमें खराब मिक्सर के लिए पूरे पैसे (रिफंड) की मांग की जाए।",
+                "where": "ईमेल या ऑनलाइन मार्केटप्लेस चैट सपोर्ट"
+              },
+              {
+                "title": "नेशनल कंज्यूमर हेल्पलाइन पर संपर्क करें",
+                "detail": "अपनी शिकायत दर्ज करने के लिए नेशनल कंज्यूमर हेल्पलाइन (1915 या INGRAM पोर्टल) का उपयोग करें, क्योंकि यह एक उपयोगी पूर्व-मुकदमा कदम है।",
+                "where": "कॉल 1915 या INGRAM पोर्टल (consumerhelpline.gov.in)"
+              },
+              {
+                "title": "ई-जाग्रति पोर्टल पर उपभोक्ता शिकायत दर्ज करें",
+                "detail": "यदि विक्रेता या हेल्पलाइन से समाधान न मिले, तो आप ई-जाग्रति पोर्टल पर ऑनलाइन उपभोक्ता आयोग में शिकायत दर्ज कर सकते हैं।",
+                "where": "ई-जाग्रति पोर्टल (e-jagriti.gov.in)"
+              },
+              {
+                "title": "फ्री कानूनी सहायता लें",
+                "detail": "यदि आपको आगे की प्रक्रिया में मदद चाहिए, तो आप जिला विधिक सेवा प्राधिकरण से संपर्क कर सकते हैं या NALSA हेल्पलाइन 15100 पर कॉल कर सकते हैं।",
+                "where": "जिला विधिक सेवा प्राधिकरण (DLSA) या हेल्पलाइन 15100"
+              }
+            ],
+            "forum": "District Consumer Commission, क्योंकि भुगतान की गई राशि 50 लाख रुपये से कम है और विक्रेता द्वारा रिफंड न देना उपभोक्ता अधिकारों का हनन है।",
+            "confidence": "high",
+            "summary": "आपके पास इनवॉइस और फोटो जैसे प्रमाण मौजूद हैं। आप सबसे पहले नेशनल कंज्यूमर हेल्पलाइन (1915) पर शिकायत दर्ज कर सकते हैं और यदि समाधान न हो, तो ई-जाग्रति पोर्टल के माध्यम से जिला उपभोक्ता आयोग में जा सकते हैं।",
+            "draft_document": {
+              "type": "legal_notice",
+              "text": "To,\n[SELLER/MARKETPLACE NAME]\n[SELLER ADDRESS]\n\nSubject: Demand for refund of Rs. 3500 for defective mixer purchased on [DATE] (Order ID: [ORDER ID])\n\nDear Sir/Madam,\n\nI am a consumer who purchased a mixer for Rs. 3500 from your online platform on [DATE] vide Invoice No. [INVOICE NUMBER]. The product delivered to me was defective and of poor quality.\n\nAs per the Consumer Protection Act, 2019, Section 2(47) and Consumer Protection (E-Commerce) Rules, 2020, Rule 6(3) and 6(4), supplying defective goods and refusing a refund amounts to an unfair trade practice and a deficiency in service. Despite having shared photographs and return requests, you have failed to refund the amount.\n\nTherefore, I call upon you to refund the sum of Rs. 3500 within [NUMBER OF DAYS, e.g., 15 days] of receiving this notice, failing which I shall be constrained to approach the District Consumer Commission and relevant authorities for legal remedy, including compensation and costs.\n\nSincerely,\n[YOUR NAME]\n[YOUR CONTACT INFORMATION]\n[YOUR ADDRESS]"
+            }
+          },
+          "verdict": {
+            "level": "can_help",
+            "reasons": [
+              "This is covered by the verified laws in this tool. You can start on your own with the steps below."
+            ]
+          },
+          "transcript": [
+            {
+              "role": "user",
+              "text": "मैंने पिछले महीने एक ऑनलाइन मार्केटप्लेस से 3500 रुपये का मिक्सर खरीदा था। वह खराब निकला। विक्रेता रिफंड देने से मना कर रहा है। मुझे पैसे वापस चाहिए।"
+            },
+            {
+              "role": "assistant",
+              "text": "क्या यह सही है: आपने पिछले महीने (अक्टूबर 2026) एक ऑनलाइन मार्केटप्लेस से 3,500 रुपये का मिक्सर खरीदा था, जो खराब निकला और विक्रेता रिफंड देने से मना कर रहा है। आप अपना रिफंड (पैसे वापस) चाहते हैं? कृपया पुष्टि करें या बताएं कि क्या बदलना है।"
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "आप उपभोक्ता संरक्षण कानून के तहत अपने अधिकारों का उपयोग कर सकते हैं। चूंकि आपने ऑनलाइन सामान खरीदा और वह खराब निकला, इसलिए विक्रेता या ई-कॉमर्स प्लेटफॉर्म को आपको रिफंड या सामान बदलकर देना चाहिए। आप चाहें तो पहले नेशनल कंज्यूमर हेल्पलाइन पर शिकायत दर्ज कर सकते हैं या ई-जाग्रति पोर्टल के माध्यम से उपभोक्ता आयोग में जा सकते हैं। इस मामले में अभी यह देखना बाकी है कि आपके पास खरीद और भुगतान के क्या सबूत हैं। यह जानकारी केवल सामान्य मार्गदर्शन के लिए है और सत्यापित कानूनी प्रावधानों पर आधारित है।\n\nकृपया बताएं कि क्या आपके पास इनमें से कोई प्रमाण (जैसे इनवॉइस, पेमेंट का सबूत, या विक्रेता से बातचीत का रिकॉर्ड) मौजूद है, और क्या आपने इस मामले में अब तक विक्रेता, प्लेटफॉर्म या किसी अन्य हेल्पलाइन से संपर्क किया है?"
+            },
+            {
+              "role": "user",
+              "text": "मेरे पास इनवॉइस, खराब मिक्सर की फोटो और वापसी अनुरोध का स्क्रीनशॉट है।"
+            },
+            {
+              "role": "assistant",
+              "text": "आपके पास इनवॉइस और फोटो जैसे प्रमाण मौजूद हैं। आप सबसे पहले नेशनल कंज्यूमर हेल्पलाइन (1915) पर शिकायत दर्ज कर सकते हैं और यदि समाधान न हो, तो ई-जाग्रति पोर्टल के माध्यम से जिला उपभोक्ता आयोग में जा सकते हैं।"
+            }
+          ]
+        },
+        "reply": "आपके पास इनवॉइस और फोटो जैसे प्रमाण मौजूद हैं। आप सबसे पहले नेशनल कंज्यूमर हेल्पलाइन (1915) पर शिकायत दर्ज कर सकते हैं और यदि समाधान न हो, तो ई-जाग्रति पोर्टल के माध्यम से जिला उपभोक्ता आयोग में जा सकते हैं।",
+        "plan": {
+          "evidence_have": [
+            "इनवॉइस",
+            "खराब मिक्सर की फोटो",
+            "वापसी अनुरोध का स्क्रीनशॉट"
+          ],
+          "evidence_missing": [
+            "भुगतान का प्रमाण (बैंक स्टेटमेंट, UPI स्क्रीनशॉट या रसीद)",
+            "विक्रेता या प्लेटफॉर्म द्वारा रिफंड से मना करने का लिखित जवाब (यदि कोई हो)"
+          ],
+          "steps": [
+            {
+              "title": "(General) विक्रेता को लिखित मांग भेजें",
+              "detail": "अपने इनवॉइस, फोटो और स्क्रीनशॉट के साथ विक्रेता को एक लिखित संदेश या ईमेल भेजें जिसमें खराब मिक्सर के लिए पूरे पैसे (रिफंड) की मांग की जाए।",
+              "where": "ईमेल या ऑनलाइन मार्केटप्लेस चैट सपोर्ट"
+            },
+            {
+              "title": "नेशनल कंज्यूमर हेल्पलाइन पर संपर्क करें",
+              "detail": "अपनी शिकायत दर्ज करने के लिए नेशनल कंज्यूमर हेल्पलाइन (1915 या INGRAM पोर्टल) का उपयोग करें, क्योंकि यह एक उपयोगी पूर्व-मुकदमा कदम है।",
+              "where": "कॉल 1915 या INGRAM पोर्टल (consumerhelpline.gov.in)"
+            },
+            {
+              "title": "ई-जाग्रति पोर्टल पर उपभोक्ता शिकायत दर्ज करें",
+              "detail": "यदि विक्रेता या हेल्पलाइन से समाधान न मिले, तो आप ई-जाग्रति पोर्टल पर ऑनलाइन उपभोक्ता आयोग में शिकायत दर्ज कर सकते हैं।",
+              "where": "ई-जाग्रति पोर्टल (e-jagriti.gov.in)"
+            },
+            {
+              "title": "फ्री कानूनी सहायता लें",
+              "detail": "यदि आपको आगे की प्रक्रिया में मदद चाहिए, तो आप जिला विधिक सेवा प्राधिकरण से संपर्क कर सकते हैं या NALSA हेल्पलाइन 15100 पर कॉल कर सकते हैं।",
+              "where": "जिला विधिक सेवा प्राधिकरण (DLSA) या हेल्पलाइन 15100"
+            }
+          ],
+          "forum": "District Consumer Commission, क्योंकि भुगतान की गई राशि 50 लाख रुपये से कम है और विक्रेता द्वारा रिफंड न देना उपभोक्ता अधिकारों का हनन है।",
+          "confidence": "high",
+          "summary": "आपके पास इनवॉइस और फोटो जैसे प्रमाण मौजूद हैं। आप सबसे पहले नेशनल कंज्यूमर हेल्पलाइन (1915) पर शिकायत दर्ज कर सकते हैं और यदि समाधान न हो, तो ई-जाग्रति पोर्टल के माध्यम से जिला उपभोक्ता आयोग में जा सकते हैं।",
+          "draft_document": {
+            "type": "legal_notice",
+            "text": "To,\n[SELLER/MARKETPLACE NAME]\n[SELLER ADDRESS]\n\nSubject: Demand for refund of Rs. 3500 for defective mixer purchased on [DATE] (Order ID: [ORDER ID])\n\nDear Sir/Madam,\n\nI am a consumer who purchased a mixer for Rs. 3500 from your online platform on [DATE] vide Invoice No. [INVOICE NUMBER]. The product delivered to me was defective and of poor quality.\n\nAs per the Consumer Protection Act, 2019, Section 2(47) and Consumer Protection (E-Commerce) Rules, 2020, Rule 6(3) and 6(4), supplying defective goods and refusing a refund amounts to an unfair trade practice and a deficiency in service. Despite having shared photographs and return requests, you have failed to refund the amount.\n\nTherefore, I call upon you to refund the sum of Rs. 3500 within [NUMBER OF DAYS, e.g., 15 days] of receiving this notice, failing which I shall be constrained to approach the District Consumer Commission and relevant authorities for legal remedy, including compensation and costs.\n\nSincerely,\n[YOUR NAME]\n[YOUR CONTACT INFORMATION]\n[YOUR ADDRESS]"
+          }
+        },
+        "verdict": {
+          "level": "can_help",
+          "reasons": [
+            "This is covered by the verified laws in this tool. You can start on your own with the steps below."
+          ]
+        },
+        "warnings": []
+      }
+    }
+  ]
+}

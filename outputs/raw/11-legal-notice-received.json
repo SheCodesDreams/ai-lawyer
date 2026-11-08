@@ -1,0 +1,530 @@
+{
+  "case": {
+    "id": "11-legal-notice-received",
+    "note": "User received a legal notice -> outside tool's guidance, lawyer.",
+    "story": "A company sent me a legal notice saying I owe them Rs 40000 for a subscription I cancelled. They say they will file a case. I do not understand the notice.",
+    "extra": "I received it 5 days ago by post. I cancelled the subscription 4 months ago.",
+    "proofs": "I have the notice, the cancellation email and bank statements.",
+    "expect": {
+      "verdict_in": [
+        "partly",
+        "can_help"
+      ],
+      "draft_type_in": [
+        "reply_to_notice",
+        "legal_notice",
+        "none"
+      ]
+    }
+  },
+  "seconds": 28,
+  "checks": [
+    {
+      "name": "verdict in partly/can_help",
+      "ok": true,
+      "detail": "partly"
+    },
+    {
+      "name": "draft type in reply_to_notice/legal_notice/none",
+      "ok": true,
+      "detail": "reply_to_notice"
+    }
+  ],
+  "row": {
+    "id": "11-legal-notice-received",
+    "pass": true,
+    "verdict": "partly",
+    "issue": "notice_received",
+    "seconds": 28,
+    "warnings": 0,
+    "failed": []
+  },
+  "turns": [
+    {
+      "label": "story",
+      "user": "A company sent me a legal notice saying I owe them Rs 40000 for a subscription I cancelled. They say they will file a case. I do not understand the notice.",
+      "result": {
+        "state": {
+          "stage": "intake",
+          "story": {
+            "summary": "User received a legal notice from a company claiming Rs 40000 for a cancelled subscription, with threats to file a case.",
+            "timeline": [
+              {
+                "when": "recent",
+                "what": "Received legal notice for Rs 40000 for a cancelled subscription"
+              }
+            ],
+            "opposite_party": "Subscription company",
+            "platform": null,
+            "amount_inr": 40000,
+            "payment_method": null,
+            "proof_mentioned": [
+              "legal notice"
+            ],
+            "user_goal": "Understand the notice and address the demand",
+            "months_since_event": null,
+            "event_date": null,
+            "flags": {
+              "threats_or_violence": false,
+              "court_case_filed": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": null,
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "A company sent me a legal notice saying I owe them Rs 40000 for a subscription I cancelled. They say they will file a case. I do not understand the notice."
+            },
+            {
+              "role": "assistant",
+              "text": "I understand you received a legal notice for Rs 40000 regarding a cancelled subscription, and they are threatening to file a case. To help you better, could you please tell me when you received this notice and the name of the company?"
+            }
+          ]
+        },
+        "reply": "I understand you received a legal notice for Rs 40000 regarding a cancelled subscription, and they are threatening to file a case. To help you better, could you please tell me when you received this notice and the name of the company?",
+        "warnings": []
+      }
+    },
+    {
+      "label": "extra details",
+      "user": "I received it 5 days ago by post. I cancelled the subscription 4 months ago.",
+      "result": {
+        "state": {
+          "stage": "confirm",
+          "story": {
+            "summary": "User received a legal notice by post claiming Rs 40000 for a subscription cancelled 4 months ago.",
+            "timeline": [
+              {
+                "when": "4 months ago",
+                "what": "Cancelled the subscription"
+              },
+              {
+                "when": "5 days ago",
+                "what": "Received legal notice by post demanding Rs 40000"
+              }
+            ],
+            "opposite_party": "Subscription company",
+            "platform": null,
+            "amount_inr": 40000,
+            "payment_method": null,
+            "proof_mentioned": [
+              "legal notice"
+            ],
+            "user_goal": "Understand the notice and address the demand",
+            "months_since_event": 0,
+            "event_date": "2026-11-03",
+            "flags": {
+              "threats_or_violence": false,
+              "court_case_filed": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": null,
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "A company sent me a legal notice saying I owe them Rs 40000 for a subscription I cancelled. They say they will file a case. I do not understand the notice."
+            },
+            {
+              "role": "assistant",
+              "text": "I understand you received a legal notice for Rs 40000 regarding a cancelled subscription, and they are threatening to file a case. To help you better, could you please tell me when you received this notice and the name of the company?"
+            },
+            {
+              "role": "user",
+              "text": "I received it 5 days ago by post. I cancelled the subscription 4 months ago."
+            },
+            {
+              "role": "assistant",
+              "text": "You received a legal notice by post 5 days ago from the subscription company claiming Rs 40000, even though you cancelled your subscription 4 months ago, and you want to understand and address this demand. Is this correct? Say yes, or tell me what to change."
+            }
+          ]
+        },
+        "reply": "You received a legal notice by post 5 days ago from the subscription company claiming Rs 40000, even though you cancelled your subscription 4 months ago, and you want to understand and address this demand. Is this correct? Say yes, or tell me what to change.",
+        "warnings": []
+      }
+    },
+    {
+      "label": "confirm",
+      "user": "Yes, that is correct.",
+      "result": {
+        "state": {
+          "stage": "evidence",
+          "story": {
+            "summary": "User received a legal notice by post claiming Rs 40000 for a subscription cancelled 4 months ago.",
+            "timeline": [
+              {
+                "when": "4 months ago",
+                "what": "Cancelled the subscription"
+              },
+              {
+                "when": "5 days ago",
+                "what": "Received legal notice by post demanding Rs 40000"
+              }
+            ],
+            "opposite_party": "Subscription company",
+            "platform": null,
+            "amount_inr": 40000,
+            "payment_method": null,
+            "proof_mentioned": [
+              "legal notice"
+            ],
+            "user_goal": "Understand the notice and address the demand",
+            "months_since_event": 0,
+            "event_date": "2026-11-03",
+            "flags": {
+              "threats_or_violence": false,
+              "court_case_filed": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "notice_received",
+            "plain_explanation": "You have received a legal notice demanding payment for a subscription you cancelled four months ago. Receiving a notice means the company is claiming money, but it is not a court order by itself and does not mean you have automatically lost. You have the right to reply to this notice and explain that you cancelled the service months ago. It is important not to ignore this notice, as deadlines often matter when responding to formal legal demands. Since details of your cancellation and the exact terms of their agreement need careful review, it is best to consult a lawyer or legal aid clinic to help draft a proper reply.",
+            "provisions": [
+              {
+                "id": "PROC-LEGALNOTICE",
+                "why": "Explains that a legal notice gives you an opportunity to respond and clarify your cancellation before any court case is actually filed.",
+                "reference": "Legal notice before a consumer complaint",
+                "instrument": "Practice",
+                "title": "Legal notice is advisable but not required",
+                "source_url": "https://supremetoday.ai/issue/legal-notice-requirement-consumer-complaint-india",
+                "source_type": "secondary"
+              },
+              {
+                "id": "ICA-73",
+                "why": "Governs claims related to breach of contract, which companies often cite when demanding subscription or penalty payments.",
+                "reference": "Section 73",
+                "instrument": "Indian Contract Act, 1872",
+                "title": "Compensation for breach of contract",
+                "source_url": "https://indiankanoon.org/doc/339747/",
+                "source_type": "secondary"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "Copy of the legal notice received by post",
+                "why": "Contains the specific claims, company details, and demands made against you.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Cancellation confirmation email or message",
+                "why": "Proves the exact date and fact that you cancelled your subscription four months ago.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Bank or payment statements",
+                "why": "Shows your payment history and when payments for the subscription stopped.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Original subscription agreement or terms",
+                "why": "Helps check what the company's cancellation policy and penalty clauses actually state.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Any previous communication with the company",
+                "why": "Shows your earlier interactions or notices exchanged regarding the subscription.",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "Do you have a copy of your cancellation confirmation or proof from when you cancelled the subscription 4 months ago, and have you already consulted a lawyer or replied to the company?"
+          },
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "A company sent me a legal notice saying I owe them Rs 40000 for a subscription I cancelled. They say they will file a case. I do not understand the notice."
+            },
+            {
+              "role": "assistant",
+              "text": "I understand you received a legal notice for Rs 40000 regarding a cancelled subscription, and they are threatening to file a case. To help you better, could you please tell me when you received this notice and the name of the company?"
+            },
+            {
+              "role": "user",
+              "text": "I received it 5 days ago by post. I cancelled the subscription 4 months ago."
+            },
+            {
+              "role": "assistant",
+              "text": "You received a legal notice by post 5 days ago from the subscription company claiming Rs 40000, even though you cancelled your subscription 4 months ago, and you want to understand and address this demand. Is this correct? Say yes, or tell me what to change."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "You have received a legal notice demanding payment for a subscription you cancelled four months ago. Receiving a notice means the company is claiming money, but it is not a court order by itself and does not mean you have automatically lost. You have the right to reply to this notice and explain that you cancelled the service months ago. It is important not to ignore this notice, as deadlines often matter when responding to formal legal demands. Since details of your cancellation and the exact terms of their agreement need careful review, it is best to consult a lawyer or legal aid clinic to help draft a proper reply.\n\nDo you have a copy of your cancellation confirmation or proof from when you cancelled the subscription 4 months ago, and have you already consulted a lawyer or replied to the company?"
+            }
+          ]
+        },
+        "reply": "You have received a legal notice demanding payment for a subscription you cancelled four months ago. Receiving a notice means the company is claiming money, but it is not a court order by itself and does not mean you have automatically lost. You have the right to reply to this notice and explain that you cancelled the service months ago. It is important not to ignore this notice, as deadlines often matter when responding to formal legal demands. Since details of your cancellation and the exact terms of their agreement need careful review, it is best to consult a lawyer or legal aid clinic to help draft a proper reply.\n\nDo you have a copy of your cancellation confirmation or proof from when you cancelled the subscription 4 months ago, and have you already consulted a lawyer or replied to the company?",
+        "analysis": {
+          "issue_type": "notice_received",
+          "plain_explanation": "You have received a legal notice demanding payment for a subscription you cancelled four months ago. Receiving a notice means the company is claiming money, but it is not a court order by itself and does not mean you have automatically lost. You have the right to reply to this notice and explain that you cancelled the service months ago. It is important not to ignore this notice, as deadlines often matter when responding to formal legal demands. Since details of your cancellation and the exact terms of their agreement need careful review, it is best to consult a lawyer or legal aid clinic to help draft a proper reply.",
+          "provisions": [
+            {
+              "id": "PROC-LEGALNOTICE",
+              "why": "Explains that a legal notice gives you an opportunity to respond and clarify your cancellation before any court case is actually filed.",
+              "reference": "Legal notice before a consumer complaint",
+              "instrument": "Practice",
+              "title": "Legal notice is advisable but not required",
+              "source_url": "https://supremetoday.ai/issue/legal-notice-requirement-consumer-complaint-india",
+              "source_type": "secondary"
+            },
+            {
+              "id": "ICA-73",
+              "why": "Governs claims related to breach of contract, which companies often cite when demanding subscription or penalty payments.",
+              "reference": "Section 73",
+              "instrument": "Indian Contract Act, 1872",
+              "title": "Compensation for breach of contract",
+              "source_url": "https://indiankanoon.org/doc/339747/",
+              "source_type": "secondary"
+            }
+          ],
+          "evidence_checklist": [
+            {
+              "item": "Copy of the legal notice received by post",
+              "why": "Contains the specific claims, company details, and demands made against you.",
+              "mentioned_by_user": true
+            },
+            {
+              "item": "Cancellation confirmation email or message",
+              "why": "Proves the exact date and fact that you cancelled your subscription four months ago.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Bank or payment statements",
+              "why": "Shows your payment history and when payments for the subscription stopped.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Original subscription agreement or terms",
+              "why": "Helps check what the company's cancellation policy and penalty clauses actually state.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Any previous communication with the company",
+              "why": "Shows your earlier interactions or notices exchanged regarding the subscription.",
+              "mentioned_by_user": false
+            }
+          ],
+          "ask": "Do you have a copy of your cancellation confirmation or proof from when you cancelled the subscription 4 months ago, and have you already consulted a lawyer or replied to the company?"
+        },
+        "warnings": []
+      }
+    },
+    {
+      "label": "proofs",
+      "user": "I have the notice, the cancellation email and bank statements.",
+      "result": {
+        "state": {
+          "stage": "done",
+          "story": {
+            "summary": "User received a legal notice by post claiming Rs 40000 for a subscription cancelled 4 months ago.",
+            "timeline": [
+              {
+                "when": "4 months ago",
+                "what": "Cancelled the subscription"
+              },
+              {
+                "when": "5 days ago",
+                "what": "Received legal notice by post demanding Rs 40000"
+              }
+            ],
+            "opposite_party": "Subscription company",
+            "platform": null,
+            "amount_inr": 40000,
+            "payment_method": null,
+            "proof_mentioned": [
+              "legal notice"
+            ],
+            "user_goal": "Understand the notice and address the demand",
+            "months_since_event": 0,
+            "event_date": "2026-11-03",
+            "flags": {
+              "threats_or_violence": false,
+              "court_case_filed": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "notice_received",
+            "plain_explanation": "You have received a legal notice demanding payment for a subscription you cancelled four months ago. Receiving a notice means the company is claiming money, but it is not a court order by itself and does not mean you have automatically lost. You have the right to reply to this notice and explain that you cancelled the service months ago. It is important not to ignore this notice, as deadlines often matter when responding to formal legal demands. Since details of your cancellation and the exact terms of their agreement need careful review, it is best to consult a lawyer or legal aid clinic to help draft a proper reply.",
+            "provisions": [
+              {
+                "id": "PROC-LEGALNOTICE",
+                "why": "Explains that a legal notice gives you an opportunity to respond and clarify your cancellation before any court case is actually filed.",
+                "reference": "Legal notice before a consumer complaint",
+                "instrument": "Practice",
+                "title": "Legal notice is advisable but not required",
+                "source_url": "https://supremetoday.ai/issue/legal-notice-requirement-consumer-complaint-india",
+                "source_type": "secondary"
+              },
+              {
+                "id": "ICA-73",
+                "why": "Governs claims related to breach of contract, which companies often cite when demanding subscription or penalty payments.",
+                "reference": "Section 73",
+                "instrument": "Indian Contract Act, 1872",
+                "title": "Compensation for breach of contract",
+                "source_url": "https://indiankanoon.org/doc/339747/",
+                "source_type": "secondary"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "Copy of the legal notice received by post",
+                "why": "Contains the specific claims, company details, and demands made against you.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Cancellation confirmation email or message",
+                "why": "Proves the exact date and fact that you cancelled your subscription four months ago.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Bank or payment statements",
+                "why": "Shows your payment history and when payments for the subscription stopped.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Original subscription agreement or terms",
+                "why": "Helps check what the company's cancellation policy and penalty clauses actually state.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Any previous communication with the company",
+                "why": "Shows your earlier interactions or notices exchanged regarding the subscription.",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "Do you have a copy of your cancellation confirmation or proof from when you cancelled the subscription 4 months ago, and have you already consulted a lawyer or replied to the company?"
+          },
+          "plan": {
+            "evidence_have": [
+              "Copy of the legal notice",
+              "Cancellation email",
+              "Bank statements"
+            ],
+            "evidence_missing": [
+              "Original subscription agreement or terms",
+              "Any previous communication with the company"
+            ],
+            "steps": [
+              {
+                "title": "(General) Gather and organize all your proofs",
+                "detail": "Collect the legal notice, your cancellation email showing the date you cancelled, and bank statements showing your payment history. Keep these documents ready to share with a lawyer or legal aid.",
+                "where": "At home / with your personal documents"
+              },
+              {
+                "title": "Contact free legal aid for assistance",
+                "detail": "Since you received a formal legal notice, you can contact the District Legal Services Authority (DLSA) or call the NALSA helpline to get guidance or free legal help to draft a proper reply.",
+                "where": "District Legal Services Authority or call NALSA helpline 15100"
+              },
+              {
+                "title": "Send a formal written reply to the notice",
+                "detail": "Draft and send a formal reply to the company or the lawyer who sent the notice, clearly explaining that the subscription was already cancelled 4 months ago and attaching your cancellation proof. Do not ignore the notice.",
+                "where": "By post / registered mail to the opposite party"
+              }
+            ],
+            "forum": "District Legal Services Authority / Civil Court (if a case is filed later)",
+            "confidence": "medium",
+            "summary": "You have received a legal notice for Rs 40000 regarding a subscription you cancelled 4 months ago, and you have your cancellation email and bank statements as proof. You should not ignore the notice; instead, you should gather your proofs and consult a legal aid authority or a lawyer to send a formal written reply clarifying that the subscription was already cancelled.",
+            "draft_document": {
+              "type": "reply_to_notice",
+              "text": "To,\n[ADVOCATE NAME / SENDER OF NOTICE]\n[SENDER ADDRESS]\n\nSubject: Reply to legal notice dated [DATE OF NOTICE] regarding alleged dues of Rs 40000\n\nDear Sir/Madam,\n\nI am writing in response to your legal notice dated [DATE OF NOTICE] sent on behalf of [SUBSCRIPTION COMPANY], demanding payment of Rs 40000.\n\nI state that the demand raised in your notice is completely baseless and incorrect. I had already cancelled my subscription with your client 4 months ago, specifically on [DATE OF CANCELLATION], and received a cancellation confirmation email on that date. Furthermore, my bank statements show that no active services have been utilized or paid for since the cancellation.\n\nSince the subscription was lawfully terminated months prior to this demand, I do not owe any amount of Rs 40000 to your client. You are hereby requested to withdraw the said legal notice immediately.\n\nSincerely,\n\n[YOUR NAME]\n[YOUR CONTACT INFORMATION]"
+            }
+          },
+          "verdict": {
+            "level": "partly",
+            "reasons": [
+              "Some parts of your case are not clearly covered by the verified laws here."
+            ]
+          },
+          "transcript": [
+            {
+              "role": "user",
+              "text": "A company sent me a legal notice saying I owe them Rs 40000 for a subscription I cancelled. They say they will file a case. I do not understand the notice."
+            },
+            {
+              "role": "assistant",
+              "text": "I understand you received a legal notice for Rs 40000 regarding a cancelled subscription, and they are threatening to file a case. To help you better, could you please tell me when you received this notice and the name of the company?"
+            },
+            {
+              "role": "user",
+              "text": "I received it 5 days ago by post. I cancelled the subscription 4 months ago."
+            },
+            {
+              "role": "assistant",
+              "text": "You received a legal notice by post 5 days ago from the subscription company claiming Rs 40000, even though you cancelled your subscription 4 months ago, and you want to understand and address this demand. Is this correct? Say yes, or tell me what to change."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "You have received a legal notice demanding payment for a subscription you cancelled four months ago. Receiving a notice means the company is claiming money, but it is not a court order by itself and does not mean you have automatically lost. You have the right to reply to this notice and explain that you cancelled the service months ago. It is important not to ignore this notice, as deadlines often matter when responding to formal legal demands. Since details of your cancellation and the exact terms of their agreement need careful review, it is best to consult a lawyer or legal aid clinic to help draft a proper reply.\n\nDo you have a copy of your cancellation confirmation or proof from when you cancelled the subscription 4 months ago, and have you already consulted a lawyer or replied to the company?"
+            },
+            {
+              "role": "user",
+              "text": "I have the notice, the cancellation email and bank statements."
+            },
+            {
+              "role": "assistant",
+              "text": "You have received a legal notice for Rs 40000 regarding a subscription you cancelled 4 months ago, and you have your cancellation email and bank statements as proof. You should not ignore the notice; instead, you should gather your proofs and consult a legal aid authority or a lawyer to send a formal written reply clarifying that the subscription was already cancelled."
+            }
+          ]
+        },
+        "reply": "You have received a legal notice for Rs 40000 regarding a subscription you cancelled 4 months ago, and you have your cancellation email and bank statements as proof. You should not ignore the notice; instead, you should gather your proofs and consult a legal aid authority or a lawyer to send a formal written reply clarifying that the subscription was already cancelled.",
+        "plan": {
+          "evidence_have": [
+            "Copy of the legal notice",
+            "Cancellation email",
+            "Bank statements"
+          ],
+          "evidence_missing": [
+            "Original subscription agreement or terms",
+            "Any previous communication with the company"
+          ],
+          "steps": [
+            {
+              "title": "(General) Gather and organize all your proofs",
+              "detail": "Collect the legal notice, your cancellation email showing the date you cancelled, and bank statements showing your payment history. Keep these documents ready to share with a lawyer or legal aid.",
+              "where": "At home / with your personal documents"
+            },
+            {
+              "title": "Contact free legal aid for assistance",
+              "detail": "Since you received a formal legal notice, you can contact the District Legal Services Authority (DLSA) or call the NALSA helpline to get guidance or free legal help to draft a proper reply.",
+              "where": "District Legal Services Authority or call NALSA helpline 15100"
+            },
+            {
+              "title": "Send a formal written reply to the notice",
+              "detail": "Draft and send a formal reply to the company or the lawyer who sent the notice, clearly explaining that the subscription was already cancelled 4 months ago and attaching your cancellation proof. Do not ignore the notice.",
+              "where": "By post / registered mail to the opposite party"
+            }
+          ],
+          "forum": "District Legal Services Authority / Civil Court (if a case is filed later)",
+          "confidence": "medium",
+          "summary": "You have received a legal notice for Rs 40000 regarding a subscription you cancelled 4 months ago, and you have your cancellation email and bank statements as proof. You should not ignore the notice; instead, you should gather your proofs and consult a legal aid authority or a lawyer to send a formal written reply clarifying that the subscription was already cancelled.",
+          "draft_document": {
+            "type": "reply_to_notice",
+            "text": "To,\n[ADVOCATE NAME / SENDER OF NOTICE]\n[SENDER ADDRESS]\n\nSubject: Reply to legal notice dated [DATE OF NOTICE] regarding alleged dues of Rs 40000\n\nDear Sir/Madam,\n\nI am writing in response to your legal notice dated [DATE OF NOTICE] sent on behalf of [SUBSCRIPTION COMPANY], demanding payment of Rs 40000.\n\nI state that the demand raised in your notice is completely baseless and incorrect. I had already cancelled my subscription with your client 4 months ago, specifically on [DATE OF CANCELLATION], and received a cancellation confirmation email on that date. Furthermore, my bank statements show that no active services have been utilized or paid for since the cancellation.\n\nSince the subscription was lawfully terminated months prior to this demand, I do not owe any amount of Rs 40000 to your client. You are hereby requested to withdraw the said legal notice immediately.\n\nSincerely,\n\n[YOUR NAME]\n[YOUR CONTACT INFORMATION]"
+          }
+        },
+        "verdict": {
+          "level": "partly",
+          "reasons": [
+            "Some parts of your case are not clearly covered by the verified laws here."
+          ]
+        },
+        "warnings": []
+      }
+    }
+  ]
+}

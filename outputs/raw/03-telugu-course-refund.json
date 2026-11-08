@@ -1,0 +1,541 @@
+{
+  "case": {
+    "id": "03-telugu-course-refund",
+    "note": "Telugu input. Online course refund refused.",
+    "story": "నేను ఒక ఆన్‌లైన్ కోర్సు కోసం 5000 రూపాయలు చెల్లించాను. కోర్సు చెప్పినట్టు లేదు, రీఫండ్ అడిగితే ఇవ్వడం లేదు. రెండు నెలల క్రితం కొన్నాను.",
+    "extra": "కంపెనీ మొదట 7 రోజుల్లో రీఫండ్ అని ప్రకటనలో చెప్పింది. నేను ఈమెయిల్ పంపాను, సమాధానం లేదు.",
+    "proofs": "నా దగ్గర చెల్లింపు రసీదు, ప్రకటన స్క్రీన్‌షాట్, ఈమెయిల్ ఉన్నాయి.",
+    "expect": {
+      "verdict_in": [
+        "can_help",
+        "partly"
+      ],
+      "language_script": "telugu"
+    }
+  },
+  "seconds": 33,
+  "checks": [
+    {
+      "name": "verdict in can_help/partly",
+      "ok": true,
+      "detail": "can_help"
+    },
+    {
+      "name": "replied in telugu",
+      "ok": true
+    }
+  ],
+  "row": {
+    "id": "03-telugu-course-refund",
+    "pass": true,
+    "verdict": "can_help",
+    "issue": "refund_or_nondelivery",
+    "seconds": 33,
+    "warnings": 0,
+    "failed": []
+  },
+  "turns": [
+    {
+      "label": "story",
+      "user": "నేను ఒక ఆన్‌లైన్ కోర్సు కోసం 5000 రూపాయలు చెల్లించాను. కోర్సు చెప్పినట్టు లేదు, రీఫండ్ అడిగితే ఇవ్వడం లేదు. రెండు నెలల క్రితం కొన్నాను.",
+      "result": {
+        "state": {
+          "stage": "confirm",
+          "story": {
+            "summary": "ఆన్లాఇన్ కోర్సు కోసం రూ. 5000 చెల్లించారు, కోర్సు సరిగ్గా లేదు మరియు రీఫన్డ్ ఇవ్వలేదు.",
+            "timeline": [
+              {
+                "when": "2 months ago",
+                "what": "కోర్సు కౌన్లు చేశారు మరియు రీఫన్డ్ అడిగారు"
+              }
+            ],
+            "opposite_party": null,
+            "platform": "ఆన్లాఇన్ కోర్సు నిర్వాహకులు",
+            "amount_inr": 5000,
+            "payment_method": null,
+            "proof_mentioned": [],
+            "user_goal": "రీఫన్డ్ పొందడం",
+            "months_since_event": 2,
+            "event_date": null,
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": null,
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "నేను ఒక ఆన్‌లైన్ కోర్సు కోసం 5000 రూపాయలు చెల్లించాను. కోర్సు చెప్పినట్టు లేదు, రీఫండ్ అడిగితే ఇవ్వడం లేదు. రెండు నెలల క్రితం కొన్నాను."
+            },
+            {
+              "role": "assistant",
+              "text": "మీరు ఆన్‌లైన్ కోర్సు కోసం రూ. 5000 చెల్లించారని, కోర్సు సరిగ్గా లేకపోవడంతో రెండు నెలల క్రితం రీఫండ్ అడిగితే వారు ఇవ్వడం లేదని అర్థం చేసుకున్నాను. ఈ వివరాలు సరైనవేనా? అవును అని చెప్పండి లేదా ఏమైనా మార్చాలంటే తెలపండి."
+            }
+          ]
+        },
+        "reply": "మీరు ఆన్‌లైన్ కోర్సు కోసం రూ. 5000 చెల్లించారని, కోర్సు సరిగ్గా లేకపోవడంతో రెండు నెలల క్రితం రీఫండ్ అడిగితే వారు ఇవ్వడం లేదని అర్థం చేసుకున్నాను. ఈ వివరాలు సరైనవేనా? అవును అని చెప్పండి లేదా ఏమైనా మార్చాలంటే తెలపండి.",
+        "warnings": []
+      }
+    },
+    {
+      "label": "confirm",
+      "user": "Yes, that is correct.",
+      "result": {
+        "state": {
+          "stage": "evidence",
+          "story": {
+            "summary": "ఆన్లాఇన్ కోర్సు కోసం రూ. 5000 చెల్లించారు, కోర్సు సరిగ్గా లేదు మరియు రీఫన్డ్ ఇవ్వలేదు.",
+            "timeline": [
+              {
+                "when": "2 months ago",
+                "what": "కోర్సు కౌన్లు చేశారు మరియు రీఫన్డ్ అడిగారు"
+              }
+            ],
+            "opposite_party": null,
+            "platform": "ఆన్లాఇన్ కోర్సు నిర్వాహకులు",
+            "amount_inr": 5000,
+            "payment_method": null,
+            "proof_mentioned": [],
+            "user_goal": "రీఫన్డ్ పొందడం",
+            "months_since_event": 2,
+            "event_date": null,
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "refund_or_nondelivery",
+            "plain_explanation": "మీరు ఆన్‌లైన్ కోర్సు కోసం రూ. 5000 చెల్లించారు కానీ కోర్సు సరిగ్గా లేకపోవడంతో రీఫండ్ ఇవ్వలేదు. వినియోగదారుల చట్టం ప్రకారం, నాణ్యత లేని సేవలు లేదా రీఫండ్ ఇవ్వకపోవడం వంటి సమస్యలపై మీరు తగిన వేదికలను ఆశ్రయించవచ్చు. ఈ సమస్యపై నేషనల్ కన్స్యూమర్ హెల్ప్‌లైన్ లేదా ఇ-జాగృతి పోర్టల్ ద్వారా ఫిర్యాదు చేసే అవకాశం ఉంది. రెండు నెలలు గడిచినా, చట్టపరమైన కాలపరిమితి ఇంకా ఉంది కాబట్టి ఆందోళన చెందకండి. అయితే, మీకు అనుకూలంగా కచ్చితంగా తీర్పు వస్తుందని ఎవరూ హామీ ఇవ్వలేరు.",
+            "provisions": [
+              {
+                "id": "CPA-2.7",
+                "why": "మీరు డబ్బు చెల్లించి కోర్సు కొనుగోలు చేశారు కాబట్టి మీరు కన్స్యూమర్ (వినియోగదారుడు) కిందకు వస్తారు.",
+                "reference": "Section 2(7)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of consumer",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "CPA-2.11",
+                "why": "కోర్సు సరిగ్గా లేకపోవడం అనేది సేవలో లోపం (deficiency in service) కిందకు వస్తుంది.",
+                "reference": "Section 2(11)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of deficiency (in service)",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "CPA-2.47",
+                "why": "చెల్లించిన డబ్బుకు రీఫండ్ ఇవ్వడానికి నిరాకరించడం లేదా లోపభూయిష్ట సేవలను అందించడం అన్యాయమైన వ్యాపార పద్ధతి కావచ్చు.",
+                "reference": "Section 2(47)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of unfair trade practice",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "CPA-69",
+                "why": "సమస్య ఏర్పడిన తేదీ నుండి 2 సంవత్సరాల లోపు వినియోగదారుల కమిషన్‌లో ఫిర్యాదు చేయవచ్చు.",
+                "reference": "Section 69",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Time limit for a consumer complaint",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/69.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "PROC-NCH",
+                "why": "న్యాయస్థానానికి వెళ్లే ముందు నేషనల్ కన్స్యూమర్ హెల్ప్‌లైన్‌ను సంప్రదించడం ఒక మంచి మొదటి మెట్టు.",
+                "reference": "1915 / 1800-11-4000 / INGRAM portal",
+                "instrument": "National Consumer Helpline (Department of Consumer Affairs)",
+                "title": "Pre-litigation step: National Consumer Helpline",
+                "source_url": "https://consumerhelpline.gov.in/public/about",
+                "source_type": "official"
+              },
+              {
+                "id": "PROC-EJAGRITI",
+                "why": "మీరు ఇ-జాగృతి పోర్టల్ ద్వారా ఆన్‌లైన్‌లో నేరుగా వినియోగదారుల ఫిర్యాదును నమోదు చేయవచ్చు.",
+                "reference": "e-jagriti.gov.in",
+                "instrument": "e-Jagriti portal (Department of Consumer Affairs)",
+                "title": "Filing a consumer complaint online",
+                "source_url": "https://www.impriindia.com/insights/policy-update/e-jagriti-the-digital-transformation-of-consumer-dispute-resolution-in-india/",
+                "source_type": "secondary"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "కోర్సు కొనుగోలు చేసిన రసీదు లేదా పేమెంట్ స్క్రీన్‌షాట్",
+                "why": "మీరు రూ. 5000 చెల్లించినట్లు నిరూపించడానికి ఇది చాలా ముఖ్యం.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "కోర్సు నిర్వాహకులతో జరిపిన చాట్‌లు లేదా ఈమెయిళ్లు",
+                "why": "మీరు రీఫండ్ అడిగినట్లు మరియు వారు నిరాకరించినట్లు చూపించడానికి.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "కోర్సు వివరాలు లేదా ప్రకటన కాపీ",
+                "why": "కోర్సు చెప్పినట్టు లేదని నిరూపించడానికి.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "నిర్వాహకుల సంప్రదింపు వివరాలు (పేరు, ఈమెయిల్, ఫోన్ నంబర్)",
+                "why": "ఫిర్యాదులో వ్యతిరేక పక్షం వివరాలు పొందుపరచడానికి.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "కోర్సు లోపాలను చూపించే స్క్రీన్ రికార్డింగ్‌లు",
+                "why": "సేవలో లోపాన్ని స్పష్టంగా నిరూపించడానికి.",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "దయచేసి మీ వద్ద పేమెంట్ రసీదు, కోర్సు నిర్వాహకులతో జరిపిన చాట్‌లు లేదా ఈమెయిళ్లు వంటి ఆధారాలు ఏమైనా ఉన్నాయా తెలపండి. అలాగే, మీరు ఇప్పటికే నేషనల్ కన్స్యూమర్ హెల్ప్‌లైన్ (1915) ద్వారా లేదా నేరుగా ఆ కోర్సు నిర్వాహకులను సంప్రదించి రీఫండ్ అడిగాారా?"
+          },
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "నేను ఒక ఆన్‌లైన్ కోర్సు కోసం 5000 రూపాయలు చెల్లించాను. కోర్సు చెప్పినట్టు లేదు, రీఫండ్ అడిగితే ఇవ్వడం లేదు. రెండు నెలల క్రితం కొన్నాను."
+            },
+            {
+              "role": "assistant",
+              "text": "మీరు ఆన్‌లైన్ కోర్సు కోసం రూ. 5000 చెల్లించారని, కోర్సు సరిగ్గా లేకపోవడంతో రెండు నెలల క్రితం రీఫండ్ అడిగితే వారు ఇవ్వడం లేదని అర్థం చేసుకున్నాను. ఈ వివరాలు సరైనవేనా? అవును అని చెప్పండి లేదా ఏమైనా మార్చాలంటే తెలపండి."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "మీరు ఆన్‌లైన్ కోర్సు కోసం రూ. 5000 చెల్లించారు కానీ కోర్సు సరిగ్గా లేకపోవడంతో రీఫండ్ ఇవ్వలేదు. వినియోగదారుల చట్టం ప్రకారం, నాణ్యత లేని సేవలు లేదా రీఫండ్ ఇవ్వకపోవడం వంటి సమస్యలపై మీరు తగిన వేదికలను ఆశ్రయించవచ్చు. ఈ సమస్యపై నేషనల్ కన్స్యూమర్ హెల్ప్‌లైన్ లేదా ఇ-జాగృతి పోర్టల్ ద్వారా ఫిర్యాదు చేసే అవకాశం ఉంది. రెండు నెలలు గడిచినా, చట్టపరమైన కాలపరిమితి ఇంకా ఉంది కాబట్టి ఆందోళన చెందకండి. అయితే, మీకు అనుకూలంగా కచ్చితంగా తీర్పు వస్తుందని ఎవరూ హామీ ఇవ్వలేరు.\n\nదయచేసి మీ వద్ద పేమెంట్ రసీదు, కోర్సు నిర్వాహకులతో జరిపిన చాట్‌లు లేదా ఈమెయిళ్లు వంటి ఆధారాలు ఏమైనా ఉన్నాయా తెలపండి. అలాగే, మీరు ఇప్పటికే నేషనల్ కన్స్యూమర్ హెల్ప్‌లైన్ (1915) ద్వారా లేదా నేరుగా ఆ కోర్సు నిర్వాహకులను సంప్రదించి రీఫండ్ అడిగాారా?"
+            }
+          ]
+        },
+        "reply": "మీరు ఆన్‌లైన్ కోర్సు కోసం రూ. 5000 చెల్లించారు కానీ కోర్సు సరిగ్గా లేకపోవడంతో రీఫండ్ ఇవ్వలేదు. వినియోగదారుల చట్టం ప్రకారం, నాణ్యత లేని సేవలు లేదా రీఫండ్ ఇవ్వకపోవడం వంటి సమస్యలపై మీరు తగిన వేదికలను ఆశ్రయించవచ్చు. ఈ సమస్యపై నేషనల్ కన్స్యూమర్ హెల్ప్‌లైన్ లేదా ఇ-జాగృతి పోర్టల్ ద్వారా ఫిర్యాదు చేసే అవకాశం ఉంది. రెండు నెలలు గడిచినా, చట్టపరమైన కాలపరిమితి ఇంకా ఉంది కాబట్టి ఆందోళన చెందకండి. అయితే, మీకు అనుకూలంగా కచ్చితంగా తీర్పు వస్తుందని ఎవరూ హామీ ఇవ్వలేరు.\n\nదయచేసి మీ వద్ద పేమెంట్ రసీదు, కోర్సు నిర్వాహకులతో జరిపిన చాట్‌లు లేదా ఈమెయిళ్లు వంటి ఆధారాలు ఏమైనా ఉన్నాయా తెలపండి. అలాగే, మీరు ఇప్పటికే నేషనల్ కన్స్యూమర్ హెల్ప్‌లైన్ (1915) ద్వారా లేదా నేరుగా ఆ కోర్సు నిర్వాహకులను సంప్రదించి రీఫండ్ అడిగాారా?",
+        "analysis": {
+          "issue_type": "refund_or_nondelivery",
+          "plain_explanation": "మీరు ఆన్‌లైన్ కోర్సు కోసం రూ. 5000 చెల్లించారు కానీ కోర్సు సరిగ్గా లేకపోవడంతో రీఫండ్ ఇవ్వలేదు. వినియోగదారుల చట్టం ప్రకారం, నాణ్యత లేని సేవలు లేదా రీఫండ్ ఇవ్వకపోవడం వంటి సమస్యలపై మీరు తగిన వేదికలను ఆశ్రయించవచ్చు. ఈ సమస్యపై నేషనల్ కన్స్యూమర్ హెల్ప్‌లైన్ లేదా ఇ-జాగృతి పోర్టల్ ద్వారా ఫిర్యాదు చేసే అవకాశం ఉంది. రెండు నెలలు గడిచినా, చట్టపరమైన కాలపరిమితి ఇంకా ఉంది కాబట్టి ఆందోళన చెందకండి. అయితే, మీకు అనుకూలంగా కచ్చితంగా తీర్పు వస్తుందని ఎవరూ హామీ ఇవ్వలేరు.",
+          "provisions": [
+            {
+              "id": "CPA-2.7",
+              "why": "మీరు డబ్బు చెల్లించి కోర్సు కొనుగోలు చేశారు కాబట్టి మీరు కన్స్యూమర్ (వినియోగదారుడు) కిందకు వస్తారు.",
+              "reference": "Section 2(7)",
+              "instrument": "Consumer Protection Act, 2019",
+              "title": "Definition of consumer",
+              "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+              "source_type": "secondary"
+            },
+            {
+              "id": "CPA-2.11",
+              "why": "కోర్సు సరిగ్గా లేకపోవడం అనేది సేవలో లోపం (deficiency in service) కిందకు వస్తుంది.",
+              "reference": "Section 2(11)",
+              "instrument": "Consumer Protection Act, 2019",
+              "title": "Definition of deficiency (in service)",
+              "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+              "source_type": "secondary"
+            },
+            {
+              "id": "CPA-2.47",
+              "why": "చెల్లించిన డబ్బుకు రీఫండ్ ఇవ్వడానికి నిరాకరించడం లేదా లోపభూయిష్ట సేవలను అందించడం అన్యాయమైన వ్యాపార పద్ధతి కావచ్చు.",
+              "reference": "Section 2(47)",
+              "instrument": "Consumer Protection Act, 2019",
+              "title": "Definition of unfair trade practice",
+              "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+              "source_type": "secondary"
+            },
+            {
+              "id": "CPA-69",
+              "why": "సమస్య ఏర్పడిన తేదీ నుండి 2 సంవత్సరాల లోపు వినియోగదారుల కమిషన్‌లో ఫిర్యాదు చేయవచ్చు.",
+              "reference": "Section 69",
+              "instrument": "Consumer Protection Act, 2019",
+              "title": "Time limit for a consumer complaint",
+              "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/69.php",
+              "source_type": "secondary"
+            },
+            {
+              "id": "PROC-NCH",
+              "why": "న్యాయస్థానానికి వెళ్లే ముందు నేషనల్ కన్స్యూమర్ హెల్ప్‌లైన్‌ను సంప్రదించడం ఒక మంచి మొదటి మెట్టు.",
+              "reference": "1915 / 1800-11-4000 / INGRAM portal",
+              "instrument": "National Consumer Helpline (Department of Consumer Affairs)",
+              "title": "Pre-litigation step: National Consumer Helpline",
+              "source_url": "https://consumerhelpline.gov.in/public/about",
+              "source_type": "official"
+            },
+            {
+              "id": "PROC-EJAGRITI",
+              "why": "మీరు ఇ-జాగృతి పోర్టల్ ద్వారా ఆన్‌లైన్‌లో నేరుగా వినియోగదారుల ఫిర్యాదును నమోదు చేయవచ్చు.",
+              "reference": "e-jagriti.gov.in",
+              "instrument": "e-Jagriti portal (Department of Consumer Affairs)",
+              "title": "Filing a consumer complaint online",
+              "source_url": "https://www.impriindia.com/insights/policy-update/e-jagriti-the-digital-transformation-of-consumer-dispute-resolution-in-india/",
+              "source_type": "secondary"
+            }
+          ],
+          "evidence_checklist": [
+            {
+              "item": "కోర్సు కొనుగోలు చేసిన రసీదు లేదా పేమెంట్ స్క్రీన్‌షాట్",
+              "why": "మీరు రూ. 5000 చెల్లించినట్లు నిరూపించడానికి ఇది చాలా ముఖ్యం.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "కోర్సు నిర్వాహకులతో జరిపిన చాట్‌లు లేదా ఈమెయిళ్లు",
+              "why": "మీరు రీఫండ్ అడిగినట్లు మరియు వారు నిరాకరించినట్లు చూపించడానికి.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "కోర్సు వివరాలు లేదా ప్రకటన కాపీ",
+              "why": "కోర్సు చెప్పినట్టు లేదని నిరూపించడానికి.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "నిర్వాహకుల సంప్రదింపు వివరాలు (పేరు, ఈమెయిల్, ఫోన్ నంబర్)",
+              "why": "ఫిర్యాదులో వ్యతిరేక పక్షం వివరాలు పొందుపరచడానికి.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "కోర్సు లోపాలను చూపించే స్క్రీన్ రికార్డింగ్‌లు",
+              "why": "సేవలో లోపాన్ని స్పష్టంగా నిరూపించడానికి.",
+              "mentioned_by_user": false
+            }
+          ],
+          "ask": "దయచేసి మీ వద్ద పేమెంట్ రసీదు, కోర్సు నిర్వాహకులతో జరిపిన చాట్‌లు లేదా ఈమెయిళ్లు వంటి ఆధారాలు ఏమైనా ఉన్నాయా తెలపండి. అలాగే, మీరు ఇప్పటికే నేషనల్ కన్స్యూమర్ హెల్ప్‌లైన్ (1915) ద్వారా లేదా నేరుగా ఆ కోర్సు నిర్వాహకులను సంప్రదించి రీఫండ్ అడిగాారా?"
+        },
+        "warnings": []
+      }
+    },
+    {
+      "label": "proofs",
+      "user": "నా దగ్గర చెల్లింపు రసీదు, ప్రకటన స్క్రీన్‌షాట్, ఈమెయిల్ ఉన్నాయి.",
+      "result": {
+        "state": {
+          "stage": "done",
+          "story": {
+            "summary": "ఆన్లాఇన్ కోర్సు కోసం రూ. 5000 చెల్లించారు, కోర్సు సరిగ్గా లేదు మరియు రీఫన్డ్ ఇవ్వలేదు.",
+            "timeline": [
+              {
+                "when": "2 months ago",
+                "what": "కోర్సు కౌన్లు చేశారు మరియు రీఫన్డ్ అడిగారు"
+              }
+            ],
+            "opposite_party": null,
+            "platform": "ఆన్లాఇన్ కోర్సు నిర్వాహకులు",
+            "amount_inr": 5000,
+            "payment_method": null,
+            "proof_mentioned": [],
+            "user_goal": "రీఫన్డ్ పొందడం",
+            "months_since_event": 2,
+            "event_date": null,
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "refund_or_nondelivery",
+            "plain_explanation": "మీరు ఆన్‌లైన్ కోర్సు కోసం రూ. 5000 చెల్లించారు కానీ కోర్సు సరిగ్గా లేకపోవడంతో రీఫండ్ ఇవ్వలేదు. వినియోగదారుల చట్టం ప్రకారం, నాణ్యత లేని సేవలు లేదా రీఫండ్ ఇవ్వకపోవడం వంటి సమస్యలపై మీరు తగిన వేదికలను ఆశ్రయించవచ్చు. ఈ సమస్యపై నేషనల్ కన్స్యూమర్ హెల్ప్‌లైన్ లేదా ఇ-జాగృతి పోర్టల్ ద్వారా ఫిర్యాదు చేసే అవకాశం ఉంది. రెండు నెలలు గడిచినా, చట్టపరమైన కాలపరిమితి ఇంకా ఉంది కాబట్టి ఆందోళన చెందకండి. అయితే, మీకు అనుకూలంగా కచ్చితంగా తీర్పు వస్తుందని ఎవరూ హామీ ఇవ్వలేరు.",
+            "provisions": [
+              {
+                "id": "CPA-2.7",
+                "why": "మీరు డబ్బు చెల్లించి కోర్సు కొనుగోలు చేశారు కాబట్టి మీరు కన్స్యూమర్ (వినియోగదారుడు) కిందకు వస్తారు.",
+                "reference": "Section 2(7)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of consumer",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "CPA-2.11",
+                "why": "కోర్సు సరిగ్గా లేకపోవడం అనేది సేవలో లోపం (deficiency in service) కిందకు వస్తుంది.",
+                "reference": "Section 2(11)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of deficiency (in service)",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "CPA-2.47",
+                "why": "చెల్లించిన డబ్బుకు రీఫండ్ ఇవ్వడానికి నిరాకరించడం లేదా లోపభూయిష్ట సేవలను అందించడం అన్యాయమైన వ్యాపార పద్ధతి కావచ్చు.",
+                "reference": "Section 2(47)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of unfair trade practice",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "CPA-69",
+                "why": "సమస్య ఏర్పడిన తేదీ నుండి 2 సంవత్సరాల లోపు వినియోగదారుల కమిషన్‌లో ఫిర్యాదు చేయవచ్చు.",
+                "reference": "Section 69",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Time limit for a consumer complaint",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/69.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "PROC-NCH",
+                "why": "న్యాయస్థానానికి వెళ్లే ముందు నేషనల్ కన్స్యూమర్ హెల్ప్‌లైన్‌ను సంప్రదించడం ఒక మంచి మొదటి మెట్టు.",
+                "reference": "1915 / 1800-11-4000 / INGRAM portal",
+                "instrument": "National Consumer Helpline (Department of Consumer Affairs)",
+                "title": "Pre-litigation step: National Consumer Helpline",
+                "source_url": "https://consumerhelpline.gov.in/public/about",
+                "source_type": "official"
+              },
+              {
+                "id": "PROC-EJAGRITI",
+                "why": "మీరు ఇ-జాగృతి పోర్టల్ ద్వారా ఆన్‌లైన్‌లో నేరుగా వినియోగదారుల ఫిర్యాదును నమోదు చేయవచ్చు.",
+                "reference": "e-jagriti.gov.in",
+                "instrument": "e-Jagriti portal (Department of Consumer Affairs)",
+                "title": "Filing a consumer complaint online",
+                "source_url": "https://www.impriindia.com/insights/policy-update/e-jagriti-the-digital-transformation-of-consumer-dispute-resolution-in-india/",
+                "source_type": "secondary"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "కోర్సు కొనుగోలు చేసిన రసీదు లేదా పేమెంట్ స్క్రీన్‌షాట్",
+                "why": "మీరు రూ. 5000 చెల్లించినట్లు నిరూపించడానికి ఇది చాలా ముఖ్యం.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "కోర్సు నిర్వాహకులతో జరిపిన చాట్‌లు లేదా ఈమెయిళ్లు",
+                "why": "మీరు రీఫండ్ అడిగినట్లు మరియు వారు నిరాకరించినట్లు చూపించడానికి.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "కోర్సు వివరాలు లేదా ప్రకటన కాపీ",
+                "why": "కోర్సు చెప్పినట్టు లేదని నిరూపించడానికి.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "నిర్వాహకుల సంప్రదింపు వివరాలు (పేరు, ఈమెయిల్, ఫోన్ నంబర్)",
+                "why": "ఫిర్యాదులో వ్యతిరేక పక్షం వివరాలు పొందుపరచడానికి.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "కోర్సు లోపాలను చూపించే స్క్రీన్ రికార్డింగ్‌లు",
+                "why": "సేవలో లోపాన్ని స్పష్టంగా నిరూపించడానికి.",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "దయచేసి మీ వద్ద పేమెంట్ రసీదు, కోర్సు నిర్వాహకులతో జరిపిన చాట్‌లు లేదా ఈమెయిళ్లు వంటి ఆధారాలు ఏమైనా ఉన్నాయా తెలపండి. అలాగే, మీరు ఇప్పటికే నేషనల్ కన్స్యూమర్ హెల్ప్‌లైన్ (1915) ద్వారా లేదా నేరుగా ఆ కోర్సు నిర్వాహకులను సంప్రదించి రీఫండ్ అడిగాారా?"
+          },
+          "plan": {
+            "evidence_have": [
+              "చెల్లింపు రసీదు (Payment receipt)",
+              "ప్రకటన స్క్రీన్‌షాట్ (Ad screenshot)",
+              "ఈమెయిల్ (Email communications)"
+            ],
+            "evidence_missing": [
+              "కోర్సు లోపాలను చూపించే స్క్రీన్ రికార్డింగ్‌లు"
+            ],
+            "steps": [
+              {
+                "title": "రాతపూర్వక డిమాండ్ నోటీసు లేదా ఈమెయిల్ పంపండి",
+                "detail": "కోర్సు నిర్వాహకులకు మీ వద్ద ఉన్న ఈమెయిల్ ద్వారా స్పష్టంగా రీఫండ్ కోరుతూ చివరిసారిగా వ్రాతపూర్వక డిమాండ్ పంపండి.",
+                "where": "ఈమెయిల్ ద్వారా"
+              },
+              {
+                "title": "నేషనల్ కన్స్యూమర్ హెల్ప్‌లైన్ (NCH) లో ఫిర్యాదు చేయండి",
+                "detail": "1915 నంబర్‌కు కాల్ చేయడం ద్వారా లేదా INGRAM పోర్టల్ ద్వారా ఆన్‌లైన్ కోర్సు నిర్వాహకులపై ఫిర్యాదు నమోదు చేయండి.",
+                "where": "consumerhelpline.gov.in లేదా 1915"
+              },
+              {
+                "title": "ఇ-జాగృతి పోర్టల్ ద్వారా వినియోగదారుల కమిషన్‌లో ఫిర్యాదు చేయండి",
+                "detail": "నిర్వాహకులు స్పందించకపోతే, మీరు చెల్లించిన మొత్తం రూ. 5000 ఆధారంగా ఇ-జాగృతి పోర్టల్ ద్వారా జిల్లా వినియోగదారుల కమిషన్‌లో ఆన్‌లైన్‌లో ఫిర్యాదు చేయవచ్చు.",
+                "where": "e-jagriti.gov.in"
+              }
+            ],
+            "forum": "District Consumer Commission",
+            "confidence": "high",
+            "summary": "మీ వద్ద చెల్లింపు రసీదు, ప్రకటన స్క్రీన్‌షాట్ మరియు ఈమెయిళ్లు ఉన్నాయి. మీరు మొదట నేషనల్ కన్స్యూమర్ హెల్ప్‌లైన్‌ను సంప్రదించవచ్చు లేదా నేరుగా ఇ-జాగృతి పోర్టల్ ద్వారా జిల్లా వినియోగదారుల కమిషన్‌లో ఫిర్యాదు దాఖలు చేయవచ్చు.",
+            "draft_document": {
+              "type": "legal_notice",
+              "text": "To,\n[ONLINE COURSE PROVIDER NAME/MANAGEMENT],\n[PROVIDER ADDRESS OR EMAIL]\n\nSUBJECT: DEMAND FOR REFUND OF RS. 5000 FOR DEFICIENT ONLINE COURSE SERVICE\n\nDear Sir/Madam,\n\nI, [YOUR NAME], resident of [YOUR ADDRESS], had purchased your online course on [DATE] by paying an amount of Rs. 5000 vide payment receipt/transaction ID [TRANSACTION ID]. \n\nThe course provided by you was not as per the description and advertisements shown, which amounts to a deficiency in service and unfair trade practice under the Consumer Protection Act, 2019. I approached you on [DATE] requesting a refund, but no positive action has been taken.\n\nThrough this notice, I demand the immediate refund of Rs. 5000 within 15 days of receiving this notice. If you fail to refund the amount, I will be forced to initiate legal proceedings against you before the District Consumer Commission and other appropriate forums.\n\nSincerely,\n[YOUR NAME]\n[YOUR CONTACT NUMBER]\n[YOUR EMAIL]"
+            }
+          },
+          "verdict": {
+            "level": "can_help",
+            "reasons": [
+              "This is covered by the verified laws in this tool. You can start on your own with the steps below."
+            ]
+          },
+          "transcript": [
+            {
+              "role": "user",
+              "text": "నేను ఒక ఆన్‌లైన్ కోర్సు కోసం 5000 రూపాయలు చెల్లించాను. కోర్సు చెప్పినట్టు లేదు, రీఫండ్ అడిగితే ఇవ్వడం లేదు. రెండు నెలల క్రితం కొన్నాను."
+            },
+            {
+              "role": "assistant",
+              "text": "మీరు ఆన్‌లైన్ కోర్సు కోసం రూ. 5000 చెల్లించారని, కోర్సు సరిగ్గా లేకపోవడంతో రెండు నెలల క్రితం రీఫండ్ అడిగితే వారు ఇవ్వడం లేదని అర్థం చేసుకున్నాను. ఈ వివరాలు సరైనవేనా? అవును అని చెప్పండి లేదా ఏమైనా మార్చాలంటే తెలపండి."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "మీరు ఆన్‌లైన్ కోర్సు కోసం రూ. 5000 చెల్లించారు కానీ కోర్సు సరిగ్గా లేకపోవడంతో రీఫండ్ ఇవ్వలేదు. వినియోగదారుల చట్టం ప్రకారం, నాణ్యత లేని సేవలు లేదా రీఫండ్ ఇవ్వకపోవడం వంటి సమస్యలపై మీరు తగిన వేదికలను ఆశ్రయించవచ్చు. ఈ సమస్యపై నేషనల్ కన్స్యూమర్ హెల్ప్‌లైన్ లేదా ఇ-జాగృతి పోర్టల్ ద్వారా ఫిర్యాదు చేసే అవకాశం ఉంది. రెండు నెలలు గడిచినా, చట్టపరమైన కాలపరిమితి ఇంకా ఉంది కాబట్టి ఆందోళన చెందకండి. అయితే, మీకు అనుకూలంగా కచ్చితంగా తీర్పు వస్తుందని ఎవరూ హామీ ఇవ్వలేరు.\n\nదయచేసి మీ వద్ద పేమెంట్ రసీదు, కోర్సు నిర్వాహకులతో జరిపిన చాట్‌లు లేదా ఈమెయిళ్లు వంటి ఆధారాలు ఏమైనా ఉన్నాయా తెలపండి. అలాగే, మీరు ఇప్పటికే నేషనల్ కన్స్యూమర్ హెల్ప్‌లైన్ (1915) ద్వారా లేదా నేరుగా ఆ కోర్సు నిర్వాహకులను సంప్రదించి రీఫండ్ అడిగాారా?"
+            },
+            {
+              "role": "user",
+              "text": "నా దగ్గర చెల్లింపు రసీదు, ప్రకటన స్క్రీన్‌షాట్, ఈమెయిల్ ఉన్నాయి."
+            },
+            {
+              "role": "assistant",
+              "text": "మీ వద్ద చెల్లింపు రసీదు, ప్రకటన స్క్రీన్‌షాట్ మరియు ఈమెయిళ్లు ఉన్నాయి. మీరు మొదట నేషనల్ కన్స్యూమర్ హెల్ప్‌లైన్‌ను సంప్రదించవచ్చు లేదా నేరుగా ఇ-జాగృతి పోర్టల్ ద్వారా జిల్లా వినియోగదారుల కమిషన్‌లో ఫిర్యాదు దాఖలు చేయవచ్చు."
+            }
+          ]
+        },
+        "reply": "మీ వద్ద చెల్లింపు రసీదు, ప్రకటన స్క్రీన్‌షాట్ మరియు ఈమెయిళ్లు ఉన్నాయి. మీరు మొదట నేషనల్ కన్స్యూమర్ హెల్ప్‌లైన్‌ను సంప్రదించవచ్చు లేదా నేరుగా ఇ-జాగృతి పోర్టల్ ద్వారా జిల్లా వినియోగదారుల కమిషన్‌లో ఫిర్యాదు దాఖలు చేయవచ్చు.",
+        "plan": {
+          "evidence_have": [
+            "చెల్లింపు రసీదు (Payment receipt)",
+            "ప్రకటన స్క్రీన్‌షాట్ (Ad screenshot)",
+            "ఈమెయిల్ (Email communications)"
+          ],
+          "evidence_missing": [
+            "కోర్సు లోపాలను చూపించే స్క్రీన్ రికార్డింగ్‌లు"
+          ],
+          "steps": [
+            {
+              "title": "రాతపూర్వక డిమాండ్ నోటీసు లేదా ఈమెయిల్ పంపండి",
+              "detail": "కోర్సు నిర్వాహకులకు మీ వద్ద ఉన్న ఈమెయిల్ ద్వారా స్పష్టంగా రీఫండ్ కోరుతూ చివరిసారిగా వ్రాతపూర్వక డిమాండ్ పంపండి.",
+              "where": "ఈమెయిల్ ద్వారా"
+            },
+            {
+              "title": "నేషనల్ కన్స్యూమర్ హెల్ప్‌లైన్ (NCH) లో ఫిర్యాదు చేయండి",
+              "detail": "1915 నంబర్‌కు కాల్ చేయడం ద్వారా లేదా INGRAM పోర్టల్ ద్వారా ఆన్‌లైన్ కోర్సు నిర్వాహకులపై ఫిర్యాదు నమోదు చేయండి.",
+              "where": "consumerhelpline.gov.in లేదా 1915"
+            },
+            {
+              "title": "ఇ-జాగృతి పోర్టల్ ద్వారా వినియోగదారుల కమిషన్‌లో ఫిర్యాదు చేయండి",
+              "detail": "నిర్వాహకులు స్పందించకపోతే, మీరు చెల్లించిన మొత్తం రూ. 5000 ఆధారంగా ఇ-జాగృతి పోర్టల్ ద్వారా జిల్లా వినియోగదారుల కమిషన్‌లో ఆన్‌లైన్‌లో ఫిర్యాదు చేయవచ్చు.",
+              "where": "e-jagriti.gov.in"
+            }
+          ],
+          "forum": "District Consumer Commission",
+          "confidence": "high",
+          "summary": "మీ వద్ద చెల్లింపు రసీదు, ప్రకటన స్క్రీన్‌షాట్ మరియు ఈమెయిళ్లు ఉన్నాయి. మీరు మొదట నేషనల్ కన్స్యూమర్ హెల్ప్‌లైన్‌ను సంప్రదించవచ్చు లేదా నేరుగా ఇ-జాగృతి పోర్టల్ ద్వారా జిల్లా వినియోగదారుల కమిషన్‌లో ఫిర్యాదు దాఖలు చేయవచ్చు.",
+          "draft_document": {
+            "type": "legal_notice",
+            "text": "To,\n[ONLINE COURSE PROVIDER NAME/MANAGEMENT],\n[PROVIDER ADDRESS OR EMAIL]\n\nSUBJECT: DEMAND FOR REFUND OF RS. 5000 FOR DEFICIENT ONLINE COURSE SERVICE\n\nDear Sir/Madam,\n\nI, [YOUR NAME], resident of [YOUR ADDRESS], had purchased your online course on [DATE] by paying an amount of Rs. 5000 vide payment receipt/transaction ID [TRANSACTION ID]. \n\nThe course provided by you was not as per the description and advertisements shown, which amounts to a deficiency in service and unfair trade practice under the Consumer Protection Act, 2019. I approached you on [DATE] requesting a refund, but no positive action has been taken.\n\nThrough this notice, I demand the immediate refund of Rs. 5000 within 15 days of receiving this notice. If you fail to refund the amount, I will be forced to initiate legal proceedings against you before the District Consumer Commission and other appropriate forums.\n\nSincerely,\n[YOUR NAME]\n[YOUR CONTACT NUMBER]\n[YOUR EMAIL]"
+          }
+        },
+        "verdict": {
+          "level": "can_help",
+          "reasons": [
+            "This is covered by the verified laws in this tool. You can start on your own with the steps below."
+          ]
+        },
+        "warnings": []
+      }
+    }
+  ]
+}

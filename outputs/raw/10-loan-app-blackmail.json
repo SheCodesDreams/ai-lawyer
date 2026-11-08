@@ -1,0 +1,567 @@
+{
+  "case": {
+    "id": "10-loan-app-blackmail",
+    "note": "Threats and blackmail -> urgent lawyer/police.",
+    "story": "I took a small loan of Rs 5000 from an app. Now they are sending my morphed photos to my contacts and threatening to defame me unless I pay Rs 30000.",
+    "extra": "It started 3 days ago. I have screenshots of the threats.",
+    "proofs": "I have screenshots, their phone numbers and the loan app name.",
+    "expect": {
+      "verdict": "needs_lawyer"
+    }
+  },
+  "seconds": 27,
+  "checks": [
+    {
+      "name": "verdict = needs_lawyer",
+      "ok": true,
+      "detail": "needs_lawyer"
+    }
+  ],
+  "row": {
+    "id": "10-loan-app-blackmail",
+    "pass": true,
+    "verdict": "needs_lawyer",
+    "issue": "cheating_scam",
+    "seconds": 27,
+    "warnings": 0,
+    "failed": []
+  },
+  "turns": [
+    {
+      "label": "story",
+      "user": "I took a small loan of Rs 5000 from an app. Now they are sending my morphed photos to my contacts and threatening to defame me unless I pay Rs 30000.",
+      "result": {
+        "state": {
+          "stage": "intake",
+          "story": {
+            "summary": "The user took a small loan of Rs 5000 from an app, and the app is now sending morphed photos to contacts and demanding Rs 30000 with threats of defamation.",
+            "timeline": [
+              {
+                "when": "unknown",
+                "what": "User took a loan of Rs 5000 from an app"
+              },
+              {
+                "when": "recently",
+                "what": "App started sending morphed photos to contacts and demanding Rs 30000"
+              }
+            ],
+            "opposite_party": "Loan app",
+            "platform": "Loan app",
+            "amount_inr": 30000,
+            "payment_method": null,
+            "proof_mentioned": [
+              "morphed photos",
+              "threat messages"
+            ],
+            "user_goal": "Stop harassment, defamation, and extortion threats from the loan app",
+            "months_since_event": null,
+            "event_date": null,
+            "flags": {
+              "threats_or_violence": true,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": null,
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I took a small loan of Rs 5000 from an app. Now they are sending my morphed photos to my contacts and threatening to defame me unless I pay Rs 30000."
+            },
+            {
+              "role": "assistant",
+              "text": "I am so sorry you are going through this. Please do not panic. To help you take action, could you tell me the name of the app and approximately when they started sending these messages and threats?"
+            }
+          ]
+        },
+        "reply": "I am so sorry you are going through this. Please do not panic. To help you take action, could you tell me the name of the app and approximately when they started sending these messages and threats?",
+        "warnings": []
+      }
+    },
+    {
+      "label": "extra details",
+      "user": "It started 3 days ago. I have screenshots of the threats.",
+      "result": {
+        "state": {
+          "stage": "confirm",
+          "story": {
+            "summary": "The user took a small loan of Rs 5000 from an app, and the app is now sending morphed photos to contacts and demanding Rs 30000 with threats of defamation.",
+            "timeline": [
+              {
+                "when": "unknown",
+                "what": "User took a loan of Rs 5000 from an app"
+              },
+              {
+                "when": "2025-11-05",
+                "what": "App started sending morphed photos and making extortion threats demanding Rs 30000"
+              }
+            ],
+            "opposite_party": "Loan app",
+            "platform": "Loan app",
+            "amount_inr": 30000,
+            "payment_method": null,
+            "proof_mentioned": [
+              "morphed photos",
+              "threat messages",
+              "screenshots"
+            ],
+            "user_goal": "Stop harassment, defamation, and extortion threats from the loan app",
+            "months_since_event": 12,
+            "event_date": "2025-11-05",
+            "flags": {
+              "threats_or_violence": true,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": null,
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I took a small loan of Rs 5000 from an app. Now they are sending my morphed photos to my contacts and threatening to defame me unless I pay Rs 30000."
+            },
+            {
+              "role": "assistant",
+              "text": "I am so sorry you are going through this. Please do not panic. To help you take action, could you tell me the name of the app and approximately when they started sending these messages and threats?"
+            },
+            {
+              "role": "user",
+              "text": "It started 3 days ago. I have screenshots of the threats."
+            },
+            {
+              "role": "assistant",
+              "text": "This is a serious matter of harassment and extortion by an illegal loan app. You have screenshots of the threats and it started 3 days ago around 2025-11-05. Is this correct? Say yes, or tell me what to change."
+            }
+          ]
+        },
+        "reply": "This is a serious matter of harassment and extortion by an illegal loan app. You have screenshots of the threats and it started 3 days ago around 2025-11-05. Is this correct? Say yes, or tell me what to change.",
+        "warnings": []
+      }
+    },
+    {
+      "label": "confirm",
+      "user": "Yes, that is correct.",
+      "result": {
+        "state": {
+          "stage": "evidence",
+          "story": {
+            "summary": "The user took a small loan of Rs 5000 from an app, and the app is now sending morphed photos to contacts and demanding Rs 30000 with threats of defamation.",
+            "timeline": [
+              {
+                "when": "unknown",
+                "what": "User took a loan of Rs 5000 from an app"
+              },
+              {
+                "when": "2025-11-05",
+                "what": "App started sending morphed photos and making extortion threats demanding Rs 30000"
+              }
+            ],
+            "opposite_party": "Loan app",
+            "platform": "Loan app",
+            "amount_inr": 30000,
+            "payment_method": null,
+            "proof_mentioned": [
+              "morphed photos",
+              "threat messages",
+              "screenshots"
+            ],
+            "user_goal": "Stop harassment, defamation, and extortion threats from the loan app",
+            "months_since_event": 12,
+            "event_date": "2025-11-05",
+            "flags": {
+              "threats_or_violence": true,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "cheating_scam",
+            "plain_explanation": "You are facing severe harassment, extortion, and defamation by an illegal loan app that is sending morphed photos to your contacts and demanding an excessive amount. This is a criminal offence involving extortion and intimidation. You can report this immediately to the cyber crime authorities and the police to protect yourself and stop the harassment. You also have options to report financial fraud online, but please note that police actions and financial recovery outcomes cannot be guaranteed.",
+            "provisions": [
+              {
+                "id": "BNS-308-351",
+                "why": "This covers extortion and criminal intimidation, which applies directly when a loan app uses threats, blackmail, and harassment to force you to pay money.",
+                "reference": "Sections 308 and 351",
+                "instrument": "Bharatiya Nyaya Sanhita, 2023",
+                "title": "Extortion and criminal intimidation",
+                "source_url": "https://egazette.gov.in/WriteReadData/2023/250883.pdf",
+                "source_type": "official"
+              },
+              {
+                "id": "PROC-CYBER",
+                "why": "This provides the immediate practical step of reporting online financial fraud and cyber harassment through the national cyber crime portal or helpline 1930.",
+                "reference": "cybercrime.gov.in, 1930",
+                "instrument": "National Cyber Crime Reporting Portal / helpline 1930",
+                "title": "Report online financial fraud immediately",
+                "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2085609&reg=3&lang=2",
+                "source_type": "official"
+              },
+              {
+                "id": "BNSS-173",
+                "why": "This explains how you can file a police complaint or FIR regarding cognizable offences like extortion and threats.",
+                "reference": "Section 173",
+                "instrument": "Bharatiya Nagarik Suraksha Sanhita, 2023",
+                "title": "Filing an FIR, including electronically, and what to do if police refuse",
+                "source_url": "https://egazette.gov.in/WriteReadData/2023/250884.pdf",
+                "source_type": "official"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "Screenshots of threat messages",
+                "why": "Crucial proof of the extortion demands and messages sent by the loan app.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Morphed photos sent to contacts",
+                "why": "Serves as direct evidence of defamation and malicious harassment.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "App details or download link",
+                "why": "Helps authorities identify the fraudulent app and developers.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Bank statements or transaction proofs",
+                "why": "Shows the initial receipt of the loan amount if any money was transferred.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "List of contacts who received messages",
+                "why": "Documents the extent of the defamation and harassment.",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "Do you have the app's name, transaction history of the initial loan, and contact details of the people who received the morphed photos, and have you already reported this to the cyber crime helpline 1930 or local police?"
+          },
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I took a small loan of Rs 5000 from an app. Now they are sending my morphed photos to my contacts and threatening to defame me unless I pay Rs 30000."
+            },
+            {
+              "role": "assistant",
+              "text": "I am so sorry you are going through this. Please do not panic. To help you take action, could you tell me the name of the app and approximately when they started sending these messages and threats?"
+            },
+            {
+              "role": "user",
+              "text": "It started 3 days ago. I have screenshots of the threats."
+            },
+            {
+              "role": "assistant",
+              "text": "This is a serious matter of harassment and extortion by an illegal loan app. You have screenshots of the threats and it started 3 days ago around 2025-11-05. Is this correct? Say yes, or tell me what to change."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "You are facing severe harassment, extortion, and defamation by an illegal loan app that is sending morphed photos to your contacts and demanding an excessive amount. This is a criminal offence involving extortion and intimidation. You can report this immediately to the cyber crime authorities and the police to protect yourself and stop the harassment. You also have options to report financial fraud online, but please note that police actions and financial recovery outcomes cannot be guaranteed.\n\nDo you have the app's name, transaction history of the initial loan, and contact details of the people who received the morphed photos, and have you already reported this to the cyber crime helpline 1930 or local police?"
+            }
+          ]
+        },
+        "reply": "You are facing severe harassment, extortion, and defamation by an illegal loan app that is sending morphed photos to your contacts and demanding an excessive amount. This is a criminal offence involving extortion and intimidation. You can report this immediately to the cyber crime authorities and the police to protect yourself and stop the harassment. You also have options to report financial fraud online, but please note that police actions and financial recovery outcomes cannot be guaranteed.\n\nDo you have the app's name, transaction history of the initial loan, and contact details of the people who received the morphed photos, and have you already reported this to the cyber crime helpline 1930 or local police?",
+        "analysis": {
+          "issue_type": "cheating_scam",
+          "plain_explanation": "You are facing severe harassment, extortion, and defamation by an illegal loan app that is sending morphed photos to your contacts and demanding an excessive amount. This is a criminal offence involving extortion and intimidation. You can report this immediately to the cyber crime authorities and the police to protect yourself and stop the harassment. You also have options to report financial fraud online, but please note that police actions and financial recovery outcomes cannot be guaranteed.",
+          "provisions": [
+            {
+              "id": "BNS-308-351",
+              "why": "This covers extortion and criminal intimidation, which applies directly when a loan app uses threats, blackmail, and harassment to force you to pay money.",
+              "reference": "Sections 308 and 351",
+              "instrument": "Bharatiya Nyaya Sanhita, 2023",
+              "title": "Extortion and criminal intimidation",
+              "source_url": "https://egazette.gov.in/WriteReadData/2023/250883.pdf",
+              "source_type": "official"
+            },
+            {
+              "id": "PROC-CYBER",
+              "why": "This provides the immediate practical step of reporting online financial fraud and cyber harassment through the national cyber crime portal or helpline 1930.",
+              "reference": "cybercrime.gov.in, 1930",
+              "instrument": "National Cyber Crime Reporting Portal / helpline 1930",
+              "title": "Report online financial fraud immediately",
+              "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2085609&reg=3&lang=2",
+              "source_type": "official"
+            },
+            {
+              "id": "BNSS-173",
+              "why": "This explains how you can file a police complaint or FIR regarding cognizable offences like extortion and threats.",
+              "reference": "Section 173",
+              "instrument": "Bharatiya Nagarik Suraksha Sanhita, 2023",
+              "title": "Filing an FIR, including electronically, and what to do if police refuse",
+              "source_url": "https://egazette.gov.in/WriteReadData/2023/250884.pdf",
+              "source_type": "official"
+            }
+          ],
+          "evidence_checklist": [
+            {
+              "item": "Screenshots of threat messages",
+              "why": "Crucial proof of the extortion demands and messages sent by the loan app.",
+              "mentioned_by_user": true
+            },
+            {
+              "item": "Morphed photos sent to contacts",
+              "why": "Serves as direct evidence of defamation and malicious harassment.",
+              "mentioned_by_user": true
+            },
+            {
+              "item": "App details or download link",
+              "why": "Helps authorities identify the fraudulent app and developers.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Bank statements or transaction proofs",
+              "why": "Shows the initial receipt of the loan amount if any money was transferred.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "List of contacts who received messages",
+              "why": "Documents the extent of the defamation and harassment.",
+              "mentioned_by_user": false
+            }
+          ],
+          "ask": "Do you have the app's name, transaction history of the initial loan, and contact details of the people who received the morphed photos, and have you already reported this to the cyber crime helpline 1930 or local police?"
+        },
+        "warnings": []
+      }
+    },
+    {
+      "label": "proofs",
+      "user": "I have screenshots, their phone numbers and the loan app name.",
+      "result": {
+        "state": {
+          "stage": "done",
+          "story": {
+            "summary": "The user took a small loan of Rs 5000 from an app, and the app is now sending morphed photos to contacts and demanding Rs 30000 with threats of defamation.",
+            "timeline": [
+              {
+                "when": "unknown",
+                "what": "User took a loan of Rs 5000 from an app"
+              },
+              {
+                "when": "2025-11-05",
+                "what": "App started sending morphed photos and making extortion threats demanding Rs 30000"
+              }
+            ],
+            "opposite_party": "Loan app",
+            "platform": "Loan app",
+            "amount_inr": 30000,
+            "payment_method": null,
+            "proof_mentioned": [
+              "morphed photos",
+              "threat messages",
+              "screenshots"
+            ],
+            "user_goal": "Stop harassment, defamation, and extortion threats from the loan app",
+            "months_since_event": 12,
+            "event_date": "2025-11-05",
+            "flags": {
+              "threats_or_violence": true,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "cheating_scam",
+            "plain_explanation": "You are facing severe harassment, extortion, and defamation by an illegal loan app that is sending morphed photos to your contacts and demanding an excessive amount. This is a criminal offence involving extortion and intimidation. You can report this immediately to the cyber crime authorities and the police to protect yourself and stop the harassment. You also have options to report financial fraud online, but please note that police actions and financial recovery outcomes cannot be guaranteed.",
+            "provisions": [
+              {
+                "id": "BNS-308-351",
+                "why": "This covers extortion and criminal intimidation, which applies directly when a loan app uses threats, blackmail, and harassment to force you to pay money.",
+                "reference": "Sections 308 and 351",
+                "instrument": "Bharatiya Nyaya Sanhita, 2023",
+                "title": "Extortion and criminal intimidation",
+                "source_url": "https://egazette.gov.in/WriteReadData/2023/250883.pdf",
+                "source_type": "official"
+              },
+              {
+                "id": "PROC-CYBER",
+                "why": "This provides the immediate practical step of reporting online financial fraud and cyber harassment through the national cyber crime portal or helpline 1930.",
+                "reference": "cybercrime.gov.in, 1930",
+                "instrument": "National Cyber Crime Reporting Portal / helpline 1930",
+                "title": "Report online financial fraud immediately",
+                "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2085609&reg=3&lang=2",
+                "source_type": "official"
+              },
+              {
+                "id": "BNSS-173",
+                "why": "This explains how you can file a police complaint or FIR regarding cognizable offences like extortion and threats.",
+                "reference": "Section 173",
+                "instrument": "Bharatiya Nagarik Suraksha Sanhita, 2023",
+                "title": "Filing an FIR, including electronically, and what to do if police refuse",
+                "source_url": "https://egazette.gov.in/WriteReadData/2023/250884.pdf",
+                "source_type": "official"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "Screenshots of threat messages",
+                "why": "Crucial proof of the extortion demands and messages sent by the loan app.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Morphed photos sent to contacts",
+                "why": "Serves as direct evidence of defamation and malicious harassment.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "App details or download link",
+                "why": "Helps authorities identify the fraudulent app and developers.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Bank statements or transaction proofs",
+                "why": "Shows the initial receipt of the loan amount if any money was transferred.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "List of contacts who received messages",
+                "why": "Documents the extent of the defamation and harassment.",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "Do you have the app's name, transaction history of the initial loan, and contact details of the people who received the morphed photos, and have you already reported this to the cyber crime helpline 1930 or local police?"
+          },
+          "plan": {
+            "evidence_have": [
+              "Screenshots of threat messages",
+              "Morphed photos sent to contacts",
+              "Loan app name",
+              "Phone numbers used by the app"
+            ],
+            "evidence_missing": [
+              "Bank statements or transaction proofs of the initial loan",
+              "List of contacts who received messages"
+            ],
+            "steps": [
+              {
+                "title": "Report immediately on the cyber crime portal or helpline 1930",
+                "detail": "Contact the National Cyber Crime Reporting Portal at cybercrime.gov.in or call 1930 immediately to report financial extortion, cyber harassment, and the illegal loan app. Keep all screenshots ready as proof.",
+                "where": "cybercrime.gov.in or helpline 1930"
+              },
+              {
+                "title": "File a police complaint or FIR",
+                "detail": "Approach your local police station to file a formal complaint regarding extortion, criminal intimidation, and defamation under sections 308 and 351 of the Bharatiya Nyaya Sanhita, 2023. Provide your screenshots and app details.",
+                "where": "Local Police Station"
+              },
+              {
+                "title": "(General) Inform your contacts and secure your accounts",
+                "detail": "Warn your friends, family, and colleagues that your photos have been morphed by a fraudulent loan app and advise them to block the numbers sending these messages. Change your social media privacy settings immediately.",
+                "where": "Phone contacts and social media platforms"
+              },
+              {
+                "title": "Seek free legal aid and guidance",
+                "detail": "If you need professional guidance or assistance with legal filings, contact the District Legal Services Authority or call the NALSA toll-free helpline for free legal aid.",
+                "where": "District Legal Services Authority / Helpline 15100"
+              }
+            ],
+            "forum": "Cyber Crime Cell and Local Police Station, because you are facing criminal extortion, online harassment, and defamation by an illegal app.",
+            "confidence": "high",
+            "summary": "You are facing severe criminal extortion, harassment, and defamation from an illegal loan app. Since you have screenshots and the app details, you should immediately report the matter to the cyber crime helpline 1930 or cybercrime.gov.in and file a police complaint for criminal intimidation and extortion.",
+            "draft_document": {
+              "type": "complaint",
+              "text": "To,\nThe Officer In Charge,\nCyber Crime Cell / Local Police Station,\n[YOUR CITY/DISTRICT]\n\nSUBJECT: COMPLAINT AGAINST ILLEGAL LOAN APP FOR EXTORTION, CRIMINAL INTIMIDATION, AND DEFAMATION\n\nRespected Sir/Madam,\n\nI am writing to formally report severe harassment, extortion, and criminal intimidation being conducted against me by an illegal loan application operating under the name [LOAN APP NAME].\n\n1. I took a small loan of Rs 5000 through the said app. \n2. Starting on or around [DATE], the representatives of the app began demanding an exorbitant amount of Rs 30000.\n3. Upon my inability to pay this inflated demand, the app started sending morphed, obscene, and defamatory photos of me to my personal contacts.\n4. They are continuously sending threatening messages and making extortion demands, causing severe mental agony and harming my reputation.\n\nI have attached screenshots of the threat messages, details of the app, and phone numbers used by the perpetrators as evidence.\n\nI request you to kindly register an FIR under relevant provisions including Sections 308 and 351 of the Bharatiya Nyaya Sanhita, 2023, investigate this matter, freeze their accounts, and take strict legal action against the culprits to stop this harassment.\n\nThanking you,\n\n[YOUR NAME]\n[YOUR PHONE NUMBER]\n[YOUR ADDRESS]\nDate: [DATE]"
+            }
+          },
+          "verdict": {
+            "level": "needs_lawyer",
+            "reasons": [
+              "There are threats, blackmail or violence involved. Report it to the police now, keep all messages, and involve a lawyer. The steps below still apply."
+            ]
+          },
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I took a small loan of Rs 5000 from an app. Now they are sending my morphed photos to my contacts and threatening to defame me unless I pay Rs 30000."
+            },
+            {
+              "role": "assistant",
+              "text": "I am so sorry you are going through this. Please do not panic. To help you take action, could you tell me the name of the app and approximately when they started sending these messages and threats?"
+            },
+            {
+              "role": "user",
+              "text": "It started 3 days ago. I have screenshots of the threats."
+            },
+            {
+              "role": "assistant",
+              "text": "This is a serious matter of harassment and extortion by an illegal loan app. You have screenshots of the threats and it started 3 days ago around 2025-11-05. Is this correct? Say yes, or tell me what to change."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "You are facing severe harassment, extortion, and defamation by an illegal loan app that is sending morphed photos to your contacts and demanding an excessive amount. This is a criminal offence involving extortion and intimidation. You can report this immediately to the cyber crime authorities and the police to protect yourself and stop the harassment. You also have options to report financial fraud online, but please note that police actions and financial recovery outcomes cannot be guaranteed.\n\nDo you have the app's name, transaction history of the initial loan, and contact details of the people who received the morphed photos, and have you already reported this to the cyber crime helpline 1930 or local police?"
+            },
+            {
+              "role": "user",
+              "text": "I have screenshots, their phone numbers and the loan app name."
+            },
+            {
+              "role": "assistant",
+              "text": "You are facing severe criminal extortion, harassment, and defamation from an illegal loan app. Since you have screenshots and the app details, you should immediately report the matter to the cyber crime helpline 1930 or cybercrime.gov.in and file a police complaint for criminal intimidation and extortion."
+            }
+          ]
+        },
+        "reply": "You are facing severe criminal extortion, harassment, and defamation from an illegal loan app. Since you have screenshots and the app details, you should immediately report the matter to the cyber crime helpline 1930 or cybercrime.gov.in and file a police complaint for criminal intimidation and extortion.",
+        "plan": {
+          "evidence_have": [
+            "Screenshots of threat messages",
+            "Morphed photos sent to contacts",
+            "Loan app name",
+            "Phone numbers used by the app"
+          ],
+          "evidence_missing": [
+            "Bank statements or transaction proofs of the initial loan",
+            "List of contacts who received messages"
+          ],
+          "steps": [
+            {
+              "title": "Report immediately on the cyber crime portal or helpline 1930",
+              "detail": "Contact the National Cyber Crime Reporting Portal at cybercrime.gov.in or call 1930 immediately to report financial extortion, cyber harassment, and the illegal loan app. Keep all screenshots ready as proof.",
+              "where": "cybercrime.gov.in or helpline 1930"
+            },
+            {
+              "title": "File a police complaint or FIR",
+              "detail": "Approach your local police station to file a formal complaint regarding extortion, criminal intimidation, and defamation under sections 308 and 351 of the Bharatiya Nyaya Sanhita, 2023. Provide your screenshots and app details.",
+              "where": "Local Police Station"
+            },
+            {
+              "title": "(General) Inform your contacts and secure your accounts",
+              "detail": "Warn your friends, family, and colleagues that your photos have been morphed by a fraudulent loan app and advise them to block the numbers sending these messages. Change your social media privacy settings immediately.",
+              "where": "Phone contacts and social media platforms"
+            },
+            {
+              "title": "Seek free legal aid and guidance",
+              "detail": "If you need professional guidance or assistance with legal filings, contact the District Legal Services Authority or call the NALSA toll-free helpline for free legal aid.",
+              "where": "District Legal Services Authority / Helpline 15100"
+            }
+          ],
+          "forum": "Cyber Crime Cell and Local Police Station, because you are facing criminal extortion, online harassment, and defamation by an illegal app.",
+          "confidence": "high",
+          "summary": "You are facing severe criminal extortion, harassment, and defamation from an illegal loan app. Since you have screenshots and the app details, you should immediately report the matter to the cyber crime helpline 1930 or cybercrime.gov.in and file a police complaint for criminal intimidation and extortion.",
+          "draft_document": {
+            "type": "complaint",
+            "text": "To,\nThe Officer In Charge,\nCyber Crime Cell / Local Police Station,\n[YOUR CITY/DISTRICT]\n\nSUBJECT: COMPLAINT AGAINST ILLEGAL LOAN APP FOR EXTORTION, CRIMINAL INTIMIDATION, AND DEFAMATION\n\nRespected Sir/Madam,\n\nI am writing to formally report severe harassment, extortion, and criminal intimidation being conducted against me by an illegal loan application operating under the name [LOAN APP NAME].\n\n1. I took a small loan of Rs 5000 through the said app. \n2. Starting on or around [DATE], the representatives of the app began demanding an exorbitant amount of Rs 30000.\n3. Upon my inability to pay this inflated demand, the app started sending morphed, obscene, and defamatory photos of me to my personal contacts.\n4. They are continuously sending threatening messages and making extortion demands, causing severe mental agony and harming my reputation.\n\nI have attached screenshots of the threat messages, details of the app, and phone numbers used by the perpetrators as evidence.\n\nI request you to kindly register an FIR under relevant provisions including Sections 308 and 351 of the Bharatiya Nyaya Sanhita, 2023, investigate this matter, freeze their accounts, and take strict legal action against the culprits to stop this harassment.\n\nThanking you,\n\n[YOUR NAME]\n[YOUR PHONE NUMBER]\n[YOUR ADDRESS]\nDate: [DATE]"
+          }
+        },
+        "verdict": {
+          "level": "needs_lawyer",
+          "reasons": [
+            "There are threats, blackmail or violence involved. Report it to the police now, keep all messages, and involve a lawyer. The steps below still apply."
+          ]
+        },
+        "warnings": []
+      }
+    }
+  ]
+}

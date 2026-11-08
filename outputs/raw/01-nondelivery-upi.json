@@ -1,0 +1,532 @@
+{
+  "case": {
+    "id": "01-nondelivery-upi",
+    "note": "Core case: paid, never delivered, seller silent.",
+    "story": "I ordered a phone from a website called MobileMart24 for Rs 18000 on 20 Oct 2026 and paid by UPI. It was never delivered and now they do not reply to my messages. I want my money back.",
+    "extra": "The website has no phone number, only a chat box. I have the order screenshot and UPI receipt.",
+    "proofs": "I have the order confirmation screenshot, the UPI payment receipt, and my chat messages. I messaged them 3 times, no reply.",
+    "expect": {
+      "verdict": "can_help",
+      "issue_type": "refund_or_nondelivery"
+    }
+  },
+  "seconds": 23,
+  "checks": [
+    {
+      "name": "verdict = can_help",
+      "ok": true,
+      "detail": "can_help"
+    },
+    {
+      "name": "issue_type = refund_or_nondelivery",
+      "ok": true,
+      "detail": "refund_or_nondelivery"
+    }
+  ],
+  "row": {
+    "id": "01-nondelivery-upi",
+    "pass": true,
+    "verdict": "can_help",
+    "issue": "refund_or_nondelivery",
+    "seconds": 23,
+    "warnings": 0,
+    "failed": []
+  },
+  "turns": [
+    {
+      "label": "story",
+      "user": "I ordered a phone from a website called MobileMart24 for Rs 18000 on 20 Oct 2026 and paid by UPI. It was never delivered and now they do not reply to my messages. I want my money back.",
+      "result": {
+        "state": {
+          "stage": "confirm",
+          "story": {
+            "summary": "User ordered a phone for Rs 18000 from MobileMart24 on 20 Oct 2026 using UPI. The phone was never delivered, seller is unresponsive, and user wants a refund.",
+            "timeline": [
+              {
+                "when": "2026-10-20",
+                "what": "Ordered a phone for Rs 18000 from MobileMart24 and paid via UPI."
+              }
+            ],
+            "opposite_party": "MobileMart24",
+            "platform": "MobileMart24",
+            "amount_inr": 18000,
+            "payment_method": "UPI",
+            "proof_mentioned": [],
+            "user_goal": "Refund",
+            "months_since_event": 1,
+            "event_date": "2026-10-20",
+            "flags": {
+              "threats_or_violence": false,
+              "court_case_filed": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": null,
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I ordered a phone from a website called MobileMart24 for Rs 18000 on 20 Oct 2026 and paid by UPI. It was never delivered and now they do not reply to my messages. I want my money back."
+            },
+            {
+              "role": "assistant",
+              "text": "You ordered a phone for Rs 18,000 from MobileMart24 on October 20, 2026, paid via UPI, but it was never delivered and the seller is not responding. You want a refund. Is this correct? Say yes, or tell me what to change."
+            }
+          ]
+        },
+        "reply": "You ordered a phone for Rs 18,000 from MobileMart24 on October 20, 2026, paid via UPI, but it was never delivered and the seller is not responding. You want a refund. Is this correct? Say yes, or tell me what to change.",
+        "warnings": []
+      }
+    },
+    {
+      "label": "confirm",
+      "user": "Yes, that is correct.",
+      "result": {
+        "state": {
+          "stage": "evidence",
+          "story": {
+            "summary": "User ordered a phone for Rs 18000 from MobileMart24 on 20 Oct 2026 using UPI. The phone was never delivered, seller is unresponsive, and user wants a refund.",
+            "timeline": [
+              {
+                "when": "2026-10-20",
+                "what": "Ordered a phone for Rs 18000 from MobileMart24 and paid via UPI."
+              }
+            ],
+            "opposite_party": "MobileMart24",
+            "platform": "MobileMart24",
+            "amount_inr": 18000,
+            "payment_method": "UPI",
+            "proof_mentioned": [],
+            "user_goal": "Refund",
+            "months_since_event": 1,
+            "event_date": "2026-10-20",
+            "flags": {
+              "threats_or_violence": false,
+              "court_case_filed": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "refund_or_nondelivery",
+            "plain_explanation": "You bought a phone for Rs 18,000 using UPI on October 20, 2026, from MobileMart24, but it was never delivered and the seller is not responding. You have the right to seek a full refund for undelivered goods under consumer and contract laws. Since the payment was made via UPI, you should immediately report the transaction to your bank and the national cyber crime reporting portal if it qualifies as an online fraud. You can also file a complaint through the National Consumer Helpline or approach the Consumer Disputes Redressal Commission if the seller continues to ignore you. However, refunds cannot be guaranteed, and outcomes depend on the evidence you provide and the response of the seller or bank.",
+            "provisions": [
+              {
+                "id": "CPA-2.7",
+                "why": "It defines you as a consumer since you paid for goods online.",
+                "reference": "Section 2(7)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of consumer",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "CPA-2.47",
+                "why": "It covers unfair trade practices when a seller refuses to deliver goods or refund money.",
+                "reference": "Section 2(47)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of unfair trade practice",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "SOGA-57-61",
+                "why": "It preserves your right to recover money paid when the consideration has failed due to non-delivery.",
+                "reference": "Sections 57 and 61",
+                "instrument": "Sale of Goods Act, 1930",
+                "title": "Buyer's remedies: non-delivery and money paid",
+                "source_url": "https://www.legalauthority.in/bare-act/sale-of-goods-act-1930",
+                "source_type": "secondary"
+              },
+              {
+                "id": "PROC-NCH",
+                "why": "It allows you to register a pre-litigation grievance through the National Consumer Helpline to bring the seller to the table.",
+                "reference": "1915 / 1800-11-4000 / INGRAM portal",
+                "instrument": "National Consumer Helpline (Department of Consumer Affairs)",
+                "title": "Pre-litigation step: National Consumer Helpline",
+                "source_url": "https://consumerhelpline.gov.in/public/about",
+                "source_type": "official"
+              },
+              {
+                "id": "PROC-CYBER",
+                "why": "It enables you to report online financial transactions and fraud immediately to prevent money from being siphoned off.",
+                "reference": "cybercrime.gov.in, 1930",
+                "instrument": "National Cyber Crime Reporting Portal / helpline 1930",
+                "title": "Report online financial fraud immediately",
+                "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2085609&reg=3&lang=2",
+                "source_type": "official"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "Order confirmation or invoice",
+                "why": "Proves that you placed the order with MobileMart24.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Payment screenshot or bank/UPI transaction receipt",
+                "why": "Shows that Rs 18,000 was paid to the seller on October 20, 2026.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Chat logs, emails, or messages sent to the seller",
+                "why": "Demonstrates that you tried to contact MobileMart24 and they did not reply.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Screenshots of the product listing or website",
+                "why": "Verifies the item you purchased and the terms shown at the time of order.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Bank statement reflecting the debit",
+                "why": "Serves as official financial proof of the payment made via UPI.",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "Do you have any of these proofs—such as the UPI payment receipt, order confirmation, or chat messages with the seller—and have you already contacted MobileMart24, your bank, or the cyber crime helpline regarding this issue?"
+          },
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I ordered a phone from a website called MobileMart24 for Rs 18000 on 20 Oct 2026 and paid by UPI. It was never delivered and now they do not reply to my messages. I want my money back."
+            },
+            {
+              "role": "assistant",
+              "text": "You ordered a phone for Rs 18,000 from MobileMart24 on October 20, 2026, paid via UPI, but it was never delivered and the seller is not responding. You want a refund. Is this correct? Say yes, or tell me what to change."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "You bought a phone for Rs 18,000 using UPI on October 20, 2026, from MobileMart24, but it was never delivered and the seller is not responding. You have the right to seek a full refund for undelivered goods under consumer and contract laws. Since the payment was made via UPI, you should immediately report the transaction to your bank and the national cyber crime reporting portal if it qualifies as an online fraud. You can also file a complaint through the National Consumer Helpline or approach the Consumer Disputes Redressal Commission if the seller continues to ignore you. However, refunds cannot be guaranteed, and outcomes depend on the evidence you provide and the response of the seller or bank.\n\nDo you have any of these proofs—such as the UPI payment receipt, order confirmation, or chat messages with the seller—and have you already contacted MobileMart24, your bank, or the cyber crime helpline regarding this issue?"
+            }
+          ]
+        },
+        "reply": "You bought a phone for Rs 18,000 using UPI on October 20, 2026, from MobileMart24, but it was never delivered and the seller is not responding. You have the right to seek a full refund for undelivered goods under consumer and contract laws. Since the payment was made via UPI, you should immediately report the transaction to your bank and the national cyber crime reporting portal if it qualifies as an online fraud. You can also file a complaint through the National Consumer Helpline or approach the Consumer Disputes Redressal Commission if the seller continues to ignore you. However, refunds cannot be guaranteed, and outcomes depend on the evidence you provide and the response of the seller or bank.\n\nDo you have any of these proofs—such as the UPI payment receipt, order confirmation, or chat messages with the seller—and have you already contacted MobileMart24, your bank, or the cyber crime helpline regarding this issue?",
+        "analysis": {
+          "issue_type": "refund_or_nondelivery",
+          "plain_explanation": "You bought a phone for Rs 18,000 using UPI on October 20, 2026, from MobileMart24, but it was never delivered and the seller is not responding. You have the right to seek a full refund for undelivered goods under consumer and contract laws. Since the payment was made via UPI, you should immediately report the transaction to your bank and the national cyber crime reporting portal if it qualifies as an online fraud. You can also file a complaint through the National Consumer Helpline or approach the Consumer Disputes Redressal Commission if the seller continues to ignore you. However, refunds cannot be guaranteed, and outcomes depend on the evidence you provide and the response of the seller or bank.",
+          "provisions": [
+            {
+              "id": "CPA-2.7",
+              "why": "It defines you as a consumer since you paid for goods online.",
+              "reference": "Section 2(7)",
+              "instrument": "Consumer Protection Act, 2019",
+              "title": "Definition of consumer",
+              "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+              "source_type": "secondary"
+            },
+            {
+              "id": "CPA-2.47",
+              "why": "It covers unfair trade practices when a seller refuses to deliver goods or refund money.",
+              "reference": "Section 2(47)",
+              "instrument": "Consumer Protection Act, 2019",
+              "title": "Definition of unfair trade practice",
+              "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+              "source_type": "secondary"
+            },
+            {
+              "id": "SOGA-57-61",
+              "why": "It preserves your right to recover money paid when the consideration has failed due to non-delivery.",
+              "reference": "Sections 57 and 61",
+              "instrument": "Sale of Goods Act, 1930",
+              "title": "Buyer's remedies: non-delivery and money paid",
+              "source_url": "https://www.legalauthority.in/bare-act/sale-of-goods-act-1930",
+              "source_type": "secondary"
+            },
+            {
+              "id": "PROC-NCH",
+              "why": "It allows you to register a pre-litigation grievance through the National Consumer Helpline to bring the seller to the table.",
+              "reference": "1915 / 1800-11-4000 / INGRAM portal",
+              "instrument": "National Consumer Helpline (Department of Consumer Affairs)",
+              "title": "Pre-litigation step: National Consumer Helpline",
+              "source_url": "https://consumerhelpline.gov.in/public/about",
+              "source_type": "official"
+            },
+            {
+              "id": "PROC-CYBER",
+              "why": "It enables you to report online financial transactions and fraud immediately to prevent money from being siphoned off.",
+              "reference": "cybercrime.gov.in, 1930",
+              "instrument": "National Cyber Crime Reporting Portal / helpline 1930",
+              "title": "Report online financial fraud immediately",
+              "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2085609&reg=3&lang=2",
+              "source_type": "official"
+            }
+          ],
+          "evidence_checklist": [
+            {
+              "item": "Order confirmation or invoice",
+              "why": "Proves that you placed the order with MobileMart24.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Payment screenshot or bank/UPI transaction receipt",
+              "why": "Shows that Rs 18,000 was paid to the seller on October 20, 2026.",
+              "mentioned_by_user": true
+            },
+            {
+              "item": "Chat logs, emails, or messages sent to the seller",
+              "why": "Demonstrates that you tried to contact MobileMart24 and they did not reply.",
+              "mentioned_by_user": true
+            },
+            {
+              "item": "Screenshots of the product listing or website",
+              "why": "Verifies the item you purchased and the terms shown at the time of order.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Bank statement reflecting the debit",
+              "why": "Serves as official financial proof of the payment made via UPI.",
+              "mentioned_by_user": false
+            }
+          ],
+          "ask": "Do you have any of these proofs—such as the UPI payment receipt, order confirmation, or chat messages with the seller—and have you already contacted MobileMart24, your bank, or the cyber crime helpline regarding this issue?"
+        },
+        "warnings": []
+      }
+    },
+    {
+      "label": "proofs",
+      "user": "I have the order confirmation screenshot, the UPI payment receipt, and my chat messages. I messaged them 3 times, no reply.",
+      "result": {
+        "state": {
+          "stage": "done",
+          "story": {
+            "summary": "User ordered a phone for Rs 18000 from MobileMart24 on 20 Oct 2026 using UPI. The phone was never delivered, seller is unresponsive, and user wants a refund.",
+            "timeline": [
+              {
+                "when": "2026-10-20",
+                "what": "Ordered a phone for Rs 18000 from MobileMart24 and paid via UPI."
+              }
+            ],
+            "opposite_party": "MobileMart24",
+            "platform": "MobileMart24",
+            "amount_inr": 18000,
+            "payment_method": "UPI",
+            "proof_mentioned": [],
+            "user_goal": "Refund",
+            "months_since_event": 1,
+            "event_date": "2026-10-20",
+            "flags": {
+              "threats_or_violence": false,
+              "court_case_filed": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "refund_or_nondelivery",
+            "plain_explanation": "You bought a phone for Rs 18,000 using UPI on October 20, 2026, from MobileMart24, but it was never delivered and the seller is not responding. You have the right to seek a full refund for undelivered goods under consumer and contract laws. Since the payment was made via UPI, you should immediately report the transaction to your bank and the national cyber crime reporting portal if it qualifies as an online fraud. You can also file a complaint through the National Consumer Helpline or approach the Consumer Disputes Redressal Commission if the seller continues to ignore you. However, refunds cannot be guaranteed, and outcomes depend on the evidence you provide and the response of the seller or bank.",
+            "provisions": [
+              {
+                "id": "CPA-2.7",
+                "why": "It defines you as a consumer since you paid for goods online.",
+                "reference": "Section 2(7)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of consumer",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "CPA-2.47",
+                "why": "It covers unfair trade practices when a seller refuses to deliver goods or refund money.",
+                "reference": "Section 2(47)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of unfair trade practice",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "SOGA-57-61",
+                "why": "It preserves your right to recover money paid when the consideration has failed due to non-delivery.",
+                "reference": "Sections 57 and 61",
+                "instrument": "Sale of Goods Act, 1930",
+                "title": "Buyer's remedies: non-delivery and money paid",
+                "source_url": "https://www.legalauthority.in/bare-act/sale-of-goods-act-1930",
+                "source_type": "secondary"
+              },
+              {
+                "id": "PROC-NCH",
+                "why": "It allows you to register a pre-litigation grievance through the National Consumer Helpline to bring the seller to the table.",
+                "reference": "1915 / 1800-11-4000 / INGRAM portal",
+                "instrument": "National Consumer Helpline (Department of Consumer Affairs)",
+                "title": "Pre-litigation step: National Consumer Helpline",
+                "source_url": "https://consumerhelpline.gov.in/public/about",
+                "source_type": "official"
+              },
+              {
+                "id": "PROC-CYBER",
+                "why": "It enables you to report online financial transactions and fraud immediately to prevent money from being siphoned off.",
+                "reference": "cybercrime.gov.in, 1930",
+                "instrument": "National Cyber Crime Reporting Portal / helpline 1930",
+                "title": "Report online financial fraud immediately",
+                "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2085609&reg=3&lang=2",
+                "source_type": "official"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "Order confirmation or invoice",
+                "why": "Proves that you placed the order with MobileMart24.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Payment screenshot or bank/UPI transaction receipt",
+                "why": "Shows that Rs 18,000 was paid to the seller on October 20, 2026.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Chat logs, emails, or messages sent to the seller",
+                "why": "Demonstrates that you tried to contact MobileMart24 and they did not reply.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Screenshots of the product listing or website",
+                "why": "Verifies the item you purchased and the terms shown at the time of order.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Bank statement reflecting the debit",
+                "why": "Serves as official financial proof of the payment made via UPI.",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "Do you have any of these proofs—such as the UPI payment receipt, order confirmation, or chat messages with the seller—and have you already contacted MobileMart24, your bank, or the cyber crime helpline regarding this issue?"
+          },
+          "plan": {
+            "evidence_have": [
+              "Order confirmation screenshot",
+              "UPI payment receipt",
+              "Chat messages showing no reply"
+            ],
+            "evidence_missing": [
+              "Bank statement reflecting the debit"
+            ],
+            "steps": [
+              {
+                "title": "Contact the seller in writing",
+                "detail": "Send a final written demand to MobileMart24 attaching your order confirmation, UPI payment receipt, and chat proof, asking for a full refund for the undelivered phone.",
+                "where": "Email or customer support chat of MobileMart24"
+              },
+              {
+                "title": "Call National Consumer Helpline (NCH)",
+                "detail": "Register a pre-litigation grievance against MobileMart24 by calling 1915 or using the INGRAM portal with your payment and order details.",
+                "where": "Call 1915 or visit consumerhelpline.gov.in"
+              },
+              {
+                "title": "Report at cybercrime.gov.in / 1930",
+                "detail": "Report the online financial fraud and non-delivery scam immediately on the national cyber crime reporting portal to protect your financial interests.",
+                "where": "Call 1930 or visit cybercrime.gov.in"
+              },
+              {
+                "title": "Inform your bank about the disputed transaction",
+                "detail": "Contact your bank's customer support immediately to report the unauthorized or fraudulent UPI transaction and check for chargeback options.",
+                "where": "Your bank's official customer care or branch"
+              },
+              {
+                "title": "File a consumer complaint on the e-Jagriti portal",
+                "detail": "If MobileMart24 fails to refund, file a formal consumer complaint online on the e-Jagriti portal since the amount paid is up to Rs 50 lakh.",
+                "where": "e-jagriti.gov.in"
+              }
+            ],
+            "forum": "District Consumer Commission",
+            "confidence": "high",
+            "summary": "You have solid evidence including order confirmation, UPI receipt, and unresponded chat logs. Since MobileMart24 failed to deliver your phone, you should report the matter to NCH 1915, the cybercrime portal 1930, notify your bank, and if needed, file a formal complaint on the e-Jagriti portal.",
+            "draft_document": {
+              "type": "legal_notice",
+              "text": "To,\nMobileMart24\n\nSubject: Legal notice for non-delivery of phone and demand for full refund of Rs 18,000\n\nDear Sir/Madam,\n\nI, [YOUR NAME], placed an order for a mobile phone on 20 Oct 2026 with your platform MobileMart24 and paid an amount of Rs 18,000 via UPI on the same date, vide transaction reference [TRANSACTION ID].\n\nAlthough the payment was successfully processed, you have failed to deliver the phone to date. Furthermore, despite multiple attempts to contact your support team through chat messages, you have completely ignored my requests and failed to provide any resolution or refund.\n\nYour failure to deliver the goods or refund the money amounts to a deficiency in service and an unfair trade practice under the Consumer Protection Act, 2019. \n\nThrough this notice, I call upon you to refund the entire amount of Rs 18,000 along with appropriate compensation within 7 days of receiving this notice. If you fail to do so, I shall be forced to initiate legal proceedings against you before the Consumer Disputes Redressal Commission and other appropriate forums at your risk and cost.\n\nSincerely,\n[YOUR NAME]\n[YOUR CONTACT INFORMATION]\nDate: [DATE]"
+            }
+          },
+          "verdict": {
+            "level": "can_help",
+            "reasons": [
+              "This is covered by the verified laws in this tool. You can start on your own with the steps below."
+            ]
+          },
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I ordered a phone from a website called MobileMart24 for Rs 18000 on 20 Oct 2026 and paid by UPI. It was never delivered and now they do not reply to my messages. I want my money back."
+            },
+            {
+              "role": "assistant",
+              "text": "You ordered a phone for Rs 18,000 from MobileMart24 on October 20, 2026, paid via UPI, but it was never delivered and the seller is not responding. You want a refund. Is this correct? Say yes, or tell me what to change."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "You bought a phone for Rs 18,000 using UPI on October 20, 2026, from MobileMart24, but it was never delivered and the seller is not responding. You have the right to seek a full refund for undelivered goods under consumer and contract laws. Since the payment was made via UPI, you should immediately report the transaction to your bank and the national cyber crime reporting portal if it qualifies as an online fraud. You can also file a complaint through the National Consumer Helpline or approach the Consumer Disputes Redressal Commission if the seller continues to ignore you. However, refunds cannot be guaranteed, and outcomes depend on the evidence you provide and the response of the seller or bank.\n\nDo you have any of these proofs—such as the UPI payment receipt, order confirmation, or chat messages with the seller—and have you already contacted MobileMart24, your bank, or the cyber crime helpline regarding this issue?"
+            },
+            {
+              "role": "user",
+              "text": "I have the order confirmation screenshot, the UPI payment receipt, and my chat messages. I messaged them 3 times, no reply."
+            },
+            {
+              "role": "assistant",
+              "text": "You have solid evidence including order confirmation, UPI receipt, and unresponded chat logs. Since MobileMart24 failed to deliver your phone, you should report the matter to NCH 1915, the cybercrime portal 1930, notify your bank, and if needed, file a formal complaint on the e-Jagriti portal."
+            }
+          ]
+        },
+        "reply": "You have solid evidence including order confirmation, UPI receipt, and unresponded chat logs. Since MobileMart24 failed to deliver your phone, you should report the matter to NCH 1915, the cybercrime portal 1930, notify your bank, and if needed, file a formal complaint on the e-Jagriti portal.",
+        "plan": {
+          "evidence_have": [
+            "Order confirmation screenshot",
+            "UPI payment receipt",
+            "Chat messages showing no reply"
+          ],
+          "evidence_missing": [
+            "Bank statement reflecting the debit"
+          ],
+          "steps": [
+            {
+              "title": "Contact the seller in writing",
+              "detail": "Send a final written demand to MobileMart24 attaching your order confirmation, UPI payment receipt, and chat proof, asking for a full refund for the undelivered phone.",
+              "where": "Email or customer support chat of MobileMart24"
+            },
+            {
+              "title": "Call National Consumer Helpline (NCH)",
+              "detail": "Register a pre-litigation grievance against MobileMart24 by calling 1915 or using the INGRAM portal with your payment and order details.",
+              "where": "Call 1915 or visit consumerhelpline.gov.in"
+            },
+            {
+              "title": "Report at cybercrime.gov.in / 1930",
+              "detail": "Report the online financial fraud and non-delivery scam immediately on the national cyber crime reporting portal to protect your financial interests.",
+              "where": "Call 1930 or visit cybercrime.gov.in"
+            },
+            {
+              "title": "Inform your bank about the disputed transaction",
+              "detail": "Contact your bank's customer support immediately to report the unauthorized or fraudulent UPI transaction and check for chargeback options.",
+              "where": "Your bank's official customer care or branch"
+            },
+            {
+              "title": "File a consumer complaint on the e-Jagriti portal",
+              "detail": "If MobileMart24 fails to refund, file a formal consumer complaint online on the e-Jagriti portal since the amount paid is up to Rs 50 lakh.",
+              "where": "e-jagriti.gov.in"
+            }
+          ],
+          "forum": "District Consumer Commission",
+          "confidence": "high",
+          "summary": "You have solid evidence including order confirmation, UPI receipt, and unresponded chat logs. Since MobileMart24 failed to deliver your phone, you should report the matter to NCH 1915, the cybercrime portal 1930, notify your bank, and if needed, file a formal complaint on the e-Jagriti portal.",
+          "draft_document": {
+            "type": "legal_notice",
+            "text": "To,\nMobileMart24\n\nSubject: Legal notice for non-delivery of phone and demand for full refund of Rs 18,000\n\nDear Sir/Madam,\n\nI, [YOUR NAME], placed an order for a mobile phone on 20 Oct 2026 with your platform MobileMart24 and paid an amount of Rs 18,000 via UPI on the same date, vide transaction reference [TRANSACTION ID].\n\nAlthough the payment was successfully processed, you have failed to deliver the phone to date. Furthermore, despite multiple attempts to contact your support team through chat messages, you have completely ignored my requests and failed to provide any resolution or refund.\n\nYour failure to deliver the goods or refund the money amounts to a deficiency in service and an unfair trade practice under the Consumer Protection Act, 2019. \n\nThrough this notice, I call upon you to refund the entire amount of Rs 18,000 along with appropriate compensation within 7 days of receiving this notice. If you fail to do so, I shall be forced to initiate legal proceedings against you before the Consumer Disputes Redressal Commission and other appropriate forums at your risk and cost.\n\nSincerely,\n[YOUR NAME]\n[YOUR CONTACT INFORMATION]\nDate: [DATE]"
+          }
+        },
+        "verdict": {
+          "level": "can_help",
+          "reasons": [
+            "This is covered by the verified laws in this tool. You can start on your own with the steps below."
+          ]
+        },
+        "warnings": []
+      }
+    }
+  ]
+}

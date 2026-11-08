@@ -1,0 +1,545 @@
+{
+  "case": {
+    "id": "07-large-amount",
+    "note": "Amount above Rs 50 lakh -> must recommend a lawyer.",
+    "story": "I paid Rs 60 lakh to a luxury car dealer for a car in January 2026. They have not delivered it and refuse to refund. I want my money back.",
+    "extra": "I paid by bank transfer 2 months ago. We have a signed booking agreement.",
+    "proofs": "I have the booking agreement, payment proof and emails.",
+    "expect": {
+      "verdict": "needs_lawyer"
+    }
+  },
+  "seconds": 31,
+  "checks": [
+    {
+      "name": "verdict = needs_lawyer",
+      "ok": true,
+      "detail": "needs_lawyer"
+    }
+  ],
+  "row": {
+    "id": "07-large-amount",
+    "pass": true,
+    "verdict": "needs_lawyer",
+    "issue": "refund_or_nondelivery",
+    "seconds": 31,
+    "warnings": 0,
+    "failed": []
+  },
+  "turns": [
+    {
+      "label": "story",
+      "user": "I paid Rs 60 lakh to a luxury car dealer for a car in January 2026. They have not delivered it and refuse to refund. I want my money back.",
+      "result": {
+        "state": {
+          "stage": "confirm",
+          "story": {
+            "summary": "Paid Rs 60 lakh to a luxury car dealer in January 2026 for a car. The dealer has not delivered the vehicle and refuses to provide a refund.",
+            "timeline": [
+              {
+                "when": "2026-01",
+                "what": "Paid Rs 60 lakh to a luxury car dealer for a car."
+              }
+            ],
+            "opposite_party": "Luxury car dealer",
+            "platform": null,
+            "amount_inr": 6000000,
+            "payment_method": null,
+            "proof_mentioned": [],
+            "user_goal": "Get money back",
+            "months_since_event": 10,
+            "event_date": "2026-01-01",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": null,
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I paid Rs 60 lakh to a luxury car dealer for a car in January 2026. They have not delivered it and refuse to refund. I want my money back."
+            },
+            {
+              "role": "assistant",
+              "text": "You paid Rs 60 lakh to a luxury car dealer in January 2026, but they neither delivered the car nor refunded your money, and you want a full refund. Is this correct? Say yes, or tell me what to change."
+            }
+          ]
+        },
+        "reply": "You paid Rs 60 lakh to a luxury car dealer in January 2026, but they neither delivered the car nor refunded your money, and you want a full refund. Is this correct? Say yes, or tell me what to change.",
+        "warnings": []
+      }
+    },
+    {
+      "label": "confirm",
+      "user": "Yes, that is correct.",
+      "result": {
+        "state": {
+          "stage": "evidence",
+          "story": {
+            "summary": "Paid Rs 60 lakh to a luxury car dealer in January 2026 for a car. The dealer has not delivered the vehicle and refuses to provide a refund.",
+            "timeline": [
+              {
+                "when": "2026-01",
+                "what": "Paid Rs 60 lakh to a luxury car dealer for a car."
+              }
+            ],
+            "opposite_party": "Luxury car dealer",
+            "platform": null,
+            "amount_inr": 6000000,
+            "payment_method": null,
+            "proof_mentioned": [],
+            "user_goal": "Get money back",
+            "months_since_event": 10,
+            "event_date": "2026-01-01",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "refund_or_nondelivery",
+            "plain_explanation": "You paid a large amount of Rs 60 lakh to a luxury car dealer who failed to deliver the car and is refusing to refund your money. Since the amount paid is above Rs 50 lakh, your case falls under the State Consumer Disputes Redressal Commission rather than the District Commission. You have multiple legal routes available, including filing a consumer complaint for deficiency in service or unfair trade practice, or pursuing a civil claim for recovery of money. However, since the delay is significant, you should act promptly and consult a lawyer to calculate exact limitation timelines and choose the best forum.",
+            "provisions": [
+              {
+                "id": "CPA-2.7",
+                "why": "It defines you as a consumer since you paid for goods for a price.",
+                "reference": "Section 2(7)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of consumer",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "CPA-2.11",
+                "why": "It covers the dealer's failure to deliver the car as a deficiency in service.",
+                "reference": "Section 2(11)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of deficiency (in service)",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "CPA-2.47",
+                "why": "It classifies the refusal to deliver goods or refund money as an unfair trade practice.",
+                "reference": "Section 2(47)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of unfair trade practice",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "RULES-JURIS-2021",
+                "why": "Because the amount paid is above Rs 50 lakh up to Rs 2 crore, your consumer complaint goes to the State Commission.",
+                "reference": "Rules 3-5",
+                "instrument": "Consumer Protection (Jurisdiction of the District Commission, the State Commission and the National Commission) Rules, 2021",
+                "title": "Which Commission by amount paid",
+                "source_url": "https://www.thc.nic.in/Central Governmental Rules/Consumer Protection (Jurisdiction of the District Commission, the State Commission and the National Commission) Rules, 2021.pdf",
+                "source_type": "official"
+              },
+              {
+                "id": "CPA-69",
+                "why": "It sets a two-year time limit from the cause of action to file a consumer complaint.",
+                "reference": "Section 69",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Time limit for a consumer complaint",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/69.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "SOGA-57-61",
+                "why": "It gives you the right to sue the dealer for non-delivery and recover money paid where consideration has failed.",
+                "reference": "Sections 57 and 61",
+                "instrument": "Sale of Goods Act, 1930",
+                "title": "Buyer's remedies: non-delivery and money paid",
+                "source_url": "https://www.legalauthority.in/bare-act/sale-of-goods-act-1930",
+                "source_type": "secondary"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "Payment receipt or bank statement showing the Rs 60 lakh transfer",
+                "why": "Proves you paid the money to the dealer.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Booking form, invoice, or sale agreement with the dealer",
+                "why": "Proves the terms of the car purchase and promise of delivery.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Written communications, emails, or chat messages demanding delivery or refund",
+                "why": "Proves you asked for the car or refund and the dealer refused.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Any legal notice sent to the dealer previously",
+                "why": "Shows formal demand was made before taking legal action.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Dealer's written refusal or response to your demands",
+                "why": "Documents their refusal to refund or deliver.",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "Do you have any of these proofs such as the payment receipt, booking agreement, or written chats with the dealer, and have you already contacted them or sent a legal notice?"
+          },
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I paid Rs 60 lakh to a luxury car dealer for a car in January 2026. They have not delivered it and refuse to refund. I want my money back."
+            },
+            {
+              "role": "assistant",
+              "text": "You paid Rs 60 lakh to a luxury car dealer in January 2026, but they neither delivered the car nor refunded your money, and you want a full refund. Is this correct? Say yes, or tell me what to change."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "You paid a large amount of Rs 60 lakh to a luxury car dealer who failed to deliver the car and is refusing to refund your money. Since the amount paid is above Rs 50 lakh, your case falls under the State Consumer Disputes Redressal Commission rather than the District Commission. You have multiple legal routes available, including filing a consumer complaint for deficiency in service or unfair trade practice, or pursuing a civil claim for recovery of money. However, since the delay is significant, you should act promptly and consult a lawyer to calculate exact limitation timelines and choose the best forum.\n\nDo you have any of these proofs such as the payment receipt, booking agreement, or written chats with the dealer, and have you already contacted them or sent a legal notice?"
+            }
+          ]
+        },
+        "reply": "You paid a large amount of Rs 60 lakh to a luxury car dealer who failed to deliver the car and is refusing to refund your money. Since the amount paid is above Rs 50 lakh, your case falls under the State Consumer Disputes Redressal Commission rather than the District Commission. You have multiple legal routes available, including filing a consumer complaint for deficiency in service or unfair trade practice, or pursuing a civil claim for recovery of money. However, since the delay is significant, you should act promptly and consult a lawyer to calculate exact limitation timelines and choose the best forum.\n\nDo you have any of these proofs such as the payment receipt, booking agreement, or written chats with the dealer, and have you already contacted them or sent a legal notice?",
+        "analysis": {
+          "issue_type": "refund_or_nondelivery",
+          "plain_explanation": "You paid a large amount of Rs 60 lakh to a luxury car dealer who failed to deliver the car and is refusing to refund your money. Since the amount paid is above Rs 50 lakh, your case falls under the State Consumer Disputes Redressal Commission rather than the District Commission. You have multiple legal routes available, including filing a consumer complaint for deficiency in service or unfair trade practice, or pursuing a civil claim for recovery of money. However, since the delay is significant, you should act promptly and consult a lawyer to calculate exact limitation timelines and choose the best forum.",
+          "provisions": [
+            {
+              "id": "CPA-2.7",
+              "why": "It defines you as a consumer since you paid for goods for a price.",
+              "reference": "Section 2(7)",
+              "instrument": "Consumer Protection Act, 2019",
+              "title": "Definition of consumer",
+              "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+              "source_type": "secondary"
+            },
+            {
+              "id": "CPA-2.11",
+              "why": "It covers the dealer's failure to deliver the car as a deficiency in service.",
+              "reference": "Section 2(11)",
+              "instrument": "Consumer Protection Act, 2019",
+              "title": "Definition of deficiency (in service)",
+              "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+              "source_type": "secondary"
+            },
+            {
+              "id": "CPA-2.47",
+              "why": "It classifies the refusal to deliver goods or refund money as an unfair trade practice.",
+              "reference": "Section 2(47)",
+              "instrument": "Consumer Protection Act, 2019",
+              "title": "Definition of unfair trade practice",
+              "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+              "source_type": "secondary"
+            },
+            {
+              "id": "RULES-JURIS-2021",
+              "why": "Because the amount paid is above Rs 50 lakh up to Rs 2 crore, your consumer complaint goes to the State Commission.",
+              "reference": "Rules 3-5",
+              "instrument": "Consumer Protection (Jurisdiction of the District Commission, the State Commission and the National Commission) Rules, 2021",
+              "title": "Which Commission by amount paid",
+              "source_url": "https://www.thc.nic.in/Central Governmental Rules/Consumer Protection (Jurisdiction of the District Commission, the State Commission and the National Commission) Rules, 2021.pdf",
+              "source_type": "official"
+            },
+            {
+              "id": "CPA-69",
+              "why": "It sets a two-year time limit from the cause of action to file a consumer complaint.",
+              "reference": "Section 69",
+              "instrument": "Consumer Protection Act, 2019",
+              "title": "Time limit for a consumer complaint",
+              "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/69.php",
+              "source_type": "secondary"
+            },
+            {
+              "id": "SOGA-57-61",
+              "why": "It gives you the right to sue the dealer for non-delivery and recover money paid where consideration has failed.",
+              "reference": "Sections 57 and 61",
+              "instrument": "Sale of Goods Act, 1930",
+              "title": "Buyer's remedies: non-delivery and money paid",
+              "source_url": "https://www.legalauthority.in/bare-act/sale-of-goods-act-1930",
+              "source_type": "secondary"
+            }
+          ],
+          "evidence_checklist": [
+            {
+              "item": "Payment receipt or bank statement showing the Rs 60 lakh transfer",
+              "why": "Proves you paid the money to the dealer.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Booking form, invoice, or sale agreement with the dealer",
+              "why": "Proves the terms of the car purchase and promise of delivery.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Written communications, emails, or chat messages demanding delivery or refund",
+              "why": "Proves you asked for the car or refund and the dealer refused.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Any legal notice sent to the dealer previously",
+              "why": "Shows formal demand was made before taking legal action.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Dealer's written refusal or response to your demands",
+              "why": "Documents their refusal to refund or deliver.",
+              "mentioned_by_user": false
+            }
+          ],
+          "ask": "Do you have any of these proofs such as the payment receipt, booking agreement, or written chats with the dealer, and have you already contacted them or sent a legal notice?"
+        },
+        "warnings": []
+      }
+    },
+    {
+      "label": "proofs",
+      "user": "I have the booking agreement, payment proof and emails.",
+      "result": {
+        "state": {
+          "stage": "done",
+          "story": {
+            "summary": "Paid Rs 60 lakh to a luxury car dealer in January 2026 for a car. The dealer has not delivered the vehicle and refuses to provide a refund.",
+            "timeline": [
+              {
+                "when": "2026-01",
+                "what": "Paid Rs 60 lakh to a luxury car dealer for a car."
+              }
+            ],
+            "opposite_party": "Luxury car dealer",
+            "platform": null,
+            "amount_inr": 6000000,
+            "payment_method": null,
+            "proof_mentioned": [],
+            "user_goal": "Get money back",
+            "months_since_event": 10,
+            "event_date": "2026-01-01",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "refund_or_nondelivery",
+            "plain_explanation": "You paid a large amount of Rs 60 lakh to a luxury car dealer who failed to deliver the car and is refusing to refund your money. Since the amount paid is above Rs 50 lakh, your case falls under the State Consumer Disputes Redressal Commission rather than the District Commission. You have multiple legal routes available, including filing a consumer complaint for deficiency in service or unfair trade practice, or pursuing a civil claim for recovery of money. However, since the delay is significant, you should act promptly and consult a lawyer to calculate exact limitation timelines and choose the best forum.",
+            "provisions": [
+              {
+                "id": "CPA-2.7",
+                "why": "It defines you as a consumer since you paid for goods for a price.",
+                "reference": "Section 2(7)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of consumer",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "CPA-2.11",
+                "why": "It covers the dealer's failure to deliver the car as a deficiency in service.",
+                "reference": "Section 2(11)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of deficiency (in service)",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "CPA-2.47",
+                "why": "It classifies the refusal to deliver goods or refund money as an unfair trade practice.",
+                "reference": "Section 2(47)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of unfair trade practice",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "RULES-JURIS-2021",
+                "why": "Because the amount paid is above Rs 50 lakh up to Rs 2 crore, your consumer complaint goes to the State Commission.",
+                "reference": "Rules 3-5",
+                "instrument": "Consumer Protection (Jurisdiction of the District Commission, the State Commission and the National Commission) Rules, 2021",
+                "title": "Which Commission by amount paid",
+                "source_url": "https://www.thc.nic.in/Central Governmental Rules/Consumer Protection (Jurisdiction of the District Commission, the State Commission and the National Commission) Rules, 2021.pdf",
+                "source_type": "official"
+              },
+              {
+                "id": "CPA-69",
+                "why": "It sets a two-year time limit from the cause of action to file a consumer complaint.",
+                "reference": "Section 69",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Time limit for a consumer complaint",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/69.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "SOGA-57-61",
+                "why": "It gives you the right to sue the dealer for non-delivery and recover money paid where consideration has failed.",
+                "reference": "Sections 57 and 61",
+                "instrument": "Sale of Goods Act, 1930",
+                "title": "Buyer's remedies: non-delivery and money paid",
+                "source_url": "https://www.legalauthority.in/bare-act/sale-of-goods-act-1930",
+                "source_type": "secondary"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "Payment receipt or bank statement showing the Rs 60 lakh transfer",
+                "why": "Proves you paid the money to the dealer.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Booking form, invoice, or sale agreement with the dealer",
+                "why": "Proves the terms of the car purchase and promise of delivery.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Written communications, emails, or chat messages demanding delivery or refund",
+                "why": "Proves you asked for the car or refund and the dealer refused.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Any legal notice sent to the dealer previously",
+                "why": "Shows formal demand was made before taking legal action.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Dealer's written refusal or response to your demands",
+                "why": "Documents their refusal to refund or deliver.",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "Do you have any of these proofs such as the payment receipt, booking agreement, or written chats with the dealer, and have you already contacted them or sent a legal notice?"
+          },
+          "plan": {
+            "evidence_have": [
+              "booking agreement",
+              "payment proof",
+              "emails"
+            ],
+            "evidence_missing": [
+              "dealer's written refusal or response to demands",
+              "any legal notice sent previously"
+            ],
+            "steps": [
+              {
+                "title": "Send a formal legal notice",
+                "detail": "Send a formal legal notice to the luxury car dealer demanding the delivery of the vehicle or a full refund of Rs 60 lakh along with appropriate compensation and interest.",
+                "where": "By registered post or email to the car dealer's official business address."
+              },
+              {
+                "title": "(General) Register a complaint on the National Consumer Helpline",
+                "detail": "Register your grievance regarding non-delivery and refusal of refund through the National Consumer Helpline portal or by calling 1915.",
+                "where": "National Consumer Helpline (INGRAM portal or 1915)"
+              },
+              {
+                "title": "File a consumer complaint at the State Consumer Commission",
+                "detail": "Since the amount paid is above Rs 50 lakh up to Rs 2 crore, file a formal consumer complaint for deficiency in service and unfair trade practice at the State Consumer Disputes Redressal Commission.",
+                "where": "State Consumer Commission (via e-Jagriti portal or physically)"
+              },
+              {
+                "title": "Consult a legal professional for civil or criminal recovery options",
+                "detail": "Consult a lawyer to review limitation timelines under the Sale of Goods Act, 1930 and evaluate whether to pursue a civil recovery suit or criminal complaint for cheating if dishonest intent is established.",
+                "where": "Local advocate or District Legal Services Authority (DLSA / NALSA 15100) for legal guidance"
+              }
+            ],
+            "forum": "State Consumer Disputes Redressal Commission, because the value paid is above Rs 50 lakh up to Rs 2 crore as per the Consumer Protection Rules, 2021.",
+            "confidence": "high",
+            "summary": "You have confirmed having the booking agreement, payment receipts, and emails. Since the amount paid is Rs 60 lakh, your consumer complaint falls under the State Consumer Commission. You should send a formal legal notice and prepare to file your complaint through the e-Jagriti portal or consult a lawyer for civil recovery.",
+            "draft_document": {
+              "type": "legal_notice",
+              "text": "To,\n[LUXURY CAR DEALER NAME]\n[DEALER ADDRESS]\n\nSUBJECT: LEGAL NOTICE FOR REFUND OF RS 60 LAKH AND COMPENSATION FOR NON-DELIVERY OF VEHICLE\n\nDear Sir/Madam,\n\nI, [YOUR NAME], resident of [YOUR ADDRESS], state the following:\n\n1. That in January 2026, I paid a sum of Rs 60,00,000 (Rupees Sixty Lakhs only) to your dealership for the purchase of a luxury car, as evidenced by the booking agreement and payment proof dated [DATE OF PAYMENT].\n2. That despite the lapse of several months, you have failed to deliver the vehicle as promised, which amounts to a serious deficiency in service and an unfair trade practice.\n3. That my repeated emails and requests for delivery or a full refund have been ignored or refused by your establishment.\n\nTherefore, through this legal notice, I call upon you to refund the entire amount of Rs 60,00,000 along with appropriate interest and compensation within 15 days of receiving this notice. Failing this, I shall be constrained to initiate legal proceedings against you before the appropriate State Consumer Disputes Redressal Commission and other forums as per law, at your sole risk and cost.\n\nSincerely,\n[YOUR NAME]\n[YOUR CONTACT INFORMATION]\n[DATE]"
+            }
+          },
+          "verdict": {
+            "level": "needs_lawyer",
+            "reasons": [
+              "The amount is above Rs 50 lakh, which is beyond the District Consumer Commission. A lawyer is strongly advised."
+            ]
+          },
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I paid Rs 60 lakh to a luxury car dealer for a car in January 2026. They have not delivered it and refuse to refund. I want my money back."
+            },
+            {
+              "role": "assistant",
+              "text": "You paid Rs 60 lakh to a luxury car dealer in January 2026, but they neither delivered the car nor refunded your money, and you want a full refund. Is this correct? Say yes, or tell me what to change."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "You paid a large amount of Rs 60 lakh to a luxury car dealer who failed to deliver the car and is refusing to refund your money. Since the amount paid is above Rs 50 lakh, your case falls under the State Consumer Disputes Redressal Commission rather than the District Commission. You have multiple legal routes available, including filing a consumer complaint for deficiency in service or unfair trade practice, or pursuing a civil claim for recovery of money. However, since the delay is significant, you should act promptly and consult a lawyer to calculate exact limitation timelines and choose the best forum.\n\nDo you have any of these proofs such as the payment receipt, booking agreement, or written chats with the dealer, and have you already contacted them or sent a legal notice?"
+            },
+            {
+              "role": "user",
+              "text": "I have the booking agreement, payment proof and emails."
+            },
+            {
+              "role": "assistant",
+              "text": "You have confirmed having the booking agreement, payment receipts, and emails. Since the amount paid is Rs 60 lakh, your consumer complaint falls under the State Consumer Commission. You should send a formal legal notice and prepare to file your complaint through the e-Jagriti portal or consult a lawyer for civil recovery."
+            }
+          ]
+        },
+        "reply": "You have confirmed having the booking agreement, payment receipts, and emails. Since the amount paid is Rs 60 lakh, your consumer complaint falls under the State Consumer Commission. You should send a formal legal notice and prepare to file your complaint through the e-Jagriti portal or consult a lawyer for civil recovery.",
+        "plan": {
+          "evidence_have": [
+            "booking agreement",
+            "payment proof",
+            "emails"
+          ],
+          "evidence_missing": [
+            "dealer's written refusal or response to demands",
+            "any legal notice sent previously"
+          ],
+          "steps": [
+            {
+              "title": "Send a formal legal notice",
+              "detail": "Send a formal legal notice to the luxury car dealer demanding the delivery of the vehicle or a full refund of Rs 60 lakh along with appropriate compensation and interest.",
+              "where": "By registered post or email to the car dealer's official business address."
+            },
+            {
+              "title": "(General) Register a complaint on the National Consumer Helpline",
+              "detail": "Register your grievance regarding non-delivery and refusal of refund through the National Consumer Helpline portal or by calling 1915.",
+              "where": "National Consumer Helpline (INGRAM portal or 1915)"
+            },
+            {
+              "title": "File a consumer complaint at the State Consumer Commission",
+              "detail": "Since the amount paid is above Rs 50 lakh up to Rs 2 crore, file a formal consumer complaint for deficiency in service and unfair trade practice at the State Consumer Disputes Redressal Commission.",
+              "where": "State Consumer Commission (via e-Jagriti portal or physically)"
+            },
+            {
+              "title": "Consult a legal professional for civil or criminal recovery options",
+              "detail": "Consult a lawyer to review limitation timelines under the Sale of Goods Act, 1930 and evaluate whether to pursue a civil recovery suit or criminal complaint for cheating if dishonest intent is established.",
+              "where": "Local advocate or District Legal Services Authority (DLSA / NALSA 15100) for legal guidance"
+            }
+          ],
+          "forum": "State Consumer Disputes Redressal Commission, because the value paid is above Rs 50 lakh up to Rs 2 crore as per the Consumer Protection Rules, 2021.",
+          "confidence": "high",
+          "summary": "You have confirmed having the booking agreement, payment receipts, and emails. Since the amount paid is Rs 60 lakh, your consumer complaint falls under the State Consumer Commission. You should send a formal legal notice and prepare to file your complaint through the e-Jagriti portal or consult a lawyer for civil recovery.",
+          "draft_document": {
+            "type": "legal_notice",
+            "text": "To,\n[LUXURY CAR DEALER NAME]\n[DEALER ADDRESS]\n\nSUBJECT: LEGAL NOTICE FOR REFUND OF RS 60 LAKH AND COMPENSATION FOR NON-DELIVERY OF VEHICLE\n\nDear Sir/Madam,\n\nI, [YOUR NAME], resident of [YOUR ADDRESS], state the following:\n\n1. That in January 2026, I paid a sum of Rs 60,00,000 (Rupees Sixty Lakhs only) to your dealership for the purchase of a luxury car, as evidenced by the booking agreement and payment proof dated [DATE OF PAYMENT].\n2. That despite the lapse of several months, you have failed to deliver the vehicle as promised, which amounts to a serious deficiency in service and an unfair trade practice.\n3. That my repeated emails and requests for delivery or a full refund have been ignored or refused by your establishment.\n\nTherefore, through this legal notice, I call upon you to refund the entire amount of Rs 60,00,000 along with appropriate interest and compensation within 15 days of receiving this notice. Failing this, I shall be constrained to initiate legal proceedings against you before the appropriate State Consumer Disputes Redressal Commission and other forums as per law, at your sole risk and cost.\n\nSincerely,\n[YOUR NAME]\n[YOUR CONTACT INFORMATION]\n[DATE]"
+          }
+        },
+        "verdict": {
+          "level": "needs_lawyer",
+          "reasons": [
+            "The amount is above Rs 50 lakh, which is beyond the District Consumer Commission. A lawyer is strongly advised."
+          ]
+        },
+        "warnings": []
+      }
+    }
+  ]
+}

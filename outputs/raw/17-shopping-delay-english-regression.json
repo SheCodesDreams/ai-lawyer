@@ -1,0 +1,599 @@
+{
+  "case": {
+    "id": "17-shopping-delay-english-regression",
+    "note": "Regression: English input must get English replies (earlier bug: Hindi/Hinglish).",
+    "story": "I ordered a dress from a website, they said pay instantly via UPI for faster delivery. I paid Rs 1200 on 28 Oct 2026 but they are not shipping it and they did not process my cancellation. The occasion has passed.",
+    "extra": "I have the UPI receipt and chat with support who keep saying it ships tomorrow.",
+    "proofs": "UPI receipt, order page screenshot and support chat screenshots.",
+    "expect": {
+      "verdict_in": [
+        "can_help",
+        "partly"
+      ],
+      "issue_type": "refund_or_nondelivery",
+      "forbidden_regex": "aapne|kiya|chahte|[\\u0900-\\u097F]"
+    }
+  },
+  "seconds": 27,
+  "checks": [
+    {
+      "name": "verdict in can_help/partly",
+      "ok": true,
+      "detail": "can_help"
+    },
+    {
+      "name": "issue_type = refund_or_nondelivery",
+      "ok": true,
+      "detail": "refund_or_nondelivery"
+    },
+    {
+      "name": "avoids /aapne|kiya|chahte|[\\u0900-\\u097F]/",
+      "ok": true
+    }
+  ],
+  "row": {
+    "id": "17-shopping-delay-english-regression",
+    "pass": true,
+    "verdict": "can_help",
+    "issue": "refund_or_nondelivery",
+    "seconds": 27,
+    "warnings": 0,
+    "failed": []
+  },
+  "turns": [
+    {
+      "label": "story",
+      "user": "I ordered a dress from a website, they said pay instantly via UPI for faster delivery. I paid Rs 1200 on 28 Oct 2026 but they are not shipping it and they did not process my cancellation. The occasion has passed.",
+      "result": {
+        "state": {
+          "stage": "intake",
+          "story": {
+            "summary": "User ordered a dress for Rs 1200 on 28 October 2026 via UPI, but the website has not shipped it or cancelled the order as requested.",
+            "timeline": [
+              {
+                "when": "2026-10-28",
+                "what": "Paid Rs 1200 via UPI for a dress"
+              }
+            ],
+            "opposite_party": null,
+            "platform": null,
+            "amount_inr": 1200,
+            "payment_method": "UPI",
+            "proof_mentioned": [],
+            "user_goal": "Cancel order and get a refund",
+            "months_since_event": 1,
+            "event_date": "2026-10-28",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": null,
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I ordered a dress from a website, they said pay instantly via UPI for faster delivery. I paid Rs 1200 on 28 Oct 2026 but they are not shipping it and they did not process my cancellation. The occasion has passed."
+            },
+            {
+              "role": "assistant",
+              "text": "Got it. You paid Rs 1200 via UPI on 28 October 2026 for a dress, but the seller has not shipped it or processed your cancellation after the occasion passed. Do you remember the name of the website, and do you have the payment receipt?"
+            }
+          ]
+        },
+        "reply": "Got it. You paid Rs 1200 via UPI on 28 October 2026 for a dress, but the seller has not shipped it or processed your cancellation after the occasion passed. Do you remember the name of the website, and do you have the payment receipt?",
+        "warnings": []
+      }
+    },
+    {
+      "label": "extra details",
+      "user": "I have the UPI receipt and chat with support who keep saying it ships tomorrow.",
+      "result": {
+        "state": {
+          "stage": "confirm",
+          "story": {
+            "summary": "User ordered a dress for Rs 1200 via UPI on 28 October 2026. The seller has not shipped it, chat support keeps delaying, and cancellation/refund was denied or ignored after the occasion passed. User has UPI receipt and chat proofs.",
+            "timeline": [
+              {
+                "when": "2026-10-28",
+                "what": "Paid Rs 1200 via UPI for a dress"
+              }
+            ],
+            "opposite_party": null,
+            "platform": null,
+            "amount_inr": 1200,
+            "payment_method": "UPI",
+            "proof_mentioned": [
+              "UPI receipt",
+              "chat with support"
+            ],
+            "user_goal": "Cancel order and get a refund",
+            "months_since_event": 1,
+            "event_date": "2026-10-28",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": null,
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I ordered a dress from a website, they said pay instantly via UPI for faster delivery. I paid Rs 1200 on 28 Oct 2026 but they are not shipping it and they did not process my cancellation. The occasion has passed."
+            },
+            {
+              "role": "assistant",
+              "text": "Got it. You paid Rs 1200 via UPI on 28 October 2026 for a dress, but the seller has not shipped it or processed your cancellation after the occasion passed. Do you remember the name of the website, and do you have the payment receipt?"
+            },
+            {
+              "role": "user",
+              "text": "I have the UPI receipt and chat with support who keep saying it ships tomorrow."
+            },
+            {
+              "role": "assistant",
+              "text": "Got it! You paid Rs 1200 via UPI on 28 October 2026 for a dress, you have the UPI receipt and chat proofs with support, and you want to cancel the order and get a refund because the occasion has passed. Is this correct? Say yes, or tell me what to change."
+            }
+          ]
+        },
+        "reply": "Got it! You paid Rs 1200 via UPI on 28 October 2026 for a dress, you have the UPI receipt and chat proofs with support, and you want to cancel the order and get a refund because the occasion has passed. Is this correct? Say yes, or tell me what to change.",
+        "warnings": []
+      }
+    },
+    {
+      "label": "confirm",
+      "user": "Yes, that is correct.",
+      "result": {
+        "state": {
+          "stage": "evidence",
+          "story": {
+            "summary": "User ordered a dress for Rs 1200 via UPI on 28 October 2026. The seller has not shipped it, chat support keeps delaying, and cancellation/refund was denied or ignored after the occasion passed. User has UPI receipt and chat proofs.",
+            "timeline": [
+              {
+                "when": "2026-10-28",
+                "what": "Paid Rs 1200 via UPI for a dress"
+              }
+            ],
+            "opposite_party": null,
+            "platform": null,
+            "amount_inr": 1200,
+            "payment_method": "UPI",
+            "proof_mentioned": [
+              "UPI receipt",
+              "chat with support"
+            ],
+            "user_goal": "Cancel order and get a refund",
+            "months_since_event": 1,
+            "event_date": "2026-10-28",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "refund_or_nondelivery",
+            "plain_explanation": "You have the right to seek a refund since you paid for the dress and the seller failed to deliver it or process your cancellation. Since the occasion has passed and the item was not shipped, you can register a formal complaint. You can use pre-litigation options like the National Consumer Helpline or the e-Jagriti portal to claim your money back with compensation. It is uncertain how long the seller will take to respond, so keeping your records ready is important.",
+            "provisions": [
+              {
+                "id": "CPA-2.7",
+                "why": "It defines you as a consumer since you paid for goods online.",
+                "reference": "Section 2(7)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of consumer",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "CPA-2.47",
+                "why": "It treats refusing to refund or take back delayed/undelivered goods as an unfair trade practice.",
+                "reference": "Section 2(47)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of unfair trade practice",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "SOGA-57-61",
+                "why": "It preserves your right to recover money paid where the consideration has failed due to non-delivery.",
+                "reference": "Sections 57 and 61",
+                "instrument": "Sale of Goods Act, 1930",
+                "title": "Buyer's remedies: non-delivery and money paid",
+                "source_url": "https://www.legalauthority.in/bare-act/sale-of-goods-act-1930",
+                "source_type": "secondary"
+              },
+              {
+                "id": "PROC-NCH",
+                "why": "It allows you to use the National Consumer Helpline as a practical first step to resolve the dispute.",
+                "reference": "1915 / 1800-11-4000 / INGRAM portal",
+                "instrument": "National Consumer Helpline (Department of Consumer Affairs)",
+                "title": "Pre-litigation step: National Consumer Helpline",
+                "source_url": "https://consumerhelpline.gov.in/public/about",
+                "source_type": "official"
+              },
+              {
+                "id": "PROC-EJAGRITI",
+                "why": "It allows you to file an online consumer complaint through the e-Jagriti portal if the seller refuses to refund.",
+                "reference": "e-jagriti.gov.in",
+                "instrument": "e-Jagriti portal (Department of Consumer Affairs)",
+                "title": "Filing a consumer complaint online",
+                "source_url": "https://www.impriindia.com/insights/policy-update/e-jagriti-the-digital-transformation-of-consumer-dispute-resolution-in-india/",
+                "source_type": "secondary"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "UPI payment receipt",
+                "why": "Shows the exact amount paid, date, and transaction reference.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Chat transcripts with customer support",
+                "why": "Proves the delays, broken promises, and your cancellation request.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Order confirmation email or message",
+                "why": "Proves details of the purchase and the seller's identity.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Product listing page screenshot",
+                "why": "Shows what was promised and the price paid.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Any written cancellation request",
+                "why": "Proves you asked to cancel before or when the delay became unreasonable.",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "Do you have the order confirmation email or the product listing screenshot along with your UPI receipt and chat proofs, and have you already tried contacting the National Consumer Helpline or the website's grievance officer?"
+          },
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I ordered a dress from a website, they said pay instantly via UPI for faster delivery. I paid Rs 1200 on 28 Oct 2026 but they are not shipping it and they did not process my cancellation. The occasion has passed."
+            },
+            {
+              "role": "assistant",
+              "text": "Got it. You paid Rs 1200 via UPI on 28 October 2026 for a dress, but the seller has not shipped it or processed your cancellation after the occasion passed. Do you remember the name of the website, and do you have the payment receipt?"
+            },
+            {
+              "role": "user",
+              "text": "I have the UPI receipt and chat with support who keep saying it ships tomorrow."
+            },
+            {
+              "role": "assistant",
+              "text": "Got it! You paid Rs 1200 via UPI on 28 October 2026 for a dress, you have the UPI receipt and chat proofs with support, and you want to cancel the order and get a refund because the occasion has passed. Is this correct? Say yes, or tell me what to change."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "You have the right to seek a refund since you paid for the dress and the seller failed to deliver it or process your cancellation. Since the occasion has passed and the item was not shipped, you can register a formal complaint. You can use pre-litigation options like the National Consumer Helpline or the e-Jagriti portal to claim your money back with compensation. It is uncertain how long the seller will take to respond, so keeping your records ready is important.\n\nDo you have the order confirmation email or the product listing screenshot along with your UPI receipt and chat proofs, and have you already tried contacting the National Consumer Helpline or the website's grievance officer?"
+            }
+          ]
+        },
+        "reply": "You have the right to seek a refund since you paid for the dress and the seller failed to deliver it or process your cancellation. Since the occasion has passed and the item was not shipped, you can register a formal complaint. You can use pre-litigation options like the National Consumer Helpline or the e-Jagriti portal to claim your money back with compensation. It is uncertain how long the seller will take to respond, so keeping your records ready is important.\n\nDo you have the order confirmation email or the product listing screenshot along with your UPI receipt and chat proofs, and have you already tried contacting the National Consumer Helpline or the website's grievance officer?",
+        "analysis": {
+          "issue_type": "refund_or_nondelivery",
+          "plain_explanation": "You have the right to seek a refund since you paid for the dress and the seller failed to deliver it or process your cancellation. Since the occasion has passed and the item was not shipped, you can register a formal complaint. You can use pre-litigation options like the National Consumer Helpline or the e-Jagriti portal to claim your money back with compensation. It is uncertain how long the seller will take to respond, so keeping your records ready is important.",
+          "provisions": [
+            {
+              "id": "CPA-2.7",
+              "why": "It defines you as a consumer since you paid for goods online.",
+              "reference": "Section 2(7)",
+              "instrument": "Consumer Protection Act, 2019",
+              "title": "Definition of consumer",
+              "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+              "source_type": "secondary"
+            },
+            {
+              "id": "CPA-2.47",
+              "why": "It treats refusing to refund or take back delayed/undelivered goods as an unfair trade practice.",
+              "reference": "Section 2(47)",
+              "instrument": "Consumer Protection Act, 2019",
+              "title": "Definition of unfair trade practice",
+              "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+              "source_type": "secondary"
+            },
+            {
+              "id": "SOGA-57-61",
+              "why": "It preserves your right to recover money paid where the consideration has failed due to non-delivery.",
+              "reference": "Sections 57 and 61",
+              "instrument": "Sale of Goods Act, 1930",
+              "title": "Buyer's remedies: non-delivery and money paid",
+              "source_url": "https://www.legalauthority.in/bare-act/sale-of-goods-act-1930",
+              "source_type": "secondary"
+            },
+            {
+              "id": "PROC-NCH",
+              "why": "It allows you to use the National Consumer Helpline as a practical first step to resolve the dispute.",
+              "reference": "1915 / 1800-11-4000 / INGRAM portal",
+              "instrument": "National Consumer Helpline (Department of Consumer Affairs)",
+              "title": "Pre-litigation step: National Consumer Helpline",
+              "source_url": "https://consumerhelpline.gov.in/public/about",
+              "source_type": "official"
+            },
+            {
+              "id": "PROC-EJAGRITI",
+              "why": "It allows you to file an online consumer complaint through the e-Jagriti portal if the seller refuses to refund.",
+              "reference": "e-jagriti.gov.in",
+              "instrument": "e-Jagriti portal (Department of Consumer Affairs)",
+              "title": "Filing a consumer complaint online",
+              "source_url": "https://www.impriindia.com/insights/policy-update/e-jagriti-the-digital-transformation-of-consumer-dispute-resolution-in-india/",
+              "source_type": "secondary"
+            }
+          ],
+          "evidence_checklist": [
+            {
+              "item": "UPI payment receipt",
+              "why": "Shows the exact amount paid, date, and transaction reference.",
+              "mentioned_by_user": true
+            },
+            {
+              "item": "Chat transcripts with customer support",
+              "why": "Proves the delays, broken promises, and your cancellation request.",
+              "mentioned_by_user": true
+            },
+            {
+              "item": "Order confirmation email or message",
+              "why": "Proves details of the purchase and the seller's identity.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Product listing page screenshot",
+              "why": "Shows what was promised and the price paid.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Any written cancellation request",
+              "why": "Proves you asked to cancel before or when the delay became unreasonable.",
+              "mentioned_by_user": false
+            }
+          ],
+          "ask": "Do you have the order confirmation email or the product listing screenshot along with your UPI receipt and chat proofs, and have you already tried contacting the National Consumer Helpline or the website's grievance officer?"
+        },
+        "warnings": []
+      }
+    },
+    {
+      "label": "proofs",
+      "user": "UPI receipt, order page screenshot and support chat screenshots.",
+      "result": {
+        "state": {
+          "stage": "done",
+          "story": {
+            "summary": "User ordered a dress for Rs 1200 via UPI on 28 October 2026. The seller has not shipped it, chat support keeps delaying, and cancellation/refund was denied or ignored after the occasion passed. User has UPI receipt and chat proofs.",
+            "timeline": [
+              {
+                "when": "2026-10-28",
+                "what": "Paid Rs 1200 via UPI for a dress"
+              }
+            ],
+            "opposite_party": null,
+            "platform": null,
+            "amount_inr": 1200,
+            "payment_method": "UPI",
+            "proof_mentioned": [
+              "UPI receipt",
+              "chat with support"
+            ],
+            "user_goal": "Cancel order and get a refund",
+            "months_since_event": 1,
+            "event_date": "2026-10-28",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "refund_or_nondelivery",
+            "plain_explanation": "You have the right to seek a refund since you paid for the dress and the seller failed to deliver it or process your cancellation. Since the occasion has passed and the item was not shipped, you can register a formal complaint. You can use pre-litigation options like the National Consumer Helpline or the e-Jagriti portal to claim your money back with compensation. It is uncertain how long the seller will take to respond, so keeping your records ready is important.",
+            "provisions": [
+              {
+                "id": "CPA-2.7",
+                "why": "It defines you as a consumer since you paid for goods online.",
+                "reference": "Section 2(7)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of consumer",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "CPA-2.47",
+                "why": "It treats refusing to refund or take back delayed/undelivered goods as an unfair trade practice.",
+                "reference": "Section 2(47)",
+                "instrument": "Consumer Protection Act, 2019",
+                "title": "Definition of unfair trade practice",
+                "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+                "source_type": "secondary"
+              },
+              {
+                "id": "SOGA-57-61",
+                "why": "It preserves your right to recover money paid where the consideration has failed due to non-delivery.",
+                "reference": "Sections 57 and 61",
+                "instrument": "Sale of Goods Act, 1930",
+                "title": "Buyer's remedies: non-delivery and money paid",
+                "source_url": "https://www.legalauthority.in/bare-act/sale-of-goods-act-1930",
+                "source_type": "secondary"
+              },
+              {
+                "id": "PROC-NCH",
+                "why": "It allows you to use the National Consumer Helpline as a practical first step to resolve the dispute.",
+                "reference": "1915 / 1800-11-4000 / INGRAM portal",
+                "instrument": "National Consumer Helpline (Department of Consumer Affairs)",
+                "title": "Pre-litigation step: National Consumer Helpline",
+                "source_url": "https://consumerhelpline.gov.in/public/about",
+                "source_type": "official"
+              },
+              {
+                "id": "PROC-EJAGRITI",
+                "why": "It allows you to file an online consumer complaint through the e-Jagriti portal if the seller refuses to refund.",
+                "reference": "e-jagriti.gov.in",
+                "instrument": "e-Jagriti portal (Department of Consumer Affairs)",
+                "title": "Filing a consumer complaint online",
+                "source_url": "https://www.impriindia.com/insights/policy-update/e-jagriti-the-digital-transformation-of-consumer-dispute-resolution-in-india/",
+                "source_type": "secondary"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "UPI payment receipt",
+                "why": "Shows the exact amount paid, date, and transaction reference.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Chat transcripts with customer support",
+                "why": "Proves the delays, broken promises, and your cancellation request.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Order confirmation email or message",
+                "why": "Proves details of the purchase and the seller's identity.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Product listing page screenshot",
+                "why": "Shows what was promised and the price paid.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Any written cancellation request",
+                "why": "Proves you asked to cancel before or when the delay became unreasonable.",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "Do you have the order confirmation email or the product listing screenshot along with your UPI receipt and chat proofs, and have you already tried contacting the National Consumer Helpline or the website's grievance officer?"
+          },
+          "plan": {
+            "evidence_have": [
+              "UPI receipt",
+              "Order page screenshot",
+              "Support chat screenshots"
+            ],
+            "evidence_missing": [
+              "Order confirmation email"
+            ],
+            "steps": [
+              {
+                "title": "Send a formal written demand",
+                "detail": "Send a clear written demand to the seller by email or message enclosing your UPI receipt and chat proofs, asking for a full refund of Rs 1200 due to non-delivery and failure to cancel.",
+                "where": "Directly to the seller's email address or customer support portal"
+              },
+              {
+                "title": "Register a complaint with the National Consumer Helpline",
+                "detail": "Register your grievance on the INGRAM portal or call the helpline to log your complaint regarding non-delivery and refusal to refund.",
+                "where": "National Consumer Helpline via INGRAM portal or call 1915"
+              },
+              {
+                "title": "File a formal consumer complaint online",
+                "detail": "If the seller fails to refund your money, file an online consumer complaint on the official e-Jagriti portal by uploading your UPI receipt and chat screenshots.",
+                "where": "e-Jagriti portal at e-jagriti.gov.in"
+              }
+            ],
+            "forum": "District Consumer Commission, as the value paid for the goods is up to Rs 50 lakh.",
+            "confidence": "high",
+            "summary": "You have solid evidence including your UPI receipt, order page screenshot, and support chat proofs. Since the seller failed to deliver the dress or process your cancellation, you can send a formal demand, register a complaint on the National Consumer Helpline, and if needed, file a case on the e-Jagriti portal to recover your Rs 1200.",
+            "draft_document": {
+              "type": "legal_notice",
+              "text": "To,\n[SELLER/COMPANY NAME]\n[SELLER ADDRESS OR SUPPORT EMAIL]\n\nSUBJECT: DEMAND FOR REFUND OF RS 1200 FOR NON-DELIVERY OF DRESS\n\nDear Sir/Madam,\n\nI am a consumer who purchased a dress from your website on 28 October 2026 for an amount of Rs 1200, paid via UPI under transaction reference [INSERT UPI REF / TRANSACTION ID].\n\nTo date, you have neither shipped the item nor processed my cancellation request, despite multiple follow-ups via chat support where false shipping dates were provided. As the occasion for which the dress was purchased has already passed, the consideration for this contract has failed.\n\nTherefore, I hereby call upon you to refund the full amount of Rs 1200 to my UPI account within 7 days of receiving this notice. Failing this, I shall be forced to initiate formal proceedings against your business on the e-Jagriti portal and through the National Consumer Helpline for deficiency in service and unfair trade practices.\n\nSincerely,\n\n[YOUR NAME]\n[YOUR CONTACT NUMBER]\n[YOUR EMAIL ADDRESS]\n[DATE]"
+            }
+          },
+          "verdict": {
+            "level": "can_help",
+            "reasons": [
+              "This is covered by the verified laws in this tool. You can start on your own with the steps below."
+            ]
+          },
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I ordered a dress from a website, they said pay instantly via UPI for faster delivery. I paid Rs 1200 on 28 Oct 2026 but they are not shipping it and they did not process my cancellation. The occasion has passed."
+            },
+            {
+              "role": "assistant",
+              "text": "Got it. You paid Rs 1200 via UPI on 28 October 2026 for a dress, but the seller has not shipped it or processed your cancellation after the occasion passed. Do you remember the name of the website, and do you have the payment receipt?"
+            },
+            {
+              "role": "user",
+              "text": "I have the UPI receipt and chat with support who keep saying it ships tomorrow."
+            },
+            {
+              "role": "assistant",
+              "text": "Got it! You paid Rs 1200 via UPI on 28 October 2026 for a dress, you have the UPI receipt and chat proofs with support, and you want to cancel the order and get a refund because the occasion has passed. Is this correct? Say yes, or tell me what to change."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "You have the right to seek a refund since you paid for the dress and the seller failed to deliver it or process your cancellation. Since the occasion has passed and the item was not shipped, you can register a formal complaint. You can use pre-litigation options like the National Consumer Helpline or the e-Jagriti portal to claim your money back with compensation. It is uncertain how long the seller will take to respond, so keeping your records ready is important.\n\nDo you have the order confirmation email or the product listing screenshot along with your UPI receipt and chat proofs, and have you already tried contacting the National Consumer Helpline or the website's grievance officer?"
+            },
+            {
+              "role": "user",
+              "text": "UPI receipt, order page screenshot and support chat screenshots."
+            },
+            {
+              "role": "assistant",
+              "text": "You have solid evidence including your UPI receipt, order page screenshot, and support chat proofs. Since the seller failed to deliver the dress or process your cancellation, you can send a formal demand, register a complaint on the National Consumer Helpline, and if needed, file a case on the e-Jagriti portal to recover your Rs 1200."
+            }
+          ]
+        },
+        "reply": "You have solid evidence including your UPI receipt, order page screenshot, and support chat proofs. Since the seller failed to deliver the dress or process your cancellation, you can send a formal demand, register a complaint on the National Consumer Helpline, and if needed, file a case on the e-Jagriti portal to recover your Rs 1200.",
+        "plan": {
+          "evidence_have": [
+            "UPI receipt",
+            "Order page screenshot",
+            "Support chat screenshots"
+          ],
+          "evidence_missing": [
+            "Order confirmation email"
+          ],
+          "steps": [
+            {
+              "title": "Send a formal written demand",
+              "detail": "Send a clear written demand to the seller by email or message enclosing your UPI receipt and chat proofs, asking for a full refund of Rs 1200 due to non-delivery and failure to cancel.",
+              "where": "Directly to the seller's email address or customer support portal"
+            },
+            {
+              "title": "Register a complaint with the National Consumer Helpline",
+              "detail": "Register your grievance on the INGRAM portal or call the helpline to log your complaint regarding non-delivery and refusal to refund.",
+              "where": "National Consumer Helpline via INGRAM portal or call 1915"
+            },
+            {
+              "title": "File a formal consumer complaint online",
+              "detail": "If the seller fails to refund your money, file an online consumer complaint on the official e-Jagriti portal by uploading your UPI receipt and chat screenshots.",
+              "where": "e-Jagriti portal at e-jagriti.gov.in"
+            }
+          ],
+          "forum": "District Consumer Commission, as the value paid for the goods is up to Rs 50 lakh.",
+          "confidence": "high",
+          "summary": "You have solid evidence including your UPI receipt, order page screenshot, and support chat proofs. Since the seller failed to deliver the dress or process your cancellation, you can send a formal demand, register a complaint on the National Consumer Helpline, and if needed, file a case on the e-Jagriti portal to recover your Rs 1200.",
+          "draft_document": {
+            "type": "legal_notice",
+            "text": "To,\n[SELLER/COMPANY NAME]\n[SELLER ADDRESS OR SUPPORT EMAIL]\n\nSUBJECT: DEMAND FOR REFUND OF RS 1200 FOR NON-DELIVERY OF DRESS\n\nDear Sir/Madam,\n\nI am a consumer who purchased a dress from your website on 28 October 2026 for an amount of Rs 1200, paid via UPI under transaction reference [INSERT UPI REF / TRANSACTION ID].\n\nTo date, you have neither shipped the item nor processed my cancellation request, despite multiple follow-ups via chat support where false shipping dates were provided. As the occasion for which the dress was purchased has already passed, the consideration for this contract has failed.\n\nTherefore, I hereby call upon you to refund the full amount of Rs 1200 to my UPI account within 7 days of receiving this notice. Failing this, I shall be forced to initiate formal proceedings against your business on the e-Jagriti portal and through the National Consumer Helpline for deficiency in service and unfair trade practices.\n\nSincerely,\n\n[YOUR NAME]\n[YOUR CONTACT NUMBER]\n[YOUR EMAIL ADDRESS]\n[DATE]"
+          }
+        },
+        "verdict": {
+          "level": "can_help",
+          "reasons": [
+            "This is covered by the verified laws in this tool. You can start on your own with the steps below."
+          ]
+        },
+        "warnings": []
+      }
+    }
+  ]
+}

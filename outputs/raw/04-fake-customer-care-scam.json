@@ -1,0 +1,602 @@
+{
+  "case": {
+    "id": "04-fake-customer-care-scam",
+    "note": "UPI scam via fake customer care. Money debited today.",
+    "story": "Today I searched for my bank's customer care number on Google and called a number. The person asked me to install an app and then Rs 45000 was debited from my account in 10 minutes. I think it was a scam.",
+    "extra": "It happened about 1 hour ago. I paid with UPI from my savings account. I did not tell anyone my PIN but I installed the screen sharing app.",
+    "proofs": "I have the bank SMS alerts, the number I called and the call log. I have not told the bank yet.",
+    "expect": {
+      "verdict": "partly",
+      "issue_type_in": [
+        "payment_fraud",
+        "cheating_scam"
+      ],
+      "must_mention_regex": "1930"
+    }
+  },
+  "seconds": 28,
+  "checks": [
+    {
+      "name": "verdict = partly",
+      "ok": true,
+      "detail": "partly"
+    },
+    {
+      "name": "issue_type in payment_fraud/cheating_scam",
+      "ok": true,
+      "detail": "payment_fraud"
+    },
+    {
+      "name": "mentions /1930/",
+      "ok": true
+    }
+  ],
+  "row": {
+    "id": "04-fake-customer-care-scam",
+    "pass": true,
+    "verdict": "partly",
+    "issue": "payment_fraud",
+    "seconds": 28,
+    "warnings": 0,
+    "failed": []
+  },
+  "turns": [
+    {
+      "label": "story",
+      "user": "Today I searched for my bank's customer care number on Google and called a number. The person asked me to install an app and then Rs 45000 was debited from my account in 10 minutes. I think it was a scam.",
+      "result": {
+        "state": {
+          "stage": "intake",
+          "story": {
+            "summary": "The user searched for a bank customer care number on Google, called a fraudulent number, and was asked to install an app. Rs 45000 was then debited from their account within 10 minutes.",
+            "timeline": [
+              {
+                "when": "2026-11-08",
+                "what": "User called a fake bank customer care number found on Google, installed an app as instructed, and Rs 45000 was debited unauthorizedly."
+              }
+            ],
+            "opposite_party": "Unknown scammer posing as bank customer care",
+            "platform": "Google Search / Remote Access App",
+            "amount_inr": 45000,
+            "payment_method": null,
+            "proof_mentioned": [],
+            "user_goal": "Recover the lost money or report the scam",
+            "months_since_event": 0,
+            "event_date": "2026-11-08",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": null,
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "Today I searched for my bank's customer care number on Google and called a number. The person asked me to install an app and then Rs 45000 was debited from my account in 10 minutes. I think it was a scam."
+            },
+            {
+              "role": "assistant",
+              "text": "I am so sorry to hear that you lost Rs 45000 through a fake customer care number scam. To help you better, could you please tell me which payment method was used (like UPI, credit card, net banking), and whether you have already reported this to the National Cyber Crime Helpline or your bank?"
+            }
+          ]
+        },
+        "reply": "I am so sorry to hear that you lost Rs 45000 through a fake customer care number scam. To help you better, could you please tell me which payment method was used (like UPI, credit card, net banking), and whether you have already reported this to the National Cyber Crime Helpline or your bank?",
+        "warnings": []
+      }
+    },
+    {
+      "label": "extra details",
+      "user": "It happened about 1 hour ago. I paid with UPI from my savings account. I did not tell anyone my PIN but I installed the screen sharing app.",
+      "result": {
+        "state": {
+          "stage": "confirm",
+          "story": {
+            "summary": "The user searched for a bank customer care number on Google, called a fraudulent number, and was asked to install a screen-sharing app. Rs 45000 was then debited from their savings account via UPI within 10 minutes.",
+            "timeline": [
+              {
+                "when": "2026-11-08",
+                "what": "User called a fake bank customer care number found on Google, installed a screen-sharing app as instructed, and Rs 45000 was debited unauthorizedly via UPI."
+              }
+            ],
+            "opposite_party": "Unknown scammer posing as bank customer care",
+            "platform": "Google Search / Screen Sharing App",
+            "amount_inr": 45000,
+            "payment_method": "UPI",
+            "proof_mentioned": [],
+            "user_goal": "Recover the lost money or report the scam",
+            "months_since_event": 0,
+            "event_date": "2026-11-08",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": null,
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "Today I searched for my bank's customer care number on Google and called a number. The person asked me to install an app and then Rs 45000 was debited from my account in 10 minutes. I think it was a scam."
+            },
+            {
+              "role": "assistant",
+              "text": "I am so sorry to hear that you lost Rs 45000 through a fake customer care number scam. To help you better, could you please tell me which payment method was used (like UPI, credit card, net banking), and whether you have already reported this to the National Cyber Crime Helpline or your bank?"
+            },
+            {
+              "role": "user",
+              "text": "It happened about 1 hour ago. I paid with UPI from my savings account. I did not tell anyone my PIN but I installed the screen sharing app."
+            },
+            {
+              "role": "assistant",
+              "text": "You lost Rs 45000 today around 1 hour ago through a fake bank customer care number scam after installing a screen-sharing app, using UPI from your savings account. Is this correct? Say yes, or tell me what to change."
+            }
+          ]
+        },
+        "reply": "You lost Rs 45000 today around 1 hour ago through a fake bank customer care number scam after installing a screen-sharing app, using UPI from your savings account. Is this correct? Say yes, or tell me what to change.",
+        "warnings": []
+      }
+    },
+    {
+      "label": "confirm",
+      "user": "Yes, that is correct.",
+      "result": {
+        "state": {
+          "stage": "evidence",
+          "story": {
+            "summary": "The user searched for a bank customer care number on Google, called a fraudulent number, and was asked to install a screen-sharing app. Rs 45000 was then debited from their savings account via UPI within 10 minutes.",
+            "timeline": [
+              {
+                "when": "2026-11-08",
+                "what": "User called a fake bank customer care number found on Google, installed a screen-sharing app as instructed, and Rs 45000 was debited unauthorizedly via UPI."
+              }
+            ],
+            "opposite_party": "Unknown scammer posing as bank customer care",
+            "platform": "Google Search / Screen Sharing App",
+            "amount_inr": 45000,
+            "payment_method": "UPI",
+            "proof_mentioned": [],
+            "user_goal": "Recover the lost money or report the scam",
+            "months_since_event": 0,
+            "event_date": "2026-11-08",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "payment_fraud",
+            "plain_explanation": "You have faced a serious online financial fraud where money was illegally debited from your bank account through a UPI transaction after you installed a screen-sharing app. You should immediately report this financial fraud on the national cyber crime portal or helpline to try to block the transaction before the money is moved. You also need to inform your bank right away so they can freeze your account and protect you from further losses. Please note that since you installed a screen-sharing app, recovering money depends heavily on how fast you report it and the actions taken by the bank and cyber authorities.",
+            "provisions": [
+              {
+                "id": "PROC-CYBER",
+                "why": "It tells you to immediately call the toll-free helpline 1930 or use the official portal to report online financial fraud and prevent further siphoning of money.",
+                "reference": "cybercrime.gov.in, 1930",
+                "instrument": "National Cyber Crime Reporting Portal / helpline 1930",
+                "title": "Report online financial fraud immediately",
+                "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2085609&reg=3&lang=2",
+                "source_type": "official"
+              },
+              {
+                "id": "RBI-2017-LIAB",
+                "why": "It sets out rules regarding customer liability and bank reporting for unauthorised electronic banking and UPI transactions.",
+                "reference": "Paras 6, 7, 9, 12",
+                "instrument": "RBI circular DBR.No.Leg.BC.78/09.07.005/2017-18 (6 July 2017)",
+                "title": "Customer liability for unauthorised electronic banking transactions (2017 rules)",
+                "source_url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11040",
+                "source_type": "official"
+              },
+              {
+                "id": "ITA-66",
+                "why": "It covers computer-related fraud and online impersonation offences when someone uses deception or fake apps to steal money.",
+                "reference": "Sections 66, 66C, 66D (and 43)",
+                "instrument": "Information Technology Act, 2000",
+                "title": "Computer-related fraud, identity theft, cheating by personation online",
+                "source_url": "https://www.indiacode.nic.in/bitstream/123456789/13116/1/it_act_2000_updated.pdf",
+                "source_type": "official"
+              },
+              {
+                "id": "BNS-319",
+                "why": "It applies when a scammer pretends to be a bank customer care official to cheat you.",
+                "reference": "Section 319",
+                "instrument": "Bharatiya Nyaya Sanhita, 2023",
+                "title": "Cheating by personation",
+                "source_url": "https://egazette.gov.in/WriteReadData/2023/250883.pdf",
+                "source_type": "official"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "Bank account statement showing the unauthorised Rs 45000 debit",
+                "why": "Proves the exact amount lost and the time of the fraudulent transaction.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "SMS or notification alerts of the debit",
+                "why": "Acts as immediate proof of the unauthorised transaction.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Screenshot of the dialed phone number and call log",
+                "why": "Shows the fake customer care number you called from Google search.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Name of the screen-sharing app installed on your phone",
+                "why": "Helps investigators and your bank understand how the scam was executed.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Copy of the cyber crime portal complaint acknowledgment",
+                "why": "Essential proof that you reported the financial fraud promptly.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Copy of the written complaint given to your bank",
+                "why": "Needed to establish that you notified your bank immediately within the required timeframe.",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "Do you have the bank account statement or SMS alerts showing the debit, and have you already contacted your bank or called the 1930 cyber helpline?"
+          },
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "Today I searched for my bank's customer care number on Google and called a number. The person asked me to install an app and then Rs 45000 was debited from my account in 10 minutes. I think it was a scam."
+            },
+            {
+              "role": "assistant",
+              "text": "I am so sorry to hear that you lost Rs 45000 through a fake customer care number scam. To help you better, could you please tell me which payment method was used (like UPI, credit card, net banking), and whether you have already reported this to the National Cyber Crime Helpline or your bank?"
+            },
+            {
+              "role": "user",
+              "text": "It happened about 1 hour ago. I paid with UPI from my savings account. I did not tell anyone my PIN but I installed the screen sharing app."
+            },
+            {
+              "role": "assistant",
+              "text": "You lost Rs 45000 today around 1 hour ago through a fake bank customer care number scam after installing a screen-sharing app, using UPI from your savings account. Is this correct? Say yes, or tell me what to change."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "You have faced a serious online financial fraud where money was illegally debited from your bank account through a UPI transaction after you installed a screen-sharing app. You should immediately report this financial fraud on the national cyber crime portal or helpline to try to block the transaction before the money is moved. You also need to inform your bank right away so they can freeze your account and protect you from further losses. Please note that since you installed a screen-sharing app, recovering money depends heavily on how fast you report it and the actions taken by the bank and cyber authorities.\n\nDo you have the bank account statement or SMS alerts showing the debit, and have you already contacted your bank or called the 1930 cyber helpline?"
+            }
+          ]
+        },
+        "reply": "You have faced a serious online financial fraud where money was illegally debited from your bank account through a UPI transaction after you installed a screen-sharing app. You should immediately report this financial fraud on the national cyber crime portal or helpline to try to block the transaction before the money is moved. You also need to inform your bank right away so they can freeze your account and protect you from further losses. Please note that since you installed a screen-sharing app, recovering money depends heavily on how fast you report it and the actions taken by the bank and cyber authorities.\n\nDo you have the bank account statement or SMS alerts showing the debit, and have you already contacted your bank or called the 1930 cyber helpline?",
+        "analysis": {
+          "issue_type": "payment_fraud",
+          "plain_explanation": "You have faced a serious online financial fraud where money was illegally debited from your bank account through a UPI transaction after you installed a screen-sharing app. You should immediately report this financial fraud on the national cyber crime portal or helpline to try to block the transaction before the money is moved. You also need to inform your bank right away so they can freeze your account and protect you from further losses. Please note that since you installed a screen-sharing app, recovering money depends heavily on how fast you report it and the actions taken by the bank and cyber authorities.",
+          "provisions": [
+            {
+              "id": "PROC-CYBER",
+              "why": "It tells you to immediately call the toll-free helpline 1930 or use the official portal to report online financial fraud and prevent further siphoning of money.",
+              "reference": "cybercrime.gov.in, 1930",
+              "instrument": "National Cyber Crime Reporting Portal / helpline 1930",
+              "title": "Report online financial fraud immediately",
+              "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2085609&reg=3&lang=2",
+              "source_type": "official"
+            },
+            {
+              "id": "RBI-2017-LIAB",
+              "why": "It sets out rules regarding customer liability and bank reporting for unauthorised electronic banking and UPI transactions.",
+              "reference": "Paras 6, 7, 9, 12",
+              "instrument": "RBI circular DBR.No.Leg.BC.78/09.07.005/2017-18 (6 July 2017)",
+              "title": "Customer liability for unauthorised electronic banking transactions (2017 rules)",
+              "source_url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11040",
+              "source_type": "official"
+            },
+            {
+              "id": "ITA-66",
+              "why": "It covers computer-related fraud and online impersonation offences when someone uses deception or fake apps to steal money.",
+              "reference": "Sections 66, 66C, 66D (and 43)",
+              "instrument": "Information Technology Act, 2000",
+              "title": "Computer-related fraud, identity theft, cheating by personation online",
+              "source_url": "https://www.indiacode.nic.in/bitstream/123456789/13116/1/it_act_2000_updated.pdf",
+              "source_type": "official"
+            },
+            {
+              "id": "BNS-319",
+              "why": "It applies when a scammer pretends to be a bank customer care official to cheat you.",
+              "reference": "Section 319",
+              "instrument": "Bharatiya Nyaya Sanhita, 2023",
+              "title": "Cheating by personation",
+              "source_url": "https://egazette.gov.in/WriteReadData/2023/250883.pdf",
+              "source_type": "official"
+            }
+          ],
+          "evidence_checklist": [
+            {
+              "item": "Bank account statement showing the unauthorised Rs 45000 debit",
+              "why": "Proves the exact amount lost and the time of the fraudulent transaction.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "SMS or notification alerts of the debit",
+              "why": "Acts as immediate proof of the unauthorised transaction.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Screenshot of the dialed phone number and call log",
+              "why": "Shows the fake customer care number you called from Google search.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Name of the screen-sharing app installed on your phone",
+              "why": "Helps investigators and your bank understand how the scam was executed.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Copy of the cyber crime portal complaint acknowledgment",
+              "why": "Essential proof that you reported the financial fraud promptly.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Copy of the written complaint given to your bank",
+              "why": "Needed to establish that you notified your bank immediately within the required timeframe.",
+              "mentioned_by_user": false
+            }
+          ],
+          "ask": "Do you have the bank account statement or SMS alerts showing the debit, and have you already contacted your bank or called the 1930 cyber helpline?"
+        },
+        "warnings": []
+      }
+    },
+    {
+      "label": "proofs",
+      "user": "I have the bank SMS alerts, the number I called and the call log. I have not told the bank yet.",
+      "result": {
+        "state": {
+          "stage": "done",
+          "story": {
+            "summary": "The user searched for a bank customer care number on Google, called a fraudulent number, and was asked to install a screen-sharing app. Rs 45000 was then debited from their savings account via UPI within 10 minutes.",
+            "timeline": [
+              {
+                "when": "2026-11-08",
+                "what": "User called a fake bank customer care number found on Google, installed a screen-sharing app as instructed, and Rs 45000 was debited unauthorizedly via UPI."
+              }
+            ],
+            "opposite_party": "Unknown scammer posing as bank customer care",
+            "platform": "Google Search / Screen Sharing App",
+            "amount_inr": 45000,
+            "payment_method": "UPI",
+            "proof_mentioned": [],
+            "user_goal": "Recover the lost money or report the scam",
+            "months_since_event": 0,
+            "event_date": "2026-11-08",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "payment_fraud",
+            "plain_explanation": "You have faced a serious online financial fraud where money was illegally debited from your bank account through a UPI transaction after you installed a screen-sharing app. You should immediately report this financial fraud on the national cyber crime portal or helpline to try to block the transaction before the money is moved. You also need to inform your bank right away so they can freeze your account and protect you from further losses. Please note that since you installed a screen-sharing app, recovering money depends heavily on how fast you report it and the actions taken by the bank and cyber authorities.",
+            "provisions": [
+              {
+                "id": "PROC-CYBER",
+                "why": "It tells you to immediately call the toll-free helpline 1930 or use the official portal to report online financial fraud and prevent further siphoning of money.",
+                "reference": "cybercrime.gov.in, 1930",
+                "instrument": "National Cyber Crime Reporting Portal / helpline 1930",
+                "title": "Report online financial fraud immediately",
+                "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2085609&reg=3&lang=2",
+                "source_type": "official"
+              },
+              {
+                "id": "RBI-2017-LIAB",
+                "why": "It sets out rules regarding customer liability and bank reporting for unauthorised electronic banking and UPI transactions.",
+                "reference": "Paras 6, 7, 9, 12",
+                "instrument": "RBI circular DBR.No.Leg.BC.78/09.07.005/2017-18 (6 July 2017)",
+                "title": "Customer liability for unauthorised electronic banking transactions (2017 rules)",
+                "source_url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11040",
+                "source_type": "official"
+              },
+              {
+                "id": "ITA-66",
+                "why": "It covers computer-related fraud and online impersonation offences when someone uses deception or fake apps to steal money.",
+                "reference": "Sections 66, 66C, 66D (and 43)",
+                "instrument": "Information Technology Act, 2000",
+                "title": "Computer-related fraud, identity theft, cheating by personation online",
+                "source_url": "https://www.indiacode.nic.in/bitstream/123456789/13116/1/it_act_2000_updated.pdf",
+                "source_type": "official"
+              },
+              {
+                "id": "BNS-319",
+                "why": "It applies when a scammer pretends to be a bank customer care official to cheat you.",
+                "reference": "Section 319",
+                "instrument": "Bharatiya Nyaya Sanhita, 2023",
+                "title": "Cheating by personation",
+                "source_url": "https://egazette.gov.in/WriteReadData/2023/250883.pdf",
+                "source_type": "official"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "Bank account statement showing the unauthorised Rs 45000 debit",
+                "why": "Proves the exact amount lost and the time of the fraudulent transaction.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "SMS or notification alerts of the debit",
+                "why": "Acts as immediate proof of the unauthorised transaction.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Screenshot of the dialed phone number and call log",
+                "why": "Shows the fake customer care number you called from Google search.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Name of the screen-sharing app installed on your phone",
+                "why": "Helps investigators and your bank understand how the scam was executed.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Copy of the cyber crime portal complaint acknowledgment",
+                "why": "Essential proof that you reported the financial fraud promptly.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Copy of the written complaint given to your bank",
+                "why": "Needed to establish that you notified your bank immediately within the required timeframe.",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "Do you have the bank account statement or SMS alerts showing the debit, and have you already contacted your bank or called the 1930 cyber helpline?"
+          },
+          "plan": {
+            "evidence_have": [
+              "Bank SMS alerts showing the debit of Rs 45000",
+              "Call log and the fake customer care number called from Google search",
+              "Details of the screen-sharing app installed on the phone"
+            ],
+            "evidence_missing": [
+              "Copy of the cyber crime portal complaint acknowledgment",
+              "Written complaint copy given to the bank",
+              "Full bank account statement showing the unauthorised transaction details"
+            ],
+            "steps": [
+              {
+                "title": "Call the National Cyber Crime Helpline immediately",
+                "detail": "Call the 24x7 toll-free helpline number 1930 or visit cybercrime.gov.in to report the financial fraud right away so that authorities can try to freeze the transaction before the money is transferred further.",
+                "where": "National Cyber Crime Reporting Portal / helpline 1930"
+              },
+              {
+                "title": "Inform your bank immediately to block account and report fraud",
+                "detail": "Contact your bank's official customer care or visit your branch right away to report the unauthorised transaction, block your debit card, UPI handles, and freeze your account to prevent further losses.",
+                "where": "Your bank's official customer care helpline or nearest branch"
+              },
+              {
+                "title": "Submit a written complaint to your bank",
+                "detail": "Submit a formal written complaint to your bank detailing the unauthorised UPI transaction, attaching the SMS alerts, call logs, and the cyber crime acknowledgment copy once obtained.",
+                "where": "Bank branch manager or official bank grievance email"
+              },
+              {
+                "title": "Lodge an online cyber crime complaint",
+                "detail": "Register a detailed complaint on the cybercrime.gov.in portal, providing all transaction details, the fake number called, and the screen-sharing app name to get an official complaint reference number.",
+                "where": "cybercrime.gov.in portal"
+              },
+              {
+                "title": "(General) Approach the RBI Ombudsman if the bank fails to resolve",
+                "detail": "If your bank does not resolve your complaint or reply within the prescribed time after you have reported the unauthorised transaction, you can file a complaint online on the RBI Ombudsman portal.",
+                "where": "RBI Integrated Ombudsman portal at cms.rbi.org.in"
+              }
+            ],
+            "forum": "National Cyber Crime Portal / Helpline 1930 and your Bank / RBI Ombudsman",
+            "confidence": "high",
+            "summary": "You have faced a serious online financial fraud where Rs 45000 was debited via UPI after calling a fake customer care number and installing a screen-sharing app. You must immediately call 1930, report the fraud on cybercrime.gov.in, and inform your bank to freeze your account and dispute the transaction.",
+            "draft_document": {
+              "type": "none",
+              "text": ""
+            }
+          },
+          "verdict": {
+            "level": "partly",
+            "reasons": [
+              "Scam and fraud cases need police and bank action that this tool can only guide you to. Get a lawyer if the police or bank refuse to act."
+            ]
+          },
+          "transcript": [
+            {
+              "role": "user",
+              "text": "Today I searched for my bank's customer care number on Google and called a number. The person asked me to install an app and then Rs 45000 was debited from my account in 10 minutes. I think it was a scam."
+            },
+            {
+              "role": "assistant",
+              "text": "I am so sorry to hear that you lost Rs 45000 through a fake customer care number scam. To help you better, could you please tell me which payment method was used (like UPI, credit card, net banking), and whether you have already reported this to the National Cyber Crime Helpline or your bank?"
+            },
+            {
+              "role": "user",
+              "text": "It happened about 1 hour ago. I paid with UPI from my savings account. I did not tell anyone my PIN but I installed the screen sharing app."
+            },
+            {
+              "role": "assistant",
+              "text": "You lost Rs 45000 today around 1 hour ago through a fake bank customer care number scam after installing a screen-sharing app, using UPI from your savings account. Is this correct? Say yes, or tell me what to change."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "You have faced a serious online financial fraud where money was illegally debited from your bank account through a UPI transaction after you installed a screen-sharing app. You should immediately report this financial fraud on the national cyber crime portal or helpline to try to block the transaction before the money is moved. You also need to inform your bank right away so they can freeze your account and protect you from further losses. Please note that since you installed a screen-sharing app, recovering money depends heavily on how fast you report it and the actions taken by the bank and cyber authorities.\n\nDo you have the bank account statement or SMS alerts showing the debit, and have you already contacted your bank or called the 1930 cyber helpline?"
+            },
+            {
+              "role": "user",
+              "text": "I have the bank SMS alerts, the number I called and the call log. I have not told the bank yet."
+            },
+            {
+              "role": "assistant",
+              "text": "You have faced a serious online financial fraud where Rs 45000 was debited via UPI after calling a fake customer care number and installing a screen-sharing app. You must immediately call 1930, report the fraud on cybercrime.gov.in, and inform your bank to freeze your account and dispute the transaction."
+            }
+          ]
+        },
+        "reply": "You have faced a serious online financial fraud where Rs 45000 was debited via UPI after calling a fake customer care number and installing a screen-sharing app. You must immediately call 1930, report the fraud on cybercrime.gov.in, and inform your bank to freeze your account and dispute the transaction.",
+        "plan": {
+          "evidence_have": [
+            "Bank SMS alerts showing the debit of Rs 45000",
+            "Call log and the fake customer care number called from Google search",
+            "Details of the screen-sharing app installed on the phone"
+          ],
+          "evidence_missing": [
+            "Copy of the cyber crime portal complaint acknowledgment",
+            "Written complaint copy given to the bank",
+            "Full bank account statement showing the unauthorised transaction details"
+          ],
+          "steps": [
+            {
+              "title": "Call the National Cyber Crime Helpline immediately",
+              "detail": "Call the 24x7 toll-free helpline number 1930 or visit cybercrime.gov.in to report the financial fraud right away so that authorities can try to freeze the transaction before the money is transferred further.",
+              "where": "National Cyber Crime Reporting Portal / helpline 1930"
+            },
+            {
+              "title": "Inform your bank immediately to block account and report fraud",
+              "detail": "Contact your bank's official customer care or visit your branch right away to report the unauthorised transaction, block your debit card, UPI handles, and freeze your account to prevent further losses.",
+              "where": "Your bank's official customer care helpline or nearest branch"
+            },
+            {
+              "title": "Submit a written complaint to your bank",
+              "detail": "Submit a formal written complaint to your bank detailing the unauthorised UPI transaction, attaching the SMS alerts, call logs, and the cyber crime acknowledgment copy once obtained.",
+              "where": "Bank branch manager or official bank grievance email"
+            },
+            {
+              "title": "Lodge an online cyber crime complaint",
+              "detail": "Register a detailed complaint on the cybercrime.gov.in portal, providing all transaction details, the fake number called, and the screen-sharing app name to get an official complaint reference number.",
+              "where": "cybercrime.gov.in portal"
+            },
+            {
+              "title": "(General) Approach the RBI Ombudsman if the bank fails to resolve",
+              "detail": "If your bank does not resolve your complaint or reply within the prescribed time after you have reported the unauthorised transaction, you can file a complaint online on the RBI Ombudsman portal.",
+              "where": "RBI Integrated Ombudsman portal at cms.rbi.org.in"
+            }
+          ],
+          "forum": "National Cyber Crime Portal / Helpline 1930 and your Bank / RBI Ombudsman",
+          "confidence": "high",
+          "summary": "You have faced a serious online financial fraud where Rs 45000 was debited via UPI after calling a fake customer care number and installing a screen-sharing app. You must immediately call 1930, report the fraud on cybercrime.gov.in, and inform your bank to freeze your account and dispute the transaction.",
+          "draft_document": {
+            "type": "none",
+            "text": ""
+          }
+        },
+        "verdict": {
+          "level": "partly",
+          "reasons": [
+            "Scam and fraud cases need police and bank action that this tool can only guide you to. Get a lawyer if the police or bank refuse to act."
+          ]
+        },
+        "warnings": []
+      }
+    }
+  ]
+}

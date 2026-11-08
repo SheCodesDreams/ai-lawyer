@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>AI Lawyer India - Solution Doc</title>
+<style>
+@page { size: A4; margin: 11mm 13mm; }
+body { font: 8.9pt/1.32 "Segoe UI", Arial, sans-serif; color: #1a1a1a; margin: 0; }
+h1 { font-size: 14pt; margin: 0 0 1px; }
+h2 { font-size: 10pt; margin: 7px 0 2px; color: #1f4e79; border-bottom: 1px solid #cfd8e3; padding-bottom: 1px; }
+p { margin: 2px 0; } ul { margin: 2px 0 2px 15px; padding: 0; } li { margin: 1px 0; }
+.meta { color: #555; font-size: 8.5pt; margin-bottom: 3px; }
+table { border-collapse: collapse; width: 100%; margin: 3px 0; font-size: 8.4pt; }
+td, th { border: 1px solid #cfd8e3; padding: 2px 5px; vertical-align: top; text-align: left; }
+th { background: #eef3f8; }
+.ok { color: #1e7b3a; font-weight: 600; }
+</style></head><body>
+
+<h1>AI Lawyer India: Solution Doc (Problem 2)</h1>
+<div class="meta">[Name] &middot; [Roll no.] &middot; [Branch] &nbsp;|&nbsp; Prototype: <b>https://ai-lawyer-eta.vercel.app</b> &nbsp;|&nbsp; Raw outputs: <code>outputs/raw/</code> (17 cases) &nbsp;|&nbsp; Date: 8 Nov 2026</div>
+
+<h2>1. Problem choice and scope</h2>
+<p>I picked Problem 2 because everyday legal problems in India (money not returned, a scam, a notice nobody explains) hurt many people and need no show-specific context. I went deep on <b>money disputes</b> and said what is not covered. <b>Covered, with verified law:</b> online refunds and non-delivery, e-commerce platforms, payment scams and unauthorised transactions, rental deposits, unpaid salary, private loans where documents are held, and demand notices and cheque bounce. <b>Not covered:</b> family, property title, tax, criminal defence. For those the tool still gives practical steps but labels them "(General)" and does not cite law. It never stops at "see a lawyer".</p>
+
+<h2>2. Assumptions (the brief was silent)</h2>
+<ul>
+<li>Users are ordinary people on a phone, often not writing English; text or voice, replies in their language (script detected in code).</li>
+<li>"Today" is the server date; criminal law means the <b>BNS 2023</b>, not the IPC. Consumer forum limits use the amount <i>paid</i> (District up to Rs 50 lakh).</li>
+<li>indiacode.nic.in blocked my fetches, so <b>33 of 53 corpus entries come from secondary sources</b> (bare-act sites, law-firm notes); 20 are official text. Each entry carries <code>source_type</code> and <code>verified_on</code>.</li>
+<li>Free tiers only: Gemini free API, Vercel Hobby. No user data is stored; the case lives in the browser and is sent with each request.</li>
+</ul>
+
+<h2>3. How it works: what AI does, what code does</h2>
+<p><b>Flow:</b> (1) tell your story, (2) it restates a structured case file for you to confirm, (3) it explains where you stand, cites laws and asks what proof you have, (4) it gives a step-by-step plan, the right forum, a draft notice/complaint/reply, and a verdict on whether this tool can handle the case, (5) follow-up questions, plus <b>Practice mode</b>: the AI plays the other side's lawyer, briefs you on likely tricks, asks hard questions and scores each answer.</p>
+<table>
+<tr><th style="width:17%">Gemini (3.5 Flash-Lite)</th><td>Turns the messy story into facts and a timeline; explains in plain language; picks relevant provisions <i>from the file</i>; drafts documents; plays the opposing lawyer.</td></tr>
+<tr><th>Plain code</th><td>Stage order; the law file; <b>citation validation</b>; flagging of unknown section numbers, "IPC" and case names; age of the claim from the event date; language detection and a retry if an English user gets Hindi; <b>verdict rules</b> (amount over Rs 50 lakh, claim near its time limit, threats, a court case already filed, no matching law).</td></tr>
+<tr><th>Human in the loop</th><td>The corpus is hand-reviewed with sources. The verdict recommends a lawyer, <i>in addition to</i> steps, for the risky cases above. Drafts have <code>[PLACEHOLDERS]</code> and a "check every detail" note.</td></tr>
+</table>
+<p><b>Swappable model:</b> one <code>llm()</code> function; set <code>LLM_PROVIDER=openai</code> with a key, model and base URL to use any OpenAI-compatible API, or change <code>GEMINI_MODEL</code>.</p>
+
+<h2>4. How it avoids invented laws</h2>
+<ul>
+<li><b>Closed corpus.</b> 53 entries (about 7k tokens) go in every prompt. The model may cite only by entry id; code drops any id not in the file and tells the user.</li>
+<li><b>Safety net on free text.</b> Section/rule/article numbers that appear nowhere in the file, "IPC", and "X v. Y" case citations are flagged to the user as unverified.</li>
+<li><b>Honest caveats.</b> Each entry says what is state-specific, a model law or unconfirmed (e.g. the Model Tenancy Act applies only where a state adopted it; RBI liability rules change for transactions from 1 Jan 2027; 3 entries are marked <i>unverified</i>). Prompts forbid fixed refund deadlines, case law and certainty.</li>
+<li><b>Limit:</b> the model can still paraphrase an entry loosely. The citation check proves the entry exists, not that the summary fits.</li>
+</ul>
+
+<h2>5. How I checked quality (real runs, honest failures)</h2>
+<p>I wrote <b>17 test conversations</b> and ran them on the live site. Checks: verdict, issue type, a cited law id, reply language, forbidden text. Cases: refunds in English, Hindi and Telugu; three scam types; a Rs 60 lakh claim; a 30-month-old claim; salary; deposit; Telugu private-loan documents; cheque notice; blackmail; a trap asking for "IPC 420 and a Supreme Court case"; a vague one-line message. <span class="ok">Final: 17/17 pass</span>, but the path there is the useful part:</p>
+<table>
+<tr><th style="width:23%">Run</th><th>What failed and the fix</th></tr>
+<tr><td>13 cases, run 1: 12/13</td><td>The model said "7 months" for a May 2024 event (it does not know today's date), so a time-barred claim was called "can help". <b>Fix:</b> model extracts the date, code computes the age.</td></tr>
+<tr><td>After adding salary, deposit, loan, cheque: 14/17</td><td>(a) The model set "court case exists" for a plain company notice, giving the wrong "lawyer" verdict. <b>Fix:</b> renamed the field to <code>court_case_filed</code> and tightened the prompt. (b) Gemini 503/429 overloads and a Vercel timeout: added retries. (c) Two failures were my test script giving up too early.</td></tr>
+<tr><td>Earlier, by hand</td><td>English messages got Hindi or Hinglish replies (the prompt listed Hindi as an example). <b>Fix:</b> language detected in code, enforced, one retry if wrong.</td></tr>
+</table>
+<p><b>Where it still fails or is weak:</b> (1) my cases test behaviour, not legal correctness; no lawyer has reviewed the output. (2) The cheque-bounce case gets "can help" although a bounced cheque carries criminal exposure; the verdict is too optimistic there. (3) Practice mode sometimes states a detail slightly wrong (said "a whole month" for about three weeks). (4) Deposit and wage law is state-specific, so answers are often general guidance. (5) Replies take 5-25 s on the free tier, and a stalled Gemini call can exceed Vercel's 60 s limit (one run failed this way). (6) Voice input depends on the browser; voice output uses the browser's voice.</p>
+
+<h2>6. AI tools used, and where they got it wrong</h2>
+<p><b>Claude Code</b> wrote the code and helped draft the corpus; three Claude research sub-agents checked each legal claim against web sources (they were told to write NOT VERIFIED, not guess); <b>Gemini 3.5 Flash-Lite</b> runs inside the app. <b>Where they were wrong:</b> (1) Claude's recalled section numbers were wrong twice and the source check caught both: Sale of Goods Act <i>s.56</i> is damages for <i>non-acceptance</i> (non-delivery is <i>s.57</i>), and Consumer Protection Act <i>s.51</i> is an appeal, not State jurisdiction. This is why the corpus is built from sources, not memory. (2) Gemini mis-computed the age of a claim (above). (3) The default model <code>gemini-2.5-flash</code> had been retired for new users; larger Gemini models took 15-60 s per call, so I chose a lite one.</p>
+
+<h2>7. Scale and cost</h2>
+<p>A case takes about <b>5-7 model calls</b>: intake 1-3 (small prompt), confirm + analysis, plan, then follow-ups. The corpus (about 7k tokens) is sent with analysis, plan, follow-up and practice calls, so roughly <b>25k input and 3k output tokens per case</b>. I have not measured rupee cost; it is those tokens times the chosen model's price. The server is stateless, so it scales horizontally and stores no personal data. <b>At volume:</b> a paid model (one env change); cache the fixed corpus prefix; once the corpus passes a few hundred entries, send only entries matching the detected issue type; queue and rate-limit calls; log anonymised failures for lawyer review; re-verify entries on a schedule (each has <code>verified_on</code>) because law moves (RBI rules 2027, new labour codes, state rent laws).</p>
+
+<h2>8. Next steps</h2>
+<p>Have a lawyer review the corpus and 20 outputs; verify the 3 unverified and 33 secondary entries against official text; add a cheque-bounce "criminal exposure" rule; add state-specific rent and money-lender entries; measure real cost and latency; test with real users in Hindi, Telugu and Tamil.</p>
+
+</body></html>

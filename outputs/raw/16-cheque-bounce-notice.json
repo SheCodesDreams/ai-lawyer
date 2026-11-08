@@ -1,0 +1,515 @@
+{
+  "case": {
+    "id": "16-cheque-bounce-notice",
+    "note": "User received a cheque-bounce demand notice.",
+    "story": "I received a legal notice on 2 November 2026 saying a cheque of Rs 80000 that I gave to a supplier bounced, and I must pay within 15 days or they will file a criminal case. The cheque bounced because my account balance was low.",
+    "extra": "I owe him about Rs 80000 for goods but I wanted to pay in instalments. The bank returned the cheque on 25 October 2026.",
+    "proofs": "I have the notice, the bounced cheque memo and my account statement.",
+    "expect": {
+      "verdict_in": [
+        "partly",
+        "can_help"
+      ],
+      "issue_type": "notice_received",
+      "must_cite_any": [
+        "NI-138"
+      ],
+      "must_mention_regex": "15 days"
+    }
+  },
+  "seconds": 45,
+  "checks": [
+    {
+      "name": "verdict in partly/can_help",
+      "ok": true,
+      "detail": "can_help"
+    },
+    {
+      "name": "issue_type = notice_received",
+      "ok": true,
+      "detail": "notice_received"
+    },
+    {
+      "name": "mentions /15 days/",
+      "ok": true
+    },
+    {
+      "name": "cites one of NI-138",
+      "ok": true,
+      "detail": "NI-138"
+    }
+  ],
+  "row": {
+    "id": "16-cheque-bounce-notice",
+    "pass": true,
+    "verdict": "can_help",
+    "issue": "notice_received",
+    "seconds": 45,
+    "warnings": 0,
+    "failed": []
+  },
+  "turns": [
+    {
+      "label": "story",
+      "user": "I received a legal notice on 2 November 2026 saying a cheque of Rs 80000 that I gave to a supplier bounced, and I must pay within 15 days or they will file a criminal case. The cheque bounced because my account balance was low.",
+      "result": {
+        "state": {
+          "stage": "intake",
+          "story": {
+            "summary": "The user received a legal notice on 2 November 2026 regarding a bounced cheque for Rs 80,000 given to a supplier due to low account balance, with a 15-day deadline before potential legal action.",
+            "timeline": [
+              {
+                "when": "2026-11-02",
+                "what": "Received a legal notice stating a cheque of Rs 80,000 bounced due to low account balance and demanding payment within 15 days."
+              }
+            ],
+            "opposite_party": "Supplier",
+            "platform": null,
+            "amount_inr": 80000,
+            "payment_method": "Cheque",
+            "proof_mentioned": [
+              "legal notice"
+            ],
+            "user_goal": null,
+            "months_since_event": 0,
+            "event_date": "2026-11-02",
+            "flags": {
+              "threats_or_violence": false,
+              "court_case_filed": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": null,
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I received a legal notice on 2 November 2026 saying a cheque of Rs 80000 that I gave to a supplier bounced, and I must pay within 15 days or they will file a criminal case. The cheque bounced because my account balance was low."
+            },
+            {
+              "role": "assistant",
+              "text": "I understand you received a legal notice on 2 November 2026 about an 80,000 rupee cheque that bounced due to low balance, with a demand to pay within 15 days. \n\nDo you have a copy of the legal notice and the bank memo stating the cheque bounced? Also, what is your main goal right now (for example, to settle the amount, talk to the supplier, or get more time)?"
+            }
+          ]
+        },
+        "reply": "I understand you received a legal notice on 2 November 2026 about an 80,000 rupee cheque that bounced due to low balance, with a demand to pay within 15 days. \n\nDo you have a copy of the legal notice and the bank memo stating the cheque bounced? Also, what is your main goal right now (for example, to settle the amount, talk to the supplier, or get more time)?",
+        "warnings": []
+      }
+    },
+    {
+      "label": "extra details",
+      "user": "I owe him about Rs 80000 for goods but I wanted to pay in instalments. The bank returned the cheque on 25 October 2026.",
+      "result": {
+        "state": {
+          "stage": "confirm",
+          "story": {
+            "summary": "The user received a legal notice on 2 November 2026 regarding a bounced cheque for Rs 80,000 given to a supplier for goods, with a 15-day deadline. The cheque actually bounced on 25 October 2026 due to low account balance, and the user wants to pay in instalments.",
+            "timeline": [
+              {
+                "when": "2026-10-25",
+                "what": "Cheque of Rs 80,000 returned by the bank due to low account balance."
+              },
+              {
+                "when": "2026-11-02",
+                "what": "Received a legal notice regarding the bounced cheque with a 15-day payment demand."
+              }
+            ],
+            "opposite_party": "Supplier",
+            "platform": null,
+            "amount_inr": 80000,
+            "payment_method": "Cheque",
+            "proof_mentioned": [
+              "legal notice",
+              "bank memo"
+            ],
+            "user_goal": "Pay in instalments",
+            "months_since_event": 1,
+            "event_date": "2026-10-25",
+            "flags": {
+              "threats_or_violence": false,
+              "court_case_filed": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": null,
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I received a legal notice on 2 November 2026 saying a cheque of Rs 80000 that I gave to a supplier bounced, and I must pay within 15 days or they will file a criminal case. The cheque bounced because my account balance was low."
+            },
+            {
+              "role": "assistant",
+              "text": "I understand you received a legal notice on 2 November 2026 about an 80,000 rupee cheque that bounced due to low balance, with a demand to pay within 15 days. \n\nDo you have a copy of the legal notice and the bank memo stating the cheque bounced? Also, what is your main goal right now (for example, to settle the amount, talk to the supplier, or get more time)?"
+            },
+            {
+              "role": "user",
+              "text": "I owe him about Rs 80000 for goods but I wanted to pay in instalments. The bank returned the cheque on 25 October 2026."
+            },
+            {
+              "role": "assistant",
+              "text": "You received a legal notice on 2 November 2026 after your cheque of Rs 80,000 to your supplier bounced on 25 October 2026 due to low balance, and you would like to pay in instalments. Is this correct? Say yes, or tell me what to change."
+            }
+          ]
+        },
+        "reply": "You received a legal notice on 2 November 2026 after your cheque of Rs 80,000 to your supplier bounced on 25 October 2026 due to low balance, and you would like to pay in instalments. Is this correct? Say yes, or tell me what to change.",
+        "warnings": []
+      }
+    },
+    {
+      "label": "confirm",
+      "user": "Yes, that is correct.",
+      "result": {
+        "state": {
+          "stage": "evidence",
+          "story": {
+            "summary": "The user received a legal notice on 2 November 2026 regarding a bounced cheque for Rs 80,000 given to a supplier for goods, with a 15-day deadline. The cheque actually bounced on 25 October 2026 due to low account balance, and the user wants to pay in instalments.",
+            "timeline": [
+              {
+                "when": "2026-10-25",
+                "what": "Cheque of Rs 80,000 returned by the bank due to low account balance."
+              },
+              {
+                "when": "2026-11-02",
+                "what": "Received a legal notice regarding the bounced cheque with a 15-day payment demand."
+              }
+            ],
+            "opposite_party": "Supplier",
+            "platform": null,
+            "amount_inr": 80000,
+            "payment_method": "Cheque",
+            "proof_mentioned": [
+              "legal notice",
+              "bank memo"
+            ],
+            "user_goal": "Pay in instalments",
+            "months_since_event": 1,
+            "event_date": "2026-10-25",
+            "flags": {
+              "threats_or_violence": false,
+              "court_case_filed": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "notice_received",
+            "plain_explanation": "You received a legal notice because your cheque for Rs 80,000 bounced due to a low balance. Under the law, you have a limited time of 15 days from receiving the notice to respond or clear the payment. Since you want to pay in instalments, you should contact the supplier in writing before this deadline expires to propose an instalment plan. If the supplier agrees, get the agreement in writing to avoid legal action. If you ignore the notice or fail to pay within the time limit, the supplier can file a formal complaint in court. Since legal deadlines are strict, you should consider consulting a lawyer to help draft a reply.",
+            "provisions": [
+              {
+                "id": "NI-138",
+                "why": "It governs cheque bounce situations, requiring you to respond or pay within the 15-day window specified in the legal notice to avoid a court complaint.",
+                "reference": "Section 138",
+                "instrument": "Negotiable Instruments Act, 1881",
+                "title": "Cheque bounce",
+                "source_url": "https://blog.ipleaders.in/how-to-file-cheque-bounce-case-section-138/",
+                "source_type": "secondary"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "Copy of the legal notice",
+                "why": "To check the exact date of receipt and the payment deadline demanded by the supplier.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Bank memo or return slip",
+                "why": "To confirm the exact date and reason the cheque was returned by the bank.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Invoice or bill for the goods",
+                "why": "To verify the exact amount owed for the goods purchased from the supplier.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Bank account statements",
+                "why": "To show the balance status and any attempted communications of payment.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Written messages or emails with the supplier",
+                "why": "To prove any prior talks about clearing dues or discussing instalments.",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "Do you have the original legal notice and the bank memo with you, and have you already spoken to the supplier about paying in instalments?"
+          },
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I received a legal notice on 2 November 2026 saying a cheque of Rs 80000 that I gave to a supplier bounced, and I must pay within 15 days or they will file a criminal case. The cheque bounced because my account balance was low."
+            },
+            {
+              "role": "assistant",
+              "text": "I understand you received a legal notice on 2 November 2026 about an 80,000 rupee cheque that bounced due to low balance, with a demand to pay within 15 days. \n\nDo you have a copy of the legal notice and the bank memo stating the cheque bounced? Also, what is your main goal right now (for example, to settle the amount, talk to the supplier, or get more time)?"
+            },
+            {
+              "role": "user",
+              "text": "I owe him about Rs 80000 for goods but I wanted to pay in instalments. The bank returned the cheque on 25 October 2026."
+            },
+            {
+              "role": "assistant",
+              "text": "You received a legal notice on 2 November 2026 after your cheque of Rs 80,000 to your supplier bounced on 25 October 2026 due to low balance, and you would like to pay in instalments. Is this correct? Say yes, or tell me what to change."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "You received a legal notice because your cheque for Rs 80,000 bounced due to a low balance. Under the law, you have a limited time of 15 days from receiving the notice to respond or clear the payment. Since you want to pay in instalments, you should contact the supplier in writing before this deadline expires to propose an instalment plan. If the supplier agrees, get the agreement in writing to avoid legal action. If you ignore the notice or fail to pay within the time limit, the supplier can file a formal complaint in court. Since legal deadlines are strict, you should consider consulting a lawyer to help draft a reply.\n\nDo you have the original legal notice and the bank memo with you, and have you already spoken to the supplier about paying in instalments?"
+            }
+          ]
+        },
+        "reply": "You received a legal notice because your cheque for Rs 80,000 bounced due to a low balance. Under the law, you have a limited time of 15 days from receiving the notice to respond or clear the payment. Since you want to pay in instalments, you should contact the supplier in writing before this deadline expires to propose an instalment plan. If the supplier agrees, get the agreement in writing to avoid legal action. If you ignore the notice or fail to pay within the time limit, the supplier can file a formal complaint in court. Since legal deadlines are strict, you should consider consulting a lawyer to help draft a reply.\n\nDo you have the original legal notice and the bank memo with you, and have you already spoken to the supplier about paying in instalments?",
+        "analysis": {
+          "issue_type": "notice_received",
+          "plain_explanation": "You received a legal notice because your cheque for Rs 80,000 bounced due to a low balance. Under the law, you have a limited time of 15 days from receiving the notice to respond or clear the payment. Since you want to pay in instalments, you should contact the supplier in writing before this deadline expires to propose an instalment plan. If the supplier agrees, get the agreement in writing to avoid legal action. If you ignore the notice or fail to pay within the time limit, the supplier can file a formal complaint in court. Since legal deadlines are strict, you should consider consulting a lawyer to help draft a reply.",
+          "provisions": [
+            {
+              "id": "NI-138",
+              "why": "It governs cheque bounce situations, requiring you to respond or pay within the 15-day window specified in the legal notice to avoid a court complaint.",
+              "reference": "Section 138",
+              "instrument": "Negotiable Instruments Act, 1881",
+              "title": "Cheque bounce",
+              "source_url": "https://blog.ipleaders.in/how-to-file-cheque-bounce-case-section-138/",
+              "source_type": "secondary"
+            }
+          ],
+          "evidence_checklist": [
+            {
+              "item": "Copy of the legal notice",
+              "why": "To check the exact date of receipt and the payment deadline demanded by the supplier.",
+              "mentioned_by_user": true
+            },
+            {
+              "item": "Bank memo or return slip",
+              "why": "To confirm the exact date and reason the cheque was returned by the bank.",
+              "mentioned_by_user": true
+            },
+            {
+              "item": "Invoice or bill for the goods",
+              "why": "To verify the exact amount owed for the goods purchased from the supplier.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Bank account statements",
+              "why": "To show the balance status and any attempted communications of payment.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Written messages or emails with the supplier",
+              "why": "To prove any prior talks about clearing dues or discussing instalments.",
+              "mentioned_by_user": false
+            }
+          ],
+          "ask": "Do you have the original legal notice and the bank memo with you, and have you already spoken to the supplier about paying in instalments?"
+        },
+        "warnings": []
+      }
+    },
+    {
+      "label": "proofs",
+      "user": "I have the notice, the bounced cheque memo and my account statement.",
+      "result": {
+        "state": {
+          "stage": "done",
+          "story": {
+            "summary": "The user received a legal notice on 2 November 2026 regarding a bounced cheque for Rs 80,000 given to a supplier for goods, with a 15-day deadline. The cheque actually bounced on 25 October 2026 due to low account balance, and the user wants to pay in instalments.",
+            "timeline": [
+              {
+                "when": "2026-10-25",
+                "what": "Cheque of Rs 80,000 returned by the bank due to low account balance."
+              },
+              {
+                "when": "2026-11-02",
+                "what": "Received a legal notice regarding the bounced cheque with a 15-day payment demand."
+              }
+            ],
+            "opposite_party": "Supplier",
+            "platform": null,
+            "amount_inr": 80000,
+            "payment_method": "Cheque",
+            "proof_mentioned": [
+              "legal notice",
+              "bank memo"
+            ],
+            "user_goal": "Pay in instalments",
+            "months_since_event": 1,
+            "event_date": "2026-10-25",
+            "flags": {
+              "threats_or_violence": false,
+              "court_case_filed": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "notice_received",
+            "plain_explanation": "You received a legal notice because your cheque for Rs 80,000 bounced due to a low balance. Under the law, you have a limited time of 15 days from receiving the notice to respond or clear the payment. Since you want to pay in instalments, you should contact the supplier in writing before this deadline expires to propose an instalment plan. If the supplier agrees, get the agreement in writing to avoid legal action. If you ignore the notice or fail to pay within the time limit, the supplier can file a formal complaint in court. Since legal deadlines are strict, you should consider consulting a lawyer to help draft a reply.",
+            "provisions": [
+              {
+                "id": "NI-138",
+                "why": "It governs cheque bounce situations, requiring you to respond or pay within the 15-day window specified in the legal notice to avoid a court complaint.",
+                "reference": "Section 138",
+                "instrument": "Negotiable Instruments Act, 1881",
+                "title": "Cheque bounce",
+                "source_url": "https://blog.ipleaders.in/how-to-file-cheque-bounce-case-section-138/",
+                "source_type": "secondary"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "Copy of the legal notice",
+                "why": "To check the exact date of receipt and the payment deadline demanded by the supplier.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Bank memo or return slip",
+                "why": "To confirm the exact date and reason the cheque was returned by the bank.",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Invoice or bill for the goods",
+                "why": "To verify the exact amount owed for the goods purchased from the supplier.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Bank account statements",
+                "why": "To show the balance status and any attempted communications of payment.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Written messages or emails with the supplier",
+                "why": "To prove any prior talks about clearing dues or discussing instalments.",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "Do you have the original legal notice and the bank memo with you, and have you already spoken to the supplier about paying in instalments?"
+          },
+          "plan": {
+            "evidence_have": [
+              "Copy of the legal notice",
+              "Bank memo or return slip",
+              "Bank account statements"
+            ],
+            "evidence_missing": [
+              "Invoice or bill for the goods",
+              "Written messages or emails with the supplier"
+            ],
+            "steps": [
+              {
+                "title": "Send a written reply proposing instalments",
+                "detail": "Contact the supplier in writing before the 15-day deadline ends, acknowledging the debt of Rs 80,000 and requesting an instalment payment plan.",
+                "where": "To the supplier or their lawyer through registered post or email"
+              },
+              {
+                "title": "(General) Keep all records safe",
+                "detail": "Keep copies of the legal notice, bank memo, your bank statements, and any communication with the supplier in a safe place.",
+                "where": "With your personal records"
+              },
+              {
+                "title": "Consult a lawyer or legal aid for a formal response",
+                "detail": "Since strict deadlines apply under Section 138 of the Negotiable Instruments Act, consult a lawyer or approach the District Legal Services Authority (DLSA) for guidance on drafting a proper reply.",
+                "where": "Local lawyer or District Legal Services Authority (DLSA)"
+              }
+            ],
+            "forum": "Criminal Court (if a complaint is filed under Section 138 of the Negotiable Instruments Act, 1881, due to non-payment within the notice period)",
+            "confidence": "high",
+            "summary": "You have the legal notice, bank memo, and account statement confirming the cheque of Rs 80,000 bounced. Since you want to pay in instalments, you must reply to the legal notice in writing within the 15-day deadline to propose a payment plan and avoid a court case.",
+            "draft_document": {
+              "type": "reply_to_notice",
+              "text": "To,\n[SUPPLIER OR ADVOCATE NAME]\n[SUPPLIER ADDRESS]\n\nDate: [DATE]\n\nSubject: Reply to legal notice dated 2 November 2026 regarding bounced cheque for Rs 80,000\n\nDear Sir/Madam,\n\nI am in receipt of your legal notice dated 2 November 2026 regarding the cheque of Rs 80,000 issued to you, which was returned by the bank on 25 October 2026 due to low account balance.\n\nI acknowledge the debt owed for the goods purchased. Due to temporary financial difficulties, I was unable to clear the full amount immediately. However, I am willing to clear the dues in instalments and request your cooperation in this matter.\n\nKindly confirm if you agree to an instalment plan so that we can settle this amicably.\n\nYours sincerely,\n\n[YOUR NAME]\n[YOUR CONTACT INFORMATION]"
+            }
+          },
+          "verdict": {
+            "level": "can_help",
+            "reasons": [
+              "This is covered by the verified laws in this tool. You can start on your own with the steps below."
+            ]
+          },
+          "transcript": [
+            {
+              "role": "user",
+              "text": "I received a legal notice on 2 November 2026 saying a cheque of Rs 80000 that I gave to a supplier bounced, and I must pay within 15 days or they will file a criminal case. The cheque bounced because my account balance was low."
+            },
+            {
+              "role": "assistant",
+              "text": "I understand you received a legal notice on 2 November 2026 about an 80,000 rupee cheque that bounced due to low balance, with a demand to pay within 15 days. \n\nDo you have a copy of the legal notice and the bank memo stating the cheque bounced? Also, what is your main goal right now (for example, to settle the amount, talk to the supplier, or get more time)?"
+            },
+            {
+              "role": "user",
+              "text": "I owe him about Rs 80000 for goods but I wanted to pay in instalments. The bank returned the cheque on 25 October 2026."
+            },
+            {
+              "role": "assistant",
+              "text": "You received a legal notice on 2 November 2026 after your cheque of Rs 80,000 to your supplier bounced on 25 October 2026 due to low balance, and you would like to pay in instalments. Is this correct? Say yes, or tell me what to change."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "You received a legal notice because your cheque for Rs 80,000 bounced due to a low balance. Under the law, you have a limited time of 15 days from receiving the notice to respond or clear the payment. Since you want to pay in instalments, you should contact the supplier in writing before this deadline expires to propose an instalment plan. If the supplier agrees, get the agreement in writing to avoid legal action. If you ignore the notice or fail to pay within the time limit, the supplier can file a formal complaint in court. Since legal deadlines are strict, you should consider consulting a lawyer to help draft a reply.\n\nDo you have the original legal notice and the bank memo with you, and have you already spoken to the supplier about paying in instalments?"
+            },
+            {
+              "role": "user",
+              "text": "I have the notice, the bounced cheque memo and my account statement."
+            },
+            {
+              "role": "assistant",
+              "text": "You have the legal notice, bank memo, and account statement confirming the cheque of Rs 80,000 bounced. Since you want to pay in instalments, you must reply to the legal notice in writing within the 15-day deadline to propose a payment plan and avoid a court case."
+            }
+          ]
+        },
+        "reply": "You have the legal notice, bank memo, and account statement confirming the cheque of Rs 80,000 bounced. Since you want to pay in instalments, you must reply to the legal notice in writing within the 15-day deadline to propose a payment plan and avoid a court case.",
+        "plan": {
+          "evidence_have": [
+            "Copy of the legal notice",
+            "Bank memo or return slip",
+            "Bank account statements"
+          ],
+          "evidence_missing": [
+            "Invoice or bill for the goods",
+            "Written messages or emails with the supplier"
+          ],
+          "steps": [
+            {
+              "title": "Send a written reply proposing instalments",
+              "detail": "Contact the supplier in writing before the 15-day deadline ends, acknowledging the debt of Rs 80,000 and requesting an instalment payment plan.",
+              "where": "To the supplier or their lawyer through registered post or email"
+            },
+            {
+              "title": "(General) Keep all records safe",
+              "detail": "Keep copies of the legal notice, bank memo, your bank statements, and any communication with the supplier in a safe place.",
+              "where": "With your personal records"
+            },
+            {
+              "title": "Consult a lawyer or legal aid for a formal response",
+              "detail": "Since strict deadlines apply under Section 138 of the Negotiable Instruments Act, consult a lawyer or approach the District Legal Services Authority (DLSA) for guidance on drafting a proper reply.",
+              "where": "Local lawyer or District Legal Services Authority (DLSA)"
+            }
+          ],
+          "forum": "Criminal Court (if a complaint is filed under Section 138 of the Negotiable Instruments Act, 1881, due to non-payment within the notice period)",
+          "confidence": "high",
+          "summary": "You have the legal notice, bank memo, and account statement confirming the cheque of Rs 80,000 bounced. Since you want to pay in instalments, you must reply to the legal notice in writing within the 15-day deadline to propose a payment plan and avoid a court case.",
+          "draft_document": {
+            "type": "reply_to_notice",
+            "text": "To,\n[SUPPLIER OR ADVOCATE NAME]\n[SUPPLIER ADDRESS]\n\nDate: [DATE]\n\nSubject: Reply to legal notice dated 2 November 2026 regarding bounced cheque for Rs 80,000\n\nDear Sir/Madam,\n\nI am in receipt of your legal notice dated 2 November 2026 regarding the cheque of Rs 80,000 issued to you, which was returned by the bank on 25 October 2026 due to low account balance.\n\nI acknowledge the debt owed for the goods purchased. Due to temporary financial difficulties, I was unable to clear the full amount immediately. However, I am willing to clear the dues in instalments and request your cooperation in this matter.\n\nKindly confirm if you agree to an instalment plan so that we can settle this amicably.\n\nYours sincerely,\n\n[YOUR NAME]\n[YOUR CONTACT INFORMATION]"
+          }
+        },
+        "verdict": {
+          "level": "can_help",
+          "reasons": [
+            "This is covered by the verified laws in this tool. You can start on your own with the steps below."
+          ]
+        },
+        "warnings": []
+      }
+    }
+  ]
+}

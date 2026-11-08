@@ -1,0 +1,434 @@
+{
+  "case": {
+    "id": "06-unauthorised-card-transaction",
+    "note": "Unauthorised card transaction, reported next day; RBI liability rules.",
+    "story": "Yesterday Rs 12000 was charged on my credit card at an online store I have never used. I did not share any OTP. I want the bank to reverse it.",
+    "extra": "I got an SMS and noticed it yesterday evening. I called the bank this morning and blocked the card.",
+    "proofs": "I have the SMS alert, card statement and the call reference number from the bank.",
+    "expect": {
+      "verdict_in": [
+        "partly",
+        "can_help"
+      ],
+      "issue_type": "payment_fraud"
+    }
+  },
+  "seconds": 20,
+  "checks": [
+    {
+      "name": "verdict in partly/can_help",
+      "ok": true,
+      "detail": "partly"
+    },
+    {
+      "name": "issue_type = payment_fraud",
+      "ok": true,
+      "detail": "payment_fraud"
+    }
+  ],
+  "row": {
+    "id": "06-unauthorised-card-transaction",
+    "pass": true,
+    "verdict": "partly",
+    "issue": "payment_fraud",
+    "seconds": 20,
+    "warnings": 0,
+    "failed": []
+  },
+  "turns": [
+    {
+      "label": "story",
+      "user": "Yesterday Rs 12000 was charged on my credit card at an online store I have never used. I did not share any OTP. I want the bank to reverse it.",
+      "result": {
+        "state": {
+          "stage": "confirm",
+          "story": {
+            "summary": "An unauthorized charge of Rs 12,000 was made on the user's credit card yesterday at an online store they have never used, without any OTP shared. The user wants the bank to reverse the amount.",
+            "timeline": [
+              {
+                "when": "2026-11-07",
+                "what": "Unauthorized charge of Rs 12000 on credit card at an unknown online store."
+              }
+            ],
+            "opposite_party": "Online Store / Bank",
+            "platform": "Online store",
+            "amount_inr": 12000,
+            "payment_method": "Credit Card",
+            "proof_mentioned": [],
+            "user_goal": "Get the bank to reverse the charge",
+            "months_since_event": 0,
+            "event_date": "2026-11-07",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": null,
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "Yesterday Rs 12000 was charged on my credit card at an online store I have never used. I did not share any OTP. I want the bank to reverse it."
+            },
+            {
+              "role": "assistant",
+              "text": "I see that Rs 12,000 was charged to your credit card yesterday by an online store you did not use, without you sharing any OTP, and you want your bank to reverse this charge. Is this correct? Say yes, or tell me what to change."
+            }
+          ]
+        },
+        "reply": "I see that Rs 12,000 was charged to your credit card yesterday by an online store you did not use, without you sharing any OTP, and you want your bank to reverse this charge. Is this correct? Say yes, or tell me what to change.",
+        "warnings": []
+      }
+    },
+    {
+      "label": "confirm",
+      "user": "Yes, that is correct.",
+      "result": {
+        "state": {
+          "stage": "evidence",
+          "story": {
+            "summary": "An unauthorized charge of Rs 12,000 was made on the user's credit card yesterday at an online store they have never used, without any OTP shared. The user wants the bank to reverse the amount.",
+            "timeline": [
+              {
+                "when": "2026-11-07",
+                "what": "Unauthorized charge of Rs 12000 on credit card at an unknown online store."
+              }
+            ],
+            "opposite_party": "Online Store / Bank",
+            "platform": "Online store",
+            "amount_inr": 12000,
+            "payment_method": "Credit Card",
+            "proof_mentioned": [],
+            "user_goal": "Get the bank to reverse the charge",
+            "months_since_event": 0,
+            "event_date": "2026-11-07",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "payment_fraud",
+            "plain_explanation": "An unauthorized transaction of Rs 12,000 was made on your credit card yesterday at an online store you have never used. Since you did not share any OTP, you have the right to report this fraudulent charge immediately to your bank and request a reversal. You should also report the incident on the national cyber crime portal to help authorities trace the fraud. Please note that banks require prompt reporting within specific windows to review liability, so you should act without delay. Keep in mind that we are providing legal information, not formal legal representation.",
+            "provisions": [
+              {
+                "id": "RBI-2017-LIAB",
+                "why": "This helps by setting out customer liability rules and bank reporting timelines for unauthorized electronic transactions.",
+                "reference": "Paras 6, 7, 9, 12",
+                "instrument": "RBI circular DBR.No.Leg.BC.78/09.07.005/2017-18 (6 July 2017)",
+                "title": "Customer liability for unauthorised electronic banking transactions (2017 rules)",
+                "source_url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11040",
+                "source_type": "official"
+              },
+              {
+                "id": "PROC-CYBER",
+                "why": "This provides the official reporting channel and helpline for financial fraud to help stop funds and register your complaint.",
+                "reference": "cybercrime.gov.in, 1930",
+                "instrument": "National Cyber Crime Reporting Portal / helpline 1930",
+                "title": "Report online financial fraud immediately",
+                "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2085609&reg=3&lang=2",
+                "source_type": "official"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "Bank statement or transaction alert showing the Rs 12,000 debit",
+                "why": "Proof of the unauthorized charge and the exact date and time.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Copy of the complaint sent to your credit card issuer / bank",
+                "why": "Shows you reported the fraud to your bank immediately.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Cyber crime portal complaint acknowledgment",
+                "why": "Proof that you reported the financial fraud officially.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "SMS or email alerts received regarding the transaction",
+                "why": "Confirms lack of prior notice or OTP sharing for the charge.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Written correspondence or ticket reference number from the bank",
+                "why": "Helps track the status of your chargeback or dispute request.",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "Do you have any of these proofs, such as the bank transaction alert or SMS notification? Also, have you already contacted your bank to block your card and dispute the transaction?"
+          },
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "Yesterday Rs 12000 was charged on my credit card at an online store I have never used. I did not share any OTP. I want the bank to reverse it."
+            },
+            {
+              "role": "assistant",
+              "text": "I see that Rs 12,000 was charged to your credit card yesterday by an online store you did not use, without you sharing any OTP, and you want your bank to reverse this charge. Is this correct? Say yes, or tell me what to change."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "An unauthorized transaction of Rs 12,000 was made on your credit card yesterday at an online store you have never used. Since you did not share any OTP, you have the right to report this fraudulent charge immediately to your bank and request a reversal. You should also report the incident on the national cyber crime portal to help authorities trace the fraud. Please note that banks require prompt reporting within specific windows to review liability, so you should act without delay. Keep in mind that we are providing legal information, not formal legal representation.\n\nDo you have any of these proofs, such as the bank transaction alert or SMS notification? Also, have you already contacted your bank to block your card and dispute the transaction?"
+            }
+          ]
+        },
+        "reply": "An unauthorized transaction of Rs 12,000 was made on your credit card yesterday at an online store you have never used. Since you did not share any OTP, you have the right to report this fraudulent charge immediately to your bank and request a reversal. You should also report the incident on the national cyber crime portal to help authorities trace the fraud. Please note that banks require prompt reporting within specific windows to review liability, so you should act without delay. Keep in mind that we are providing legal information, not formal legal representation.\n\nDo you have any of these proofs, such as the bank transaction alert or SMS notification? Also, have you already contacted your bank to block your card and dispute the transaction?",
+        "analysis": {
+          "issue_type": "payment_fraud",
+          "plain_explanation": "An unauthorized transaction of Rs 12,000 was made on your credit card yesterday at an online store you have never used. Since you did not share any OTP, you have the right to report this fraudulent charge immediately to your bank and request a reversal. You should also report the incident on the national cyber crime portal to help authorities trace the fraud. Please note that banks require prompt reporting within specific windows to review liability, so you should act without delay. Keep in mind that we are providing legal information, not formal legal representation.",
+          "provisions": [
+            {
+              "id": "RBI-2017-LIAB",
+              "why": "This helps by setting out customer liability rules and bank reporting timelines for unauthorized electronic transactions.",
+              "reference": "Paras 6, 7, 9, 12",
+              "instrument": "RBI circular DBR.No.Leg.BC.78/09.07.005/2017-18 (6 July 2017)",
+              "title": "Customer liability for unauthorised electronic banking transactions (2017 rules)",
+              "source_url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11040",
+              "source_type": "official"
+            },
+            {
+              "id": "PROC-CYBER",
+              "why": "This provides the official reporting channel and helpline for financial fraud to help stop funds and register your complaint.",
+              "reference": "cybercrime.gov.in, 1930",
+              "instrument": "National Cyber Crime Reporting Portal / helpline 1930",
+              "title": "Report online financial fraud immediately",
+              "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2085609&reg=3&lang=2",
+              "source_type": "official"
+            }
+          ],
+          "evidence_checklist": [
+            {
+              "item": "Bank statement or transaction alert showing the Rs 12,000 debit",
+              "why": "Proof of the unauthorized charge and the exact date and time.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Copy of the complaint sent to your credit card issuer / bank",
+              "why": "Shows you reported the fraud to your bank immediately.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Cyber crime portal complaint acknowledgment",
+              "why": "Proof that you reported the financial fraud officially.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "SMS or email alerts received regarding the transaction",
+              "why": "Confirms lack of prior notice or OTP sharing for the charge.",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Written correspondence or ticket reference number from the bank",
+              "why": "Helps track the status of your chargeback or dispute request.",
+              "mentioned_by_user": false
+            }
+          ],
+          "ask": "Do you have any of these proofs, such as the bank transaction alert or SMS notification? Also, have you already contacted your bank to block your card and dispute the transaction?"
+        },
+        "warnings": []
+      }
+    },
+    {
+      "label": "proofs",
+      "user": "I have the SMS alert, card statement and the call reference number from the bank.",
+      "result": {
+        "state": {
+          "stage": "done",
+          "story": {
+            "summary": "An unauthorized charge of Rs 12,000 was made on the user's credit card yesterday at an online store they have never used, without any OTP shared. The user wants the bank to reverse the amount.",
+            "timeline": [
+              {
+                "when": "2026-11-07",
+                "what": "Unauthorized charge of Rs 12000 on credit card at an unknown online store."
+              }
+            ],
+            "opposite_party": "Online Store / Bank",
+            "platform": "Online store",
+            "amount_inr": 12000,
+            "payment_method": "Credit Card",
+            "proof_mentioned": [],
+            "user_goal": "Get the bank to reverse the charge",
+            "months_since_event": 0,
+            "event_date": "2026-11-07",
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "payment_fraud",
+            "plain_explanation": "An unauthorized transaction of Rs 12,000 was made on your credit card yesterday at an online store you have never used. Since you did not share any OTP, you have the right to report this fraudulent charge immediately to your bank and request a reversal. You should also report the incident on the national cyber crime portal to help authorities trace the fraud. Please note that banks require prompt reporting within specific windows to review liability, so you should act without delay. Keep in mind that we are providing legal information, not formal legal representation.",
+            "provisions": [
+              {
+                "id": "RBI-2017-LIAB",
+                "why": "This helps by setting out customer liability rules and bank reporting timelines for unauthorized electronic transactions.",
+                "reference": "Paras 6, 7, 9, 12",
+                "instrument": "RBI circular DBR.No.Leg.BC.78/09.07.005/2017-18 (6 July 2017)",
+                "title": "Customer liability for unauthorised electronic banking transactions (2017 rules)",
+                "source_url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11040",
+                "source_type": "official"
+              },
+              {
+                "id": "PROC-CYBER",
+                "why": "This provides the official reporting channel and helpline for financial fraud to help stop funds and register your complaint.",
+                "reference": "cybercrime.gov.in, 1930",
+                "instrument": "National Cyber Crime Reporting Portal / helpline 1930",
+                "title": "Report online financial fraud immediately",
+                "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2085609&reg=3&lang=2",
+                "source_type": "official"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "Bank statement or transaction alert showing the Rs 12,000 debit",
+                "why": "Proof of the unauthorized charge and the exact date and time.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Copy of the complaint sent to your credit card issuer / bank",
+                "why": "Shows you reported the fraud to your bank immediately.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Cyber crime portal complaint acknowledgment",
+                "why": "Proof that you reported the financial fraud officially.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "SMS or email alerts received regarding the transaction",
+                "why": "Confirms lack of prior notice or OTP sharing for the charge.",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Written correspondence or ticket reference number from the bank",
+                "why": "Helps track the status of your chargeback or dispute request.",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "Do you have any of these proofs, such as the bank transaction alert or SMS notification? Also, have you already contacted your bank to block your card and dispute the transaction?"
+          },
+          "plan": {
+            "evidence_have": [
+              "SMS alert showing the transaction",
+              "Card statement",
+              "Call reference number from the bank"
+            ],
+            "evidence_missing": [
+              "Cyber crime portal complaint acknowledgment"
+            ],
+            "steps": [
+              {
+                "title": "Report financial fraud on the national cyber crime portal",
+                "detail": "Immediately register a complaint on the official cyber crime portal or call the helpline to report the unauthorized online transaction.",
+                "where": "cybercrime.gov.in or call 1930"
+              },
+              {
+                "title": "Submit written dispute to your bank",
+                "detail": "Provide your call reference number along with a written fraud dispute form to your credit card issuer, requesting a full chargeback and reversal.",
+                "where": "Your credit card issuer / bank branch or customer support email"
+              },
+              {
+                "title": "Keep records of all correspondence",
+                "detail": "Preserve your SMS alerts, card statements, call logs, reference numbers, and any written replies from the bank for tracking liability.",
+                "where": "Safely stored on your phone or printed"
+              }
+            ],
+            "forum": "Bank grievance cell and RBI Integrated Ombudsman Scheme (if the bank fails to resolve within the stipulated time)",
+            "confidence": "high",
+            "summary": "Since you have already contacted your bank and obtained a call reference number, you should now file an official report on the cyber-crime portal using your SMS alert and statement details. Keep following up with your bank in writing to track your transaction dispute.",
+            "draft_document": {
+              "type": "none",
+              "text": ""
+            }
+          },
+          "verdict": {
+            "level": "partly",
+            "reasons": [
+              "Scam and fraud cases need police and bank action that this tool can only guide you to. Get a lawyer if the police or bank refuse to act."
+            ]
+          },
+          "transcript": [
+            {
+              "role": "user",
+              "text": "Yesterday Rs 12000 was charged on my credit card at an online store I have never used. I did not share any OTP. I want the bank to reverse it."
+            },
+            {
+              "role": "assistant",
+              "text": "I see that Rs 12,000 was charged to your credit card yesterday by an online store you did not use, without you sharing any OTP, and you want your bank to reverse this charge. Is this correct? Say yes, or tell me what to change."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "An unauthorized transaction of Rs 12,000 was made on your credit card yesterday at an online store you have never used. Since you did not share any OTP, you have the right to report this fraudulent charge immediately to your bank and request a reversal. You should also report the incident on the national cyber crime portal to help authorities trace the fraud. Please note that banks require prompt reporting within specific windows to review liability, so you should act without delay. Keep in mind that we are providing legal information, not formal legal representation.\n\nDo you have any of these proofs, such as the bank transaction alert or SMS notification? Also, have you already contacted your bank to block your card and dispute the transaction?"
+            },
+            {
+              "role": "user",
+              "text": "I have the SMS alert, card statement and the call reference number from the bank."
+            },
+            {
+              "role": "assistant",
+              "text": "Since you have already contacted your bank and obtained a call reference number, you should now file an official report on the cyber-crime portal using your SMS alert and statement details. Keep following up with your bank in writing to track your transaction dispute."
+            }
+          ]
+        },
+        "reply": "Since you have already contacted your bank and obtained a call reference number, you should now file an official report on the cyber-crime portal using your SMS alert and statement details. Keep following up with your bank in writing to track your transaction dispute.",
+        "plan": {
+          "evidence_have": [
+            "SMS alert showing the transaction",
+            "Card statement",
+            "Call reference number from the bank"
+          ],
+          "evidence_missing": [
+            "Cyber crime portal complaint acknowledgment"
+          ],
+          "steps": [
+            {
+              "title": "Report financial fraud on the national cyber crime portal",
+              "detail": "Immediately register a complaint on the official cyber crime portal or call the helpline to report the unauthorized online transaction.",
+              "where": "cybercrime.gov.in or call 1930"
+            },
+            {
+              "title": "Submit written dispute to your bank",
+              "detail": "Provide your call reference number along with a written fraud dispute form to your credit card issuer, requesting a full chargeback and reversal.",
+              "where": "Your credit card issuer / bank branch or customer support email"
+            },
+            {
+              "title": "Keep records of all correspondence",
+              "detail": "Preserve your SMS alerts, card statements, call logs, reference numbers, and any written replies from the bank for tracking liability.",
+              "where": "Safely stored on your phone or printed"
+            }
+          ],
+          "forum": "Bank grievance cell and RBI Integrated Ombudsman Scheme (if the bank fails to resolve within the stipulated time)",
+          "confidence": "high",
+          "summary": "Since you have already contacted your bank and obtained a call reference number, you should now file an official report on the cyber-crime portal using your SMS alert and statement details. Keep following up with your bank in writing to track your transaction dispute.",
+          "draft_document": {
+            "type": "none",
+            "text": ""
+          }
+        },
+        "verdict": {
+          "level": "partly",
+          "reasons": [
+            "Scam and fraud cases need police and bank action that this tool can only guide you to. Get a lawyer if the police or bank refuse to act."
+          ]
+        },
+        "warnings": []
+      }
+    }
+  ]
+}

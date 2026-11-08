@@ -1,0 +1,1021 @@
+{
+  "meta": {
+    "version": "0.1",
+    "built_on": "2026-11-08",
+    "scope": "Consumer disputes and refunds, e-commerce, online payment scams, rental deposits, unpaid wages, private loans and documents held by a lender, and cheque-bounce or demand notices, in India. Family, property-title, tax and corporate law are not covered; for those the tool gives only general practical guidance.",
+    "rules": "The assistant may cite ONLY entries in this file, by id. Entries with source_type 'secondary' were checked against bare-act or law-firm sites, not indiacode.nic.in; re-check against official text before relying on them in a real filing.",
+    "disclaimer": "General legal information, not legal advice."
+  },
+  "issue_types": [
+    {
+      "id": "refund_or_nondelivery",
+      "label": "Refund not given / item not delivered / wrong or defective item",
+      "description": "Paid for goods or a service and did not get what was promised or the money back."
+    },
+    {
+      "id": "ecommerce_platform",
+      "label": "Online platform or seller not responding",
+      "description": "Marketplace, app or website seller ignores complaints."
+    },
+    {
+      "id": "payment_fraud",
+      "label": "Unauthorised transaction / UPI or card fraud",
+      "description": "Money left the bank account or card without the person's authorisation, or through a scam."
+    },
+    {
+      "id": "cheating_scam",
+      "label": "Seller or person took money and vanished (cheating)",
+      "description": "Deliberate deception to obtain money, fake sellers, fake websites, fake investment or job offers."
+    },
+    {
+      "id": "misleading_ads_dark_patterns",
+      "label": "False advertising or tricks in the app/site",
+      "description": "Fake discounts, hidden charges, forced subscriptions, misleading claims."
+    },
+    {
+      "id": "money_recovery",
+      "label": "Recovering money through civil court",
+      "description": "Cases that are not consumer purchases, or where the person wants a civil suit."
+    },
+    {
+      "id": "free_legal_help",
+      "label": "Cannot afford a lawyer",
+      "description": "Free legal aid and alternative dispute resolution."
+    },
+    {
+      "id": "rental_deposit",
+      "label": "Landlord not returning security deposit",
+      "description": "Tenant vacated or the tenancy ended and the landlord is withholding the deposit."
+    },
+    {
+      "id": "unpaid_wages",
+      "label": "Salary or wages not paid",
+      "description": "Employer has delayed or stopped paying salary or dues."
+    },
+    {
+      "id": "loan_documents_held",
+      "label": "Private loan: lender keeps documents or demands extra interest",
+      "description": "Money borrowed from an individual or moneylender; documents or valuables held as security; disputes over interest or return of papers after repayment."
+    },
+    {
+      "id": "notice_received",
+      "label": "Received a demand or legal notice / cheque bounced",
+      "description": "The person got a notice demanding money, or a cheque issued or received has bounced."
+    }
+  ],
+  "entries": [
+    {
+      "id": "CPA-2.7",
+      "kind": "provision",
+      "instrument": "Consumer Protection Act, 2019",
+      "reference": "Section 2(7)",
+      "title": "Definition of consumer",
+      "summary": "A consumer is someone who buys goods or hires services for a price that was paid, promised or part-paid. It includes online, teleshopping and direct-selling purchases. Buying to resell or for a commercial purpose is excluded.",
+      "applies_when": "Deciding whether the person can use the consumer forums at all.",
+      "issue_types": [
+        "refund_or_nondelivery",
+        "ecommerce_platform"
+      ],
+      "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "caveats": "Re-check exact wording against official text."
+    },
+    {
+      "id": "CPA-2.11",
+      "kind": "provision",
+      "instrument": "Consumer Protection Act, 2019",
+      "reference": "Section 2(11)",
+      "title": "Definition of deficiency (in service)",
+      "summary": "Any fault, imperfection or shortcoming in the quality, nature or manner of a service, including negligence and withholding relevant information.",
+      "applies_when": "Service not provided, provided badly, or refund/cancellation mishandled.",
+      "issue_types": [
+        "refund_or_nondelivery",
+        "ecommerce_platform"
+      ],
+      "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "id": "CPA-2.47",
+      "kind": "provision",
+      "instrument": "Consumer Protection Act, 2019",
+      "reference": "Section 2(47)",
+      "title": "Definition of unfair trade practice",
+      "summary": "Unfair or deceptive practices to promote sale or supply, such as false claims, fake bargain offers, spurious goods, refusing to take back defective goods or refund within the stipulated period (30 days if none is stated), not issuing bills.",
+      "applies_when": "Seller made false claims, refused to take back defective goods, or would not refund.",
+      "issue_types": [
+        "refund_or_nondelivery",
+        "misleading_ads_dark_patterns",
+        "ecommerce_platform"
+      ],
+      "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "caveats": "Re-check exact wording against official text."
+    },
+    {
+      "id": "CPA-2.28",
+      "kind": "provision",
+      "instrument": "Consumer Protection Act, 2019",
+      "reference": "Section 2(28)",
+      "title": "Definition of misleading advertisement",
+      "summary": "An advertisement that falsely describes a product or service, gives a false guarantee, is likely to mislead, or deliberately hides important information.",
+      "applies_when": "The ad or listing promised something the product or service did not deliver.",
+      "issue_types": [
+        "misleading_ads_dark_patterns"
+      ],
+      "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/2.php",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "id": "CPA-34",
+      "kind": "provision",
+      "instrument": "Consumer Protection Act, 2019",
+      "reference": "Section 34(2)",
+      "title": "Where a complaint can be filed (District Commission)",
+      "summary": "A complaint can be filed in the District Commission where the seller lives, does business or has a branch, where the cause of action arose, or where the complainant themselves lives or personally works for gain. So the buyer can file in their own district.",
+      "applies_when": "The seller is in another city or state.",
+      "issue_types": [
+        "refund_or_nondelivery",
+        "ecommerce_platform"
+      ],
+      "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/34.php",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "caveats": "The money limit printed in s.34(1) of the Act is superseded by the 2021 Rules (see RULES-JURIS-2021)."
+    },
+    {
+      "id": "CPA-35",
+      "kind": "provision",
+      "instrument": "Consumer Protection Act, 2019",
+      "reference": "Section 35",
+      "title": "How a consumer complaint is made",
+      "summary": "A complaint can be filed by the consumer, a group of consumers with the same interest, a consumer association, a legal heir, or the government. It may be filed electronically and the fee may be paid electronically.",
+      "applies_when": "Explaining how to file.",
+      "issue_types": [
+        "refund_or_nondelivery",
+        "ecommerce_platform",
+        "misleading_ads_dark_patterns"
+      ],
+      "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/35.php",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "id": "CPA-37",
+      "kind": "provision",
+      "instrument": "Consumer Protection Act, 2019",
+      "reference": "Section 37",
+      "title": "Reference to mediation",
+      "summary": "At the first hearing or later, if a settlement looks possible, the Commission can send the case to mediation if the parties agree in writing.",
+      "applies_when": "Both sides may be willing to settle.",
+      "issue_types": [
+        "refund_or_nondelivery",
+        "free_legal_help"
+      ],
+      "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/37.php",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "id": "CPA-38",
+      "kind": "provision",
+      "instrument": "Consumer Protection Act, 2019",
+      "reference": "Section 38",
+      "title": "Procedure and timelines after a complaint is admitted",
+      "summary": "Notice goes to the seller; the seller has 30 days to reply (extendable by 15). The Commission should try to decide within 3 months of notice (5 months if lab testing is needed). These are targets, and real cases often take longer.",
+      "applies_when": "The person asks how long it will take.",
+      "issue_types": [
+        "refund_or_nondelivery",
+        "ecommerce_platform"
+      ],
+      "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/38.php",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "caveats": "Timelines are targets. Do not promise a result date."
+    },
+    {
+      "id": "CPA-39",
+      "kind": "provision",
+      "instrument": "Consumer Protection Act, 2019",
+      "reference": "Section 39",
+      "title": "What the District Commission can order",
+      "summary": "If the complaint is proved, the Commission can order the defect removed, goods replaced, the price refunded (with interest), compensation (including punitive damages), the unfair practice stopped, corrective advertisement, and costs.",
+      "applies_when": "Explaining what the person can ask for.",
+      "issue_types": [
+        "refund_or_nondelivery",
+        "ecommerce_platform",
+        "misleading_ads_dark_patterns"
+      ],
+      "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/39.php",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "id": "CPA-69",
+      "kind": "provision",
+      "instrument": "Consumer Protection Act, 2019",
+      "reference": "Section 69",
+      "title": "Time limit for a consumer complaint",
+      "summary": "A complaint must be filed within 2 years from when the cause of action arose. A late complaint can be accepted if the Commission records its reasons for allowing the delay.",
+      "applies_when": "Always check how old the problem is.",
+      "issue_types": [
+        "refund_or_nondelivery",
+        "ecommerce_platform",
+        "misleading_ads_dark_patterns"
+      ],
+      "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/69.php",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "caveats": "If close to or past 2 years, suggest a human lawyer."
+    },
+    {
+      "id": "CPA-72",
+      "kind": "provision",
+      "instrument": "Consumer Protection Act, 2019",
+      "reference": "Section 72",
+      "title": "Penalty for not obeying a Commission's order",
+      "summary": "Not complying with a Commission's order is punishable with imprisonment of 1 month to 3 years, or a fine of Rs 25,000 to Rs 1 lakh, or both.",
+      "applies_when": "The seller won after losing and still does not pay.",
+      "issue_types": [
+        "refund_or_nondelivery"
+      ],
+      "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/72.php",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "id": "CPA-21",
+      "kind": "provision",
+      "instrument": "Consumer Protection Act, 2019",
+      "reference": "Sections 18-21 and 89",
+      "title": "Central Consumer Protection Authority and false advertisement penalties",
+      "summary": "The CCPA protects consumers as a class, can investigate, order recalls and fine makers or endorsers up to Rs 10 lakh for false or misleading ads (up to Rs 50 lakh for repeat). Section 89 punishes false ads with up to 2 years' jail and a Rs 10 lakh fine. The CCPA acts on patterns of wrongdoing; it does not decide an individual's refund claim.",
+      "applies_when": "Widespread misleading ads or unsafe goods.",
+      "issue_types": [
+        "misleading_ads_dark_patterns"
+      ],
+      "source_url": "https://www.advocatekhoj.com/library/bareacts/consumerprotection2019/21.php",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "id": "RULES-JURIS-2021",
+      "kind": "rule",
+      "instrument": "Consumer Protection (Jurisdiction of the District Commission, the State Commission and the National Commission) Rules, 2021",
+      "reference": "Rules 3-5",
+      "title": "Which Commission by amount paid",
+      "summary": "District Commission: value paid for the goods or service is up to Rs 50 lakh. State Commission: above Rs 50 lakh up to Rs 2 crore. National Commission: above Rs 2 crore. It is measured on what was paid, not on the compensation claimed.",
+      "applies_when": "Choosing the right forum.",
+      "issue_types": [
+        "refund_or_nondelivery",
+        "ecommerce_platform"
+      ],
+      "source_url": "https://www.thc.nic.in/Central Governmental Rules/Consumer Protection (Jurisdiction of the District Commission, the State Commission and the National Commission) Rules, 2021.pdf",
+      "source_type": "official",
+      "verification": "verified",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "id": "RULES-FEE-2020",
+      "kind": "rule",
+      "instrument": "Consumer Protection (Consumer Disputes Redressal Commissions) Rules, 2020",
+      "reference": "Rule 7 (fee table, amended 2023)",
+      "title": "Filing fee",
+      "summary": "No fee for amounts up to Rs 5 lakh. Then Rs 200 (to 10 lakh), Rs 400 (to 20 lakh), Rs 1,000 (to 50 lakh). Measured on the amount paid.",
+      "applies_when": "The person asks what filing costs.",
+      "issue_types": [
+        "refund_or_nondelivery",
+        "ecommerce_platform",
+        "free_legal_help"
+      ],
+      "source_url": "https://www.taxclue.in/blog/rule-7-consumer-protection-cdrc-rules-2020-fee-for-filing-a-consumer-complaint/",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "caveats": "Two secondary tables agree; the 2023 amendment gazette was not opened."
+    },
+    {
+      "id": "ECOM-4",
+      "kind": "rule",
+      "instrument": "Consumer Protection (E-Commerce) Rules, 2020",
+      "reference": "Rule 4(4), 4(5), 4(8), 4(10)",
+      "title": "Duties of e-commerce platforms: grievance officer, cancellations, refunds",
+      "summary": "Every e-commerce entity must have a grievance officer whose details are shown. The officer must acknowledge a complaint within 48 hours and resolve it within one month. No cancellation charges after the consumer confirms an order unless the entity charges itself for its own cancellations. Accepted refunds must be paid within a reasonable period; no fixed number of days is stated.",
+      "applies_when": "A platform ignores a complaint or delays a refund.",
+      "issue_types": [
+        "ecommerce_platform",
+        "refund_or_nondelivery"
+      ],
+      "source_url": "https://taxguru.in/wp-content/uploads/2020/07/Consumer-Protection-E-Commerce-Rules-2020.pdf",
+      "source_type": "official",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "caveats": "Gazette copy. A 2026 amendment reportedly renumbers rule 4 from 1 Jan 2027 (secondary source, not read). Never say refunds are due in a fixed number of days."
+    },
+    {
+      "id": "ECOM-6",
+      "kind": "rule",
+      "instrument": "Consumer Protection (E-Commerce) Rules, 2020",
+      "reference": "Rule 6(3), 6(4)",
+      "title": "Duties of sellers on marketplaces",
+      "summary": "A marketplace seller must not refuse to take back goods or refund when goods are defective, spurious, not as advertised, or delivered late (except where force majeure caused the delay), and must have a grievance officer with the same 48-hour and one-month timelines.",
+      "applies_when": "A seller on Amazon/Flipkart-type platforms refuses a refund or return.",
+      "issue_types": [
+        "refund_or_nondelivery",
+        "ecommerce_platform"
+      ],
+      "source_url": "https://taxguru.in/wp-content/uploads/2020/07/Consumer-Protection-E-Commerce-Rules-2020.pdf",
+      "source_type": "official",
+      "verification": "verified",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "id": "DARK-2023",
+      "kind": "rule",
+      "instrument": "CCPA Guidelines for Prevention and Regulation of Dark Patterns, 2023",
+      "reference": "Guidelines dated 30 Nov 2023, Annexure 1",
+      "title": "Dark patterns",
+      "summary": "Names 13 deceptive design tricks that count as dark patterns, including false urgency, basket sneaking, confirm shaming, forced action, subscription trap, drip pricing, bait and switch, and disguised ads.",
+      "applies_when": "Hidden charges, added items, forced subscriptions or fake countdowns.",
+      "issue_types": [
+        "misleading_ads_dark_patterns"
+      ],
+      "source_url": "https://www.legal500.com/intelligence/india/consumer-protection/ccpa-issues-guidelines-for-prevention-and-regulation-of-dark-patterns-2023-effective-30-november-2023",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "caveats": "Date and count (13) confirmed by a PIB document; the list itself is from a law-firm summary."
+    },
+    {
+      "id": "ICA-17-19",
+      "kind": "provision",
+      "instrument": "Indian Contract Act, 1872",
+      "reference": "Sections 17 and 19",
+      "title": "Fraud and voidable contracts",
+      "summary": "Fraud includes a false statement of fact made without believing it, active concealment, and a promise made with no intention of keeping it. If consent was caused by fraud or misrepresentation, the contract can be cancelled at the option of the cheated party.",
+      "applies_when": "The seller lied about what was being sold or never meant to deliver.",
+      "issue_types": [
+        "cheating_scam",
+        "money_recovery"
+      ],
+      "source_url": "https://www.caseon.in/section/section-19-the-indian-contract-act-1872",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "id": "ICA-65",
+      "kind": "provision",
+      "instrument": "Indian Contract Act, 1872",
+      "reference": "Section 65",
+      "title": "Returning benefits under a void contract",
+      "summary": "Anyone who received a benefit under a void agreement, or a contract that has become void, must give it back or compensate the other person.",
+      "applies_when": "The deal was cancelled or void and money was already paid.",
+      "issue_types": [
+        "money_recovery",
+        "refund_or_nondelivery",
+        "rental_deposit",
+        "loan_documents_held",
+        "notice_received"
+      ],
+      "source_url": "https://www.caseon.in/section/section-65-the-indian-contract-act-1872",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "id": "ICA-73",
+      "kind": "provision",
+      "instrument": "Indian Contract Act, 1872",
+      "reference": "Section 73",
+      "title": "Compensation for breach of contract",
+      "summary": "The injured party can claim compensation for loss that arises naturally from the breach or that both parties knew was likely. Remote or indirect loss is not covered.",
+      "applies_when": "The seller broke the agreement and the person lost money.",
+      "issue_types": [
+        "money_recovery",
+        "refund_or_nondelivery",
+        "rental_deposit",
+        "loan_documents_held",
+        "notice_received"
+      ],
+      "source_url": "https://indiankanoon.org/doc/339747/",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "id": "SOGA-16",
+      "kind": "provision",
+      "instrument": "Sale of Goods Act, 1930",
+      "reference": "Section 16",
+      "title": "Quality and fitness of goods",
+      "summary": "Generally there is no implied condition about quality, but if the buyer states the purpose and relies on the seller's skill, goods must be reasonably fit for that purpose. Goods bought by description from a dealer must be of merchantable quality.",
+      "applies_when": "Defective or unfit goods.",
+      "issue_types": [
+        "refund_or_nondelivery"
+      ],
+      "source_url": "https://www.legalauthority.in/bare-act/sale-of-goods-act-1930",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "id": "SOGA-57-61",
+      "kind": "provision",
+      "instrument": "Sale of Goods Act, 1930",
+      "reference": "Sections 57 and 61",
+      "title": "Buyer's remedies: non-delivery and money paid",
+      "summary": "Section 57: the buyer can sue the seller for damages for non-delivery. Section 61 preserves the right to recover money paid where the consideration has failed, and courts may award interest from the date of payment.",
+      "applies_when": "Paid but goods never delivered.",
+      "issue_types": [
+        "refund_or_nondelivery",
+        "money_recovery"
+      ],
+      "source_url": "https://www.legalauthority.in/bare-act/sale-of-goods-act-1930",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "id": "LIM-47-55",
+      "kind": "provision",
+      "instrument": "Limitation Act, 1963",
+      "reference": "Articles 47, 55 (and 113 as fallback)",
+      "title": "Time limits for a civil money suit",
+      "summary": "For money paid on a consideration that later failed, 3 years from the failure (Article 47). For damages for breach of contract, 3 years from the breach (Article 55). Article 113 is a 3-year fallback. A suit filed late is barred; the delay-condonation section does not apply to suits.",
+      "applies_when": "Civil suit instead of the consumer route, or consumer deadline is missed.",
+      "issue_types": [
+        "money_recovery",
+        "refund_or_nondelivery",
+        "rental_deposit",
+        "loan_documents_held",
+        "notice_received"
+      ],
+      "source_url": "https://www.advocatekhoj.com/library/bareacts/limitation/part2.php",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "caveats": "Always recommend a human lawyer to compute the exact deadline."
+    },
+    {
+      "id": "CPC-O37",
+      "kind": "provision",
+      "instrument": "Code of Civil Procedure, 1908",
+      "reference": "Order XXXVII rule 1(2)",
+      "title": "Summary suit for a fixed money claim",
+      "summary": "A faster summary suit is available for a fixed (liquidated) money claim arising from a written contract, enactment or guarantee. Claims for unliquidated damages do not qualify.",
+      "applies_when": "A fixed amount owed under a written agreement and the consumer forum does not apply.",
+      "issue_types": [
+        "money_recovery",
+        "rental_deposit",
+        "loan_documents_held",
+        "notice_received"
+      ],
+      "source_url": "https://indiankanoon.org/doc/1255044/",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "caveats": "Needs a lawyer in practice."
+    },
+    {
+      "id": "RBI-2017-LIAB",
+      "kind": "rule",
+      "instrument": "RBI circular DBR.No.Leg.BC.78/09.07.005/2017-18 (6 July 2017)",
+      "reference": "Paras 6, 7, 9, 12",
+      "title": "Customer liability for unauthorised electronic banking transactions (2017 rules)",
+      "summary": "Zero liability if the bank was at fault, or if a third party caused the breach and the customer reports to the bank within 3 working days. Reported in 4-7 working days: limited liability capped at Rs 5,000 to Rs 25,000 depending on account type. After 7 days it follows the bank's policy. The bank must credit the amount back (shadow credit) within 10 working days of the report. The bank bears the burden of proving customer negligence.",
+      "applies_when": "Unauthorised bank, card or UPI transaction on or before the 2026 changeover.",
+      "issue_types": [
+        "payment_fraud"
+      ],
+      "source_url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=11040",
+      "source_type": "official",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "caveats": "Consolidated into RBI's 2025 Commercial Banks Directions and being replaced for transactions from 1 Jan 2027 (see RBI-2026-LIAB). Which rules apply to which date is not fully confirmed. Does not apply if the customer shared OTP/PIN voluntarily in many cases; do not promise a refund."
+    },
+    {
+      "id": "RBI-2026-LIAB",
+      "kind": "rule",
+      "instrument": "RBI Third Amendment Directions, 2026 (RBI/2026-27/167, 24 June 2026)",
+      "reference": "New Section DA",
+      "title": "New liability rules from 1 January 2027",
+      "summary": "For electronic banking transactions on or after 1 January 2027: zero liability for bank negligence, zero liability for a third-party breach reported within 5 calendar days, and the burden of proof is on the bank. Complaints are to be resolved within 45 days. Customers are advised to report on the cyber-crime portal or 1930. These directions exclude small finance banks, payments banks, RRBs and local area banks.",
+      "applies_when": "Transaction date is on or after 1 Jan 2027.",
+      "issue_types": [
+        "payment_fraud"
+      ],
+      "source_url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=13543",
+      "source_type": "official",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "caveats": "Transition wording for earlier transactions is not confirmed."
+    },
+    {
+      "id": "RBI-OMB-2026",
+      "kind": "procedure",
+      "instrument": "RBI Integrated Ombudsman Scheme, 2026",
+      "reference": "In force from 1 July 2026 (replaced the 2021 Scheme)",
+      "title": "Banking and payments complaints to the RBI Ombudsman",
+      "summary": "A customer must first complain to the bank or regulated entity. If there is no reply in 30 days, or the reply is unsatisfactory, they can complain to the Ombudsman at cms.rbi.org.in within 90 days. It is free. It does not take a complaint that is already before a court or tribunal.",
+      "applies_when": "Bank, wallet or card issuer did not resolve a complaint.",
+      "issue_types": [
+        "payment_fraud",
+        "free_legal_help"
+      ],
+      "source_url": "https://www.rbi.org.in/commonman/Upload/English/FAQs/PDFs/RBIOS01072026.pdf",
+      "source_type": "official",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "caveats": "UPI-specific coverage is not confirmed; disputes against banks and PPI issuers are covered."
+    },
+    {
+      "id": "LSA-12",
+      "kind": "provision",
+      "instrument": "Legal Services Authorities Act, 1987",
+      "reference": "Section 12",
+      "title": "Who gets free legal services",
+      "summary": "Entitled: SC/ST members, trafficking victims, women and children, persons with disabilities, disaster or violence victims, industrial workmen, persons in custody, and persons below an income ceiling set by the State. The Act's printed ceiling is Rs 9,000 a year but states notify higher figures.",
+      "applies_when": "The person cannot afford a lawyer.",
+      "issue_types": [
+        "free_legal_help",
+        "rental_deposit",
+        "unpaid_wages",
+        "loan_documents_held",
+        "notice_received"
+      ],
+      "source_url": "https://www.legalauthority.in/bare-act/legal-services-authorities-act-1987",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "caveats": "State income ceilings were not verified; tell the user to ask their District Legal Services Authority."
+    },
+    {
+      "id": "LSA-LOKADALAT",
+      "kind": "provision",
+      "instrument": "Legal Services Authorities Act, 1987",
+      "reference": "Sections 19-22",
+      "title": "Lok Adalat",
+      "summary": "Lok Adalats settle disputes, including ones not yet in court, if both sides agree. An award is treated as a civil court decree, is final and cannot be appealed. A one-party application can start the pre-litigation process.",
+      "applies_when": "The person wants a quick, cheap settlement.",
+      "issue_types": [
+        "free_legal_help",
+        "money_recovery",
+        "rental_deposit",
+        "unpaid_wages",
+        "loan_documents_held",
+        "notice_received"
+      ],
+      "source_url": "https://www.legalauthority.in/bare-act/legal-services-authorities-act-1987",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "id": "PROC-NALSA",
+      "kind": "procedure",
+      "instrument": "National Legal Services Authority",
+      "reference": "Helpline 15100",
+      "title": "Free legal aid helpline",
+      "summary": "NALSA runs a toll-free legal aid helpline, 15100. Each district has a District Legal Services Authority.",
+      "applies_when": "The person needs free legal advice or aid.",
+      "issue_types": [
+        "free_legal_help",
+        "rental_deposit",
+        "unpaid_wages",
+        "loan_documents_held",
+        "notice_received"
+      ],
+      "source_url": "https://nalsa.gov.in/",
+      "source_type": "official",
+      "verification": "verified",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "id": "PROC-NCH",
+      "kind": "procedure",
+      "instrument": "National Consumer Helpline (Department of Consumer Affairs)",
+      "reference": "1915 / 1800-11-4000 / INGRAM portal",
+      "title": "Pre-litigation step: National Consumer Helpline",
+      "summary": "Call 1915 (toll-free, 8AM-8PM) or 1800-11-4000, WhatsApp/SMS 8800001915, or use the INGRAM portal to register a grievance against a company. It is a pre-litigation step that brings the company in to resolve it. Registering does not guarantee a remedy.",
+      "applies_when": "First practical step when a seller or platform does not respond.",
+      "issue_types": [
+        "refund_or_nondelivery",
+        "ecommerce_platform",
+        "misleading_ads_dark_patterns"
+      ],
+      "source_url": "https://consumerhelpline.gov.in/public/about",
+      "source_type": "official",
+      "verification": "verified",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "id": "PROC-EJAGRITI",
+      "kind": "procedure",
+      "instrument": "e-Jagriti portal (Department of Consumer Affairs)",
+      "reference": "e-jagriti.gov.in",
+      "title": "Filing a consumer complaint online",
+      "summary": "Consumer complaints can be filed online on the e-Jagriti portal, which has absorbed e-Daakhil since January 2025. The person picks the Commission by the amount paid and the district, uploads documents and pays any fee online.",
+      "applies_when": "The person is ready to file.",
+      "issue_types": [
+        "refund_or_nondelivery",
+        "ecommerce_platform",
+        "misleading_ads_dark_patterns"
+      ],
+      "source_url": "https://www.impriindia.com/insights/policy-update/e-jagriti-the-digital-transformation-of-consumer-dispute-resolution-in-india/",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "caveats": "Whether e-Daakhil is formally closed is not confirmed. Tell the user to check the portal for current steps."
+    },
+    {
+      "id": "PROC-LEGALNOTICE",
+      "kind": "procedure",
+      "instrument": "Practice",
+      "reference": "Legal notice before a consumer complaint",
+      "title": "Legal notice is advisable but not required",
+      "summary": "A legal notice to the seller is generally not a legal requirement before filing a consumer complaint, but it is useful evidence that the seller was given a chance to fix the problem. An exception is goods lost or damaged with a common carrier, where written notice within 6 months is required under the Carriers Act, 1865.",
+      "applies_when": "Deciding whether to send a notice first, and drafting one.",
+      "issue_types": [
+        "refund_or_nondelivery",
+        "ecommerce_platform",
+        "money_recovery",
+        "cheating_scam",
+        "rental_deposit",
+        "loan_documents_held",
+        "notice_received",
+        "unpaid_wages"
+      ],
+      "source_url": "https://supremetoday.ai/issue/legal-notice-requirement-consumer-complaint-india",
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "caveats": "Secondary source only; the cited case was not read."
+    },
+    {
+      "id": "BNS-318",
+      "kind": "provision",
+      "instrument": "Bharatiya Nyaya Sanhita, 2023",
+      "reference": "Section 318",
+      "title": "Cheating",
+      "summary": "Cheating is deceiving someone, fraudulently or dishonestly, so they hand over property or do or skip something that harms them. Basic cheating, 318(2), is punishable up to 3 years (non-cognizable, bailable). Cheating that dishonestly induces delivery of property, 318(4), the classic online-scam offence, is punishable up to 7 years and a fine (cognizable, non-bailable). Replaced IPC 415, 417, 418 and 420.",
+      "applies_when": "Seller or scammer took money by deception, with no intention to deliver, fake site, fake listing. Needs proof of dishonest intent from the start, not just a late delivery or a dispute.",
+      "issue_types": [
+        "cheating_scam",
+        "payment_fraud"
+      ],
+      "source_url": "https://egazette.gov.in/WriteReadData/2023/250883.pdf",
+      "source_type": "official",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "caveats": "In force since 1 July 2024; never say IPC 420 for new events. Police often treat plain refund disputes as civil, so intent evidence matters. Cognizable status is from the BNSS First Schedule."
+    },
+    {
+      "id": "BNS-316",
+      "kind": "provision",
+      "instrument": "Bharatiya Nyaya Sanhita, 2023",
+      "reference": "Section 316",
+      "title": "Criminal breach of trust",
+      "summary": "Someone entrusted with property who dishonestly misappropriates it or uses it against the law or the agreement. Basic offence, 316(2), up to 5 years or fine or both (cognizable, non-bailable). Replaced IPC 405-409.",
+      "applies_when": "Money or goods were handed over for a specific purpose (for example to an agent or dealer) and the person kept or misused them.",
+      "issue_types": [
+        "cheating_scam",
+        "money_recovery",
+        "loan_documents_held"
+      ],
+      "source_url": "https://egazette.gov.in/WriteReadData/2023/250883.pdf",
+      "source_type": "official",
+      "verification": "verified",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "id": "BNS-319",
+      "kind": "provision",
+      "instrument": "Bharatiya Nyaya Sanhita, 2023",
+      "reference": "Section 319",
+      "title": "Cheating by personation",
+      "summary": "Cheating by pretending to be someone else, real or imaginary. Up to 5 years or fine or both (cognizable, bailable). Replaced IPC 416 and 419.",
+      "applies_when": "Fake customer-care agent, fake bank or brand, someone impersonating an official.",
+      "issue_types": [
+        "cheating_scam",
+        "payment_fraud"
+      ],
+      "source_url": "https://egazette.gov.in/WriteReadData/2023/250883.pdf",
+      "source_type": "official",
+      "verification": "verified",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "id": "BNS-336-340",
+      "kind": "provision",
+      "instrument": "Bharatiya Nyaya Sanhita, 2023",
+      "reference": "Sections 336 and 340",
+      "title": "Forgery and using a forged document or electronic record",
+      "summary": "Making a false document or electronic record to cause damage, support a claim or commit fraud is forgery. Forgery for the purpose of cheating, 336(3), is up to 7 years and a fine. Knowingly using a forged document or electronic record as genuine is punished as forgery, s.340(2).",
+      "applies_when": "Fake invoices, fake payment screenshots, fake certificates or websites.",
+      "issue_types": [
+        "cheating_scam"
+      ],
+      "source_url": "https://egazette.gov.in/WriteReadData/2023/250883.pdf",
+      "source_type": "official",
+      "verification": "verified",
+      "verified_on": "2026-11-08"
+    },
+    {
+      "id": "BNS-308-351",
+      "kind": "provision",
+      "instrument": "Bharatiya Nyaya Sanhita, 2023",
+      "reference": "Sections 308 and 351",
+      "title": "Extortion and criminal intimidation",
+      "summary": "Extortion (s.308) is putting someone in fear of injury to dishonestly make them hand over property; basic extortion is up to 7 years (cognizable, non-bailable). Criminal intimidation (s.351) is threatening injury to person, reputation or property to cause alarm; basic offence up to 2 years (non-cognizable, bailable). Replaced IPC 383-389 and 503-507.",
+      "applies_when": "Loan-app harassment, blackmail with photos, threats to pay or else.",
+      "issue_types": [
+        "cheating_scam",
+        "loan_documents_held"
+      ],
+      "source_url": "https://egazette.gov.in/WriteReadData/2023/250883.pdf",
+      "source_type": "official",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "caveats": "Threats involving violence or blackmail need a human lawyer or police urgently."
+    },
+    {
+      "id": "BNS-111-112",
+      "kind": "provision",
+      "instrument": "Bharatiya Nyaya Sanhita, 2023",
+      "reference": "Sections 111 and 112",
+      "title": "Organised crime and petty organised crime",
+      "summary": "Section 111 covers organised crime syndicates, expressly including cyber-crimes and economic offences such as mass-marketing fraud; it needs a syndicate with previous charge-sheets. Section 112 covers petty organised crime by a group, including cheating. These are new provisions with no IPC equivalent.",
+      "applies_when": "Only when the scam looks like part of an organised ring. The person cannot invoke these alone; it is up to the police and prosecutors.",
+      "issue_types": [
+        "cheating_scam"
+      ],
+      "source_url": "https://egazette.gov.in/WriteReadData/2023/250883.pdf",
+      "source_type": "official",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "caveats": "Application of s.112 to online fraud is not verified. Mention as possible only."
+    },
+    {
+      "id": "BNSS-173",
+      "kind": "provision",
+      "instrument": "Bharatiya Nagarik Suraksha Sanhita, 2023",
+      "reference": "Section 173",
+      "title": "Filing an FIR, including electronically, and what to do if police refuse",
+      "summary": "Information about a cognizable offence can be given orally or electronically to a police station, irrespective of where the offence happened (the basis of a Zero FIR). Electronic information is recorded once the informant signs it within 3 days. The informant gets a free copy. For offences of 3 to under 7 years, police may hold a preliminary enquiry (14 days) with senior permission. If police refuse to record it, the person can send the substance in writing to the Superintendent of Police, and failing that apply to the Magistrate (see s.175(3)).",
+      "applies_when": "The person is going to the police about a scam.",
+      "issue_types": [
+        "cheating_scam",
+        "payment_fraud",
+        "loan_documents_held"
+      ],
+      "source_url": "https://egazette.gov.in/WriteReadData/2023/250884.pdf",
+      "source_type": "official",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "caveats": "Non-cognizable offences (such as basic cheating) do not get an FIR in the same way; police may record a complaint and need a Magistrate's order to investigate."
+    },
+    {
+      "id": "ITA-66",
+      "kind": "provision",
+      "instrument": "Information Technology Act, 2000",
+      "reference": "Sections 66, 66C, 66D (and 43)",
+      "title": "Computer-related fraud, identity theft, cheating by personation online",
+      "summary": "Section 66: dishonestly or fraudulently hacking or tampering with a computer or data, up to 3 years or fine up to Rs 5 lakh. Section 66C: fraudulent use of someone's password, e-signature or unique ID, up to 3 years and fine up to Rs 1 lakh. Section 66D: cheating by personation using a computer or phone, up to 3 years and fine up to Rs 1 lakh. These are cognizable and bailable, and investigated by an Inspector or above. Section 43 gives civil compensation for unauthorised access or damage.",
+      "applies_when": "Online impersonation, stolen credentials, phishing, fake apps or sites.",
+      "issue_types": [
+        "payment_fraud",
+        "cheating_scam"
+      ],
+      "source_url": "https://www.indiacode.nic.in/bitstream/123456789/13116/1/it_act_2000_updated.pdf",
+      "source_type": "official",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "caveats": "Do not cite section 66A. Its status was not verified for this corpus."
+    },
+    {
+      "id": "PROC-CYBER",
+      "kind": "procedure",
+      "instrument": "National Cyber Crime Reporting Portal / helpline 1930",
+      "reference": "cybercrime.gov.in, 1930",
+      "title": "Report online financial fraud immediately",
+      "summary": "Report online financial fraud at the National Cyber Crime Reporting Portal (cybercrime.gov.in, run under MHA's I4C) or call the toll-free helpline 1930 (24x7). The financial fraud reporting system exists to stop money being siphoned off, so report immediately and tell your bank too. The portal records the complaint; converting it into an FIR and investigating is done by the State police. No official time limit exists for the 'golden hour'; just act at once. RBI also advises customers to report there.",
+      "applies_when": "Money was lost to a scam, fake site or unauthorised transaction.",
+      "issue_types": [
+        "payment_fraud",
+        "cheating_scam",
+        "loan_documents_held"
+      ],
+      "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2085609&reg=3&lang=2",
+      "source_type": "official",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "caveats": "Based on PIB releases. Do not quote recovery statistics or a specific golden-hour duration."
+    },
+    {
+      "source_type": "official",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "id": "MTA-11",
+      "kind": "provision",
+      "instrument": "Model Tenancy Act, 2021",
+      "reference": "Section 11",
+      "title": "Security deposit limit and refund",
+      "summary": "A landlord can take a security deposit of at most 2 months' rent for a residential property (6 months' rent for non-residential). It is refunded when the landlord takes back vacant possession, after deducting what the tenant legitimately owes. The Act sets no extra refund period after handover. A landlord who fails to refund owes simple interest at the prescribed rate.",
+      "applies_when": "Tenant is asking for the deposit back after vacating.",
+      "issue_types": [
+        "rental_deposit"
+      ],
+      "source_url": "https://livelaw.in/pdf_upload/model-tenancy-act-394449.pdf",
+      "caveats": "This is a MODEL law. Rent is a state subject, so it applies only in states that have adopted it. Always check the person's state rent act and the written rent agreement. Exact section numbers for the interest rule were not confirmed; do not cite them."
+    },
+    {
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "id": "MTA-FORUM",
+      "kind": "procedure",
+      "instrument": "Model Tenancy Act, 2021",
+      "reference": "Rent Authority and Rent Court (ss. 30-35)",
+      "title": "Where tenancy disputes go in states that follow the Model Tenancy Act",
+      "summary": "The Act sets up a Rent Authority (an officer not below Deputy Collector), appeals to a Rent Court, and then a Rent Tribunal. Rent Courts and Tribunals should try to decide within 60 days, with written reasons if they cannot.",
+      "applies_when": "The person lives in a state that has a tenancy authority under its own rent law.",
+      "issue_types": [
+        "rental_deposit"
+      ],
+      "source_url": "https://ksandk.com/real-estate/the-model-tenancy-act-2021/",
+      "caveats": "State-specific. Whether a deposit claim goes straight to the Rent Court was not confirmed. If the state has no such authority, the usual route is a civil suit."
+    },
+    {
+      "source_type": "secondary",
+      "verification": "unverified",
+      "verified_on": "2026-11-08",
+      "id": "RENT-DEPOSIT-ROUTE",
+      "kind": "procedure",
+      "instrument": "Practice",
+      "reference": "Recovering a rental deposit",
+      "title": "Practical route to recover a deposit",
+      "summary": "Usual order: ask in writing (message or email), send a formal legal notice with a deadline, then file a civil money-recovery suit, or approach the state rent authority if one exists. A 3-year limit from when the right to sue arises is the safe working assumption, so do not wait. A consumer forum usually does not hear disputes with an ordinary private landlord, though it may for a professional landlord, broker or service provider.",
+      "applies_when": "Landlord is refusing or ignoring a deposit refund.",
+      "issue_types": [
+        "rental_deposit",
+        "money_recovery"
+      ],
+      "source_url": "https://sudhirrao.com/insights/recover-security-deposit-landlord-legal-remedies-india",
+      "caveats": "Secondary sources only. The exact Limitation Act article and the start date of the 3 years are not settled across sources. The consumer-forum point was not checked against any NCDRC ruling. Present these as general guidance."
+    },
+    {
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "id": "WAGES-17",
+      "kind": "provision",
+      "instrument": "Code on Wages, 2019",
+      "reference": "Section 17",
+      "title": "When wages must be paid",
+      "summary": "The Code on Wages came into force generally from 21 Nov 2025 and replaced the Payment of Wages Act, 1936. Monthly wages must be paid by the 7th of the next month, weekly wages on the last working day of the week, daily wages at the end of the shift. When a worker is removed, dismissed, retrenched or resigns, wages are due within 2 working days.",
+      "applies_when": "Salary is late or unpaid.",
+      "issue_types": [
+        "unpaid_wages"
+      ],
+      "source_url": "https://www.taxmann.com/post/blog/analysis-the-code-on-wages/",
+      "caveats": "Read from a commentary, not the statute. State rules differ and some are still being notified."
+    },
+    {
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "id": "WAGES-CLAIM",
+      "kind": "procedure",
+      "instrument": "Code on Wages, 2019 / labour portals",
+      "reference": "Claims (ss. 43-51); Shram Suvidha, Samadhan",
+      "title": "How to claim unpaid wages",
+      "summary": "A claim for unpaid wages can be made within 3 years of when it arose, to the authority under the Code, with the Inspector-cum-Facilitator helping enforce compliance. Complaints can also be raised through the labour department and the Shram Suvidha / Samadhan portals. Keep the appointment letter, payslips, bank statements and any messages about the delay.",
+      "applies_when": "The employer keeps delaying or refuses to pay.",
+      "issue_types": [
+        "unpaid_wages"
+      ],
+      "source_url": "https://shramsuvidha.gov.in",
+      "caveats": "Commentary and news sources only. The exact complaint procedure and any decision timeline were not verified, so tell the user to check the state labour department."
+    },
+    {
+      "source_type": "official",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "id": "ICA-148-160",
+      "kind": "provision",
+      "instrument": "Indian Contract Act, 1872",
+      "reference": "Sections 148 and 160",
+      "title": "Return of goods given for a purpose (bailment)",
+      "summary": "When goods or documents are handed over for a purpose, the holder must return them without being asked once the time ends or the purpose is accomplished. Section 160 is the rule most relevant when a lender keeps papers after the loan is repaid.",
+      "applies_when": "A lender or other person still holds the user's documents or items after the debt is cleared.",
+      "issue_types": [
+        "loan_documents_held",
+        "money_recovery"
+      ],
+      "source_url": "https://comtax.up.nic.in/Miscellaneous%20Act/the-indian-contract-act-1872.pdf"
+    },
+    {
+      "source_type": "official",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "id": "ICA-173-176",
+      "kind": "provision",
+      "instrument": "Indian Contract Act, 1872",
+      "reference": "Sections 173, 174 and 176",
+      "title": "A lender may hold pledged items only for that debt",
+      "summary": "A lender holding something as security may keep it for the debt, interest and expenses of that loan. They cannot keep it for a different debt unless the contract says so. On default, the lender can sue on the debt while keeping the item, or sell after giving notice.",
+      "applies_when": "A lender refuses to return papers or items and demands extra money.",
+      "issue_types": [
+        "loan_documents_held"
+      ],
+      "source_url": "https://comtax.up.nic.in/Miscellaneous%20Act/the-indian-contract-act-1872.pdf",
+      "caveats": "Whether handing over title deeds counts as a pledge of goods or an equitable mortgage was not verified. Present as general principle."
+    },
+    {
+      "source_type": "secondary",
+      "verification": "unverified",
+      "verified_on": "2026-11-08",
+      "id": "ULA-1918",
+      "kind": "provision",
+      "instrument": "Usurious Loans Act, 1918",
+      "reference": "Section 3",
+      "title": "Courts can relieve excessive interest",
+      "summary": "In a suit about a loan, if the interest is excessive and the deal is substantially unfair, the court may reopen the transaction, recalculate the account, relieve the borrower of excessive interest and alter the security.",
+      "applies_when": "A private lender demands very high interest or more than was agreed.",
+      "issue_types": [
+        "loan_documents_held"
+      ],
+      "source_url": "https://www.advocatekhoj.com/library/bareacts/usuriousloans/3.php",
+      "caveats": "Current in-force status was not confirmed on India Code, and some states have amended or repealed it. Say it 'may' apply and that a court decides."
+    },
+    {
+      "source_type": "secondary",
+      "verification": "unverified",
+      "verified_on": "2026-11-08",
+      "id": "MONEYLENDERS-STATE",
+      "kind": "provision",
+      "instrument": "State money-lenders laws",
+      "reference": "e.g. Telangana and Andhra Pradesh money-lenders Acts",
+      "title": "State laws regulate private moneylenders",
+      "summary": "Many states require private moneylenders to be licensed or registered and some allow the government to cap interest rates. A lender who is not licensed or who charges above the notified rate can be complained against to the district authorities or police.",
+      "applies_when": "Lending is by a private individual or moneylender, especially as a business.",
+      "issue_types": [
+        "loan_documents_held"
+      ],
+      "source_url": "https://indiacode.nic.in/bitstream/123456789/8481/1/act_5_of_1349_f.pdf",
+      "caveats": "State-specific. Current licence rules, notified rate caps and penalties were not verified. Tell the user to ask the district collector's office or a legal aid clinic."
+    },
+    {
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "id": "RBI-DOCS-2023",
+      "kind": "rule",
+      "instrument": "RBI directions on release of original property documents",
+      "reference": "Effective 1 Dec 2023",
+      "title": "Banks and NBFCs must return documents within 30 days of full repayment",
+      "summary": "Regulated lenders (banks and NBFCs) must release original property documents and remove charges within 30 days of full repayment, or pay compensation of Rs 5,000 for each day of delay.",
+      "applies_when": "The lender is a bank or registered NBFC. It does NOT apply to private individuals.",
+      "issue_types": [
+        "loan_documents_held"
+      ],
+      "source_url": "https://www.moneylife.in/article/release-property-documents-within-30-days-on-repayment-or-settlement-of-loans-else-pay-rs5000-per-day-as-compensation-rbi/71983.html",
+      "caveats": "From news and housing sites, not the RBI circular itself; sources differ on when the penalty clock starts."
+    },
+    {
+      "source_type": "secondary",
+      "verification": "verified",
+      "verified_on": "2026-11-08",
+      "id": "NI-138",
+      "kind": "provision",
+      "instrument": "Negotiable Instruments Act, 1881",
+      "reference": "Section 138",
+      "title": "Cheque bounce",
+      "summary": "If a cheque bounces, the payee must send a written demand within 30 days of the bank's return memo. The drawer then has 15 days to pay. If unpaid, the payee can file a complaint within one month after that period ends. Punishment is up to 2 years' jail, or a fine up to twice the cheque amount, or both. The cheque must have been presented within its validity.",
+      "applies_when": "The user's cheque bounced, or the user received a cheque-bounce notice.",
+      "issue_types": [
+        "notice_received",
+        "money_recovery"
+      ],
+      "source_url": "https://blog.ipleaders.in/how-to-file-cheque-bounce-case-section-138/",
+      "caveats": "Read from a commentary. Procedure references may now point to the BNSS; not confirmed. If the user RECEIVED a notice, they must not ignore the 15-day period; replying and paying or disputing in writing matters."
+    }
+  ]
+}

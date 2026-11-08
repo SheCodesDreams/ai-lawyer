@@ -1,0 +1,605 @@
+{
+  "case": {
+    "id": "09-unpaid-salary",
+    "note": "Unpaid salary: now in scope. Must give steps and cite wage law, not just refer to a lawyer.",
+    "story": "My employer has not paid my salary for 3 months, about Rs 90000 in total. They keep giving excuses. What can I do?",
+    "extra": "It is a private company in Hyderabad. I have my offer letter and payslips.",
+    "proofs": "I have the offer letter, payslips and bank statements.",
+    "expect": {
+      "verdict_in": [
+        "partly",
+        "can_help"
+      ],
+      "issue_type": "unpaid_wages",
+      "must_cite_any": [
+        "WAGES-17",
+        "WAGES-CLAIM"
+      ]
+    }
+  },
+  "seconds": 32,
+  "checks": [
+    {
+      "name": "verdict in partly/can_help",
+      "ok": true,
+      "detail": "partly"
+    },
+    {
+      "name": "issue_type = unpaid_wages",
+      "ok": true,
+      "detail": "unpaid_wages"
+    },
+    {
+      "name": "cites one of WAGES-17/WAGES-CLAIM",
+      "ok": true,
+      "detail": "WAGES-17,WAGES-CLAIM"
+    }
+  ],
+  "row": {
+    "id": "09-unpaid-salary",
+    "pass": true,
+    "verdict": "partly",
+    "issue": "unpaid_wages",
+    "seconds": 32,
+    "warnings": 0,
+    "failed": []
+  },
+  "turns": [
+    {
+      "label": "story",
+      "user": "My employer has not paid my salary for 3 months, about Rs 90000 in total. They keep giving excuses. What can I do?",
+      "result": {
+        "state": {
+          "stage": "intake",
+          "story": {
+            "summary": "The user's employer has not paid their salary for 3 months, totaling about Rs 90000, and is giving excuses.",
+            "timeline": [
+              {
+                "when": "past 3 months",
+                "what": "Employer stopped paying salary."
+              }
+            ],
+            "opposite_party": "Employer",
+            "platform": null,
+            "amount_inr": 90000,
+            "payment_method": null,
+            "proof_mentioned": [],
+            "user_goal": "Get unpaid salary",
+            "months_since_event": 3,
+            "event_date": null,
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": null,
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "My employer has not paid my salary for 3 months, about Rs 90000 in total. They keep giving excuses. What can I do?"
+            },
+            {
+              "role": "assistant",
+              "text": "I am not a lawyer, but I can help you understand your options for unpaid salary. Could you please tell me when the last payment was due, and what goal you want to achieve (such as getting full payment)?"
+            }
+          ]
+        },
+        "reply": "I am not a lawyer, but I can help you understand your options for unpaid salary. Could you please tell me when the last payment was due, and what goal you want to achieve (such as getting full payment)?",
+        "warnings": []
+      }
+    },
+    {
+      "label": "extra details",
+      "user": "It is a private company in Hyderabad. I have my offer letter and payslips.",
+      "result": {
+        "state": {
+          "stage": "intake",
+          "story": {
+            "summary": "The user's employer in Hyderabad has not paid their salary for 3 months, totaling about Rs 90000, and is giving excuses. The user has an offer letter and payslips.",
+            "timeline": [
+              {
+                "when": "past 3 months",
+                "what": "Employer stopped paying salary."
+              }
+            ],
+            "opposite_party": "Private company",
+            "platform": null,
+            "amount_inr": 90000,
+            "payment_method": null,
+            "proof_mentioned": [
+              "offer letter",
+              "payslips"
+            ],
+            "user_goal": "Get unpaid salary",
+            "months_since_event": 3,
+            "event_date": null,
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": null,
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "My employer has not paid my salary for 3 months, about Rs 90000 in total. They keep giving excuses. What can I do?"
+            },
+            {
+              "role": "assistant",
+              "text": "I am not a lawyer, but I can help you understand your options for unpaid salary. Could you please tell me when the last payment was due, and what goal you want to achieve (such as getting full payment)?"
+            },
+            {
+              "role": "user",
+              "text": "It is a private company in Hyderabad. I have my offer letter and payslips."
+            },
+            {
+              "role": "assistant",
+              "text": "I understand. It is a private company in Hyderabad, and you have your offer letter and payslips for the 90000 rupees due. Could you please tell me roughly when the last unpaid salary was due?"
+            }
+          ]
+        },
+        "reply": "I understand. It is a private company in Hyderabad, and you have your offer letter and payslips for the 90000 rupees due. Could you please tell me roughly when the last unpaid salary was due?",
+        "warnings": []
+      }
+    },
+    {
+      "label": "no more details",
+      "user": "That is all the information I have. Please continue.",
+      "result": {
+        "state": {
+          "stage": "confirm",
+          "story": {
+            "summary": "The user's employer in Hyderabad has not paid their salary for 3 months, totaling about Rs 90000, and is giving excuses. The user has an offer letter and payslips.",
+            "timeline": [
+              {
+                "when": "past 3 months",
+                "what": "Employer stopped paying salary."
+              }
+            ],
+            "opposite_party": "Private company",
+            "platform": null,
+            "amount_inr": 90000,
+            "payment_method": null,
+            "proof_mentioned": [
+              "offer letter",
+              "payslips"
+            ],
+            "user_goal": "Get unpaid salary",
+            "months_since_event": 3,
+            "event_date": null,
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": null,
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "My employer has not paid my salary for 3 months, about Rs 90000 in total. They keep giving excuses. What can I do?"
+            },
+            {
+              "role": "assistant",
+              "text": "I am not a lawyer, but I can help you understand your options for unpaid salary. Could you please tell me when the last payment was due, and what goal you want to achieve (such as getting full payment)?"
+            },
+            {
+              "role": "user",
+              "text": "It is a private company in Hyderabad. I have my offer letter and payslips."
+            },
+            {
+              "role": "assistant",
+              "text": "I understand. It is a private company in Hyderabad, and you have your offer letter and payslips for the 90000 rupees due. Could you please tell me roughly when the last unpaid salary was due?"
+            },
+            {
+              "role": "user",
+              "text": "That is all the information I have. Please continue."
+            },
+            {
+              "role": "assistant",
+              "text": "You are seeking help to recover 3 months of unpaid salary totaling Rs 90000 from a private company in Hyderabad, and you have your offer letter and payslips as proof. Is this correct? Say yes, or tell me what to change."
+            }
+          ]
+        },
+        "reply": "You are seeking help to recover 3 months of unpaid salary totaling Rs 90000 from a private company in Hyderabad, and you have your offer letter and payslips as proof. Is this correct? Say yes, or tell me what to change.",
+        "warnings": []
+      }
+    },
+    {
+      "label": "confirm",
+      "user": "Yes, that is correct.",
+      "result": {
+        "state": {
+          "stage": "evidence",
+          "story": {
+            "summary": "The user's employer in Hyderabad has not paid their salary for 3 months, totaling about Rs 90000, and is giving excuses. The user has an offer letter and payslips.",
+            "timeline": [
+              {
+                "when": "past 3 months",
+                "what": "Employer stopped paying salary."
+              }
+            ],
+            "opposite_party": "Private company",
+            "platform": null,
+            "amount_inr": 90000,
+            "payment_method": null,
+            "proof_mentioned": [
+              "offer letter",
+              "payslips"
+            ],
+            "user_goal": "Get unpaid salary",
+            "months_since_event": 3,
+            "event_date": null,
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "unpaid_wages",
+            "plain_explanation": "You have the right to receive your earned wages for the work you performed, and labour laws require timely payment. Since your employer in Hyderabad has not paid your salary for three months, you can file a formal claim with the labour department. The law states that wages must be paid on time, and unpaid wage claims can generally be brought within a specific time limit. You should gather your employment records and consider raising a formal complaint or seeking assistance from the local authorities. I am not a lawyer, so please consult a legal professional or the District Legal Services Authority for specific guidance on your case.",
+            "provisions": [
+              {
+                "id": "WAGES-17",
+                "why": "This rule outlines the timelines for when wages must be paid to employees.",
+                "reference": "Section 17",
+                "instrument": "Code on Wages, 2019",
+                "title": "When wages must be paid",
+                "source_url": "https://www.taxmann.com/post/blog/analysis-the-code-on-wages/",
+                "source_type": "secondary"
+              },
+              {
+                "id": "WAGES-CLAIM",
+                "why": "This explains how you can file a claim for unpaid wages and use labour portals or authorities to seek help.",
+                "reference": "Claims (ss. 43-51); Shram Suvidha, Samadhan",
+                "instrument": "Code on Wages, 2019 / labour portals",
+                "title": "How to claim unpaid wages",
+                "source_url": "https://shramsuvidha.gov.in",
+                "source_type": "secondary"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "Offer letter",
+                "why": "Proves your employment terms and agreement with the company",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Payslips",
+                "why": "Shows your salary amount and the months you were not paid",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Bank statements",
+                "why": "Helps prove the history of past payments and when deposits stopped",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Email or chat messages",
+                "why": "Records any excuses or communication from the employer regarding the delay",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Identity proof",
+                "why": "Needed for filing a formal labour complaint",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "Do you have bank statements or any messages from your employer about the salary delay, and have you already contacted your company's HR or management in writing?"
+          },
+          "plan": null,
+          "verdict": null,
+          "transcript": [
+            {
+              "role": "user",
+              "text": "My employer has not paid my salary for 3 months, about Rs 90000 in total. They keep giving excuses. What can I do?"
+            },
+            {
+              "role": "assistant",
+              "text": "I am not a lawyer, but I can help you understand your options for unpaid salary. Could you please tell me when the last payment was due, and what goal you want to achieve (such as getting full payment)?"
+            },
+            {
+              "role": "user",
+              "text": "It is a private company in Hyderabad. I have my offer letter and payslips."
+            },
+            {
+              "role": "assistant",
+              "text": "I understand. It is a private company in Hyderabad, and you have your offer letter and payslips for the 90000 rupees due. Could you please tell me roughly when the last unpaid salary was due?"
+            },
+            {
+              "role": "user",
+              "text": "That is all the information I have. Please continue."
+            },
+            {
+              "role": "assistant",
+              "text": "You are seeking help to recover 3 months of unpaid salary totaling Rs 90000 from a private company in Hyderabad, and you have your offer letter and payslips as proof. Is this correct? Say yes, or tell me what to change."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "You have the right to receive your earned wages for the work you performed, and labour laws require timely payment. Since your employer in Hyderabad has not paid your salary for three months, you can file a formal claim with the labour department. The law states that wages must be paid on time, and unpaid wage claims can generally be brought within a specific time limit. You should gather your employment records and consider raising a formal complaint or seeking assistance from the local authorities. I am not a lawyer, so please consult a legal professional or the District Legal Services Authority for specific guidance on your case.\n\nDo you have bank statements or any messages from your employer about the salary delay, and have you already contacted your company's HR or management in writing?"
+            }
+          ]
+        },
+        "reply": "You have the right to receive your earned wages for the work you performed, and labour laws require timely payment. Since your employer in Hyderabad has not paid your salary for three months, you can file a formal claim with the labour department. The law states that wages must be paid on time, and unpaid wage claims can generally be brought within a specific time limit. You should gather your employment records and consider raising a formal complaint or seeking assistance from the local authorities. I am not a lawyer, so please consult a legal professional or the District Legal Services Authority for specific guidance on your case.\n\nDo you have bank statements or any messages from your employer about the salary delay, and have you already contacted your company's HR or management in writing?",
+        "analysis": {
+          "issue_type": "unpaid_wages",
+          "plain_explanation": "You have the right to receive your earned wages for the work you performed, and labour laws require timely payment. Since your employer in Hyderabad has not paid your salary for three months, you can file a formal claim with the labour department. The law states that wages must be paid on time, and unpaid wage claims can generally be brought within a specific time limit. You should gather your employment records and consider raising a formal complaint or seeking assistance from the local authorities. I am not a lawyer, so please consult a legal professional or the District Legal Services Authority for specific guidance on your case.",
+          "provisions": [
+            {
+              "id": "WAGES-17",
+              "why": "This rule outlines the timelines for when wages must be paid to employees.",
+              "reference": "Section 17",
+              "instrument": "Code on Wages, 2019",
+              "title": "When wages must be paid",
+              "source_url": "https://www.taxmann.com/post/blog/analysis-the-code-on-wages/",
+              "source_type": "secondary"
+            },
+            {
+              "id": "WAGES-CLAIM",
+              "why": "This explains how you can file a claim for unpaid wages and use labour portals or authorities to seek help.",
+              "reference": "Claims (ss. 43-51); Shram Suvidha, Samadhan",
+              "instrument": "Code on Wages, 2019 / labour portals",
+              "title": "How to claim unpaid wages",
+              "source_url": "https://shramsuvidha.gov.in",
+              "source_type": "secondary"
+            }
+          ],
+          "evidence_checklist": [
+            {
+              "item": "Offer letter",
+              "why": "Proves your employment terms and agreement with the company",
+              "mentioned_by_user": true
+            },
+            {
+              "item": "Payslips",
+              "why": "Shows your salary amount and the months you were not paid",
+              "mentioned_by_user": true
+            },
+            {
+              "item": "Bank statements",
+              "why": "Helps prove the history of past payments and when deposits stopped",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Email or chat messages",
+              "why": "Records any excuses or communication from the employer regarding the delay",
+              "mentioned_by_user": false
+            },
+            {
+              "item": "Identity proof",
+              "why": "Needed for filing a formal labour complaint",
+              "mentioned_by_user": false
+            }
+          ],
+          "ask": "Do you have bank statements or any messages from your employer about the salary delay, and have you already contacted your company's HR or management in writing?"
+        },
+        "warnings": []
+      }
+    },
+    {
+      "label": "proofs",
+      "user": "I have the offer letter, payslips and bank statements.",
+      "result": {
+        "state": {
+          "stage": "done",
+          "story": {
+            "summary": "The user's employer in Hyderabad has not paid their salary for 3 months, totaling about Rs 90000, and is giving excuses. The user has an offer letter and payslips.",
+            "timeline": [
+              {
+                "when": "past 3 months",
+                "what": "Employer stopped paying salary."
+              }
+            ],
+            "opposite_party": "Private company",
+            "platform": null,
+            "amount_inr": 90000,
+            "payment_method": null,
+            "proof_mentioned": [
+              "offer letter",
+              "payslips"
+            ],
+            "user_goal": "Get unpaid salary",
+            "months_since_event": 3,
+            "event_date": null,
+            "flags": {
+              "threats_or_violence": false,
+              "already_in_court_or_notice_received": false,
+              "out_of_scope": false
+            }
+          },
+          "analysis": {
+            "issue_type": "unpaid_wages",
+            "plain_explanation": "You have the right to receive your earned wages for the work you performed, and labour laws require timely payment. Since your employer in Hyderabad has not paid your salary for three months, you can file a formal claim with the labour department. The law states that wages must be paid on time, and unpaid wage claims can generally be brought within a specific time limit. You should gather your employment records and consider raising a formal complaint or seeking assistance from the local authorities. I am not a lawyer, so please consult a legal professional or the District Legal Services Authority for specific guidance on your case.",
+            "provisions": [
+              {
+                "id": "WAGES-17",
+                "why": "This rule outlines the timelines for when wages must be paid to employees.",
+                "reference": "Section 17",
+                "instrument": "Code on Wages, 2019",
+                "title": "When wages must be paid",
+                "source_url": "https://www.taxmann.com/post/blog/analysis-the-code-on-wages/",
+                "source_type": "secondary"
+              },
+              {
+                "id": "WAGES-CLAIM",
+                "why": "This explains how you can file a claim for unpaid wages and use labour portals or authorities to seek help.",
+                "reference": "Claims (ss. 43-51); Shram Suvidha, Samadhan",
+                "instrument": "Code on Wages, 2019 / labour portals",
+                "title": "How to claim unpaid wages",
+                "source_url": "https://shramsuvidha.gov.in",
+                "source_type": "secondary"
+              }
+            ],
+            "evidence_checklist": [
+              {
+                "item": "Offer letter",
+                "why": "Proves your employment terms and agreement with the company",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Payslips",
+                "why": "Shows your salary amount and the months you were not paid",
+                "mentioned_by_user": true
+              },
+              {
+                "item": "Bank statements",
+                "why": "Helps prove the history of past payments and when deposits stopped",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Email or chat messages",
+                "why": "Records any excuses or communication from the employer regarding the delay",
+                "mentioned_by_user": false
+              },
+              {
+                "item": "Identity proof",
+                "why": "Needed for filing a formal labour complaint",
+                "mentioned_by_user": false
+              }
+            ],
+            "ask": "Do you have bank statements or any messages from your employer about the salary delay, and have you already contacted your company's HR or management in writing?"
+          },
+          "plan": {
+            "evidence_have": [
+              "Offer letter",
+              "Payslips",
+              "Bank statements"
+            ],
+            "evidence_missing": [
+              "Email or chat messages regarding salary excuses",
+              "Identity proof"
+            ],
+            "steps": [
+              {
+                "title": "(General) Send a formal written demand",
+                "detail": "Send a written demand letter or email to your employer's HR or management detailing the unpaid salary amount of Rs 90000 for the past 3 months, attaching your proof, and setting a clear deadline for payment.",
+                "where": "Email or registered post to the employer"
+              },
+              {
+                "title": "File a claim for unpaid wages",
+                "detail": "Raise a formal claim for unpaid wages through the state labour department or relevant labour portals such as Shram Suvidha or Samadhan, as supported by WAGES-CLAIM.",
+                "where": "State labour department office or online labour portals"
+              },
+              {
+                "title": "Approach the District Legal Services Authority",
+                "detail": "If you need free legal assistance or guidance to pursue your wage claim, contact the local DLSA or call the legal aid helpline, as supported by PROC-NALSA and LSA-12.",
+                "where": "District Legal Services Authority (DLSA) or Helpline 15100"
+              }
+            ],
+            "forum": "State labour department authority or Labour Court, because your issue involves unpaid wages from a private employer.",
+            "confidence": "medium",
+            "summary": "You have your offer letter, payslips, and bank statements to prove that your employer in Hyderabad owes you Rs 90000 in unpaid wages for 3 months. You should send a written demand to your employer and file a formal claim through the labour department or portals, and you can seek free help from the District Legal Services Authority.",
+            "draft_document": {
+              "type": "legal_notice",
+              "text": "To,\n[COMPANY NAME / EMPLOYER],\n[COMPANY ADDRESS, HYDERABAD]\n\nSUBJECT: DEMAND FOR PAYMENT OF UNPAID SALARY TOTALING RS 90000\n\nDear Sir/Madam,\n\nI, [YOUR NAME], was employed with your company under the offer letter dated [DATE OF OFFER LETTER]. \n\nI have faithfully performed my duties, but you have failed to pay my salary for the past 3 months, amounting to a total of Rs 90000. This non-payment violates applicable wage rules such as WAGES-17.\n\nI hereby demand that you clear my full unpaid salary of Rs 90000 within 15 days of receiving this notice. Please transfer the amount directly to my bank account as per our employment terms.\n\nIf you fail to clear the dues within the given time, I will be forced to initiate formal proceedings before the labour authorities and appropriate forums.\n\nSincerely,\n[YOUR NAME]\n[YOUR CONTACT INFORMATION]\n[DATE]"
+            }
+          },
+          "verdict": {
+            "level": "partly",
+            "reasons": [
+              "Some parts of your case are not clearly covered by the verified laws here."
+            ]
+          },
+          "transcript": [
+            {
+              "role": "user",
+              "text": "My employer has not paid my salary for 3 months, about Rs 90000 in total. They keep giving excuses. What can I do?"
+            },
+            {
+              "role": "assistant",
+              "text": "I am not a lawyer, but I can help you understand your options for unpaid salary. Could you please tell me when the last payment was due, and what goal you want to achieve (such as getting full payment)?"
+            },
+            {
+              "role": "user",
+              "text": "It is a private company in Hyderabad. I have my offer letter and payslips."
+            },
+            {
+              "role": "assistant",
+              "text": "I understand. It is a private company in Hyderabad, and you have your offer letter and payslips for the 90000 rupees due. Could you please tell me roughly when the last unpaid salary was due?"
+            },
+            {
+              "role": "user",
+              "text": "That is all the information I have. Please continue."
+            },
+            {
+              "role": "assistant",
+              "text": "You are seeking help to recover 3 months of unpaid salary totaling Rs 90000 from a private company in Hyderabad, and you have your offer letter and payslips as proof. Is this correct? Say yes, or tell me what to change."
+            },
+            {
+              "role": "user",
+              "text": "Yes, that is correct."
+            },
+            {
+              "role": "assistant",
+              "text": "You have the right to receive your earned wages for the work you performed, and labour laws require timely payment. Since your employer in Hyderabad has not paid your salary for three months, you can file a formal claim with the labour department. The law states that wages must be paid on time, and unpaid wage claims can generally be brought within a specific time limit. You should gather your employment records and consider raising a formal complaint or seeking assistance from the local authorities. I am not a lawyer, so please consult a legal professional or the District Legal Services Authority for specific guidance on your case.\n\nDo you have bank statements or any messages from your employer about the salary delay, and have you already contacted your company's HR or management in writing?"
+            },
+            {
+              "role": "user",
+              "text": "I have the offer letter, payslips and bank statements."
+            },
+            {
+              "role": "assistant",
+              "text": "You have your offer letter, payslips, and bank statements to prove that your employer in Hyderabad owes you Rs 90000 in unpaid wages for 3 months. You should send a written demand to your employer and file a formal claim through the labour department or portals, and you can seek free help from the District Legal Services Authority."
+            }
+          ]
+        },
+        "reply": "You have your offer letter, payslips, and bank statements to prove that your employer in Hyderabad owes you Rs 90000 in unpaid wages for 3 months. You should send a written demand to your employer and file a formal claim through the labour department or portals, and you can seek free help from the District Legal Services Authority.",
+        "plan": {
+          "evidence_have": [
+            "Offer letter",
+            "Payslips",
+            "Bank statements"
+          ],
+          "evidence_missing": [
+            "Email or chat messages regarding salary excuses",
+            "Identity proof"
+          ],
+          "steps": [
+            {
+              "title": "(General) Send a formal written demand",
+              "detail": "Send a written demand letter or email to your employer's HR or management detailing the unpaid salary amount of Rs 90000 for the past 3 months, attaching your proof, and setting a clear deadline for payment.",
+              "where": "Email or registered post to the employer"
+            },
+            {
+              "title": "File a claim for unpaid wages",
+              "detail": "Raise a formal claim for unpaid wages through the state labour department or relevant labour portals such as Shram Suvidha or Samadhan, as supported by WAGES-CLAIM.",
+              "where": "State labour department office or online labour portals"
+            },
+            {
+              "title": "Approach the District Legal Services Authority",
+              "detail": "If you need free legal assistance or guidance to pursue your wage claim, contact the local DLSA or call the legal aid helpline, as supported by PROC-NALSA and LSA-12.",
+              "where": "District Legal Services Authority (DLSA) or Helpline 15100"
+            }
+          ],
+          "forum": "State labour department authority or Labour Court, because your issue involves unpaid wages from a private employer.",
+          "confidence": "medium",
+          "summary": "You have your offer letter, payslips, and bank statements to prove that your employer in Hyderabad owes you Rs 90000 in unpaid wages for 3 months. You should send a written demand to your employer and file a formal claim through the labour department or portals, and you can seek free help from the District Legal Services Authority.",
+          "draft_document": {
+            "type": "legal_notice",
+            "text": "To,\n[COMPANY NAME / EMPLOYER],\n[COMPANY ADDRESS, HYDERABAD]\n\nSUBJECT: DEMAND FOR PAYMENT OF UNPAID SALARY TOTALING RS 90000\n\nDear Sir/Madam,\n\nI, [YOUR NAME], was employed with your company under the offer letter dated [DATE OF OFFER LETTER]. \n\nI have faithfully performed my duties, but you have failed to pay my salary for the past 3 months, amounting to a total of Rs 90000. This non-payment violates applicable wage rules such as WAGES-17.\n\nI hereby demand that you clear my full unpaid salary of Rs 90000 within 15 days of receiving this notice. Please transfer the amount directly to my bank account as per our employment terms.\n\nIf you fail to clear the dues within the given time, I will be forced to initiate formal proceedings before the labour authorities and appropriate forums.\n\nSincerely,\n[YOUR NAME]\n[YOUR CONTACT INFORMATION]\n[DATE]"
+          }
+        },
+        "verdict": {
+          "level": "partly",
+          "reasons": [
+            "Some parts of your case are not clearly covered by the verified laws here."
+          ]
+        },
+        "warnings": []
+      }
+    }
+  ]
+}
