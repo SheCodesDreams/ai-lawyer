@@ -245,6 +245,7 @@ async function ask<T>(req: { system: string; user: string }, lang: string): Prom
 }
 
 // ---------- practice mode: the AI plays the other side ----------
+export const MAX_PRACTICE_QUESTIONS = 10;
 const PRACTICE_ROLE = `ROLE: You play the OPPOSING side's lawyer or representative (the seller / company / platform / bank) in a mock hearing or negotiation, so the user can practise. Be firm but fair and polite, never abusive. This is a learning simulation, not a prediction of what any real forum will decide.
 - Use only the CASE and the LAW FILE. Never invent laws, sections, court cases, or facts about the user's case that the user did not state.
 - Tactics you may use, only if plausible for THIS case: doubting the proof, pointing to delay or the time limit, "terms and conditions / no-refund policy", blaming the user (shared OTP, installed an app, did not read the policy), saying the claim is exaggerated, wrong forum, user did not complain to the grievance officer first, commercial-purpose purchase, denying delivery attempts, blaming the courier.`;
@@ -253,7 +254,12 @@ const PRACTICE_START = `STAGE: PRACTICE START.
 Schema: {"intro": string (2 sentences: who you are playing and that this is practice), "briefing": [{"tactic": string, "how_it_is_used": string}] (4-6 tactics most likely against THIS user, one line each), "question": string (your first hard question)}`;
 
 const PRACTICE_ANSWER = `STAGE: PRACTICE ANSWER. Judge the user's last answer, then ask the next question.
-Schema: {"feedback": {"strength": "weak"|"ok"|"strong", "what_worked": string, "what_to_fix": string, "better_answer": string (short model answer using only the user's stated facts and the LAW FILE)}, "tactic_used": string (the tactic your last question used), "question": string (next question; switch or escalate the tactic; return "" if the user has answered 5 or more questions)}`;
+Schema: {"feedback": {"strength": "weak"|"ok"|"strong", "what_worked": string, "what_to_fix": string, "better_answer": string (short model answer using only the user's stated facts and the LAW FILE)}, "tactic_used": string (the tactic your NEXT question uses, copied exactly from this list: "doubting the proof", "delay or time limit", "terms and conditions", "blaming the user", "exaggerated claim", "wrong forum", "no prior complaint", "commercial purpose", "denying delivery attempts", "blaming the courier"), "question": string (next question; switch or escalate the tactic; return "" if QUESTIONS ANSWERED SO FAR is 10 or more)}
+- Be a tough but fair judge. Use "strong" ONLY if the answer directly answers the LAST question you asked, with specific facts from the case. If it dodges the question or is vague, use "weak" or "ok".
+- "what_to_fix" must name a concrete gap in THIS answer (for example a missing date, amount, law or proof). Never give generic advice like "keep your documents safe".
+- "better_answer" must add something the user did not already say, such as the relevant law from the LAW FILE or a specific proof, and must not just repeat their answer.
+- Use only facts the user stated. Do not invent facts about the user's case; phrase the opposing side's claims as the other side's allegations.
+- Never show internal ids or square brackets such as [SOGA-57-61]. Name the Act and section in plain words instead, e.g. "Section 57 of the Sale of Goods Act, 1930".`;
 
 const PRACTICE_SUMMARY = `STAGE: PRACTICE SUMMARY. Summarise how the user did across the whole practice.
 Schema: {"strengths": string[], "weak_spots": string[], "bring_to_hearing": string[] (documents and proof to carry), "tips": string[] (3-5 short, practical)}`;
@@ -285,10 +291,12 @@ async function runPractice(
   // normal turn inside practice: the user answered the opposing lawyer
   s.practice ??= { turns: [] };
   s.practice.turns.push({ role: "user", text: userText });
+  const answered = s.practice.turns.filter((t) => t.role === "user").length;
   const r = await ask<{ feedback: PracticeFeedback; tactic_used: string; question: string }>(
-    { system: sys(PRACTICE_ANSWER), user: `${base}\nPRACTICE SO FAR:\n${log()}` }, lang);
+    { system: sys(PRACTICE_ANSWER), user: `${base}\nQUESTIONS ANSWERED SO FAR: ${answered}\nPRACTICE SO FAR:\n${log()}` }, lang);
   warnings.push(...warn([r.feedback?.better_answer ?? "", r.question ?? ""]));
-  if (!r.question) {
+  // The round length is enforced in code, not left to the model: it always ends after MAX_PRACTICE_QUESTIONS answers.
+  if (!r.question || answered >= MAX_PRACTICE_QUESTIONS) {
     const summary = await summarize();
     return { state: s, reply: "That is the end of the practice round.", practice: { feedback: r.feedback, tactic_used: r.tactic_used, summary }, warnings };
   }

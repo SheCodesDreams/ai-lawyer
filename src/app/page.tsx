@@ -136,6 +136,15 @@ export default function Home() {
         )}
         {msgs.map((m, i) => (
           <div key={i} style={{ display: "flex", flexDirection: "column", gap: 8, alignItems: m.role === "user" ? "flex-end" : "stretch" }}>
+            {m.practice?.feedback && (
+              <div className="card practice">
+                <h3>Feedback on your last answer <span className="tag">{m.practice.feedback.strength}</span></h3>
+                <p style={{ margin: "4px 0" }}><b>What worked:</b> {m.practice.feedback.what_worked}</p>
+                <p style={{ margin: "4px 0" }}><b>What to fix:</b> {m.practice.feedback.what_to_fix}</p>
+                <p style={{ margin: "4px 0" }}><b>A stronger answer:</b> {m.practice.feedback.better_answer}</p>
+              </div>
+            )}
+            {m.practice?.tactic_used && m.role === "bot" && <div className="sub">Their next tactic: <span className="tag">{m.practice.tactic_used}</span></div>}
             <div className={"msg " + m.role}>{m.text}</div>
             {m.role === "bot" && <button className="mini" onClick={() => speak(m.text)} aria-label="Read aloud">🔊 Read aloud</button>}
             {m.story && (
@@ -155,14 +164,6 @@ export default function Home() {
               <div className="card practice">
                 <h3>🥊 Tricks the other side may use against you</h3>
                 <ul>{m.practice.briefing.map((b, k) => <li key={k}><b>{b.tactic}</b> — {b.how_it_is_used}</li>)}</ul>
-              </div>
-            )}
-            {m.practice?.feedback && (
-              <div className="card practice">
-                <h3>Feedback on your answer <span className="tag">{m.practice.feedback.strength}</span>{m.practice.tactic_used && <span className="tag">tactic: {m.practice.tactic_used}</span>}</h3>
-                <p style={{ margin: "4px 0" }}><b>Worked:</b> {m.practice.feedback.what_worked}</p>
-                <p style={{ margin: "4px 0" }}><b>Fix:</b> {m.practice.feedback.what_to_fix}</p>
-                <p style={{ margin: "4px 0" }}><b>A stronger answer:</b> {m.practice.feedback.better_answer}</p>
               </div>
             )}
             {m.practice?.summary && (
@@ -238,7 +239,7 @@ export default function Home() {
         {practicing && <button onClick={() => send("practice_end")} disabled={busy}>End practice</button>}
         {msgs.length > 0 && <button onClick={reset} style={{ marginLeft: "auto" }}>New case</button>}
       </div>
-      {practicing && <div className="banner">Practice mode: I am playing the other side&apos;s lawyer. Answer my questions as you would in a hearing. This is a simulation, not a prediction of what a real forum will do.</div>}
+      {practicing && <div className="banner"><b>Practice mode.</b> I am playing the other side&apos;s lawyer. Answer as you would in a hearing, and press End practice whenever you are done. This is a simulation, not a prediction of what a real forum will do.</div>}
       <div className="row">
         <textarea
           value={input} onChange={(e) => setInput(e.target.value)} rows={2}

@@ -40,3 +40,4 @@ a { color: var(--accent); }
 .err { color: var(--bad); font-size: 14px; }
 .card.practice { border-color: var(--warn); }
 button.mini { align-self: flex-start; font-size: 12px; padding: 3px 8px; color: var(--muted); }
+.sub { font-size: 12px; color: var(--muted); }
